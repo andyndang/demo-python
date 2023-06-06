@@ -1,5 +1,7 @@
 configVersion: 1.0.0
 generation:
+  baseServerUrl: https://api.whylabsapp.com
+  telemetryEnabled: false
   comments:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
