@@ -67,7 +67,7 @@ req = shared.AddMembershipRequest(
 )
 
 res = s.internal.create_membership(req, operations.CreateMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -99,7 +99,7 @@ req = operations.CreateOrganizationRequest(
 )
 
 res = s.internal.create_organization(req, operations.CreateOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -123,7 +123,7 @@ req = shared.CreateUserRequest(
 )
 
 res = s.internal.create_user(req, operations.CreateUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -147,7 +147,7 @@ req = operations.DeleteOrganizationRequest(
 )
 
 res = s.internal.delete_organization(req, operations.DeleteOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -171,7 +171,7 @@ req = operations.GetAWSMarketplaceMetadataRequest(
 )
 
 res = s.internal.get_aws_marketplace_metadata(req, operations.GetAWSMarketplaceMetadataSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -196,7 +196,7 @@ req = operations.GetAPIKeyRequest(
 )
 
 res = s.internal.get_api_key(req, operations.GetAPIKeySecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -221,7 +221,7 @@ req = shared.GetConnectionRequest(
 )
 
 res = s.internal.get_connection(req, operations.GetConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -245,7 +245,7 @@ req = operations.GetDefaultMembershipForEmailRequest(
 )
 
 res = s.internal.get_default_membership_for_email(req, operations.GetDefaultMembershipForEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -270,7 +270,7 @@ req = operations.GetFeatureFlagsRequest(
 )
 
 res = s.internal.get_feature_flags(req, operations.GetFeatureFlagsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -294,7 +294,7 @@ req = operations.GetMembershipsRequest(
 )
 
 res = s.internal.get_memberships(req, operations.GetMembershipsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -318,7 +318,7 @@ req = operations.GetMembershipsByEmailRequest(
 )
 
 res = s.internal.get_memberships_by_email(req, operations.GetMembershipsByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -342,7 +342,7 @@ req = operations.GetMembershipsByOrgRequest(
 )
 
 res = s.internal.get_memberships_by_org(req, operations.GetMembershipsByOrgSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -368,7 +368,7 @@ req = operations.GetMonitorConfigV3VersionRequest(
 )
 
 res = s.internal.get_monitor_config_v3_version(req, operations.GetMonitorConfigV3VersionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -392,7 +392,7 @@ req = operations.GetNotificationSettingsRequest(
 )
 
 res = s.internal.get_notification_settings(req, operations.GetNotificationSettingsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -416,7 +416,7 @@ req = operations.GetOrganizationRequest(
 )
 
 res = s.internal.get_organization(req, operations.GetOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -440,7 +440,7 @@ req = operations.GetUserRequest(
 )
 
 res = s.internal.get_user(req, operations.GetUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -464,7 +464,7 @@ req = operations.GetUserByEmailRequest(
 )
 
 res = s.internal.get_user_by_email(req, operations.GetUserByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -489,7 +489,7 @@ req = operations.ListAPIKeysRequest(
 )
 
 res = s.internal.list_api_keys(req, operations.ListAPIKeysSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -514,7 +514,7 @@ req = shared.ListJobsRequest(
 )
 
 res = s.internal.list_jobs(req, operations.ListJobsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -539,7 +539,7 @@ req = operations.ListMonitorConfigV3VersionsRequest(
 )
 
 res = s.internal.list_monitor_config_v3_versions(req, operations.ListMonitorConfigV3VersionsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -560,7 +560,7 @@ s = songbird.Songbird()
 
 
 res = s.internal.list_organizations(operations.ListOrganizationsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -587,7 +587,7 @@ req = operations.ListSegmentsRequest(
 )
 
 res = s.internal.list_segments(req, operations.ListSegmentsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -621,7 +621,7 @@ req = operations.PartiallyUpdateOrgRequest(
 )
 
 res = s.internal.partially_update_org(req, operations.PartiallyUpdateOrgSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -653,7 +653,7 @@ req = operations.PartiallyUpdateOrganizationRequest(
 )
 
 res = s.internal.partially_update_organization(req, operations.PartiallyUpdateOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -674,7 +674,7 @@ s = songbird.Songbird()
 
 
 res = s.internal.post_monitor_config_validation_job(operations.PostMonitorConfigValidationJobSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -702,7 +702,7 @@ req = shared.ProvisionNewMarketplaceUserRequest(
 )
 
 res = s.internal.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -728,7 +728,7 @@ req = shared.ProvisionDatabricksConnectionRequest(
 )
 
 res = s.internal.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -756,7 +756,7 @@ req = shared.ProvisionNewUserRequest(
 )
 
 res = s.internal.provision_new_user(req, operations.ProvisionNewUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -790,7 +790,7 @@ req = operations.PutRequestMonitorRunConfigRequest(
 )
 
 res = s.internal.put_request_monitor_run_config(req, operations.PutRequestMonitorRunConfigSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -815,7 +815,7 @@ req = shared.RefreshConnectionRequest(
 )
 
 res = s.internal.refresh_connection(req, operations.RefreshConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -849,7 +849,7 @@ req = shared.RegisterDatabricksConnectionRequest(
 )
 
 res = s.internal.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -874,7 +874,7 @@ req = shared.RemoveMembershipRequest(
 )
 
 res = s.internal.remove_membership_by_email(req, operations.RemoveMembershipByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -900,7 +900,7 @@ req = shared.RunJobRequest(
 )
 
 res = s.internal.run_job(req, operations.RunJobSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -925,7 +925,7 @@ req = shared.SetDefaultMembershipRequest(
 )
 
 res = s.internal.set_default_membership(req, operations.SetDefaultMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -975,7 +975,7 @@ req = shared.UpdateConnectionRequest(
 )
 
 res = s.internal.update_connection(req, operations.UpdateConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1001,7 +1001,7 @@ req = shared.UpdateMembershipRequest(
 )
 
 res = s.internal.update_membership_by_email(req, operations.UpdateMembershipByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1051,7 +1051,7 @@ req = operations.UpdateNotificationSettingsRequest(
 )
 
 res = s.internal.update_notification_settings(req, operations.UpdateNotificationSettingsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1087,7 +1087,7 @@ req = operations.UpdateOrgRequest(
 )
 
 res = s.internal.update_org(req, operations.UpdateOrgSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1119,7 +1119,7 @@ req = operations.UpdateOrganizationRequest(
 )
 
 res = s.internal.update_organization(req, operations.UpdateOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1145,7 +1145,7 @@ req = shared.User(
 )
 
 res = s.internal.update_user(req, operations.UpdateUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1169,7 +1169,7 @@ req = operations.WhyLabsSearchRequest(
 )
 
 res = s.internal.why_labs_search(req, operations.WhyLabsSearchSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -1194,7 +1194,7 @@ req = shared.SearchIndexRequest(
 )
 
 res = s.internal.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

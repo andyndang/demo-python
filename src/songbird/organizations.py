@@ -22,7 +22,7 @@ class Organizations:
         headers = {}
         query_params = utils.get_query_params(operations.CreateOrganizationRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -48,7 +48,7 @@ class Organizations:
         url = utils.generate_url(operations.DeleteOrganizationRequest, base_url, '/v0/organizations/{org_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -74,7 +74,7 @@ class Organizations:
         url = utils.generate_url(operations.GetAWSMarketplaceMetadataRequest, base_url, '/v0/organizations/{org_id}/marketplace-metadata/', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -100,7 +100,7 @@ class Organizations:
         url = utils.generate_url(operations.GetOrganizationRequest, base_url, '/v0/organizations/{org_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -126,7 +126,7 @@ class Organizations:
         url = base_url + '/v0/organizations'
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -160,7 +160,7 @@ class Organizations:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.PartiallyUpdateOrgRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -187,7 +187,7 @@ class Organizations:
         headers = {}
         query_params = utils.get_query_params(operations.PartiallyUpdateOrganizationRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -221,7 +221,7 @@ class Organizations:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpdateOrgRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -248,7 +248,7 @@ class Organizations:
         headers = {}
         query_params = utils.get_query_params(operations.UpdateOrganizationRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         

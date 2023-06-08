@@ -24,7 +24,7 @@ req = shared.CreateUserRequest(
 )
 
 res = s.user.create_user(req, operations.CreateUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -48,7 +48,7 @@ req = operations.GetUserRequest(
 )
 
 res = s.user.get_user(req, operations.GetUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -72,7 +72,7 @@ req = operations.GetUserByEmailRequest(
 )
 
 res = s.user.get_user_by_email(req, operations.GetUserByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -98,7 +98,7 @@ req = shared.User(
 )
 
 res = s.user.update_user(req, operations.UpdateUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

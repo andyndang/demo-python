@@ -21,7 +21,7 @@ req = operations.GetMonitorConfigSchemaRequest(
 )
 
 res = s.schema.get_monitor_config_schema(req, operations.GetMonitorConfigSchemaSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

@@ -22,7 +22,7 @@ class Models:
         headers = {}
         query_params = utils.get_query_params(operations.CreateModelRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -48,7 +48,7 @@ class Models:
         url = utils.generate_url(operations.DeactivateModelRequest, base_url, '/v0/organizations/{org_id}/models/{model_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -74,7 +74,7 @@ class Models:
         url = utils.generate_url(operations.DeleteEntitySchemaRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -100,7 +100,7 @@ class Models:
         url = utils.generate_url(operations.DeleteEntitySchemaColumnRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/column/{column_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -126,7 +126,7 @@ class Models:
         url = utils.generate_url(operations.DeleteEntitySchemaMetricRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/metric/{metric_label}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -152,7 +152,7 @@ class Models:
         url = utils.generate_url(operations.GetEntitySchemaRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -178,7 +178,7 @@ class Models:
         url = utils.generate_url(operations.GetEntitySchemaColumnRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/column/{column_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -204,7 +204,7 @@ class Models:
         url = utils.generate_url(operations.GetModelRequest, base_url, '/v0/organizations/{org_id}/models/{model_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -230,7 +230,7 @@ class Models:
         url = utils.generate_url(operations.ListModelsRequest, base_url, '/v0/organizations/{org_id}/models', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -261,7 +261,7 @@ class Models:
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -292,7 +292,7 @@ class Models:
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -323,7 +323,7 @@ class Models:
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -350,7 +350,7 @@ class Models:
         headers = {}
         query_params = utils.get_query_params(operations.UpdateModelRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         

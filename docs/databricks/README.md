@@ -26,7 +26,7 @@ req = shared.GetConnectionRequest(
 )
 
 res = s.databricks.get_connection(req, operations.GetConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -51,7 +51,7 @@ req = shared.ListJobsRequest(
 )
 
 res = s.databricks.list_jobs(req, operations.ListJobsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -76,7 +76,7 @@ req = shared.RefreshConnectionRequest(
 )
 
 res = s.databricks.refresh_connection(req, operations.RefreshConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -102,7 +102,7 @@ req = shared.RunJobRequest(
 )
 
 res = s.databricks.run_job(req, operations.RunJobSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -132,7 +132,7 @@ req = shared.UpdateConnectionRequest(
 )
 
 res = s.databricks.update_connection(req, operations.UpdateConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

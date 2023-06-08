@@ -32,7 +32,7 @@ req = operations.CreateAPIKeyRequest(
 )
 
 res = s.api_key.create_api_key(req, operations.CreateAPIKeySecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -57,7 +57,7 @@ req = operations.GetAPIKeyRequest(
 )
 
 res = s.api_key.get_api_key(req, operations.GetAPIKeySecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -82,7 +82,7 @@ req = operations.ListAPIKeysRequest(
 )
 
 res = s.api_key.list_api_keys(req, operations.ListAPIKeysSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -108,7 +108,7 @@ req = operations.RevokeAPIKeyRequest(
 )
 
 res = s.api_key.revoke_api_key(req, operations.RevokeAPIKeySecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

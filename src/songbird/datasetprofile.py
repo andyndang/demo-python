@@ -28,7 +28,7 @@ class DatasetProfile:
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -55,7 +55,7 @@ class DatasetProfile:
         headers = {}
         query_params = utils.get_query_params(operations.DeleteAnalyzerResultsRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -82,7 +82,7 @@ class DatasetProfile:
         headers = {}
         query_params = utils.get_query_params(operations.DeleteDatasetProfilesRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -108,7 +108,7 @@ class DatasetProfile:
         url = utils.generate_url(operations.DeleteReferenceProfileRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{model_id}/reference-profiles/{reference_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -134,7 +134,7 @@ class DatasetProfile:
         url = utils.generate_url(operations.GetReferenceProfileRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{model_id}/reference-profiles/{reference_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -161,7 +161,7 @@ class DatasetProfile:
         headers = {}
         query_params = utils.get_query_params(operations.ListReferenceProfilesRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
@@ -187,7 +187,7 @@ class DatasetProfile:
         url = utils.generate_url(operations.ListSegmentsRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{model_id}/segments', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         

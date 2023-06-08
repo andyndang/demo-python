@@ -7,7 +7,7 @@ s = songbird.Songbird()
 
 
 res = s.admin.post_monitor_config_validation_job(operations.PostMonitorConfigValidationJobSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

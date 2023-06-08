@@ -22,7 +22,7 @@ req = operations.GetFeatureFlagsRequest(
 )
 
 res = s.feature_flags.get_feature_flags(req, operations.GetFeatureFlagsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

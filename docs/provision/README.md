@@ -28,7 +28,7 @@ req = shared.ProvisionNewMarketplaceUserRequest(
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -54,7 +54,7 @@ req = shared.ProvisionDatabricksConnectionRequest(
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -82,7 +82,7 @@ req = shared.ProvisionNewUserRequest(
 )
 
 res = s.provision.provision_new_user(req, operations.ProvisionNewUserSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -116,7 +116,7 @@ req = shared.RegisterDatabricksConnectionRequest(
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

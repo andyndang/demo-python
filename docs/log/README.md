@@ -40,7 +40,7 @@ req = operations.LogAsyncRequest(
 )
 
 res = s.log.log_async(req, operations.LogAsyncSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -69,7 +69,7 @@ req = operations.LogReferenceRequest(
 )
 
 res = s.log.log_reference(req, operations.LogReferenceSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

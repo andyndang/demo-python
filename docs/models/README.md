@@ -37,7 +37,7 @@ req = operations.CreateModelRequest(
 )
 
 res = s.models.create_model(req, operations.CreateModelSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -62,7 +62,7 @@ req = operations.DeactivateModelRequest(
 )
 
 res = s.models.deactivate_model(req, operations.DeactivateModelSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -87,7 +87,7 @@ req = operations.DeleteEntitySchemaRequest(
 )
 
 res = s.models.delete_entity_schema(req, operations.DeleteEntitySchemaSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -113,7 +113,7 @@ req = operations.DeleteEntitySchemaColumnRequest(
 )
 
 res = s.models.delete_entity_schema_column(req, operations.DeleteEntitySchemaColumnSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -139,7 +139,7 @@ req = operations.DeleteEntitySchemaMetricRequest(
 )
 
 res = s.models.delete_entity_schema_metric(req, operations.DeleteEntitySchemaMetricSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -164,7 +164,7 @@ req = operations.GetEntitySchemaRequest(
 )
 
 res = s.models.get_entity_schema(req, operations.GetEntitySchemaSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -190,7 +190,7 @@ req = operations.GetEntitySchemaColumnRequest(
 )
 
 res = s.models.get_entity_schema_column(req, operations.GetEntitySchemaColumnSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -215,7 +215,7 @@ req = operations.GetModelRequest(
 )
 
 res = s.models.get_model(req, operations.GetModelSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -239,7 +239,7 @@ req = operations.ListModelsRequest(
 )
 
 res = s.models.list_models(req, operations.ListModelsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -300,7 +300,7 @@ req = operations.PutEntitySchemaRequest(
 )
 
 res = s.models.put_entity_schema(req, operations.PutEntitySchemaSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -331,7 +331,7 @@ req = operations.PutEntitySchemaColumnRequest(
 )
 
 res = s.models.put_entity_schema_column(req, operations.PutEntitySchemaColumnSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -361,7 +361,7 @@ req = operations.PutEntitySchemaMetricRequest(
 )
 
 res = s.models.put_entity_schema_metric(req, operations.PutEntitySchemaMetricSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -389,7 +389,7 @@ req = operations.UpdateModelRequest(
 )
 
 res = s.models.update_model(req, operations.UpdateModelSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

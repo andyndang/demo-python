@@ -36,7 +36,7 @@ req = shared.AddMembershipRequest(
 )
 
 res = s.membership.create_membership(req, operations.CreateMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -63,7 +63,7 @@ req = operations.CreateOrganizationMembershipRequest(
 )
 
 res = s.membership.create_organization_membership(req, operations.CreateOrganizationMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -87,7 +87,7 @@ req = operations.GetDefaultMembershipForEmailRequest(
 )
 
 res = s.membership.get_default_membership_for_email(req, operations.GetDefaultMembershipForEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -111,7 +111,7 @@ req = operations.GetMembershipsRequest(
 )
 
 res = s.membership.get_memberships(req, operations.GetMembershipsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -135,7 +135,7 @@ req = operations.GetMembershipsByEmailRequest(
 )
 
 res = s.membership.get_memberships_by_email(req, operations.GetMembershipsByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -159,7 +159,7 @@ req = operations.GetMembershipsByOrgRequest(
 )
 
 res = s.membership.get_memberships_by_org(req, operations.GetMembershipsByOrgSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -183,7 +183,7 @@ req = operations.ListOrganizationMembershipsRequest(
 )
 
 res = s.membership.list_organization_memberships(req, operations.ListOrganizationMembershipsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -208,7 +208,7 @@ req = shared.RemoveMembershipRequest(
 )
 
 res = s.membership.remove_membership_by_email(req, operations.RemoveMembershipByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -233,7 +233,7 @@ req = operations.RemoveOrganizationMembershipRequest(
 )
 
 res = s.membership.remove_organization_membership(req, operations.RemoveOrganizationMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -258,7 +258,7 @@ req = shared.SetDefaultMembershipRequest(
 )
 
 res = s.membership.set_default_membership(req, operations.SetDefaultMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -284,7 +284,7 @@ req = shared.UpdateMembershipRequest(
 )
 
 res = s.membership.update_membership_by_email(req, operations.UpdateMembershipByEmailSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -310,7 +310,7 @@ req = operations.UpdateOrganizationMembershipRequest(
 )
 
 res = s.membership.update_organization_membership(req, operations.UpdateOrganizationMembershipSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

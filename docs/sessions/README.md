@@ -57,7 +57,7 @@ req = operations.ClaimGuestSessionRequest(
 )
 
 res = s.sessions.claim_guest_session(req, operations.ClaimGuestSessionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -172,7 +172,7 @@ req = operations.GetSessionRequest(
 )
 
 res = s.sessions.get_session(req, operations.GetSessionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

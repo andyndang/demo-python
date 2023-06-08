@@ -35,7 +35,7 @@ req = operations.DeleteAnalyzerRequest(
 )
 
 res = s.monitor.delete_analyzer(req, operations.DeleteAnalyzerSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -61,7 +61,7 @@ req = operations.DeleteMonitorRequest(
 )
 
 res = s.monitor.delete_monitor(req, operations.DeleteMonitorSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -87,7 +87,7 @@ req = operations.GetAnalyzerRequest(
 )
 
 res = s.monitor.get_analyzer(req, operations.GetAnalyzerSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -113,7 +113,7 @@ req = operations.GetMonitorRequest(
 )
 
 res = s.monitor.get_monitor(req, operations.GetMonitorSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -140,7 +140,7 @@ req = operations.GetMonitorConfigV3Request(
 )
 
 res = s.monitor.get_monitor_config_v3(req, operations.GetMonitorConfigV3Security(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -166,7 +166,7 @@ req = operations.GetMonitorConfigV3VersionRequest(
 )
 
 res = s.monitor.get_monitor_config_v3_version(req, operations.GetMonitorConfigV3VersionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -191,7 +191,7 @@ req = operations.ListMonitorConfigV3VersionsRequest(
 )
 
 res = s.monitor.list_monitor_config_v3_versions(req, operations.ListMonitorConfigV3VersionsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -217,7 +217,7 @@ req = operations.PatchMonitorConfigV3Request(
 )
 
 res = s.monitor.patch_monitor_config_v3(req, operations.PatchMonitorConfigV3Security(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -244,7 +244,7 @@ req = operations.PutAnalyzerRequest(
 )
 
 res = s.monitor.put_analyzer(req, operations.PutAnalyzerSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -271,7 +271,7 @@ req = operations.PutMonitorRequest(
 )
 
 res = s.monitor.put_monitor(req, operations.PutMonitorSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -297,7 +297,7 @@ req = operations.PutMonitorConfigV3Request(
 )
 
 res = s.monitor.put_monitor_config_v3(req, operations.PutMonitorConfigV3Security(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -333,7 +333,7 @@ req = operations.PutRequestMonitorRunConfigRequest(
 )
 
 res = s.monitor.put_request_monitor_run_config(req, operations.PutRequestMonitorRunConfigSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -360,7 +360,7 @@ req = operations.ValidateMonitorConfigV3Request(
 )
 
 res = s.monitor.validate_monitor_config_v3(req, operations.ValidateMonitorConfigV3Security(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

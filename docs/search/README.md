@@ -22,7 +22,7 @@ req = operations.WhyLabsSearchRequest(
 )
 
 res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -47,7 +47,7 @@ req = shared.SearchIndexRequest(
 )
 
 res = s.search.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

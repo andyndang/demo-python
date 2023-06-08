@@ -37,7 +37,7 @@ req = operations.CreateOrganizationRequest(
 )
 
 res = s.organizations.create_organization(req, operations.CreateOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -61,7 +61,7 @@ req = operations.DeleteOrganizationRequest(
 )
 
 res = s.organizations.delete_organization(req, operations.DeleteOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -85,7 +85,7 @@ req = operations.GetAWSMarketplaceMetadataRequest(
 )
 
 res = s.organizations.get_aws_marketplace_metadata(req, operations.GetAWSMarketplaceMetadataSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -109,7 +109,7 @@ req = operations.GetOrganizationRequest(
 )
 
 res = s.organizations.get_organization(req, operations.GetOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -130,7 +130,7 @@ s = songbird.Songbird()
 
 
 res = s.organizations.list_organizations(operations.ListOrganizationsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -164,7 +164,7 @@ req = operations.PartiallyUpdateOrgRequest(
 )
 
 res = s.organizations.partially_update_org(req, operations.PartiallyUpdateOrgSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -196,7 +196,7 @@ req = operations.PartiallyUpdateOrganizationRequest(
 )
 
 res = s.organizations.partially_update_organization(req, operations.PartiallyUpdateOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -232,7 +232,7 @@ req = operations.UpdateOrgRequest(
 )
 
 res = s.organizations.update_org(req, operations.UpdateOrgSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -264,7 +264,7 @@ req = operations.UpdateOrganizationRequest(
 )
 
 res = s.organizations.update_organization(req, operations.UpdateOrganizationSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

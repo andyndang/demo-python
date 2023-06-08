@@ -23,7 +23,7 @@ req = operations.GetColumnWeightsRequest(
 )
 
 res = s.feature_weights.get_column_weights(req, operations.GetColumnWeightsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -49,7 +49,7 @@ req = operations.PutColumnWeightsRequest(
 )
 
 res = s.feature_weights.put_column_weights(req, operations.PutColumnWeightsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

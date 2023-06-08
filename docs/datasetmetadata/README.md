@@ -24,7 +24,7 @@ req = operations.DeleteDatasetMetadataRequest(
 )
 
 res = s.dataset_metadata.delete_dataset_metadata(req, operations.DeleteDatasetMetadataSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -49,7 +49,7 @@ req = operations.GetDatasetMetadataRequest(
 )
 
 res = s.dataset_metadata.get_dataset_metadata(req, operations.GetDatasetMetadataSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -75,7 +75,7 @@ req = operations.PutDatasetMetadataRequest(
 )
 
 res = s.dataset_metadata.put_dataset_metadata(req, operations.PutDatasetMetadataSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

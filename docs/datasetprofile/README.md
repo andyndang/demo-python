@@ -104,7 +104,7 @@ req = operations.CreateReferenceProfileRequest(
 )
 
 res = s.dataset_profile.create_reference_profile(req, operations.CreateReferenceProfileSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -133,7 +133,7 @@ req = operations.DeleteAnalyzerResultsRequest(
 )
 
 res = s.dataset_profile.delete_analyzer_results(req, operations.DeleteAnalyzerResultsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -163,7 +163,7 @@ req = operations.DeleteDatasetProfilesRequest(
 )
 
 res = s.dataset_profile.delete_dataset_profiles(req, operations.DeleteDatasetProfilesSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -191,7 +191,7 @@ req = operations.DeleteReferenceProfileRequest(
 )
 
 res = s.dataset_profile.delete_reference_profile(req, operations.DeleteReferenceProfileSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -219,7 +219,7 @@ req = operations.GetReferenceProfileRequest(
 )
 
 res = s.dataset_profile.get_reference_profile(req, operations.GetReferenceProfileSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -248,7 +248,7 @@ req = operations.ListReferenceProfilesRequest(
 )
 
 res = s.dataset_profile.list_reference_profiles(req, operations.ListReferenceProfilesSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -275,7 +275,7 @@ req = operations.ListSegmentsRequest(
 )
 
 res = s.dataset_profile.list_segments(req, operations.ListSegmentsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:

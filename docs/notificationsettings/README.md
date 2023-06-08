@@ -37,7 +37,7 @@ req = operations.AddNotificationActionRequest(
 )
 
 res = s.notification_settings.add_notification_action(req, operations.AddNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -62,7 +62,7 @@ req = operations.DeleteNotificationActionRequest(
 )
 
 res = s.notification_settings.delete_notification_action(req, operations.DeleteNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -87,7 +87,7 @@ req = operations.DisableNotificationActionRequest(
 )
 
 res = s.notification_settings.disable_notification_action(req, operations.DisableNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -112,7 +112,7 @@ req = operations.EnableNotificationActionRequest(
 )
 
 res = s.notification_settings.enable_notification_action(req, operations.EnableNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -137,7 +137,7 @@ req = operations.GetNotificationActionRequest(
 )
 
 res = s.notification_settings.get_notification_action(req, operations.GetNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -161,7 +161,7 @@ req = operations.GetNotificationSettingsRequest(
 )
 
 res = s.notification_settings.get_notification_settings(req, operations.GetNotificationSettingsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -185,7 +185,7 @@ req = operations.ListNotificationActionsRequest(
 )
 
 res = s.notification_settings.list_notification_actions(req, operations.ListNotificationActionsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -212,7 +212,7 @@ req = operations.PutNotificationActionRequest(
 )
 
 res = s.notification_settings.put_notification_action(req, operations.PutNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -237,7 +237,7 @@ req = operations.TestNotificationActionRequest(
 )
 
 res = s.notification_settings.test_notification_action(req, operations.TestNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -264,7 +264,7 @@ req = operations.UpdateNotificationActionRequest(
 )
 
 res = s.notification_settings.update_notification_action(req, operations.UpdateNotificationActionSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -314,7 +314,7 @@ req = operations.UpdateNotificationSettingsRequest(
 )
 
 res = s.notification_settings.update_notification_settings(req, operations.UpdateNotificationSettingsSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -335,7 +335,7 @@ s = songbird.Songbird()
 
 
 res = s.notification_settings.get_email_notification_action_payload(operations.GetEmailNotificationActionPayloadSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -356,7 +356,7 @@ s = songbird.Songbird()
 
 
 res = s.notification_settings.get_pager_duty_notification_action_payload(operations.GetPagerDutyNotificationActionPayloadSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
@@ -377,7 +377,7 @@ s = songbird.Songbird()
 
 
 res = s.notification_settings.get_slack_notification_action_payload(operations.GetSlackNotificationActionPayloadSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
+    api_key_auth="",
 ))
 
 if res.status_code == 200:
