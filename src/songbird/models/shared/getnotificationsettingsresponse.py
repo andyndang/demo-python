@@ -9,10 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetNotificationSettingsResponse:
     r"""Response for getting notification settings"""
-    
     notification_settings: Optional[shared_notificationsettings.NotificationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationSettings'), 'exclude': lambda f: f is None }})
     r"""Settings that control how and when notifications are delivered."""
     
+

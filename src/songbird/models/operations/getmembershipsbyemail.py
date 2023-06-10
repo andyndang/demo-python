@@ -7,24 +7,29 @@ from ..shared import getmembershipsresponse as shared_getmembershipsresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetMembershipsByEmailSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetMembershipsByEmailRequest:
-    
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetMembershipsByEmailResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_memberships_response: Optional[shared_getmembershipsresponse.GetMembershipsResponse] = dataclasses.field(default=None)
     r"""GetMembershipsByEmail default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

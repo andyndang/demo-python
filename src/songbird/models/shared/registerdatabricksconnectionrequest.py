@@ -8,9 +8,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class RegisterDatabricksConnectionRequest:
-    
     access_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('accessToken') }})
     cloud_provider: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cloudProvider') }})
     connection_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectionId') }})
@@ -23,3 +23,4 @@ class RegisterDatabricksConnectionRequest:
     connection_established: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectionEstablished'), 'exclude': lambda f: f is None }})
     free_trial: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('freeTrial'), 'exclude': lambda f: f is None }})
     
+

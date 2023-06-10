@@ -7,18 +7,21 @@ from ..shared import provisionnewuserresponse as shared_provisionnewuserresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ProvisionNewUserSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class ProvisionNewUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     provision_new_user_response: Optional[shared_provisionnewuserresponse.ProvisionNewUserResponse] = dataclasses.field(default=None)
     r"""ProvisionNewUser default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

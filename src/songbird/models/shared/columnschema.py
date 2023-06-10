@@ -7,10 +7,10 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ColumnSchema:
     r"""Column schema for a given column"""
-    
     classifier: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('classifier') }})
     r"""We can classify these columns into various grouping. Currently we only support 'input' and 'output'"""
     data_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataType') }})
@@ -18,3 +18,4 @@ class ColumnSchema:
     discreteness: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('discreteness') }})
     r"""Whether a column should be discrete or continuous. Changing this column will change the default grouping (discrete columns vs. continuous columns"""
     
+

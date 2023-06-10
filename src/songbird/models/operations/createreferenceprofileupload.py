@@ -8,19 +8,22 @@ from ..shared import logsessionreferenceresponse as shared_logsessionreferencere
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateReferenceProfileUploadRequest:
-    
     log_reference_request: shared_logreferencerequest.LogReferenceRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateReferenceProfileUploadResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     log_session_reference_response: Optional[shared_logsessionreferenceresponse.LogSessionReferenceResponse] = dataclasses.field(default=None)
     r"""CreateReferenceProfileUpload default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

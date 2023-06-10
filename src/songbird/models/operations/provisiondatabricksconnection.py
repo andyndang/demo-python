@@ -7,18 +7,21 @@ from ..shared import provisiondatabricksconnectionresponse as shared_provisionda
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ProvisionDatabricksConnectionSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class ProvisionDatabricksConnectionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     provision_databricks_connection_response: Optional[shared_provisiondatabricksconnectionresponse.ProvisionDatabricksConnectionResponse] = dataclasses.field(default=None)
     r"""ProvisionDatabricksConnection default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

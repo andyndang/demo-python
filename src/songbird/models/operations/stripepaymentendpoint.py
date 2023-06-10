@@ -7,12 +7,13 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class StripePaymentEndpointResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     response: Optional[shared_response.Response] = dataclasses.field(default=None)
     r"""StripePaymentEndpoint default response"""
     
+

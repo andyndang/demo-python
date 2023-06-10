@@ -7,10 +7,11 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ProvisionDatabricksConnectionRequest:
-    
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     expect_existing_user: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expectExistingUser') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
+

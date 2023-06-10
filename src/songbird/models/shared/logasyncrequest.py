@@ -9,10 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class LogAsyncRequest:
     r"""Request payload for LogAsync."""
-    
     dataset_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetTimestamp'), 'exclude': lambda f: f is None }})
     segment_tags: Optional[list[shared_segmenttag.SegmentTag]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segmentTags'), 'exclude': lambda f: f is None }})
     
+

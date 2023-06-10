@@ -8,10 +8,11 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListOrganizationMembershipsResponse:
     r"""Response for the ListOrganizationMemberships API"""
-    
     memberships: list[shared_membership.Membership] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('memberships') }})
     r"""A list of all memberships in an organization."""
     
+

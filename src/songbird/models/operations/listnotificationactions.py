@@ -7,24 +7,29 @@ from ..shared import notificationaction as shared_notificationaction
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ListNotificationActionsSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListNotificationActionsRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListNotificationActionsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     notification_actions: Optional[list[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
     r"""ListNotificationActions default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -7,25 +7,30 @@ from ..shared import featureflags as shared_featureflags
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetFeatureFlagsSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetFeatureFlagsRequest:
-    
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     user_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetFeatureFlagsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     feature_flags: Optional[shared_featureflags.FeatureFlags] = dataclasses.field(default=None)
     r"""GetFeatureFlags default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

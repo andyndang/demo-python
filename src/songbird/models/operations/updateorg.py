@@ -10,23 +10,27 @@ from songbird import utils
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpdateOrgSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UpdateOrgRequestBody:
-    
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id'), 'exclude': lambda f: f is None }})
     r"""The unique ID of an organization. If an organization with this ID does not exist, this method will throw an exception."""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateOrgRequest:
-    
     name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'name', 'style': 'form', 'explode': True }})
     r"""The name of the organization"""
     request_body: UpdateOrgRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -45,12 +49,15 @@ class UpdateOrgRequest:
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateOrgResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     organization_summary: Optional[shared_organizationsummary.OrganizationSummary] = dataclasses.field(default=None)
     r"""A summary of the organization object if succeeds"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

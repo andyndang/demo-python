@@ -7,27 +7,32 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ValidateMonitorConfigV3Security:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class ValidateMonitorConfigV3Request:
-    
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     request_body: str = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     verbose: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'verbose', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class ValidateMonitorConfigV3Response:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     response: Optional[shared_response.Response] = dataclasses.field(default=None)
     r"""ValidateMonitorConfigV3 default response"""
     
+

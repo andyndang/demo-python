@@ -1,0 +1,15 @@
+# NotificationAction
+
+GetNotificationAction default response
+
+
+## Fields
+
+| Field                                                                                   | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `creation_time`                                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects)                    | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `enabled`                                                                               | *Optional[bool]*                                                                        | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `id`                                                                                    | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `last_update`                                                                           | [date](https://docs.python.org/3/library/datetime.html#date-objects)                    | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `payload`                                                                               | [Optional[NotificationActionPayload]](../../models/shared/notificationactionpayload.md) | :heavy_minus_sign:                                                                      | N/A                                                                                     |
+| `type`                                                                                  | [Optional[ActionType]](../../models/shared/actiontype.md)                               | :heavy_minus_sign:                                                                      | N/A                                                                                     |

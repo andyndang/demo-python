@@ -7,10 +7,11 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class FeatureFlags:
     r"""Feature flag state"""
-    
     flag_values: dict[str, bool] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flagValues') }})
     r"""The state of feature flags"""
     
+

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
 from songbird.models import operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class NotificationSettings:
     sdk_configuration: SDKConfiguration
@@ -37,7 +37,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res
@@ -63,7 +63,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res
@@ -89,7 +89,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res
@@ -115,7 +115,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res
@@ -224,7 +224,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res
@@ -250,7 +250,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res
@@ -281,7 +281,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
 
         return res

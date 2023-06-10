@@ -8,9 +8,10 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListJobsResponse:
     r"""ListJobs default response"""
-    
     jobs: list[shared_dto_jobs_jobdto.DTOJobsJobDTO] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jobs') }})
     
+

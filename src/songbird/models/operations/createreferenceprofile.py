@@ -8,15 +8,17 @@ from ..shared import createreferenceprofileresponse as shared_createreferencepro
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateReferenceProfileSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateReferenceProfileRequest:
-    
     create_reference_profile_request: shared_createreferenceprofilerequest.CreateReferenceProfileRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     r"""The unique model ID in your company."""
@@ -24,12 +26,15 @@ class CreateReferenceProfileRequest:
     r"""Your company's unique organization ID"""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateReferenceProfileResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_reference_profile_response: Optional[shared_createreferenceprofileresponse.CreateReferenceProfileResponse] = dataclasses.field(default=None)
     r"""The metadata for the summarized reference profile data"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -7,12 +7,13 @@ from ..shared import createsessionresponse as shared_createsessionresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateSessionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     create_session_response: Optional[shared_createsessionresponse.CreateSessionResponse] = dataclasses.field(default=None)
     r"""A new session id that can be used to upload dataset profiles."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

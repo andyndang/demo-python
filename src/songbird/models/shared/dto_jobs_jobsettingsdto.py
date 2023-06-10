@@ -11,16 +11,22 @@ from ..shared import dto_jobs_sparkpythontaskdto as shared_dto_jobs_sparkpythont
 from ..shared import dto_jobs_sparksubmittaskdto as shared_dto_jobs_sparksubmittaskdto
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class DTOJobsJobSettingsDTOLibraries:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DTOJobsJobSettingsDTO:
-    
     email_notifications: Optional[shared_dto_jobs_jobemailnotificationsdto.DTOJobsJobEmailNotificationsDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emailNotifications'), 'exclude': lambda f: f is None }})
     existing_cluster_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('existingClusterId'), 'exclude': lambda f: f is None }})
-    libraries: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('libraries'), 'exclude': lambda f: f is None }})
+    libraries: Optional[list[DTOJobsJobSettingsDTOLibraries]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('libraries'), 'exclude': lambda f: f is None }})
     max_concurrent_runs: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxConcurrentRuns'), 'exclude': lambda f: f is None }})
     max_retries: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRetries'), 'exclude': lambda f: f is None }})
     min_retry_interval_millis: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minRetryIntervalMillis'), 'exclude': lambda f: f is None }})
@@ -34,3 +40,4 @@ class DTOJobsJobSettingsDTO:
     spark_submit_task: Optional[shared_dto_jobs_sparksubmittaskdto.DTOJobsSparkSubmitTaskDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sparkSubmitTask'), 'exclude': lambda f: f is None }})
     timeout_seconds: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timeoutSeconds'), 'exclude': lambda f: f is None }})
     
+

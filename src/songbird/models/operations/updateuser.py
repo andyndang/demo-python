@@ -7,18 +7,21 @@ from ..shared import user as shared_user
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpdateUserSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateUserResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     user: Optional[shared_user.User] = dataclasses.field(default=None)
     r"""UpdateUser default response"""
     
+

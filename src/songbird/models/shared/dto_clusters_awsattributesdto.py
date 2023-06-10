@@ -10,9 +10,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DTOClustersAwsAttributesDTO:
-    
     availability: Optional[shared_dto_clusters_awsavailabilitydto.DTOClustersAwsAvailabilityDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('availability'), 'exclude': lambda f: f is None }})
     ebs_volume_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ebsVolumeCount'), 'exclude': lambda f: f is None }})
     ebs_volume_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ebsVolumeSize'), 'exclude': lambda f: f is None }})
@@ -22,3 +22,4 @@ class DTOClustersAwsAttributesDTO:
     spot_bid_price_percent: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spotBidPricePercent'), 'exclude': lambda f: f is None }})
     zone_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('zoneId'), 'exclude': lambda f: f is None }})
     
+

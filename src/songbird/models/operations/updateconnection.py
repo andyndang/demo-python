@@ -7,18 +7,21 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpdateConnectionSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateConnectionResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     response: Optional[shared_response.Response] = dataclasses.field(default=None)
     r"""UpdateConnection default response"""
     
+

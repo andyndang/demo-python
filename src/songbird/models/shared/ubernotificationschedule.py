@@ -10,6 +10,7 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UberNotificationSchedule:
     r"""Combination of all possible schedule types, a hacky workaround for bugs in generated clients that use polymorphic types.
@@ -24,7 +25,6 @@ class UberNotificationSchedule:
     Individual:
         enabled, cadence=INDIVIDUAL
     """
-    
     cadence: shared_notificationsqsmessagecadence.NotificationSqsMessageCadence = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cadence') }})
     enabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled') }})
     day_of_week: Optional[shared_notificationsettingsday.NotificationSettingsDay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dayOfWeek'), 'exclude': lambda f: f is None }})
@@ -32,3 +32,4 @@ class UberNotificationSchedule:
     local_minute_of_hour: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localMinuteOfHour'), 'exclude': lambda f: f is None }})
     local_timezone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localTimezone'), 'exclude': lambda f: f is None }})
     
+

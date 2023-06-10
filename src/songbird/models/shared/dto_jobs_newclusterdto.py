@@ -8,13 +8,25 @@ from ..shared import dto_clusters_clusterlogconfdto as shared_dto_clusters_clust
 from ..shared import dto_jobs_datasecuritymodedto as shared_dto_jobs_datasecuritymodedto
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Any, Optional
+from typing import Optional
+
+
+
+@dataclasses.dataclass
+class DTOJobsNewClusterDTOInitScripts:
+    pass
+
+
+
+@dataclasses.dataclass
+class DTOJobsNewClusterDTOSSHPublicKeys:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class DTOJobsNewClusterDTO:
-    
     artifact_paths: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('artifactPaths'), 'exclude': lambda f: f is None }})
     auto_scale: Optional[shared_dto_clusters_autoscaledto.DTOClustersAutoScaleDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('autoScale'), 'exclude': lambda f: f is None }})
     auto_termination_minutes: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('autoTerminationMinutes'), 'exclude': lambda f: f is None }})
@@ -25,7 +37,7 @@ class DTOJobsNewClusterDTO:
     data_security_mode: Optional[shared_dto_jobs_datasecuritymodedto.DTOJobsDataSecurityModeDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dataSecurityMode'), 'exclude': lambda f: f is None }})
     driver_node_type_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('driverNodeTypeId'), 'exclude': lambda f: f is None }})
     enable_elastic_disk: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enableElasticDisk'), 'exclude': lambda f: f is None }})
-    init_scripts: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('initScripts'), 'exclude': lambda f: f is None }})
+    init_scripts: Optional[list[DTOJobsNewClusterDTOInitScripts]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('initScripts'), 'exclude': lambda f: f is None }})
     instance_pool_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('instancePoolId'), 'exclude': lambda f: f is None }})
     node_type_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nodeTypeId'), 'exclude': lambda f: f is None }})
     num_workers: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numWorkers'), 'exclude': lambda f: f is None }})
@@ -34,5 +46,6 @@ class DTOJobsNewClusterDTO:
     spark_conf: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sparkConf'), 'exclude': lambda f: f is None }})
     spark_env_vars: Optional[dict[str, str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sparkEnvVars'), 'exclude': lambda f: f is None }})
     spark_version: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sparkVersion'), 'exclude': lambda f: f is None }})
-    ssh_public_keys: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sshPublicKeys'), 'exclude': lambda f: f is None }})
+    ssh_public_keys: Optional[list[DTOJobsNewClusterDTOSSHPublicKeys]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sshPublicKeys'), 'exclude': lambda f: f is None }})
     
+

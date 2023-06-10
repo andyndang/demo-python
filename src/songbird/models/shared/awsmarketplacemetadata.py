@@ -12,9 +12,9 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class AWSMarketplaceMetadata:
-    
     aws_marketplace_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsMarketplaceCustomerId') }})
     aws_marketplace_product_code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsMarketplaceProductCode') }})
     dimension: shared_marketplacedimensions.MarketplaceDimensions = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dimension') }})
@@ -23,3 +23,4 @@ class AWSMarketplaceMetadata:
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})
     created_by: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createdBy'), 'exclude': lambda f: f is None }})
     
+

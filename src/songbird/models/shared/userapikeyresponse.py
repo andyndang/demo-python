@@ -9,10 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UserAPIKeyResponse:
     r"""An key metadata object but no secret values"""
-    
     key: Optional[shared_userapikey.UserAPIKey] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key'), 'exclude': lambda f: f is None }})
     r"""Response when creating an API key successfully"""
     
+

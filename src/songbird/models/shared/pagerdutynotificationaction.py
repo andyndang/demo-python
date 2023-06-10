@@ -7,9 +7,10 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class PagerDutyNotificationAction:
     r"""Pager Duty payload for Notification Actions"""
-    
     pager_duty_key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagerDutyKey') }})
     
+

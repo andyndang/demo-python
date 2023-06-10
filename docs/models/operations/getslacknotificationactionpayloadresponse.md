@@ -1,0 +1,11 @@
+# GetSlackNotificationActionPayloadResponse
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `content_type`                                                                             | *str*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `slack_notification_action`                                                                | [Optional[shared.SlackNotificationAction]](../../models/shared/slacknotificationaction.md) | :heavy_minus_sign:                                                                         | getSlackNotificationActionPayload default response                                         |
+| `status_code`                                                                              | *int*                                                                                      | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `raw_response`                                                                             | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)      | :heavy_minus_sign:                                                                         | N/A                                                                                        |

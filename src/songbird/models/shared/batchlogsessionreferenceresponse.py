@@ -9,10 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class BatchLogSessionReferenceResponse:
     r"""Response payload for uploading reference profile."""
-    
     observatory_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('observatoryUrl'), 'exclude': lambda f: f is None }})
     references: Optional[list[shared_logsessionreferenceresponse.LogSessionReferenceResponse]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('references'), 'exclude': lambda f: f is None }})
     
+

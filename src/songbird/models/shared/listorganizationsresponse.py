@@ -9,11 +9,12 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class ListOrganizationsResponse:
     r"""Response for listing organization"""
-    
     items: list[shared_organizationsummary.OrganizationSummary] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""A list of all known organization metadata"""
     internal: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('internal'), 'exclude': lambda f: f is None }})
     
+

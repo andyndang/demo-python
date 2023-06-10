@@ -7,15 +7,17 @@ from ..shared import userapikey as shared_userapikey
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class CreateAPIKeySecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class CreateAPIKeyRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     user_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
@@ -30,12 +32,15 @@ class CreateAPIKeyRequest:
     r"""Scopes of the token"""
     
 
+
+
+
 @dataclasses.dataclass
 class CreateAPIKeyResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     user_api_key: Optional[shared_userapikey.UserAPIKey] = dataclasses.field(default=None)
     r"""A object with key ID and other metadata about the key"""
     
+

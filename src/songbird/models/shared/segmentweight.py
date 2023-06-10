@@ -9,10 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class SegmentWeight:
-    
     segment: Optional[shared_segment.Segment] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segment'), 'exclude': lambda f: f is None }})
     weights: Optional[dict[str, float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weights'), 'exclude': lambda f: f is None }})
     r"""Entity weight value for each entity"""
     
+

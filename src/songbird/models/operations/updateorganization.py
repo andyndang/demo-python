@@ -8,15 +8,17 @@ from ..shared import subscriptiontier as shared_subscriptiontier
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class UpdateOrganizationSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateOrganizationRequest:
-    
     name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'name', 'style': 'form', 'explode': True }})
     r"""The name of the organization"""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
@@ -36,12 +38,15 @@ class UpdateOrganizationRequest:
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
 
+
+
+
 @dataclasses.dataclass
 class UpdateOrganizationResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     organization_summary: Optional[shared_organizationsummary.OrganizationSummary] = dataclasses.field(default=None)
     r"""A summary of the organization object if succeeds"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

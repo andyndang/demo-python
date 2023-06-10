@@ -8,10 +8,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class UserAPIKey:
     r"""Response when creating an API key successfully"""
-    
     creation_time: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('creationTime') }})
     r"""Creation time in human readable format"""
     key_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keyId') }})
@@ -31,3 +31,4 @@ class UserAPIKey:
     scopes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopes'), 'exclude': lambda f: f is None }})
     r"""Scope of the key"""
     
+

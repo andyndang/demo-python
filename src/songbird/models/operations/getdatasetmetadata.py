@@ -7,25 +7,30 @@ from ..shared import getdatasetmetadataresponse as shared_getdatasetmetadataresp
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetDatasetMetadataSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetDatasetMetadataRequest:
-    
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetDatasetMetadataResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_dataset_metadata_response: Optional[shared_getdatasetmetadataresponse.GetDatasetMetadataResponse] = dataclasses.field(default=None)
     r"""GetDatasetMetadata default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

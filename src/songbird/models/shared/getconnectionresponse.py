@@ -8,9 +8,10 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetConnectionResponse:
     r"""GetConnection default response"""
-    
     connection: shared_databricksconnection.DatabricksConnection = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection') }})
     
+

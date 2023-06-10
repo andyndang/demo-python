@@ -7,18 +7,21 @@ from ..shared import listorganizationsresponse as shared_listorganizationsrespon
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class ListOrganizationsSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class ListOrganizationsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     list_organizations_response: Optional[shared_listorganizationsresponse.ListOrganizationsResponse] = dataclasses.field(default=None)
     r"""a list of organization summary items"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -7,24 +7,29 @@ from ..shared import getnotificationsettingsresponse as shared_getnotificationse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class GetNotificationSettingsSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetNotificationSettingsRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
+
 @dataclasses.dataclass
 class GetNotificationSettingsResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     get_notification_settings_response: Optional[shared_getnotificationsettingsresponse.GetNotificationSettingsResponse] = dataclasses.field(default=None)
     r"""GetNotificationSettings default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

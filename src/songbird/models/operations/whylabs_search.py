@@ -7,24 +7,29 @@ from ..shared import searchresponse as shared_searchresponse
 from typing import Optional
 
 
+
 @dataclasses.dataclass
 class WhyLabsSearchSecurity:
-    
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
+
+
+
 @dataclasses.dataclass
 class WhyLabsSearchRequest:
-    
     query: str = dataclasses.field(metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     
 
+
+
+
 @dataclasses.dataclass
 class WhyLabsSearchResponse:
-    
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     search_response: Optional[shared_searchresponse.SearchResponse] = dataclasses.field(default=None)
     r"""WhyLabs Search default response"""
     
+

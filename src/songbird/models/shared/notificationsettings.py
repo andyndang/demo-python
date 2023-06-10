@@ -9,10 +9,10 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class NotificationSettings:
     r"""Settings that control how and when notifications are delivered."""
-    
     email_settings: Optional[shared_ubernotificationschedule.UberNotificationSchedule] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emailSettings'), 'exclude': lambda f: f is None }})
     r"""Combination of all possible schedule types, a hacky workaround for bugs in generated clients that use polymorphic types.
     There are three types of schedules. Weekly, Daily, and Individual. You need to set the right fields for each one.
@@ -53,3 +53,4 @@ class NotificationSettings:
         enabled, cadence=INDIVIDUAL
     """
     
+

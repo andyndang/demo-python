@@ -9,10 +9,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+
 @dataclasses.dataclass
 class GetDefaultMembershipResponse:
     r"""GetDefaultMembershipForEmail default response"""
-    
     membership: Optional[shared_membership.Membership] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('membership'), 'exclude': lambda f: f is None }})
     r"""Response for the get memberships"""
     
+
