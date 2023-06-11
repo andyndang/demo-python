@@ -8,4 +8,5 @@ import dataclasses
 @dataclasses.dataclass
 class Void:
     r"""ClaimGuestSession default response"""
-    pass
+    
+
