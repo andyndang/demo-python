@@ -20,7 +20,6 @@ src/songbird/search.py
 src/songbird/sessions.py
 src/songbird/user.py
 src/songbird/sdk.py
-.gitignore
 pylintrc
 setup.py
 src/songbird/__init__.py
