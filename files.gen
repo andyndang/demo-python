@@ -229,6 +229,8 @@ src/songbird/models/shared/columnschema.py
 src/songbird/models/shared/listmodelsresponse.py
 src/songbird/models/shared/actiontype.py
 src/songbird/models/shared/notificationaction.py
+src/songbird/models/shared/notificationrelationshipitem.py
+src/songbird/models/shared/notificationrelationshiptype.py
 src/songbird/models/shared/notificationactionpayload.py
 src/songbird/models/shared/emailnotificationaction.py
 src/songbird/models/shared/pagerdutynotificationaction.py
@@ -656,6 +658,8 @@ docs/models/shared/columnschema.md
 docs/models/shared/listmodelsresponse.md
 docs/models/shared/actiontype.md
 docs/models/shared/notificationaction.md
+docs/models/shared/notificationrelationshipitem.md
+docs/models/shared/notificationrelationshiptype.md
 docs/models/shared/notificationactionpayload.md
 docs/models/shared/emailnotificationaction.md
 docs/models/shared/pagerdutynotificationaction.md
