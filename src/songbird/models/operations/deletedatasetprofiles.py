@@ -25,9 +25,9 @@ class DeleteDatasetProfilesRequest:
     before_upload_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'before_upload_timestamp', 'style': 'form', 'explode': True }})
     r"""Optional, scope deleting profiles uploaded prior to the timestamp"""
     profile_end_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'profile_end_timestamp', 'style': 'form', 'explode': True }})
-    r"""Optional, scope deleting profiles older than the timestamp"""
+    r"""Optional, scope deleting profiles more recent than the timestamp"""
     profile_start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'profile_start_timestamp', 'style': 'form', 'explode': True }})
-    r"""Optional, scope deleting profiles more recently than the timestamp"""
+    r"""Optional, scope deleting profiles older than the timestamp"""
     
 
 

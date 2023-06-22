@@ -23,9 +23,9 @@ class DeleteAnalyzerResultsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     end_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'end_timestamp', 'style': 'form', 'explode': True }})
-    r"""Optional, scope deleting analyzer results older than the timestamp"""
-    start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_timestamp', 'style': 'form', 'explode': True }})
     r"""Optional, scope deleting analyzer results more recent than the timestamp"""
+    start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_timestamp', 'style': 'form', 'explode': True }})
+    r"""Optional, scope deleting analyzer results older than the timestamp"""
     
 
 
