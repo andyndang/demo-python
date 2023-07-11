@@ -62,6 +62,7 @@ if res.status_code == 200:
 * [delete_dataset_profiles](docs/sdks/datasetprofile/README.md#delete_dataset_profiles) - Deletes a set of dataset profiles
 * [delete_reference_profile](docs/sdks/datasetprofile/README.md#delete_reference_profile) - Delete a single reference profile
 * [get_reference_profile](docs/sdks/datasetprofile/README.md#get_reference_profile) - Returns a single reference profile
+* [hide_segments](docs/sdks/datasetprofile/README.md#hide_segments) - Hides a list of segments
 * [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 
@@ -93,6 +94,7 @@ if res.status_code == 200:
 * [get_organization](docs/sdks/internal/README.md#get_organization) - Get the metadata about an organization.
 * [get_user](docs/sdks/internal/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/internal/README.md#get_user_by_email) - Get a user by their email.
+* [hide_segments](docs/sdks/internal/README.md#hide_segments) - Hides a list of segments
 * [list_api_keys](docs/sdks/internal/README.md#list_api_keys) - List API key metadata for a given organization and user
 * [list_jobs](docs/sdks/internal/README.md#list_jobs) - List all of the jobs in a workspace.
 * [list_monitor_config_v3_versions](docs/sdks/internal/README.md#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.

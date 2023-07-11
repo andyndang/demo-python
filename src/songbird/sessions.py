@@ -95,8 +95,8 @@ class Sessions:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.AsyncLogResponse])
-                res.async_log_response = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.CreateDatasetProfileUploadResponse])
+                res.create_dataset_profile_upload_response = out
 
         return res
 

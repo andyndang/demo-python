@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import asynclogresponse as shared_asynclogresponse
+from ..shared import createdatasetprofileuploadresponse as shared_createdatasetprofileuploadresponse
 from ..shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
@@ -22,7 +22,7 @@ class CreateDatasetProfileUploadRequest:
 class CreateDatasetProfileUploadResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    async_log_response: Optional[shared_asynclogresponse.AsyncLogResponse] = dataclasses.field(default=None)
+    create_dataset_profile_upload_response: Optional[shared_createdatasetprofileuploadresponse.CreateDatasetProfileUploadResponse] = dataclasses.field(default=None)
     r"""CreateDatasetProfileUpload default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

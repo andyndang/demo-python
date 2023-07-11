@@ -18,7 +18,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.WhyLabsSearchRequest(
-    query='dolorum',
+    query='ipsa',
 )
 
 res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(
@@ -55,8 +55,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SearchIndexRequest(
-    org_id='numquam',
-    type=shared.SearchIndexType.MODELS,
+    org_id='iure',
+    type=shared.SearchIndexType.ACTIONS,
 )
 
 res = s.search.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(

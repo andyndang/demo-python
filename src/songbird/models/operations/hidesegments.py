@@ -3,13 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import segmentlistresponse as shared_segmentlistresponse
+from ..shared import response as shared_response
+from ..shared import segmentslistrequest as shared_segmentslistrequest
 from typing import Optional
 
 
 
 @dataclasses.dataclass
-class ListSegmentsSecurity:
+class HideSegmentsSecurity:
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
@@ -17,22 +18,23 @@ class ListSegmentsSecurity:
 
 
 @dataclasses.dataclass
-class ListSegmentsRequest:
-    model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
-    r"""The unique model ID in your company."""
+class HideSegmentsRequest:
+    dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
+    r"""The unique dataset ID in your company."""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
+    segments_list_request: shared_segmentslistrequest.SegmentsListRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
 
 
 
 @dataclasses.dataclass
-class ListSegmentsResponse:
+class HideSegmentsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    segment_list_response: Optional[shared_segmentlistresponse.SegmentListResponse] = dataclasses.field(default=None)
-    r"""The list of segments for the dataset profile"""
+    response: Optional[shared_response.Response] = dataclasses.field(default=None)
+    r"""The list of segments hidden for the dataset profile"""
     
 

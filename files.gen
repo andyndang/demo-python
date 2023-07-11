@@ -45,6 +45,7 @@ src/songbird/models/operations/deleteanalyzerresults.py
 src/songbird/models/operations/deletedatasetprofiles.py
 src/songbird/models/operations/deletereferenceprofile.py
 src/songbird/models/operations/getreferenceprofile.py
+src/songbird/models/operations/hidesegments.py
 src/songbird/models/operations/listreferenceprofiles.py
 src/songbird/models/operations/listsegments.py
 src/songbird/models/operations/getcolumnweights.py
@@ -173,6 +174,7 @@ src/songbird/models/shared/segmenttag.py
 src/songbird/models/shared/deleteanalyzerresultsresponse.py
 src/songbird/models/shared/deletedatasetprofilesresponse.py
 src/songbird/models/shared/referenceprofileitemresponse.py
+src/songbird/models/shared/segmentslistrequest.py
 src/songbird/models/shared/segmentlistresponse.py
 src/songbird/models/shared/entityweightrecord.py
 src/songbird/models/shared/segmentweight.py
@@ -238,6 +240,7 @@ src/songbird/models/shared/slacknotificationaction.py
 src/songbird/models/shared/batchlogsessionreferenceresponse.py
 src/songbird/models/shared/logsessionreferenceresponse.py
 src/songbird/models/shared/batchlogreferencerequest.py
+src/songbird/models/shared/createdatasetprofileuploadresponse.py
 src/songbird/models/shared/createsessionresponse.py
 src/songbird/models/shared/createsessionrequest.py
 src/songbird/models/shared/getsessionresponse.py
@@ -313,6 +316,9 @@ docs/models/operations/deletereferenceprofileresponse.md
 docs/models/operations/getreferenceprofilesecurity.md
 docs/models/operations/getreferenceprofilerequest.md
 docs/models/operations/getreferenceprofileresponse.md
+docs/models/operations/hidesegmentssecurity.md
+docs/models/operations/hidesegmentsrequest.md
+docs/models/operations/hidesegmentsresponse.md
 docs/models/operations/listreferenceprofilessecurity.md
 docs/models/operations/listreferenceprofilesrequest.md
 docs/models/operations/listreferenceprofilesresponse.md
@@ -602,6 +608,7 @@ docs/models/shared/segmenttag.md
 docs/models/shared/deleteanalyzerresultsresponse.md
 docs/models/shared/deletedatasetprofilesresponse.md
 docs/models/shared/referenceprofileitemresponse.md
+docs/models/shared/segmentslistrequest.md
 docs/models/shared/segmentlistresponse.md
 docs/models/shared/entityweightrecord.md
 docs/models/shared/segmentweight.md
@@ -667,6 +674,7 @@ docs/models/shared/slacknotificationaction.md
 docs/models/shared/batchlogsessionreferenceresponse.md
 docs/models/shared/logsessionreferenceresponse.md
 docs/models/shared/batchlogreferencerequest.md
+docs/models/shared/createdatasetprofileuploadresponse.md
 docs/models/shared/createsessionresponse.md
 docs/models/shared/createsessionrequest.md
 docs/models/shared/getsessionresponse.md

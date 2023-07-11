@@ -16,7 +16,7 @@ import songbird
 
 s = songbird.Songbird()
 
-req = 'pariatur'
+req = 'perferendis'
 
 res = s.payment.stripe_payment_endpoint(req)
 

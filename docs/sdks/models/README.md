@@ -378,34 +378,34 @@ s = songbird.Songbird()
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "sint": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
-            "accusantium": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
             "mollitia": shared.ColumnSchema(
+                classifier='input',
+                data_type='fractional',
+                discreteness='discrete',
+            ),
+            "ad": shared.ColumnSchema(
+                classifier='input',
+                data_type='fractional',
+                discreteness='discrete',
+            ),
+            "eum": shared.ColumnSchema(
+                classifier='input',
+                data_type='fractional',
+                discreteness='discrete',
+            ),
+            "dolor": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='reiciendis',
-            updated_timestamp=652103,
-            version=320997,
+            author='necessitatibus',
+            updated_timestamp=141264,
+            version=367562,
         ),
         metrics={
-            "dolor": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "necessitatibus": shared.MetricSchema(
+            "iure": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',

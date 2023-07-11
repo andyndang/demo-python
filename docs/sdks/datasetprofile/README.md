@@ -7,6 +7,7 @@
 * [delete_dataset_profiles](#delete_dataset_profiles) - Deletes a set of dataset profiles
 * [delete_reference_profile](#delete_reference_profile) - Delete a single reference profile
 * [get_reference_profile](#get_reference_profile) - Returns a single reference profile
+* [hide_segments](#hide_segments) - Hides a list of segments
 * [list_reference_profiles](#list_reference_profiles) - Returns a list for reference profiles
 * [list_segments](#list_segments) - Returns a list of segments
 
@@ -289,6 +290,53 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetReferenceProfileResponse](../../models/operations/getreferenceprofileresponse.md)**
+
+
+## hide_segments
+
+Returns a list of segments that were hidden for a dataset.
+
+        
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations, shared
+
+s = songbird.Songbird()
+
+req = operations.HideSegmentsRequest(
+    segments_list_request=shared.SegmentsListRequest(
+        segments=[
+            'officia',
+            'occaecati',
+            'fugit',
+        ],
+    ),
+    dataset_id='model-123',
+    org_id='org-123',
+)
+
+res = s.dataset_profile.hide_segments(req, operations.HideSegmentsSecurity(
+    api_key_auth="",
+))
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.HideSegmentsRequest](../../models/operations/hidesegmentsrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| `security`                                                                         | [operations.HideSegmentsSecurity](../../models/operations/hidesegmentssecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+
+
+### Response
+
+**[operations.HideSegmentsResponse](../../models/operations/hidesegmentsresponse.md)**
 
 
 ## list_reference_profiles
