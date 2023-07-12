@@ -12,12 +12,16 @@ pip install git+https://github.com/andyndang/demo-python.git
 <!-- Start SDK Example Usage -->
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
 s = songbird.Songbird()
 
+req = operations.GenerateReportRequest(
+    report_type=shared.AdminReportType.SESSIONS,
+    time_period=shared.AdminReportTimePeriod.MONTH,
+)
 
-res = s.admin.post_monitor_config_validation_job(operations.PostMonitorConfigValidationJobSecurity(
+res = s.admin.generate_report(req, operations.GenerateReportSecurity(
     api_key_auth="",
 ))
 
@@ -32,6 +36,7 @@ if res.status_code == 200:
 
 ### [admin](docs/sdks/admin/README.md)
 
+* [generate_report](docs/sdks/admin/README.md#generate_report) - Generate an admin report
 * [post_monitor_config_validation_job](docs/sdks/admin/README.md#post_monitor_config_validation_job) - Create a monitor config validation job for all configs
 
 ### [api_key](docs/sdks/apikey/README.md)
@@ -81,6 +86,7 @@ if res.status_code == 200:
 * [create_organization](docs/sdks/internal/README.md#create_organization) - Create an organization
 * [create_user](docs/sdks/internal/README.md#create_user) - Create a user.
 * [delete_organization](docs/sdks/internal/README.md#delete_organization) - Delete an org
+* [generate_report](docs/sdks/internal/README.md#generate_report) - Generate an admin report
 * [get_aws_marketplace_metadata](docs/sdks/internal/README.md#get_aws_marketplace_metadata) - Get marketplace metadata for an org if any exists.
 * [get_api_key](docs/sdks/internal/README.md#get_api_key) - Get an api key by its id
 * [get_connection](docs/sdks/internal/README.md#get_connection) - Get the connection metadata for a given org

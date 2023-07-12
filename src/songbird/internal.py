@@ -127,6 +127,33 @@ class Internal:
         return res
 
     
+    def generate_report(self, request: operations.GenerateReportRequest, security: operations.GenerateReportSecurity) -> operations.GenerateReportResponse:
+        r"""Generate an admin report
+        Generate an admin report
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = base_url + '/v0/admin/generate-report'
+        headers = {}
+        query_params = utils.get_query_params(operations.GenerateReportRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('POST', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GenerateReportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.AdminReportResponse])
+                res.admin_report_response = out
+
+        return res
+
+    
     def get_aws_marketplace_metadata(self, request: operations.GetAWSMarketplaceMetadataRequest, security: operations.GetAWSMarketplaceMetadataSecurity) -> operations.GetAWSMarketplaceMetadataResponse:
         r"""Get marketplace metadata for an org if any exists.
         Get marketplace metadata for an org if any exists.

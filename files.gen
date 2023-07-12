@@ -27,6 +27,7 @@ src/songbird/models/__init__.py
 src/songbird/utils/__init__.py
 src/songbird/utils/retries.py
 src/songbird/utils/utils.py
+src/songbird/models/operations/generatereport.py
 src/songbird/models/operations/postmonitorconfigvalidationjob.py
 src/songbird/models/operations/createapikey.py
 src/songbird/models/operations/getapikey.py
@@ -133,6 +134,9 @@ src/songbird/models/operations/createreferenceprofileupload.py
 src/songbird/models/operations/createsession.py
 src/songbird/models/operations/getsession.py
 src/songbird/models/operations/__init__.py
+src/songbird/models/shared/adminreportresponse.py
+src/songbird/models/shared/adminreporttimeperiod.py
+src/songbird/models/shared/adminreporttype.py
 src/songbird/models/shared/void.py
 src/songbird/models/shared/userapikey.py
 src/songbird/models/shared/userapikeyresponse.py
@@ -268,6 +272,9 @@ docs/sdks/search/README.md
 docs/sdks/sessions/README.md
 docs/sdks/user/README.md
 USAGE.md
+docs/models/operations/generatereportsecurity.md
+docs/models/operations/generatereportrequest.md
+docs/models/operations/generatereportresponse.md
 docs/models/operations/postmonitorconfigvalidationjobsecurity.md
 docs/models/operations/postmonitorconfigvalidationjobresponse.md
 docs/models/operations/createapikeysecurity.md
@@ -558,6 +565,9 @@ docs/models/operations/createsessionresponse.md
 docs/models/operations/getsessionsecurity.md
 docs/models/operations/getsessionrequest.md
 docs/models/operations/getsessionresponse.md
+docs/models/shared/adminreportresponse.md
+docs/models/shared/adminreporttimeperiod.md
+docs/models/shared/adminreporttype.md
 docs/models/shared/void.md
 docs/models/shared/userapikey.md
 docs/models/shared/userapikeyresponse.md

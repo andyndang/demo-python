@@ -19,11 +19,15 @@ s = songbird.Songbird()
 
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=881104,
+        dataset_timestamp=680056,
         segment_tags=[
             shared.SegmentTag(
-                key='occaecati',
-                value='enim',
+                key='in',
+                value='illum',
+            ),
+            shared.SegmentTag(
+                key='maiores',
+                value='rerum',
             ),
         ],
     ),
@@ -66,8 +70,8 @@ s = songbird.Songbird()
 
 req = operations.LogReferenceRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='accusamus',
-        dataset_timestamp=965417,
+        alias='dicta',
+        dataset_timestamp=297437,
     ),
     model_id='model-123',
     org_id='org-123',

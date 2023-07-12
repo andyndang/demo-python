@@ -20,11 +20,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='fugiat',
-    email='Adolf_Runolfsdottir@gmail.com',
+    customer_id_token='voluptate',
+    email='Mireya.Beatty97@yahoo.com',
     expect_existing=False,
-    model_name='libero',
-    org_name='nobis',
+    model_name='perferendis',
+    org_name='fugiat',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -61,9 +61,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Eulalia.Lebsack@gmail.com',
+    email='Adolf_Runolfsdottir@gmail.com',
     expect_existing_user=False,
-    id='53202c73-d5fe-49b9-8c28-909b3fe49a8d',
+    id='bb258705-3202-4c73-95fe-9b90c28909b3',
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -100,11 +100,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Nettie.Renner55@yahoo.com',
+    email='Tracey_Gleichner@hotmail.com',
     expect_existing=False,
-    model_name='aliquid',
-    org_name='dolorem',
-    subscription_tier=shared.SubscriptionTier.FREE,
+    model_name='deleniti',
+    org_name='pariatur',
+    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.provision.provision_new_user(req, operations.ProvisionNewUserSecurity(
@@ -141,17 +141,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='dolor',
-    cloud_provider='qui',
+    access_token='nobis',
+    cloud_provider='libero',
     connection_established=False,
-    connection_id='ipsum',
+    connection_id='delectus',
     demo=False,
-    email='Kevin.Ritchie@hotmail.com',
+    email='Kayden20@gmail.com',
     free_trial=False,
-    hostname='wild-crumb.net',
-    port=254356,
-    workspace_id='veritatis',
-    workspace_url='ipsa',
+    hostname='ecstatic-commonsense.biz',
+    port=944373,
+    workspace_id='excepturi',
+    workspace_url='cum',
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(
