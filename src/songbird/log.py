@@ -12,6 +12,37 @@ class Log:
         self.sdk_configuration = sdk_config
         
     
+    def get_profile_observatory_link(self, request: operations.GetProfileObservatoryLinkRequest, security: operations.GetProfileObservatoryLinkSecurity) -> operations.GetProfileObservatoryLinkResponse:
+        r"""Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
+        Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetProfileObservatoryLinkRequest, base_url, '/v0/organizations/{org_id}/log/observatory-link/{dataset_id}', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "get_profile_observatory_link_request", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetProfileObservatoryLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GetProfileObservatoryLinkResponse])
+                res.get_profile_observatory_link_response = out
+
+        return res
+
+    
     def log_async(self, request: operations.LogAsyncRequest, security: operations.LogAsyncSecurity) -> operations.LogAsyncResponse:
         r"""Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
         Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.

@@ -18,7 +18,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.WhyLabsSearchRequest(
-    query='voluptate',
+    query='sit',
 )
 
 res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(
@@ -55,8 +55,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SearchIndexRequest(
-    org_id='dignissimos',
-    type=shared.SearchIndexType.MONITOR_CONFIG,
+    org_id='fugiat',
+    type=shared.SearchIndexType.MODELS,
 )
 
 res = s.search.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(

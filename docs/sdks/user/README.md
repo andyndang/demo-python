@@ -20,7 +20,7 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.CreateUserRequest(
-    email='Natalie.Parisian@gmail.com',
+    email='Savion42@gmail.com',
 )
 
 res = s.user.create_user(req, operations.CreateUserSecurity(
@@ -57,7 +57,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetUserRequest(
-    user_id='dolorum',
+    user_id='quod',
 )
 
 res = s.user.get_user(req, operations.GetUserSecurity(
@@ -94,7 +94,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetUserByEmailRequest(
-    email='Lenny_Treutel46@yahoo.com',
+    email='Christophe.Parisian68@hotmail.com',
 )
 
 res = s.user.get_user_by_email(req, operations.GetUserByEmailSecurity(
@@ -131,9 +131,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.User(
-    email='Jacky.Ondricka13@gmail.com',
-    preferences='perferendis',
-    user_id='amet',
+    email='Cruz.Schamberger73@yahoo.com',
+    preferences='accusamus',
+    user_id='numquam',
 )
 
 res = s.user.update_user(req, operations.UpdateUserSecurity(

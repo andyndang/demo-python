@@ -4,7 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import adminreportresponse as shared_adminreportresponse
-from ..shared import adminreporttimeperiod as shared_adminreporttimeperiod
 from ..shared import adminreporttype as shared_adminreporttype
 from typing import Optional
 
@@ -22,8 +21,6 @@ class GenerateReportSecurity:
 class GenerateReportRequest:
     report_type: shared_adminreporttype.AdminReportType = dataclasses.field(metadata={'query_param': { 'field_name': 'report_type', 'style': 'form', 'explode': True }})
     r"""A type of admin report."""
-    time_period: shared_adminreporttimeperiod.AdminReportTimePeriod = dataclasses.field(metadata={'query_param': { 'field_name': 'time_period', 'style': 'form', 'explode': True }})
-    r"""A time period for the admin report."""
     
 
 

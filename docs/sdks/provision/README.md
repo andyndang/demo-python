@@ -20,11 +20,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='voluptate',
-    email='Mireya.Beatty97@yahoo.com',
+    customer_id_token='dignissimos',
+    email='Eulah1@gmail.com',
     expect_existing=False,
-    model_name='perferendis',
-    org_name='fugiat',
+    model_name='dolores',
+    org_name='minus',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -61,9 +61,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Adolf_Runolfsdottir@gmail.com',
+    email='Damon_Swift@yahoo.com',
     expect_existing_user=False,
-    id='bb258705-3202-4c73-95fe-9b90c28909b3',
+    id='e9b90c28-909b-43fe-89a8-d9cbf4863332',
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -100,10 +100,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Tracey_Gleichner@hotmail.com',
+    email='Tyreek.Marks49@gmail.com',
     expect_existing=False,
-    model_name='deleniti',
-    org_name='pariatur',
+    model_name='reiciendis',
+    org_name='amet',
     subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
@@ -141,17 +141,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='nobis',
-    cloud_provider='libero',
+    access_token='numquam',
+    cloud_provider='veritatis',
     connection_established=False,
-    connection_id='delectus',
+    connection_id='ipsa',
     demo=False,
-    email='Kayden20@gmail.com',
+    email='Houston88@gmail.com',
     free_trial=False,
-    hostname='ecstatic-commonsense.biz',
-    port=944373,
-    workspace_id='excepturi',
-    workspace_url='cum',
+    hostname='revolving-weekender.info',
+    port=617658,
+    workspace_id='eos',
+    workspace_url='atque',
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(

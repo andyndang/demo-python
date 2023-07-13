@@ -146,7 +146,7 @@ class Organizations:
     def partially_update_org(self, request: operations.PartiallyUpdateOrgRequest, security: operations.PartiallyUpdateOrgSecurity) -> operations.PartiallyUpdateOrgResponse:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same
-        
+
         Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -207,7 +207,7 @@ class Organizations:
     def update_org(self, request: operations.UpdateOrgRequest, security: operations.UpdateOrgSecurity) -> operations.UpdateOrgResponse:
         r"""Update an existing organization
         Update all fields of an existing organization
-        
+
         Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())

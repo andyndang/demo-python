@@ -18,7 +18,6 @@ s = songbird.Songbird()
 
 req = operations.GenerateReportRequest(
     report_type=shared.AdminReportType.SESSIONS,
-    time_period=shared.AdminReportTimePeriod.MONTH,
 )
 
 res = s.admin.generate_report(req, operations.GenerateReportSecurity(
@@ -130,6 +129,7 @@ if res.status_code == 200:
 
 ### [log](docs/sdks/log/README.md)
 
+* [get_profile_observatory_link](docs/sdks/log/README.md#get_profile_observatory_link) - Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
 * [log_async](docs/sdks/log/README.md#log_async) - Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
 * [log_reference](docs/sdks/log/README.md#log_reference) - Returns a presigned URL for uploading the reference profile to.
 
@@ -237,6 +237,7 @@ if res.status_code == 200:
 * [create_reference_profile_upload](docs/sdks/sessions/README.md#create_reference_profile_upload) - Create a reference profile upload for a given session.
 * [create_session](docs/sdks/sessions/README.md#create_session) - Create a new session that can be used to upload dataset profiles from whylogs for display in whylabs.
 * [get_session](docs/sdks/sessions/README.md#get_session) - Get information about a session.
+* [get_session_profile_observatory_link](docs/sdks/sessions/README.md#get_session_profile_observatory_link) - Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
 
 ### [user](docs/sdks/user/README.md)
 

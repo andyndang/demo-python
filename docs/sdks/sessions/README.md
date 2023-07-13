@@ -8,6 +8,7 @@
 * [create_reference_profile_upload](#create_reference_profile_upload) - Create a reference profile upload for a given session.
 * [create_session](#create_session) - Create a new session that can be used to upload dataset profiles from whylogs for display in whylabs.
 * [get_session](#get_session) - Get information about a session.
+* [get_session_profile_observatory_link](#get_session_profile_observatory_link) - Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
 
 ## batch_create_reference_profile_upload
 
@@ -26,11 +27,19 @@ req = operations.BatchCreateReferenceProfileUploadRequest(
         references=[
             shared.LogReferenceRequest(
                 alias='dolorum',
-                dataset_timestamp=254356,
+                dataset_timestamp=478596,
+            ),
+            shared.LogReferenceRequest(
+                alias='voluptate',
+                dataset_timestamp=677082,
+            ),
+            shared.LogReferenceRequest(
+                alias='deleniti',
+                dataset_timestamp=607045,
             ),
         ],
     ),
-    session_id='veritatis',
+    session_id='necessitatibus',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -64,8 +73,8 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.ClaimGuestSessionRequest(
-    org_id='ipsa',
-    session_id='ipsa',
+    org_id='distinctio',
+    session_id='asperiores',
 )
 
 res = s.sessions.claim_guest_session(req, operations.ClaimGuestSessionSecurity(
@@ -103,19 +112,15 @@ s = songbird.Songbird()
 
 req = operations.CreateDatasetProfileUploadRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=434417,
+        dataset_timestamp=469497,
         segment_tags=[
             shared.SegmentTag(
-                key='quaerat',
-                value='accusamus',
-            ),
-            shared.SegmentTag(
-                key='quidem',
-                value='voluptatibus',
+                key='voluptate',
+                value='id',
             ),
         ],
     ),
-    session_id='voluptas',
+    session_id='saepe',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -150,10 +155,10 @@ s = songbird.Songbird()
 
 req = operations.CreateReferenceProfileUploadRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='natus',
-        dataset_timestamp=179603,
+        alias='eius',
+        dataset_timestamp=137220,
     ),
-    session_id='atque',
+    session_id='perferendis',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
@@ -187,7 +192,7 @@ from songbird.models import shared
 s = songbird.Songbird()
 
 req = shared.CreateSessionRequest(
-    user_id='sit',
+    user_id='amet',
 )
 
 res = s.sessions.create_session(req)
@@ -221,7 +226,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetSessionRequest(
-    session_id='fugiat',
+    session_id='optio',
 )
 
 res = s.sessions.get_session(req, operations.GetSessionSecurity(
@@ -243,4 +248,51 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetSessionResponse](../../models/operations/getsessionresponse.md)**
+
+
+## get_session_profile_observatory_link
+
+Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations, shared
+
+s = songbird.Songbird()
+
+req = operations.GetSessionProfileObservatoryLinkRequest(
+    get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
+        batch_profile_timestamps=[
+            320017,
+            904425,
+            383464,
+            645785,
+        ],
+        reference_profile_ids=[
+            'minima',
+            'repellendus',
+            'totam',
+        ],
+    ),
+    session_id='similique',
+)
+
+res = s.sessions.get_session_profile_observatory_link(req)
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                | Type                                                                                                                     | Required                                                                                                                 | Description                                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                                | [operations.GetSessionProfileObservatoryLinkRequest](../../models/operations/getsessionprofileobservatorylinkrequest.md) | :heavy_check_mark:                                                                                                       | The request object to use for the request.                                                                               |
+
+
+### Response
+
+**[operations.GetSessionProfileObservatoryLinkResponse](../../models/operations/getsessionprofileobservatorylinkresponse.md)**
 

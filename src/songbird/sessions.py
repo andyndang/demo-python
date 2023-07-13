@@ -189,3 +189,34 @@ class Sessions:
         return res
 
     
+    def get_session_profile_observatory_link(self, request: operations.GetSessionProfileObservatoryLinkRequest) -> operations.GetSessionProfileObservatoryLinkResponse:
+        r"""Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
+        Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetSessionProfileObservatoryLinkRequest, base_url, '/v0/sessions/observatory-link/{session_id}', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "get_profile_observatory_link_request", 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = self.sdk_configuration.client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetSessionProfileObservatoryLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GetProfileObservatoryLinkResponse])
+                res.get_profile_observatory_link_response = out
+
+        return res
+
+    

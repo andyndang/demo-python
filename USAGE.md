@@ -7,7 +7,6 @@ s = songbird.Songbird()
 
 req = operations.GenerateReportRequest(
     report_type=shared.AdminReportType.SESSIONS,
-    time_period=shared.AdminReportTimePeriod.MONTH,
 )
 
 res = s.admin.generate_report(req, operations.GenerateReportSecurity(

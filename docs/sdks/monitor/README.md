@@ -302,7 +302,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PatchMonitorConfigV3Request(
-    request_body='mollitia',
+    request_body='ullam',
     dataset_id='model-123',
     org_id='org-123',
 )
@@ -341,7 +341,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PutAnalyzerRequest(
-    request_body='ad',
+    request_body='expedita',
     analyzer_id='drift-analyzer',
     dataset_id='model-123',
     org_id='org-123',
@@ -381,7 +381,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PutMonitorRequest(
-    request_body='eum',
+    request_body='nihil',
     dataset_id='model-123',
     monitor_id='drift-monitor-123',
     org_id='org-123',
@@ -421,7 +421,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PutMonitorConfigV3Request(
-    request_body='dolor',
+    request_body='repellat',
     dataset_id='model-123',
     org_id='org-123',
 )
@@ -462,10 +462,10 @@ s = songbird.Songbird()
 req = operations.PutRequestMonitorRunConfigRequest(
     request_body=operations.PutRequestMonitorRunConfigRequestBody(
         analyzer_ids=[
-            'odit',
-            'nemo',
-            'quasi',
-            'iure',
+            'sed',
+            'saepe',
+            'pariatur',
+            'accusantium',
         ],
         end_timestamp=1893456000000,
         overwrite=False,
@@ -509,7 +509,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.ValidateMonitorConfigV3Request(
-    request_body='doloribus',
+    request_body='consequuntur',
     dataset_id='model-123',
     org_id='org-123',
     verbose=False,

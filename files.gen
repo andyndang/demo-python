@@ -85,6 +85,7 @@ src/songbird/models/operations/updateorganization.py
 src/songbird/models/operations/updateuser.py
 src/songbird/models/operations/whylabs_search.py
 src/songbird/models/operations/whylabs_search_indexing.py
+src/songbird/models/operations/getprofileobservatorylink.py
 src/songbird/models/operations/logasync.py
 src/songbird/models/operations/logreference.py
 src/songbird/models/operations/createorganizationmembership.py
@@ -133,9 +134,9 @@ src/songbird/models/operations/createdatasetprofileupload.py
 src/songbird/models/operations/createreferenceprofileupload.py
 src/songbird/models/operations/createsession.py
 src/songbird/models/operations/getsession.py
+src/songbird/models/operations/getsessionprofileobservatorylink.py
 src/songbird/models/operations/__init__.py
 src/songbird/models/shared/adminreportresponse.py
-src/songbird/models/shared/adminreporttimeperiod.py
 src/songbird/models/shared/adminreporttype.py
 src/songbird/models/shared/void.py
 src/songbird/models/shared/userapikey.py
@@ -220,6 +221,8 @@ src/songbird/models/shared/searchresponse.py
 src/songbird/models/shared/entitysearchresult.py
 src/songbird/models/shared/searchindexrequest.py
 src/songbird/models/shared/searchindextype.py
+src/songbird/models/shared/getprofileobservatorylinkresponse.py
+src/songbird/models/shared/getprofileobservatorylinkrequest.py
 src/songbird/models/shared/asynclogresponse.py
 src/songbird/models/shared/logasyncrequest.py
 src/songbird/models/shared/logreferenceresponse.py
@@ -429,6 +432,9 @@ docs/models/operations/whylabssearchrequest.md
 docs/models/operations/whylabssearchresponse.md
 docs/models/operations/whylabssearchindexingsecurity.md
 docs/models/operations/whylabssearchindexingresponse.md
+docs/models/operations/getprofileobservatorylinksecurity.md
+docs/models/operations/getprofileobservatorylinkrequest.md
+docs/models/operations/getprofileobservatorylinkresponse.md
 docs/models/operations/logasyncsecurity.md
 docs/models/operations/logasyncrequest.md
 docs/models/operations/logasyncresponse.md
@@ -565,8 +571,9 @@ docs/models/operations/createsessionresponse.md
 docs/models/operations/getsessionsecurity.md
 docs/models/operations/getsessionrequest.md
 docs/models/operations/getsessionresponse.md
+docs/models/operations/getsessionprofileobservatorylinkrequest.md
+docs/models/operations/getsessionprofileobservatorylinkresponse.md
 docs/models/shared/adminreportresponse.md
-docs/models/shared/adminreporttimeperiod.md
 docs/models/shared/adminreporttype.md
 docs/models/shared/void.md
 docs/models/shared/userapikey.md
@@ -660,6 +667,8 @@ docs/models/shared/searchresponse.md
 docs/models/shared/entitysearchresult.md
 docs/models/shared/searchindexrequest.md
 docs/models/shared/searchindextype.md
+docs/models/shared/getprofileobservatorylinkresponse.md
+docs/models/shared/getprofileobservatorylinkrequest.md
 docs/models/shared/asynclogresponse.md
 docs/models/shared/logasyncrequest.md
 docs/models/shared/logreferenceresponse.md

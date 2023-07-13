@@ -15,13 +15,13 @@ from typing import Optional
 class UberNotificationSchedule:
     r"""Combination of all possible schedule types, a hacky workaround for bugs in generated clients that use polymorphic types.
     There are three types of schedules. Weekly, Daily, and Individual. You need to set the right fields for each one.
-    
+
     Weekly:
         enabled, cadence=WEEKLY, dayOfWeek, local24HourOfDay, localMinuteOfHour, localTimezone
-        
+
     Daily:
         enabled, cadence=DAILY, local24HourOfDay, localMinuteOfHour, localTimezone
-        
+
     Individual:
         enabled, cadence=INDIVIDUAL
     """

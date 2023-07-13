@@ -2,8 +2,61 @@
 
 ### Available Operations
 
+* [get_profile_observatory_link](#get_profile_observatory_link) - Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
 * [log_async](#log_async) - Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
 * [log_reference](#log_reference) - Returns a presigned URL for uploading the reference profile to.
+
+## get_profile_observatory_link
+
+Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations, shared
+
+s = songbird.Songbird()
+
+req = operations.GetProfileObservatoryLinkRequest(
+    get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
+        batch_profile_timestamps=[
+            249796,
+            581273,
+            313218,
+            881736,
+        ],
+        reference_profile_ids=[
+            'quidem',
+            'provident',
+            'nam',
+            'id',
+        ],
+    ),
+    dataset_id='blanditiis',
+    org_id='deleniti',
+)
+
+res = s.log.get_profile_observatory_link(req, operations.GetProfileObservatoryLinkSecurity(
+    api_key_auth="",
+))
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.GetProfileObservatoryLinkRequest](../../models/operations/getprofileobservatorylinkrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
+| `security`                                                                                                   | [operations.GetProfileObservatoryLinkSecurity](../../models/operations/getprofileobservatorylinksecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+
+
+### Response
+
+**[operations.GetProfileObservatoryLinkResponse](../../models/operations/getprofileobservatorylinkresponse.md)**
+
 
 ## log_async
 
@@ -19,15 +72,11 @@ s = songbird.Songbird()
 
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=680056,
+        dataset_timestamp=956084,
         segment_tags=[
             shared.SegmentTag(
-                key='in',
-                value='illum',
-            ),
-            shared.SegmentTag(
-                key='maiores',
-                value='rerum',
+                key='deserunt',
+                value='nisi',
             ),
         ],
     ),
@@ -70,8 +119,8 @@ s = songbird.Songbird()
 
 req = operations.LogReferenceRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='dicta',
-        dataset_timestamp=297437,
+        alias='vel',
+        dataset_timestamp=618809,
     ),
     model_id='model-123',
     org_id='org-123',

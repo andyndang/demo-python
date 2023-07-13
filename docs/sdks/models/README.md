@@ -378,29 +378,24 @@ s = songbird.Songbird()
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "excepturi": shared.ColumnSchema(
+            "maxime": shared.ColumnSchema(
+                classifier='input',
+                data_type='fractional',
+                discreteness='discrete',
+            ),
+            "deleniti": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='ullam',
-            updated_timestamp=590873,
-            version=551816,
+            author='facilis',
+            updated_timestamp=447926,
+            version=100226,
         ),
         metrics={
-            "accusantium": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "mollitia": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "reiciendis": shared.MetricSchema(
+            "repudiandae": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
