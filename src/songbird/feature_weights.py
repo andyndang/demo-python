@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class FeatureWeights:
@@ -34,6 +34,8 @@ class FeatureWeights:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.EntityWeightRecord])
                 res.entity_weight_record = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -65,6 +67,8 @@ class FeatureWeights:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

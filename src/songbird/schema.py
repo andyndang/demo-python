@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations
+from songbird.models import errors, operations
 
 class Schema:
     sdk_configuration: SDKConfiguration
@@ -32,6 +32,8 @@ class Schema:
         if True:
             if utils.match_content_type(content_type, 'application/json'):
                 res.get_monitor_config_schema_default_application_json_string = http_res.content
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

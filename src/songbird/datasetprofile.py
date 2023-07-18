@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class DatasetProfile:
@@ -41,6 +41,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.CreateReferenceProfileResponse])
                 res.create_reference_profile_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -68,6 +70,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteAnalyzerResultsResponse])
                 res.delete_analyzer_results_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -95,6 +99,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteDatasetProfilesResponse])
                 res.delete_dataset_profiles_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -121,6 +127,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[bool])
                 res.delete_reference_profile_default_application_json_boolean = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -147,6 +155,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ReferenceProfileItemResponse])
                 res.reference_profile_item_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -178,6 +188,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -205,6 +217,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[list[shared.ReferenceProfileItemResponse]])
                 res.reference_profile_item_responses = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -231,6 +245,8 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.SegmentListResponse])
                 res.segment_list_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

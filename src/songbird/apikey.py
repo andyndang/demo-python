@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class APIKey:
@@ -35,6 +35,8 @@ class APIKey:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.UserAPIKey])
                 res.user_api_key = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -61,6 +63,8 @@ class APIKey:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.UserAPIKeyResponse])
                 res.user_api_key_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -88,6 +92,8 @@ class APIKey:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListUserAPIKeys])
                 res.list_user_api_keys = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
@@ -115,6 +121,8 @@ class APIKey:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.UserAPIKey])
                 res.user_api_key = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

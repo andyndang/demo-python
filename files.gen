@@ -24,6 +24,7 @@ pylintrc
 setup.py
 src/songbird/__init__.py
 src/songbird/models/__init__.py
+src/songbird/models/errors/sdkerror.py
 src/songbird/utils/__init__.py
 src/songbird/utils/retries.py
 src/songbird/utils/utils.py
@@ -253,6 +254,7 @@ src/songbird/models/shared/createsessionrequest.py
 src/songbird/models/shared/getsessionresponse.py
 src/songbird/models/shared/sessionmetadata.py
 src/songbird/models/shared/__init__.py
+src/songbird/models/errors/__init__.py
 docs/sdks/songbird/README.md
 docs/sdks/admin/README.md
 docs/sdks/apikey/README.md
