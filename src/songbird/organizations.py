@@ -157,7 +157,7 @@ class Organizations:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same
 
-        Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
@@ -222,7 +222,7 @@ class Organizations:
         r"""Update an existing organization
         Update all fields of an existing organization
 
-        Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
