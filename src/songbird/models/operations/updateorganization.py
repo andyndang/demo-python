@@ -32,6 +32,7 @@ class UpdateOrganizationRequest:
     observatory_url: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'observatory_url', 'style': 'form', 'explode': True }})
     r"""Url that users of this organization will be redirected to in some cases (such as via Siren notifications). NOTE: should NOT be followed by a trailing slash!"""
     pager_duty_key: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pager_duty_key', 'style': 'form', 'explode': True }})
+    parent_org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'parent_org_id', 'style': 'form', 'explode': True }})
     slack_webhook: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slack_webhook', 'style': 'form', 'explode': True }})
     r"""Slack Webhook that should be used for notifications for this organization"""
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'subscription_tier', 'style': 'form', 'explode': True }})

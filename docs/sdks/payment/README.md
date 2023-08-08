@@ -16,7 +16,7 @@ import songbird
 
 s = songbird.Songbird()
 
-req = 'totam'
+req = 'aliquid'
 
 res = s.payment.stripe_payment_endpoint(req)
 

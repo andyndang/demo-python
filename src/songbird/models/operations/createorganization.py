@@ -32,6 +32,7 @@ class CreateOrganizationRequest:
     override_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'override_id', 'style': 'form', 'explode': True }})
     r"""Custom ID. If this ID is invalid this method will throw an exception"""
     pager_duty_key: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pager_duty_key', 'style': 'form', 'explode': True }})
+    parent_org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'parent_org_id', 'style': 'form', 'explode': True }})
     slack_webhook: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slack_webhook', 'style': 'form', 'explode': True }})
     r"""Slack Webhook that should be used for notifications for this organization"""
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'subscription_tier', 'style': 'form', 'explode': True }})

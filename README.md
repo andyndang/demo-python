@@ -18,11 +18,19 @@ from songbird.models import operations, shared
 
 s = songbird.Songbird()
 
-req = operations.GenerateReportRequest(
-    report_type=shared.AdminReportType.SESSIONS,
+req = operations.CreateAccountUserRequest(
+    request_body=operations.CreateAccountUserRequestBody(
+        user=shared.AccountUser(
+            active=False,
+            email='Larue_Rau85@yahoo.com',
+            external_id='corrupti',
+            user_id='illum',
+        ),
+    ),
+    org_id='org-123',
 )
 
-res = s.admin.generate_report(req, operations.GenerateReportSecurity(
+res = s.account.create_account_user(req, operations.CreateAccountUserSecurity(
     api_key_auth="",
 ))
 
@@ -34,6 +42,17 @@ if res.status_code == 200:
 <!-- Start SDK Available Operations -->
 ## Available Resources and Operations
 
+
+### [account](docs/sdks/account/README.md)
+
+* [create_account_user](docs/sdks/account/README.md#create_account_user) - Create an account user
+* [delete_account_user](docs/sdks/account/README.md#delete_account_user) - Delete account user
+* [get_account_memberships](docs/sdks/account/README.md#get_account_memberships) - Get memberships in an account
+* [get_account_users](docs/sdks/account/README.md#get_account_users) - Get users in an account
+* [get_org_role_memberships](docs/sdks/account/README.md#get_org_role_memberships) - Get memberships for a specific org and role
+* [patch_org_role_memberships](docs/sdks/account/README.md#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
+* [put_org_role_memberships](docs/sdks/account/README.md#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
+* [update_account_user](docs/sdks/account/README.md#update_account_user) - Update account user
 
 ### [admin](docs/sdks/admin/README.md)
 
@@ -83,12 +102,16 @@ if res.status_code == 200:
 
 ### [internal](docs/sdks/internal/README.md)
 
+* [create_account_user](docs/sdks/internal/README.md#create_account_user) - Create an account user
 * [create_membership](docs/sdks/internal/README.md#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
 * [create_organization](docs/sdks/internal/README.md#create_organization) - Create an organization
 * [create_user](docs/sdks/internal/README.md#create_user) - Create a user.
+* [delete_account_user](docs/sdks/internal/README.md#delete_account_user) - Delete account user
 * [delete_organization](docs/sdks/internal/README.md#delete_organization) - Delete an org
 * [generate_report](docs/sdks/internal/README.md#generate_report) - Generate an admin report
 * [get_aws_marketplace_metadata](docs/sdks/internal/README.md#get_aws_marketplace_metadata) - Get marketplace metadata for an org if any exists.
+* [get_account_memberships](docs/sdks/internal/README.md#get_account_memberships) - Get memberships in an account
+* [get_account_users](docs/sdks/internal/README.md#get_account_users) - Get users in an account
 * [get_api_key](docs/sdks/internal/README.md#get_api_key) - Get an api key by its id
 * [get_connection](docs/sdks/internal/README.md#get_connection) - Get the connection metadata for a given org
 * [get_default_membership_for_email](docs/sdks/internal/README.md#get_default_membership_for_email) - Get the default membership for a user.
@@ -98,6 +121,7 @@ if res.status_code == 200:
 * [get_memberships_by_org](docs/sdks/internal/README.md#get_memberships_by_org) - Get memberships for an org.
 * [get_monitor_config_v3_version](docs/sdks/internal/README.md#get_monitor_config_v3_version) - Get the monitor config document version for a given dataset.
 * [get_notification_settings](docs/sdks/internal/README.md#get_notification_settings) - Get notification settings for an org
+* [get_org_role_memberships](docs/sdks/internal/README.md#get_org_role_memberships) - Get memberships for a specific org and role
 * [get_organization](docs/sdks/internal/README.md#get_organization) - Get the metadata about an organization.
 * [get_user](docs/sdks/internal/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/internal/README.md#get_user_by_email) - Get a user by their email.
@@ -109,10 +133,12 @@ if res.status_code == 200:
 * [list_segments](docs/sdks/internal/README.md#list_segments) - Returns a list of segments
 * [~~partially_update_org~~](docs/sdks/internal/README.md#partially_update_org) - Update some fields of an organization to non-null values :warning: **Deprecated**
 * [partially_update_organization](docs/sdks/internal/README.md#partially_update_organization) - Update some fields of an organization to non-null values
+* [patch_org_role_memberships](docs/sdks/internal/README.md#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
 * [post_monitor_config_validation_job](docs/sdks/internal/README.md#post_monitor_config_validation_job) - Create a monitor config validation job for all configs
 * [provision_aws_marketplace_new_user](docs/sdks/internal/README.md#provision_aws_marketplace_new_user) - Create resources for a new user coming from AWS Marketplace
 * [provision_databricks_connection](docs/sdks/internal/README.md#provision_databricks_connection) - Create resources for a new user coming from Databricks
 * [provision_new_user](docs/sdks/internal/README.md#provision_new_user) - Create the resources that a new user needs to use WhyLabs via the website.
+* [put_org_role_memberships](docs/sdks/internal/README.md#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
 * [put_request_monitor_run_config](docs/sdks/internal/README.md#put_request_monitor_run_config) - Put the RequestMonitorRun config into S3.
 * [refresh_connection](docs/sdks/internal/README.md#refresh_connection) - Refresh metadata for a workspace connection.
 * [register_databricks_connection](docs/sdks/internal/README.md#register_databricks_connection) - Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
@@ -120,6 +146,7 @@ if res.status_code == 200:
 * [run_job](docs/sdks/internal/README.md#run_job) - Run an existing job in a given databricks workspace.
 * [set_default_membership](docs/sdks/internal/README.md#set_default_membership) - Sets the organization that should be used when logging a user in
 * [stripe_payment_endpoint](docs/sdks/internal/README.md#stripe_payment_endpoint) - Endpoint for Stripe payment webhooks
+* [update_account_user](docs/sdks/internal/README.md#update_account_user) - Update account user
 * [update_connection](docs/sdks/internal/README.md#update_connection) - Update the connection metadata for a given org
 * [update_membership_by_email](docs/sdks/internal/README.md#update_membership_by_email) - Updates the role in an membership
 * [update_notification_settings](docs/sdks/internal/README.md#update_notification_settings) - Update notification settings for an org

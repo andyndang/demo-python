@@ -32,6 +32,7 @@ req = operations.CreateOrganizationRequest(
     observatory_url='https://hub.whylabsapp.com',
     override_id='org-123',
     pager_duty_key='abc-def-ghi-jkl',
+    parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
     subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
@@ -70,7 +71,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.DeleteOrganizationRequest(
-    org_id='perferendis',
+    org_id='modi',
 )
 
 res = s.organizations.delete_organization(req, operations.DeleteOrganizationSecurity(
@@ -107,7 +108,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetAWSMarketplaceMetadataRequest(
-    org_id='fugiat',
+    org_id='iste',
 )
 
 res = s.organizations.get_aws_marketplace_metadata(req, operations.GetAWSMarketplaceMetadataSecurity(
@@ -144,7 +145,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetOrganizationRequest(
-    org_id='amet',
+    org_id='dolorum',
 )
 
 res = s.organizations.get_organization(req, operations.GetOrganizationSecurity(
@@ -217,7 +218,7 @@ s = songbird.Songbird()
 
 req = operations.PartiallyUpdateOrgRequest(
     request_body=operations.PartiallyUpdateOrgRequestBody(
-        org_id='aut',
+        org_id='deleniti',
     ),
     domain='acme.ai',
     name='ACME, Inc',
@@ -266,8 +267,9 @@ req = operations.PartiallyUpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='corporis',
+    org_id='provident',
     pager_duty_key='abc-def-ghi-jkl',
+    parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
     subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
@@ -317,8 +319,9 @@ req = operations.UpdateOrgRequest(
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
     pager_duty_key='abc-def-ghi-jkl',
+    parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
+    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
 
 res = s.organizations.update_org(req, operations.UpdateOrgSecurity(
@@ -360,10 +363,11 @@ req = operations.UpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='dolores',
+    org_id='quaerat',
     pager_duty_key='abc-def-ghi-jkl',
+    parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.PAID,
+    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.organizations.update_organization(req, operations.UpdateOrganizationSecurity(

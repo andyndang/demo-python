@@ -7,11 +7,19 @@ from songbird.models import operations, shared
 
 s = songbird.Songbird()
 
-req = operations.GenerateReportRequest(
-    report_type=shared.AdminReportType.SESSIONS,
+req = operations.CreateAccountUserRequest(
+    request_body=operations.CreateAccountUserRequestBody(
+        user=shared.AccountUser(
+            active=False,
+            email='Larue_Rau85@yahoo.com',
+            external_id='corrupti',
+            user_id='illum',
+        ),
+    ),
+    org_id='org-123',
 )
 
-res = s.admin.generate_report(req, operations.GenerateReportSecurity(
+res = s.account.create_account_user(req, operations.CreateAccountUserSecurity(
     api_key_auth="",
 ))
 

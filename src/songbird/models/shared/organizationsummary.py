@@ -23,6 +23,7 @@ class OrganizationSummary:
     r"""Settings that control how and when notifications are delivered."""
     observatory_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('observatoryUrl'), 'exclude': lambda f: f is None }})
     pager_duty_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagerDutyKey'), 'exclude': lambda f: f is None }})
+    parent_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentOrgId'), 'exclude': lambda f: f is None }})
     slack_webhook: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slackWebhook'), 'exclude': lambda f: f is None }})
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTier'), 'exclude': lambda f: f is None }})
     

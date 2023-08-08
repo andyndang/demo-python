@@ -95,7 +95,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PutDatasetMetadataRequest(
-    request_body='magnam',
+    request_body='totam',
     dataset_id='model-123',
     org_id='org-123',
 )
