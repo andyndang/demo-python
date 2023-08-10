@@ -4,13 +4,12 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import accountuser as shared_accountuser
-from ..shared import accountuserrequest as shared_accountuserrequest
 from typing import Optional
 
 
 
 @dataclasses.dataclass
-class CreateAccountUserSecurity:
+class GetAccountUserSecurity:
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
@@ -18,8 +17,8 @@ class CreateAccountUserSecurity:
 
 
 @dataclasses.dataclass
-class CreateAccountUserRequest:
-    account_user_request: shared_accountuserrequest.AccountUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+class GetAccountUserRequest:
+    email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
@@ -27,11 +26,11 @@ class CreateAccountUserRequest:
 
 
 @dataclasses.dataclass
-class CreateAccountUserResponse:
+class GetAccountUserResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     account_user: Optional[shared_accountuser.AccountUser] = dataclasses.field(default=None)
-    r"""CreateAccountUser default response"""
+    r"""GetAccountUser default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -56,7 +56,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PutColumnWeightsRequest(
-    request_body='cum',
+    request_body='mollitia',
     dataset_id='model-123',
     org_id='org-123',
 )

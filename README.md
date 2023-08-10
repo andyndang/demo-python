@@ -19,13 +19,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.CreateAccountUserRequest(
-    request_body=operations.CreateAccountUserRequestBody(
-        user=shared.AccountUser(
-            active=False,
-            email='Larue_Rau85@yahoo.com',
-            external_id='corrupti',
-            user_id='illum',
-        ),
+    account_user_request=shared.AccountUserRequest(
+        active=False,
+        email='Larue_Rau85@yahoo.com',
+        external_id='corrupti',
     ),
     org_id='org-123',
 )
@@ -48,8 +45,9 @@ if res.status_code == 200:
 * [create_account_user](docs/sdks/account/README.md#create_account_user) - Create an account user
 * [delete_account_user](docs/sdks/account/README.md#delete_account_user) - Delete account user
 * [get_account_memberships](docs/sdks/account/README.md#get_account_memberships) - Get memberships in an account
-* [get_account_users](docs/sdks/account/README.md#get_account_users) - Get users in an account
+* [get_account_user](docs/sdks/account/README.md#get_account_user) - Get account user
 * [get_org_role_memberships](docs/sdks/account/README.md#get_org_role_memberships) - Get memberships for a specific org and role
+* [list_account_users](docs/sdks/account/README.md#list_account_users) - List users in an account
 * [patch_org_role_memberships](docs/sdks/account/README.md#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
 * [put_org_role_memberships](docs/sdks/account/README.md#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
 * [update_account_user](docs/sdks/account/README.md#update_account_user) - Update account user
@@ -111,7 +109,7 @@ if res.status_code == 200:
 * [generate_report](docs/sdks/internal/README.md#generate_report) - Generate an admin report
 * [get_aws_marketplace_metadata](docs/sdks/internal/README.md#get_aws_marketplace_metadata) - Get marketplace metadata for an org if any exists.
 * [get_account_memberships](docs/sdks/internal/README.md#get_account_memberships) - Get memberships in an account
-* [get_account_users](docs/sdks/internal/README.md#get_account_users) - Get users in an account
+* [get_account_user](docs/sdks/internal/README.md#get_account_user) - Get account user
 * [get_api_key](docs/sdks/internal/README.md#get_api_key) - Get an api key by its id
 * [get_connection](docs/sdks/internal/README.md#get_connection) - Get the connection metadata for a given org
 * [get_default_membership_for_email](docs/sdks/internal/README.md#get_default_membership_for_email) - Get the default membership for a user.
@@ -126,6 +124,7 @@ if res.status_code == 200:
 * [get_user](docs/sdks/internal/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/internal/README.md#get_user_by_email) - Get a user by their email.
 * [hide_segments](docs/sdks/internal/README.md#hide_segments) - Hides a list of segments
+* [list_account_users](docs/sdks/internal/README.md#list_account_users) - List users in an account
 * [list_api_keys](docs/sdks/internal/README.md#list_api_keys) - List API key metadata for a given organization and user
 * [list_jobs](docs/sdks/internal/README.md#list_jobs) - List all of the jobs in a workspace.
 * [list_monitor_config_v3_versions](docs/sdks/internal/README.md#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.

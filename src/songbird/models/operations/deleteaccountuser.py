@@ -19,6 +19,7 @@ class DeleteAccountUserSecurity:
 @dataclasses.dataclass
 class DeleteAccountUserRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
+    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'user_id', 'style': 'simple', 'explode': False }})
     
 
 

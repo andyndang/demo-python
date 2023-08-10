@@ -3,13 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getaccountusersresponse as shared_getaccountusersresponse
+from ..shared import accountuser as shared_accountuser
 from typing import Optional
 
 
 
 @dataclasses.dataclass
-class GetAccountUsersSecurity:
+class ListAccountUsersSecurity:
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
@@ -17,21 +17,19 @@ class GetAccountUsersSecurity:
 
 
 @dataclasses.dataclass
-class GetAccountUsersRequest:
+class ListAccountUsersRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
-    email: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
-    user_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     
 
 
 
 
 @dataclasses.dataclass
-class GetAccountUsersResponse:
+class ListAccountUsersResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    get_account_users_response: Optional[shared_getaccountusersresponse.GetAccountUsersResponse] = dataclasses.field(default=None)
-    r"""GetAccountUsers default response"""
+    account_users: Optional[list[shared_accountuser.AccountUser]] = dataclasses.field(default=None)
+    r"""ListAccountUsers default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

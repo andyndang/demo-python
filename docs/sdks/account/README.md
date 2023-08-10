@@ -5,8 +5,9 @@
 * [create_account_user](#create_account_user) - Create an account user
 * [delete_account_user](#delete_account_user) - Delete account user
 * [get_account_memberships](#get_account_memberships) - Get memberships in an account
-* [get_account_users](#get_account_users) - Get users in an account
+* [get_account_user](#get_account_user) - Get account user
 * [get_org_role_memberships](#get_org_role_memberships) - Get memberships for a specific org and role
+* [list_account_users](#list_account_users) - List users in an account
 * [patch_org_role_memberships](#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
 * [put_org_role_memberships](#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
 * [update_account_user](#update_account_user) - Update account user
@@ -24,13 +25,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.CreateAccountUserRequest(
-    request_body=operations.CreateAccountUserRequestBody(
-        user=shared.AccountUser(
-            active=False,
-            email='Linda.Oberbrunner@yahoo.com',
-            external_id='magnam',
-            user_id='debitis',
-        ),
+    account_user_request=shared.AccountUserRequest(
+        active=False,
+        email='Henry.Mueller@hotmail.com',
+        external_id='iure',
     ),
     org_id='org-123',
 )
@@ -70,6 +68,7 @@ s = songbird.Songbird()
 
 req = operations.DeleteAccountUserRequest(
     org_id='org-123',
+    user_id='user-123',
 )
 
 res = s.account.delete_account_user(req, operations.DeleteAccountUserSecurity(
@@ -131,9 +130,9 @@ if res.status_code == 200:
 **[operations.GetAccountMembershipsResponse](../../models/operations/getaccountmembershipsresponse.md)**
 
 
-## get_account_users
+## get_account_user
 
-Get users in the account organization and any managed organizations
+Get account user
 
 ### Example Usage
 
@@ -143,13 +142,12 @@ from songbird.models import operations
 
 s = songbird.Songbird()
 
-req = operations.GetAccountUsersRequest(
+req = operations.GetAccountUserRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    user_id='user-123',
 )
 
-res = s.account.get_account_users(req, operations.GetAccountUsersSecurity(
+res = s.account.get_account_user(req, operations.GetAccountUserSecurity(
     api_key_auth="",
 ))
 
@@ -159,15 +157,15 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetAccountUsersRequest](../../models/operations/getaccountusersrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.GetAccountUsersSecurity](../../models/operations/getaccountuserssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAccountUserRequest](../../models/operations/getaccountuserrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `security`                                                                             | [operations.GetAccountUserSecurity](../../models/operations/getaccountusersecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
 
 
 ### Response
 
-**[operations.GetAccountUsersResponse](../../models/operations/getaccountusersresponse.md)**
+**[operations.GetAccountUserResponse](../../models/operations/getaccountuserresponse.md)**
 
 
 ## get_org_role_memberships
@@ -209,6 +207,43 @@ if res.status_code == 200:
 **[operations.GetOrgRoleMembershipsResponse](../../models/operations/getorgrolemembershipsresponse.md)**
 
 
+## list_account_users
+
+List users in the account organization and any managed organizations
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird()
+
+req = operations.ListAccountUsersRequest(
+    org_id='org-123',
+)
+
+res = s.account.list_account_users(req, operations.ListAccountUsersSecurity(
+    api_key_auth="",
+))
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAccountUsersRequest](../../models/operations/listaccountusersrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.ListAccountUsersSecurity](../../models/operations/listaccountuserssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+
+
+### Response
+
+**[operations.ListAccountUsersResponse](../../models/operations/listaccountusersresponse.md)**
+
+
 ## patch_org_role_memberships
 
 Add or delete all of the memberships in a specific role and managed organization
@@ -225,11 +260,14 @@ req = operations.PatchOrgRoleMembershipsRequest(
     request_body=operations.PatchOrgRoleMembershipsRequestBody(
         request=shared.PatchAccountMembershipsRequest(
             user_ids_to_add=[
-                'delectus',
+                'debitis',
+                'ipsa',
             ],
             user_ids_to_delete=[
+                'tempora',
                 'suscipit',
                 'molestiae',
+                'minus',
             ],
         ),
     ),
@@ -275,10 +313,10 @@ req = operations.PutOrgRoleMembershipsRequest(
     request_body=operations.PutOrgRoleMembershipsRequestBody(
         request=shared.PutAccountMembershipsRequest(
             user_ids=[
-                'placeat',
                 'voluptatum',
                 'iusto',
                 'excepturi',
+                'nisi',
             ],
         ),
     ),
@@ -321,16 +359,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.UpdateAccountUserRequest(
-    request_body=operations.UpdateAccountUserRequestBody(
-        user=shared.AccountUser(
-            active=False,
-            email='Tianna33@yahoo.com',
-            external_id='veritatis',
-            user_id='deserunt',
-        ),
+    account_user=shared.AccountUser(
+        active=False,
+        email='Rocky.Bernier@hotmail.com',
+        id='a05dfc2d-df7c-4c78-8a1b-a928fc816742',
+        org_id='impedit',
+        source_id='cum',
+        source_user_id='esse',
+        user_id='ipsum',
+        user_schema='excepturi',
     ),
     org_id='org-123',
-    user_id='user-123',
 )
 
 res = s.account.update_account_user(req, operations.UpdateAccountUserSecurity(

@@ -18,7 +18,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.WhyLabsSearchRequest(
-    query='officiis',
+    query='est',
 )
 
 res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(
@@ -55,8 +55,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SearchIndexRequest(
-    org_id='qui',
-    type=shared.SearchIndexType.ENTITY_SCHEMA,
+    org_id='repellendus',
+    type=shared.SearchIndexType.MONITOR_CONFIG,
 )
 
 res = s.search.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(

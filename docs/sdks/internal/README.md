@@ -11,7 +11,7 @@
 * [generate_report](#generate_report) - Generate an admin report
 * [get_aws_marketplace_metadata](#get_aws_marketplace_metadata) - Get marketplace metadata for an org if any exists.
 * [get_account_memberships](#get_account_memberships) - Get memberships in an account
-* [get_account_users](#get_account_users) - Get users in an account
+* [get_account_user](#get_account_user) - Get account user
 * [get_api_key](#get_api_key) - Get an api key by its id
 * [get_connection](#get_connection) - Get the connection metadata for a given org
 * [get_default_membership_for_email](#get_default_membership_for_email) - Get the default membership for a user.
@@ -26,6 +26,7 @@
 * [get_user](#get_user) - Get a user by their id.
 * [get_user_by_email](#get_user_by_email) - Get a user by their email.
 * [hide_segments](#hide_segments) - Hides a list of segments
+* [list_account_users](#list_account_users) - List users in an account
 * [list_api_keys](#list_api_keys) - List API key metadata for a given organization and user
 * [list_jobs](#list_jobs) - List all of the jobs in a workspace.
 * [list_monitor_config_v3_versions](#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
@@ -69,13 +70,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.CreateAccountUserRequest(
-    request_body=operations.CreateAccountUserRequestBody(
-        user=shared.AccountUser(
-            active=False,
-            email='Brianne61@yahoo.com',
-            external_id='sed',
-            user_id='iste',
-        ),
+    account_user_request=shared.AccountUserRequest(
+        active=False,
+        email='Jamil62@yahoo.com',
+        external_id='quia',
     ),
     org_id='org-123',
 )
@@ -114,11 +112,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.AddMembershipRequest(
-    created_by='dolor',
+    created_by='quis',
     default=False,
-    email='Gertrude_Welch44@yahoo.com',
-    org_id='corporis',
-    role=shared.Role.MEMBER,
+    email='Marguerite13@gmail.com',
+    org_id='quo',
+    role=shared.Role.ADMIN,
 )
 
 res = s.internal.create_membership(req, operations.CreateMembershipSecurity(
@@ -164,7 +162,7 @@ req = operations.CreateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.PAID,
+    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
 
 res = s.internal.create_organization(req, operations.CreateOrganizationSecurity(
@@ -201,7 +199,7 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.CreateUserRequest(
-    email='Maxie96@hotmail.com',
+    email='Makayla9@yahoo.com',
 )
 
 res = s.internal.create_user(req, operations.CreateUserSecurity(
@@ -239,6 +237,7 @@ s = songbird.Songbird()
 
 req = operations.DeleteAccountUserRequest(
     org_id='org-123',
+    user_id='user-123',
 )
 
 res = s.internal.delete_account_user(req, operations.DeleteAccountUserSecurity(
@@ -275,7 +274,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.DeleteOrganizationRequest(
-    org_id='est',
+    org_id='error',
 )
 
 res = s.internal.delete_organization(req, operations.DeleteOrganizationSecurity(
@@ -349,7 +348,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetAWSMarketplaceMetadataRequest(
-    org_id='mollitia',
+    org_id='temporibus',
 )
 
 res = s.internal.get_aws_marketplace_metadata(req, operations.GetAWSMarketplaceMetadataSecurity(
@@ -411,9 +410,9 @@ if res.status_code == 200:
 **[operations.GetAccountMembershipsResponse](../../models/operations/getaccountmembershipsresponse.md)**
 
 
-## get_account_users
+## get_account_user
 
-Get users in the account organization and any managed organizations
+Get account user
 
 ### Example Usage
 
@@ -423,13 +422,12 @@ from songbird.models import operations
 
 s = songbird.Songbird()
 
-req = operations.GetAccountUsersRequest(
+req = operations.GetAccountUserRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    user_id='user-123',
 )
 
-res = s.internal.get_account_users(req, operations.GetAccountUsersSecurity(
+res = s.internal.get_account_user(req, operations.GetAccountUserSecurity(
     api_key_auth="",
 ))
 
@@ -439,15 +437,15 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetAccountUsersRequest](../../models/operations/getaccountusersrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.GetAccountUsersSecurity](../../models/operations/getaccountuserssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetAccountUserRequest](../../models/operations/getaccountuserrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| `security`                                                                             | [operations.GetAccountUserSecurity](../../models/operations/getaccountusersecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
 
 
 ### Response
 
-**[operations.GetAccountUsersResponse](../../models/operations/getaccountusersresponse.md)**
+**[operations.GetAccountUserResponse](../../models/operations/getaccountuserresponse.md)**
 
 
 ## get_api_key
@@ -502,7 +500,7 @@ s = songbird.Songbird()
 
 req = shared.GetConnectionRequest(
     org_id='laborum',
-    workspace_id='dolores',
+    workspace_id='quasi',
 )
 
 res = s.internal.get_connection(req, operations.GetConnectionSecurity(
@@ -539,7 +537,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetDefaultMembershipForEmailRequest(
-    email='Florian.Champlin60@gmail.com',
+    email='Weston_Thiel@hotmail.com',
 )
 
 res = s.internal.get_default_membership_for_email(req, operations.GetDefaultMembershipForEmailSecurity(
@@ -576,8 +574,8 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetFeatureFlagsRequest(
-    org_id='nemo',
-    user_id='minima',
+    org_id='voluptatibus',
+    user_id='ipsa',
 )
 
 res = s.internal.get_feature_flags(req, operations.GetFeatureFlagsSecurity(
@@ -614,7 +612,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetMembershipsRequest(
-    user_id='excepturi',
+    user_id='omnis',
 )
 
 res = s.internal.get_memberships(req, operations.GetMembershipsSecurity(
@@ -651,7 +649,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetMembershipsByEmailRequest(
-    email='Ibrahim_Nicolas10@gmail.com',
+    email='Myrtis44@yahoo.com',
 )
 
 res = s.internal.get_memberships_by_email(req, operations.GetMembershipsByEmailSecurity(
@@ -688,7 +686,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetMembershipsByOrgRequest(
-    org_id='mollitia',
+    org_id='ut',
 )
 
 res = s.internal.get_memberships_by_org(req, operations.GetMembershipsByOrgSecurity(
@@ -764,7 +762,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='dolorem',
+    org_id='maiores',
 )
 
 res = s.internal.get_notification_settings(req, operations.GetNotificationSettingsSecurity(
@@ -840,7 +838,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetOrganizationRequest(
-    org_id='culpa',
+    org_id='dicta',
 )
 
 res = s.internal.get_organization(req, operations.GetOrganizationSecurity(
@@ -877,7 +875,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetUserRequest(
-    user_id='consequuntur',
+    user_id='corporis',
 )
 
 res = s.internal.get_user(req, operations.GetUserSecurity(
@@ -914,7 +912,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetUserByEmailRequest(
-    email='Madaline41@hotmail.com',
+    email='Jayden.Carter88@gmail.com',
 )
 
 res = s.internal.get_user_by_email(req, operations.GetUserByEmailSecurity(
@@ -955,8 +953,8 @@ s = songbird.Songbird()
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'molestiae',
-            'velit',
+            'repudiandae',
+            'quae',
         ],
     ),
     dataset_id='model-123',
@@ -982,6 +980,43 @@ if res.status_code == 200:
 ### Response
 
 **[operations.HideSegmentsResponse](../../models/operations/hidesegmentsresponse.md)**
+
+
+## list_account_users
+
+List users in the account organization and any managed organizations
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird()
+
+req = operations.ListAccountUsersRequest(
+    org_id='org-123',
+)
+
+res = s.internal.list_account_users(req, operations.ListAccountUsersSecurity(
+    api_key_auth="",
+))
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ListAccountUsersRequest](../../models/operations/listaccountusersrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
+| `security`                                                                                 | [operations.ListAccountUsersSecurity](../../models/operations/listaccountuserssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+
+
+### Response
+
+**[operations.ListAccountUsersResponse](../../models/operations/listaccountusersresponse.md)**
 
 
 ## list_api_keys
@@ -1035,8 +1070,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ListJobsRequest(
-    org_id='error',
-    workspace_id='quia',
+    org_id='ipsum',
+    workspace_id='quidem',
 )
 
 res = s.internal.list_jobs(req, operations.ListJobsSecurity(
@@ -1187,14 +1222,14 @@ s = songbird.Songbird()
 
 req = operations.PartiallyUpdateOrgRequest(
     request_body=operations.PartiallyUpdateOrgRequestBody(
-        org_id='quis',
+        org_id='molestias',
     ),
     domain='acme.ai',
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.FREE,
+    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.internal.partially_update_org(req, operations.PartiallyUpdateOrgSecurity(
@@ -1236,11 +1271,11 @@ req = operations.PartiallyUpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='laborum',
+    org_id='pariatur',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.internal.partially_update_organization(req, operations.PartiallyUpdateOrganizationSecurity(
@@ -1280,11 +1315,15 @@ req = operations.PatchOrgRoleMembershipsRequest(
     request_body=operations.PatchOrgRoleMembershipsRequestBody(
         request=shared.PatchAccountMembershipsRequest(
             user_ids_to_add=[
-                'odit',
-                'quo',
+                'rem',
+                'voluptates',
+                'quasi',
             ],
             user_ids_to_delete=[
-                'tenetur',
+                'sint',
+                'veritatis',
+                'itaque',
+                'incidunt',
             ],
         ),
     ),
@@ -1360,11 +1399,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='ipsam',
-    email='Reid62@yahoo.com',
+    customer_id_token='enim',
+    email='Marc64@gmail.com',
     expect_existing=False,
-    model_name='temporibus',
-    org_name='laborum',
+    model_name='distinctio',
+    org_name='quibusdam',
 )
 
 res = s.internal.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -1401,9 +1440,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Wanda.Wolf50@gmail.com',
+    email='Dillan_Deckow@gmail.com',
     expect_existing_user=False,
-    id='f097b007-4f15-4471-b5e6-e13b99d488e1',
+    id='802d502a-94bb-44f6-bc96-9e9a3efa77df',
 )
 
 res = s.internal.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -1440,10 +1479,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Kira.Boehm31@hotmail.com',
+    email='Bettye_Gulgowski41@hotmail.com',
     expect_existing=False,
-    model_name='consequatur',
-    org_name='est',
+    model_name='aliquid',
+    org_name='laborum',
     subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
 
@@ -1484,7 +1523,7 @@ req = operations.PutOrgRoleMembershipsRequest(
     request_body=operations.PutOrgRoleMembershipsRequestBody(
         request=shared.PutAccountMembershipsRequest(
             user_ids=[
-                'deserunt',
+                'occaecati',
             ],
         ),
     ),
@@ -1529,9 +1568,8 @@ s = songbird.Songbird()
 req = operations.PutRequestMonitorRunConfigRequest(
     request_body=operations.PutRequestMonitorRunConfigRequestBody(
         analyzer_ids=[
-            'quibusdam',
-            'labore',
-            'modi',
+            'accusamus',
+            'delectus',
         ],
         end_timestamp=1893456000000,
         overwrite=False,
@@ -1575,8 +1613,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RefreshConnectionRequest(
-    org_id='qui',
-    workspace_id='aliquid',
+    org_id='quidem',
+    workspace_id='provident',
 )
 
 res = s.internal.refresh_connection(req, operations.RefreshConnectionSecurity(
@@ -1613,17 +1651,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='cupiditate',
-    cloud_provider='quos',
+    access_token='nam',
+    cloud_provider='id',
     connection_established=False,
-    connection_id='perferendis',
+    connection_id='blanditiis',
     demo=False,
-    email='Rhoda14@gmail.com',
+    email='Verlie.Feeney@yahoo.com',
     free_trial=False,
-    hostname='rapid-moat.biz',
-    port=703737,
-    workspace_id='tempore',
-    workspace_url='labore',
+    hostname='impressive-outfit.name',
+    port=474867,
+    workspace_id='perferendis',
+    workspace_url='nihil',
 )
 
 res = s.internal.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(
@@ -1660,8 +1698,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RemoveMembershipRequest(
-    email='Horacio_Franey39@hotmail.com',
-    org_id='provident',
+    email='Michele29@gmail.com',
+    org_id='suscipit',
 )
 
 res = s.internal.remove_membership_by_email(req, operations.RemoveMembershipByEmailSecurity(
@@ -1698,9 +1736,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RunJobRequest(
-    job_id=896039,
-    org_id='sint',
-    workspace_id='officia',
+    job_id=618016,
+    org_id='nobis',
+    workspace_id='eum',
 )
 
 res = s.internal.run_job(req, operations.RunJobSecurity(
@@ -1737,8 +1775,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SetDefaultMembershipRequest(
-    org_id='dolor',
-    user_id='debitis',
+    org_id='vero',
+    user_id='aspernatur',
 )
 
 res = s.internal.set_default_membership(req, operations.SetDefaultMembershipSecurity(
@@ -1774,7 +1812,7 @@ import songbird
 
 s = songbird.Songbird()
 
-req = 'a'
+req = 'architecto'
 
 res = s.internal.stripe_payment_endpoint(req)
 
@@ -1807,16 +1845,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.UpdateAccountUserRequest(
-    request_body=operations.UpdateAccountUserRequestBody(
-        user=shared.AccountUser(
-            active=False,
-            email='Isadore_Kirlin69@hotmail.com',
-            external_id='dicta',
-            user_id='magnam',
-        ),
+    account_user=shared.AccountUser(
+        active=False,
+        email='Audrey_Marks@gmail.com',
+        id='890afa56-3e25-416f-a4c8-b711e5b7fd2e',
+        org_id='pariatur',
+        source_id='accusantium',
+        source_user_id='consequuntur',
+        user_id='praesentium',
+        user_schema='natus',
     ),
     org_id='org-123',
-    user_id='user-123',
 )
 
 res = s.internal.update_account_user(req, operations.UpdateAccountUserSecurity(
@@ -1856,10 +1895,10 @@ req = shared.UpdateConnectionRequest(
     changes=shared.UpdateConnectionChanges(
         connected=False,
         demo=False,
-        org_id='cumque',
+        org_id='magni',
     ),
-    org_id='facere',
-    workspace_id='ea',
+    org_id='sunt',
+    workspace_id='quo',
 )
 
 res = s.internal.update_connection(req, operations.UpdateConnectionSecurity(
@@ -1896,9 +1935,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.UpdateMembershipRequest(
-    email='Mariah58@yahoo.com',
-    org_id='enim',
-    role=shared.Role.VIEWER,
+    email='Samantha_Schoen@hotmail.com',
+    org_id='odit',
+    role=shared.Role.MEMBER,
 )
 
 res = s.internal.update_membership_by_email(req, operations.UpdateMembershipByEmailSecurity(
@@ -1937,31 +1976,31 @@ s = songbird.Songbird()
 req = operations.UpdateNotificationSettingsRequest(
     notification_settings=shared.NotificationSettings(
         email_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.INDIVIDUAL,
-            day_of_week=shared.NotificationSettingsDay.THURSDAY,
+            cadence=shared.NotificationSqsMessageCadence.HOURLY,
+            day_of_week=shared.NotificationSettingsDay.SUNDAY,
             enabled=False,
-            local24_hour_of_day=588465,
-            local_minute_of_hour=725255,
-            local_timezone='id',
+            local24_hour_of_day=982575,
+            local_minute_of_hour=697429,
+            local_timezone='ipsam',
         ),
         pager_duty_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.WEEKLY,
-            day_of_week=shared.NotificationSettingsDay.WEDNESDAY,
-            enabled=False,
-            local24_hour_of_day=956084,
-            local_minute_of_hour=230533,
-            local_timezone='deserunt',
-        ),
-        slack_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.DAILY,
             day_of_week=shared.NotificationSettingsDay.TUESDAY,
             enabled=False,
-            local24_hour_of_day=618809,
-            local_minute_of_hour=606393,
-            local_timezone='molestiae',
+            local24_hour_of_day=722056,
+            local_minute_of_hour=50588,
+            local_timezone='pariatur',
+        ),
+        slack_settings=shared.UberNotificationSchedule(
+            cadence=shared.NotificationSqsMessageCadence.DAILY,
+            day_of_week=shared.NotificationSettingsDay.SATURDAY,
+            enabled=False,
+            local24_hour_of_day=16627,
+            local_minute_of_hour=855804,
+            local_timezone='amet',
         ),
     ),
-    org_id='perferendis',
+    org_id='aut',
 )
 
 res = s.internal.update_notification_settings(req, operations.UpdateNotificationSettingsSecurity(
@@ -2001,7 +2040,7 @@ s = songbird.Songbird()
 
 req = operations.UpdateOrgRequest(
     request_body=operations.UpdateOrgRequestBody(
-        org_id='nihil',
+        org_id='cumque',
     ),
     domain='acme.ai',
     email_domains='acme.ai,acme.com',
@@ -2053,7 +2092,7 @@ req = operations.UpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='distinctio',
+    org_id='hic',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
@@ -2094,9 +2133,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.User(
-    email='Effie_Hoppe@gmail.com',
-    preferences='eum',
-    user_id='vero',
+    email='Celestine.Hayes@hotmail.com',
+    preferences='eaque',
+    user_id='quis',
 )
 
 res = s.internal.update_user(req, operations.UpdateUserSecurity(
@@ -2133,7 +2172,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.WhyLabsSearchRequest(
-    query='aspernatur',
+    query='nesciunt',
 )
 
 res = s.internal.why_labs_search(req, operations.WhyLabsSearchSecurity(
@@ -2170,8 +2209,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SearchIndexRequest(
-    org_id='architecto',
-    type=shared.SearchIndexType.ACTIONS,
+    org_id='eos',
+    type=shared.SearchIndexType.MODELS,
 )
 
 res = s.internal.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(

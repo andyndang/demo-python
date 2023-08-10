@@ -21,15 +21,15 @@ s = songbird.Songbird()
 req = operations.GetProfileObservatoryLinkRequest(
     get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
         batch_profile_timestamps=[
-            569965,
+            793698,
         ],
         reference_profile_ids=[
-            'provident',
-            'quos',
+            'dolor',
+            'vero',
         ],
     ),
-    dataset_id='sint',
-    org_id='accusantium',
+    dataset_id='nostrum',
+    org_id='hic',
 )
 
 res = s.log.get_profile_observatory_link(req, operations.GetProfileObservatoryLinkSecurity(
@@ -67,23 +67,19 @@ s = songbird.Songbird()
 
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=653201,
+        dataset_timestamp=928082,
         segment_tags=[
             shared.SegmentTag(
-                key='mollitia',
-                value='ad',
+                key='facilis',
+                value='perspiciatis',
             ),
             shared.SegmentTag(
-                key='eum',
-                value='dolor',
+                key='voluptatem',
+                value='porro',
             ),
             shared.SegmentTag(
-                key='necessitatibus',
-                value='odit',
-            ),
-            shared.SegmentTag(
-                key='nemo',
-                value='quasi',
+                key='consequuntur',
+                value='blanditiis',
             ),
         ],
     ),
@@ -126,8 +122,8 @@ s = songbird.Songbird()
 
 req = operations.LogReferenceRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='iure',
-        dataset_timestamp=984043,
+        alias='error',
+        dataset_timestamp=50370,
     ),
     model_id='model-123',
     org_id='org-123',

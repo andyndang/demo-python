@@ -378,39 +378,44 @@ s = songbird.Songbird()
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "nemo": shared.ColumnSchema(
+            "voluptas": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "voluptatibus": shared.ColumnSchema(
+            "natus": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "perferendis": shared.ColumnSchema(
+            "eos": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "fugiat": shared.ColumnSchema(
+            "atque": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='amet',
-            updated_timestamp=11714,
-            version=764912,
+            author='sit',
+            updated_timestamp=854614,
+            version=67249,
         ),
         metrics={
-            "hic": shared.MetricSchema(
+            "dolorum": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
             ),
-            "libero": shared.MetricSchema(
+            "iusto": shared.MetricSchema(
+                column='estimated_prediction',
+                default_metric='median',
+                label='estimated_prediction.median',
+            ),
+            "voluptate": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',

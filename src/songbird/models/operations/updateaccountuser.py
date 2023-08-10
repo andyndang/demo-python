@@ -4,8 +4,6 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import accountuser as shared_accountuser
-from dataclasses_json import Undefined, dataclass_json
-from songbird import utils
 from typing import Optional
 
 
@@ -17,22 +15,11 @@ class UpdateAccountUserSecurity:
 
 
 
-@dataclass_json(undefined=Undefined.EXCLUDE)
-
-@dataclasses.dataclass
-class UpdateAccountUserRequestBody:
-    user: Optional[shared_accountuser.AccountUser] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('user'), 'exclude': lambda f: f is None }})
-    r"""Information held about a user in an account"""
-    
-
-
-
 
 @dataclasses.dataclass
 class UpdateAccountUserRequest:
+    account_user: shared_accountuser.AccountUser = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
-    request_body: UpdateAccountUserRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    user_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'user_id', 'style': 'simple', 'explode': False }})
     
 
 
