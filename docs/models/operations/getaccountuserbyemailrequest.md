@@ -1,4 +1,4 @@
-# GetAccountUserRequest
+# GetAccountUserByEmailRequest
 
 
 ## Fields

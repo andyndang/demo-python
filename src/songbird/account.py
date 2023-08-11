@@ -102,15 +102,15 @@ class Account:
         return res
 
     
-    def get_account_user(self, request: operations.GetAccountUserRequest, security: operations.GetAccountUserSecurity) -> operations.GetAccountUserResponse:
-        r"""Get account user
-        Get account user
+    def get_account_user_by_email(self, request: operations.GetAccountUserByEmailRequest, security: operations.GetAccountUserByEmailSecurity) -> operations.GetAccountUserByEmailResponse:
+        r"""Get account user by email
+        Get account user by email
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.GetAccountUserRequest, base_url, '/v0/accounts/org/{org_id}/user', request)
+        url = utils.generate_url(operations.GetAccountUserByEmailRequest, base_url, '/v0/accounts/org/{org_id}/user/email', request)
         headers = {}
-        query_params = utils.get_query_params(operations.GetAccountUserRequest, request)
+        query_params = utils.get_query_params(operations.GetAccountUserByEmailRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
@@ -119,7 +119,36 @@ class Account:
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.GetAccountUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.GetAccountUserByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.AccountUser])
+                res.account_user = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def get_account_user_by_id(self, request: operations.GetAccountUserByIDRequest, security: operations.GetAccountUserByIDSecurity) -> operations.GetAccountUserByIDResponse:
+        r"""Get account user by user_id
+        Get account user by user_id
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetAccountUserByIDRequest, base_url, '/v0/accounts/org/{org_id}/user/id', request)
+        headers = {}
+        query_params = utils.get_query_params(operations.GetAccountUserByIDRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetAccountUserByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
@@ -261,17 +290,18 @@ class Account:
         
         url = utils.generate_url(operations.UpdateAccountUserRequest, base_url, '/v0/accounts/org/{org_id}/user', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "account_user", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "account_user_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        query_params = utils.get_query_params(operations.UpdateAccountUserRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('PUT', url, data=data, files=form, headers=headers)
+        http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.UpdateAccountUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)

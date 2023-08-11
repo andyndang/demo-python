@@ -32,7 +32,8 @@ src/songbird/utils/utils.py
 src/songbird/models/operations/createaccountuser.py
 src/songbird/models/operations/deleteaccountuser.py
 src/songbird/models/operations/getaccountmemberships.py
-src/songbird/models/operations/getaccountuser.py
+src/songbird/models/operations/getaccountuserbyemail.py
+src/songbird/models/operations/getaccountuserbyid.py
 src/songbird/models/operations/getorgrolememberships.py
 src/songbird/models/operations/listaccountusers.py
 src/songbird/models/operations/patchorgrolememberships.py
@@ -304,9 +305,12 @@ docs/models/operations/deleteaccountuserresponse.md
 docs/models/operations/getaccountmembershipssecurity.md
 docs/models/operations/getaccountmembershipsrequest.md
 docs/models/operations/getaccountmembershipsresponse.md
-docs/models/operations/getaccountusersecurity.md
-docs/models/operations/getaccountuserrequest.md
-docs/models/operations/getaccountuserresponse.md
+docs/models/operations/getaccountuserbyemailsecurity.md
+docs/models/operations/getaccountuserbyemailrequest.md
+docs/models/operations/getaccountuserbyemailresponse.md
+docs/models/operations/getaccountuserbyidsecurity.md
+docs/models/operations/getaccountuserbyidrequest.md
+docs/models/operations/getaccountuserbyidresponse.md
 docs/models/operations/getorgrolemembershipssecurity.md
 docs/models/operations/getorgrolemembershipsrequest.md
 docs/models/operations/getorgrolemembershipsresponse.md

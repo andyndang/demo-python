@@ -9,7 +9,7 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetAccountUserSecurity:
+class GetAccountUserByIDSecurity:
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
@@ -17,20 +17,20 @@ class GetAccountUserSecurity:
 
 
 @dataclasses.dataclass
-class GetAccountUserRequest:
-    email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
+class GetAccountUserByIDRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
+    user_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     
 
 
 
 
 @dataclasses.dataclass
-class GetAccountUserResponse:
+class GetAccountUserByIDResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     account_user: Optional[shared_accountuser.AccountUser] = dataclasses.field(default=None)
-    r"""GetAccountUser default response"""
+    r"""GetAccountUserById default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -20,11 +20,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='numquam',
-    email='Creola.Will@gmail.com',
+    customer_id_token='dolorem',
+    email='Dameon94@gmail.com',
     expect_existing=False,
-    model_name='sit',
-    org_name='expedita',
+    model_name='excepturi',
+    org_name='cum',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -61,9 +61,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Candida.Kassulke64@gmail.com',
+    email='Jennifer68@yahoo.com',
     expect_existing_user=False,
-    id='73429cdb-1a84-422b-b679-d2322715bf0c',
+    id='4100674e-bf69-4280-91ba-77a89ebf737a',
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -100,11 +100,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Nella.Bosco8@hotmail.com',
+    email='Diamond22@hotmail.com',
     expect_existing=False,
-    model_name='nobis',
-    org_name='quos',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
+    model_name='optio',
+    org_name='accusamus',
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.provision.provision_new_user(req, operations.ProvisionNewUserSecurity(
@@ -141,17 +141,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='cupiditate',
-    cloud_provider='aperiam',
+    access_token='saepe',
+    cloud_provider='suscipit',
     connection_established=False,
-    connection_id='delectus',
+    connection_id='deserunt',
     demo=False,
-    email='Eladio67@gmail.com',
+    email='Ephraim_Sipes@yahoo.com',
     free_trial=False,
-    hostname='bustling-band.com',
-    port=555649,
-    workspace_id='itaque',
-    workspace_url='consequatur',
+    hostname='abandoned-supplier.biz',
+    port=273542,
+    workspace_id='vel',
+    workspace_url='quod',
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(

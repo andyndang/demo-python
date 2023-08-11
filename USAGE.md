@@ -12,6 +12,7 @@ req = operations.CreateAccountUserRequest(
         active=False,
         email='Larue_Rau85@yahoo.com',
         external_id='corrupti',
+        user_schema='illum',
     ),
     org_id='org-123',
 )

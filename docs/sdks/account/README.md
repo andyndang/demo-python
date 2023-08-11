@@ -5,7 +5,8 @@
 * [create_account_user](#create_account_user) - Create an account user
 * [delete_account_user](#delete_account_user) - Delete account user
 * [get_account_memberships](#get_account_memberships) - Get memberships in an account
-* [get_account_user](#get_account_user) - Get account user
+* [get_account_user_by_email](#get_account_user_by_email) - Get account user by email
+* [get_account_user_by_id](#get_account_user_by_id) - Get account user by user_id
 * [get_org_role_memberships](#get_org_role_memberships) - Get memberships for a specific org and role
 * [list_account_users](#list_account_users) - List users in an account
 * [patch_org_role_memberships](#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
@@ -27,8 +28,9 @@ s = songbird.Songbird()
 req = operations.CreateAccountUserRequest(
     account_user_request=shared.AccountUserRequest(
         active=False,
-        email='Henry.Mueller@hotmail.com',
-        external_id='iure',
+        email='Linda.Oberbrunner@yahoo.com',
+        external_id='magnam',
+        user_schema='debitis',
     ),
     org_id='org-123',
 )
@@ -130,9 +132,9 @@ if res.status_code == 200:
 **[operations.GetAccountMembershipsResponse](../../models/operations/getaccountmembershipsresponse.md)**
 
 
-## get_account_user
+## get_account_user_by_email
 
-Get account user
+Get account user by email
 
 ### Example Usage
 
@@ -142,12 +144,12 @@ from songbird.models import operations
 
 s = songbird.Songbird()
 
-req = operations.GetAccountUserRequest(
+req = operations.GetAccountUserByEmailRequest(
     email='user@whylabs.ai',
     org_id='org-123',
 )
 
-res = s.account.get_account_user(req, operations.GetAccountUserSecurity(
+res = s.account.get_account_user_by_email(req, operations.GetAccountUserByEmailSecurity(
     api_key_auth="",
 ))
 
@@ -157,15 +159,53 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetAccountUserRequest](../../models/operations/getaccountuserrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetAccountUserSecurity](../../models/operations/getaccountusersecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetAccountUserByEmailRequest](../../models/operations/getaccountuserbyemailrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
+| `security`                                                                                           | [operations.GetAccountUserByEmailSecurity](../../models/operations/getaccountuserbyemailsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
 
 
 ### Response
 
-**[operations.GetAccountUserResponse](../../models/operations/getaccountuserresponse.md)**
+**[operations.GetAccountUserByEmailResponse](../../models/operations/getaccountuserbyemailresponse.md)**
+
+
+## get_account_user_by_id
+
+Get account user by user_id
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird()
+
+req = operations.GetAccountUserByIDRequest(
+    org_id='org-123',
+    user_id='user-123',
+)
+
+res = s.account.get_account_user_by_id(req, operations.GetAccountUserByIDSecurity(
+    api_key_auth="",
+))
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.GetAccountUserByIDRequest](../../models/operations/getaccountuserbyidrequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
+| `security`                                                                                     | [operations.GetAccountUserByIDSecurity](../../models/operations/getaccountuserbyidsecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+
+
+### Response
+
+**[operations.GetAccountUserByIDResponse](../../models/operations/getaccountuserbyidresponse.md)**
 
 
 ## get_org_role_memberships
@@ -260,14 +300,11 @@ req = operations.PatchOrgRoleMembershipsRequest(
     request_body=operations.PatchOrgRoleMembershipsRequestBody(
         request=shared.PatchAccountMembershipsRequest(
             user_ids_to_add=[
-                'debitis',
-                'ipsa',
+                'delectus',
             ],
             user_ids_to_delete=[
-                'tempora',
                 'suscipit',
                 'molestiae',
-                'minus',
             ],
         ),
     ),
@@ -313,10 +350,10 @@ req = operations.PutOrgRoleMembershipsRequest(
     request_body=operations.PutOrgRoleMembershipsRequestBody(
         request=shared.PutAccountMembershipsRequest(
             user_ids=[
+                'placeat',
                 'voluptatum',
                 'iusto',
                 'excepturi',
-                'nisi',
             ],
         ),
     ),
@@ -359,17 +396,14 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.UpdateAccountUserRequest(
-    account_user=shared.AccountUser(
+    account_user_request=shared.AccountUserRequest(
         active=False,
-        email='Rocky.Bernier@hotmail.com',
-        id='a05dfc2d-df7c-4c78-8a1b-a928fc816742',
-        org_id='impedit',
-        source_id='cum',
-        source_user_id='esse',
-        user_id='ipsum',
-        user_schema='excepturi',
+        email='Tianna33@yahoo.com',
+        external_id='veritatis',
+        user_schema='deserunt',
     ),
     org_id='org-123',
+    user_id='user-123',
 )
 
 res = s.account.update_account_user(req, operations.UpdateAccountUserSecurity(

@@ -28,65 +28,32 @@ s = songbird.Songbird()
 
 req = operations.CreateReferenceProfileRequest(
     create_reference_profile_request=shared.CreateReferenceProfileRequest(
-        alias='iste',
-        dataset_timestamp=437032,
+        alias='porro',
+        dataset_timestamp=678880,
         segments=[
             shared.Segment(
                 tags=[
                     shared.SegmentTag(
-                        key='architecto',
-                        value='ipsa',
+                        key='officia',
+                        value='occaecati',
                     ),
                     shared.SegmentTag(
-                        key='reiciendis',
-                        value='est',
+                        key='fugit',
+                        value='deleniti',
                     ),
                     shared.SegmentTag(
-                        key='mollitia',
-                        value='laborum',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='dolorem',
-                        value='corporis',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='nobis',
-                        value='enim',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='nemo',
-                        value='minima',
-                    ),
-                    shared.SegmentTag(
-                        key='excepturi',
-                        value='accusantium',
-                    ),
-                    shared.SegmentTag(
-                        key='iure',
-                        value='culpa',
+                        key='hic',
+                        value='optio',
                     ),
                 ],
             ),
         ],
         tags=[
-            'sapiente',
-            'architecto',
-            'mollitia',
-            'dolorem',
+            'beatae',
+            'commodi',
+            'molestiae',
         ],
-        version='culpa',
+        version='modi',
     ),
     dataset_id='model-123',
     org_id='org-123',
@@ -297,7 +264,7 @@ s = songbird.Songbird()
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'repellat',
+            'impedit',
         ],
     ),
     dataset_id='model-123',

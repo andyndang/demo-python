@@ -23,6 +23,7 @@ req = operations.CreateAccountUserRequest(
         active=False,
         email='Larue_Rau85@yahoo.com',
         external_id='corrupti',
+        user_schema='illum',
     ),
     org_id='org-123',
 )
@@ -45,7 +46,8 @@ if res.status_code == 200:
 * [create_account_user](docs/sdks/account/README.md#create_account_user) - Create an account user
 * [delete_account_user](docs/sdks/account/README.md#delete_account_user) - Delete account user
 * [get_account_memberships](docs/sdks/account/README.md#get_account_memberships) - Get memberships in an account
-* [get_account_user](docs/sdks/account/README.md#get_account_user) - Get account user
+* [get_account_user_by_email](docs/sdks/account/README.md#get_account_user_by_email) - Get account user by email
+* [get_account_user_by_id](docs/sdks/account/README.md#get_account_user_by_id) - Get account user by user_id
 * [get_org_role_memberships](docs/sdks/account/README.md#get_org_role_memberships) - Get memberships for a specific org and role
 * [list_account_users](docs/sdks/account/README.md#list_account_users) - List users in an account
 * [patch_org_role_memberships](docs/sdks/account/README.md#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
@@ -109,7 +111,8 @@ if res.status_code == 200:
 * [generate_report](docs/sdks/internal/README.md#generate_report) - Generate an admin report
 * [get_aws_marketplace_metadata](docs/sdks/internal/README.md#get_aws_marketplace_metadata) - Get marketplace metadata for an org if any exists.
 * [get_account_memberships](docs/sdks/internal/README.md#get_account_memberships) - Get memberships in an account
-* [get_account_user](docs/sdks/internal/README.md#get_account_user) - Get account user
+* [get_account_user_by_email](docs/sdks/internal/README.md#get_account_user_by_email) - Get account user by email
+* [get_account_user_by_id](docs/sdks/internal/README.md#get_account_user_by_id) - Get account user by user_id
 * [get_api_key](docs/sdks/internal/README.md#get_api_key) - Get an api key by its id
 * [get_connection](docs/sdks/internal/README.md#get_connection) - Get the connection metadata for a given org
 * [get_default_membership_for_email](docs/sdks/internal/README.md#get_default_membership_for_email) - Get the default membership for a user.
