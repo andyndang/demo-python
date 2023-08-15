@@ -4,7 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import accountuser as shared_accountuser
-from ..shared import accountuserrequest as shared_accountuserrequest
+from ..shared import createaccountuserrequest as shared_createaccountuserrequest
 from typing import Optional
 
 
@@ -19,7 +19,7 @@ class CreateAccountUserSecurity:
 
 @dataclasses.dataclass
 class CreateAccountUserRequest:
-    account_user_request: shared_accountuserrequest.AccountUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+    create_account_user_request: shared_createaccountuserrequest.CreateAccountUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 

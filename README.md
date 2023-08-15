@@ -19,7 +19,7 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.CreateAccountUserRequest(
-    account_user_request=shared.AccountUserRequest(
+    create_account_user_request=shared.CreateAccountUserRequest(
         active=False,
         email='Larue_Rau85@yahoo.com',
         external_id='corrupti',

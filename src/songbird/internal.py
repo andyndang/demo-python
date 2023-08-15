@@ -20,7 +20,7 @@ class Internal:
         
         url = utils.generate_url(operations.CreateAccountUserRequest, base_url, '/v0/accounts/org/{org_id}/user', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "account_user_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "create_account_user_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1415,7 +1415,7 @@ class Internal:
         
         url = utils.generate_url(operations.UpdateAccountUserRequest, base_url, '/v0/accounts/org/{org_id}/user', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "account_user_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "update_account_user_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

@@ -30,7 +30,7 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.AddNotificationActionRequest(
-    request_body='eos',
+    request_body='perspiciatis',
     action_id='user-action',
     org_id='org-123',
     type=shared.ActionType.EMAIL,
@@ -222,7 +222,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='dolores',
+    org_id='porro',
 )
 
 res = s.notification_settings.get_notification_settings(req, operations.GetNotificationSettingsSecurity(
@@ -296,10 +296,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.PutNotificationActionRequest(
-    request_body='minus',
+    request_body='consequuntur',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.SLACK,
+    type=shared.ActionType.PAGER_DUTY,
 )
 
 res = s.notification_settings.put_notification_action(req, operations.PutNotificationActionSecurity(
@@ -374,10 +374,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.UpdateNotificationActionRequest(
-    request_body='dolor',
+    request_body='error',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.NA,
+    type=shared.ActionType.EMAIL,
 )
 
 res = s.notification_settings.update_notification_action(req, operations.UpdateNotificationActionSecurity(
@@ -416,31 +416,31 @@ s = songbird.Songbird()
 req = operations.UpdateNotificationSettingsRequest(
     notification_settings=shared.NotificationSettings(
         email_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.DAILY,
-            day_of_week=shared.NotificationSettingsDay.SATURDAY,
+            cadence=shared.NotificationSqsMessageCadence.WEEKLY,
+            day_of_week=shared.NotificationSettingsDay.THURSDAY,
             enabled=False,
-            local24_hour_of_day=928082,
-            local_minute_of_hour=608253,
-            local_timezone='facilis',
+            local24_hour_of_day=237893,
+            local_minute_of_hour=992397,
+            local_timezone='earum',
         ),
         pager_duty_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.WEEKLY,
-            day_of_week=shared.NotificationSettingsDay.SUNDAY,
+            cadence=shared.NotificationSqsMessageCadence.DAILY,
+            day_of_week=shared.NotificationSettingsDay.THURSDAY,
             enabled=False,
-            local24_hour_of_day=783645,
-            local_minute_of_hour=164694,
-            local_timezone='blanditiis',
+            local24_hour_of_day=679091,
+            local_minute_of_hour=535633,
+            local_timezone='pariatur',
         ),
         slack_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.WEEKLY,
-            day_of_week=shared.NotificationSettingsDay.SUNDAY,
+            day_of_week=shared.NotificationSettingsDay.FRIDAY,
             enabled=False,
-            local24_hour_of_day=577229,
-            local_minute_of_hour=699098,
-            local_timezone='adipisci',
+            local24_hour_of_day=730122,
+            local_minute_of_hour=964490,
+            local_timezone='quaerat',
         ),
     ),
-    org_id='asperiores',
+    org_id='quos',
 )
 
 res = s.notification_settings.update_notification_settings(req, operations.UpdateNotificationSettingsSecurity(

@@ -20,11 +20,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='dolorem',
-    email='Dameon94@gmail.com',
+    customer_id_token='dolorum',
+    email='Arvid43@gmail.com',
     expect_existing=False,
-    model_name='excepturi',
-    org_name='cum',
+    model_name='odio',
+    org_name='quaerat',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -61,9 +61,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Jennifer68@yahoo.com',
+    email='Maurine_Wolf@hotmail.com',
     expect_existing_user=False,
-    id='4100674e-bf69-4280-91ba-77a89ebf737a',
+    id='280d1ba7-7a89-4ebf-b37a-e4203ce5e6a9',
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -100,10 +100,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Diamond22@hotmail.com',
+    email='Rickie.Leannon@gmail.com',
     expect_existing=False,
-    model_name='optio',
-    org_name='accusamus',
+    model_name='at',
+    org_name='quaerat',
     subscription_tier=shared.SubscriptionTier.PAID,
 )
 
@@ -141,17 +141,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='saepe',
-    cloud_provider='suscipit',
+    access_token='vel',
+    cloud_provider='quod',
     connection_established=False,
-    connection_id='deserunt',
+    connection_id='officiis',
     demo=False,
-    email='Ephraim_Sipes@yahoo.com',
+    email='Marilou_Wilderman@gmail.com',
     free_trial=False,
-    hostname='abandoned-supplier.biz',
-    port=273542,
-    workspace_id='vel',
-    workspace_url='quod',
+    hostname='left-cousin.net',
+    port=947371,
+    workspace_id='amet',
+    workspace_url='tempore',
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(

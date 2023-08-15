@@ -378,39 +378,24 @@ s = songbird.Songbird()
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "nemo": shared.ColumnSchema(
+            "totam": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "voluptatibus": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
-            "perferendis": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
-            "fugiat": shared.ColumnSchema(
+            "dignissimos": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='amet',
-            updated_timestamp=11714,
-            version=764912,
+            author='eaque',
+            updated_timestamp=338985,
+            version=199996,
         ),
         metrics={
-            "hic": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "libero": shared.MetricSchema(
+            "perferendis": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',

@@ -26,7 +26,7 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.CreateAccountUserRequest(
-    account_user_request=shared.AccountUserRequest(
+    create_account_user_request=shared.CreateAccountUserRequest(
         active=False,
         email='Linda.Oberbrunner@yahoo.com',
         external_id='magnam',
@@ -396,11 +396,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = operations.UpdateAccountUserRequest(
-    account_user_request=shared.AccountUserRequest(
+    update_account_user_request=shared.UpdateAccountUserRequest(
         active=False,
-        email='Tianna33@yahoo.com',
-        external_id='veritatis',
-        user_schema='deserunt',
+        external_id='nisi',
+        user_schema='recusandae',
     ),
     org_id='org-123',
     user_id='user-123',

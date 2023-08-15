@@ -149,7 +149,7 @@ src/songbird/models/operations/getsession.py
 src/songbird/models/operations/getsessionprofileobservatorylink.py
 src/songbird/models/operations/__init__.py
 src/songbird/models/shared/accountuser.py
-src/songbird/models/shared/accountuserrequest.py
+src/songbird/models/shared/createaccountuserrequest.py
 src/songbird/models/shared/void.py
 src/songbird/models/shared/getaccountmembershipsresponse.py
 src/songbird/models/shared/organizationrolemembers.py
@@ -157,6 +157,7 @@ src/songbird/models/shared/role.py
 src/songbird/models/shared/member.py
 src/songbird/models/shared/patchaccountmembershipsrequest.py
 src/songbird/models/shared/putaccountmembershipsrequest.py
+src/songbird/models/shared/updateaccountuserrequest.py
 src/songbird/models/shared/adminreportresponse.py
 src/songbird/models/shared/adminreporttype.py
 src/songbird/models/shared/userapikey.py
@@ -627,7 +628,7 @@ docs/models/operations/getsessionresponse.md
 docs/models/operations/getsessionprofileobservatorylinkrequest.md
 docs/models/operations/getsessionprofileobservatorylinkresponse.md
 docs/models/shared/accountuser.md
-docs/models/shared/accountuserrequest.md
+docs/models/shared/createaccountuserrequest.md
 docs/models/shared/void.md
 docs/models/shared/getaccountmembershipsresponse.md
 docs/models/shared/organizationrolemembers.md
@@ -635,6 +636,7 @@ docs/models/shared/role.md
 docs/models/shared/member.md
 docs/models/shared/patchaccountmembershipsrequest.md
 docs/models/shared/putaccountmembershipsrequest.md
+docs/models/shared/updateaccountuserrequest.md
 docs/models/shared/adminreportresponse.md
 docs/models/shared/adminreporttype.md
 docs/models/shared/userapikey.md

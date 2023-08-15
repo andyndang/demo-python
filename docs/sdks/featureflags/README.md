@@ -17,8 +17,8 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetFeatureFlagsRequest(
-    org_id='esse',
-    user_id='ipsum',
+    org_id='in',
+    user_id='corporis',
 )
 
 res = s.feature_flags.get_feature_flags(req, operations.GetFeatureFlagsSecurity(

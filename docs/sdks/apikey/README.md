@@ -25,6 +25,9 @@ req = operations.CreateAPIKeyRequest(
     org_id='org-123',
     scopes=[
         ':user',
+        ':user',
+        ':user',
+        ':user',
     ],
     user_id='user-123',
 )
