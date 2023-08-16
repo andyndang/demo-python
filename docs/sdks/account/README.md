@@ -7,10 +7,10 @@
 * [get_account_memberships](#get_account_memberships) - Get memberships in an account
 * [get_account_user_by_email](#get_account_user_by_email) - Get account user by email
 * [get_account_user_by_id](#get_account_user_by_id) - Get account user by user_id
-* [get_org_role_memberships](#get_org_role_memberships) - Get memberships for a specific org and role
 * [list_account_users](#list_account_users) - List users in an account
-* [patch_org_role_memberships](#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
-* [put_org_role_memberships](#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
+* [list_managed_organizations](#list_managed_organizations) - List managed organizations for a parent organization
+* [patch_organization_memberships](#patch_organization_memberships) - Add or delete memberships in a specific role and managed organization
+* [put_organization_memberships](#put_organization_memberships) - Replace the memberships in a specific role and managed organization
 * [update_account_user](#update_account_user) - Update account user
 
 ## create_account_user
@@ -102,12 +102,14 @@ Get memberships in the account organization and any managed organizations
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
 s = songbird.Songbird()
 
 req = operations.GetAccountMembershipsRequest(
+    managed_org_id='org-123',
     org_id='org-123',
+    role=shared.Role.ADMIN,
     user_id='user-123',
 )
 
@@ -208,45 +210,6 @@ if res.status_code == 200:
 **[operations.GetAccountUserByIDResponse](../../models/operations/getaccountuserbyidresponse.md)**
 
 
-## get_org_role_memberships
-
-Get memberships in a specific organization and role within the account
-
-### Example Usage
-
-```python
-import songbird
-from songbird.models import operations
-
-s = songbird.Songbird()
-
-req = operations.GetOrgRoleMembershipsRequest(
-    managed_org_id='org-123',
-    org_id='org-123',
-    role='admin',
-)
-
-res = s.account.get_org_role_memberships(req, operations.GetOrgRoleMembershipsSecurity(
-    api_key_auth="",
-))
-
-if res.status_code == 200:
-    # handle response
-```
-
-### Parameters
-
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetOrgRoleMembershipsRequest](../../models/operations/getorgrolemembershipsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetOrgRoleMembershipsSecurity](../../models/operations/getorgrolemembershipssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
-
-
-### Response
-
-**[operations.GetOrgRoleMembershipsResponse](../../models/operations/getorgrolemembershipsresponse.md)**
-
-
 ## list_account_users
 
 List users in the account organization and any managed organizations
@@ -284,7 +247,44 @@ if res.status_code == 200:
 **[operations.ListAccountUsersResponse](../../models/operations/listaccountusersresponse.md)**
 
 
-## patch_org_role_memberships
+## list_managed_organizations
+
+List managed organizations for a parent organization
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird()
+
+req = operations.ListManagedOrganizationsRequest(
+    org_id='org-123',
+)
+
+res = s.account.list_managed_organizations(req, operations.ListManagedOrganizationsSecurity(
+    api_key_auth="",
+))
+
+if res.status_code == 200:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.ListManagedOrganizationsRequest](../../models/operations/listmanagedorganizationsrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
+| `security`                                                                                                 | [operations.ListManagedOrganizationsSecurity](../../models/operations/listmanagedorganizationssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+
+
+### Response
+
+**[operations.ListManagedOrganizationsResponse](../../models/operations/listmanagedorganizationsresponse.md)**
+
+
+## patch_organization_memberships
 
 Add or delete all of the memberships in a specific role and managed organization
 
@@ -296,24 +296,27 @@ from songbird.models import operations, shared
 
 s = songbird.Songbird()
 
-req = operations.PatchOrgRoleMembershipsRequest(
-    request_body=operations.PatchOrgRoleMembershipsRequestBody(
-        request=shared.PatchAccountMembershipsRequest(
-            user_ids_to_add=[
-                'delectus',
-            ],
-            user_ids_to_delete=[
-                'suscipit',
-                'molestiae',
-            ],
-        ),
+req = operations.PatchOrganizationMembershipsRequest(
+    patch_account_memberships_request=shared.PatchAccountMembershipsRequest(
+        user_ids_to_add=[
+            'tempora',
+            'suscipit',
+            'molestiae',
+            'minus',
+        ],
+        user_ids_to_delete=[
+            'voluptatum',
+            'iusto',
+            'excepturi',
+            'nisi',
+        ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role='admin',
+    role=shared.Role.VIEWER,
 )
 
-res = s.account.patch_org_role_memberships(req, operations.PatchOrgRoleMembershipsSecurity(
+res = s.account.patch_organization_memberships(req, operations.PatchOrganizationMembershipsSecurity(
     api_key_auth="",
 ))
 
@@ -323,18 +326,18 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.PatchOrgRoleMembershipsRequest](../../models/operations/patchorgrolemembershipsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.PatchOrgRoleMembershipsSecurity](../../models/operations/patchorgrolemembershipssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                          | [operations.PatchOrganizationMembershipsRequest](../../models/operations/patchorganizationmembershipsrequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
+| `security`                                                                                                         | [operations.PatchOrganizationMembershipsSecurity](../../models/operations/patchorganizationmembershipssecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
 
 
 ### Response
 
-**[operations.PatchOrgRoleMembershipsResponse](../../models/operations/patchorgrolemembershipsresponse.md)**
+**[operations.PatchOrganizationMembershipsResponse](../../models/operations/patchorganizationmembershipsresponse.md)**
 
 
-## put_org_role_memberships
+## put_organization_memberships
 
 Replace all of the memberships in a specific role and managed organization
 
@@ -346,23 +349,21 @@ from songbird.models import operations, shared
 
 s = songbird.Songbird()
 
-req = operations.PutOrgRoleMembershipsRequest(
-    request_body=operations.PutOrgRoleMembershipsRequestBody(
-        request=shared.PutAccountMembershipsRequest(
-            user_ids=[
-                'placeat',
-                'voluptatum',
-                'iusto',
-                'excepturi',
-            ],
-        ),
+req = operations.PutOrganizationMembershipsRequest(
+    put_account_memberships_request=shared.PutAccountMembershipsRequest(
+        user_ids=[
+            'ab',
+            'quis',
+            'veritatis',
+            'deserunt',
+        ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role='admin',
+    role=shared.Role.ADMIN,
 )
 
-res = s.account.put_org_role_memberships(req, operations.PutOrgRoleMembershipsSecurity(
+res = s.account.put_organization_memberships(req, operations.PutOrganizationMembershipsSecurity(
     api_key_auth="",
 ))
 
@@ -372,15 +373,15 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PutOrgRoleMembershipsRequest](../../models/operations/putorgrolemembershipsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.PutOrgRoleMembershipsSecurity](../../models/operations/putorgrolemembershipssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.PutOrganizationMembershipsRequest](../../models/operations/putorganizationmembershipsrequest.md)   | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
+| `security`                                                                                                     | [operations.PutOrganizationMembershipsSecurity](../../models/operations/putorganizationmembershipssecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
 
 
 ### Response
 
-**[operations.PutOrgRoleMembershipsResponse](../../models/operations/putorgrolemembershipsresponse.md)**
+**[operations.PutOrganizationMembershipsResponse](../../models/operations/putorganizationmembershipsresponse.md)**
 
 
 ## update_account_user
@@ -398,8 +399,8 @@ s = songbird.Songbird()
 req = operations.UpdateAccountUserRequest(
     update_account_user_request=shared.UpdateAccountUserRequest(
         active=False,
-        external_id='nisi',
-        user_schema='recusandae',
+        external_id='ipsam',
+        user_schema='repellendus',
     ),
     org_id='org-123',
     user_id='user-123',

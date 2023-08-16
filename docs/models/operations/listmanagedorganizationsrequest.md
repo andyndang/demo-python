@@ -1,8 +1,8 @@
-# GetOrgRoleMembershipsSecurity
+# ListManagedOrganizationsRequest
 
 
 ## Fields
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `api_key_auth`     | *str*              | :heavy_check_mark: | N/A                |                    |
+| `org_id`           | *str*              | :heavy_check_mark: | N/A                | org-123            |

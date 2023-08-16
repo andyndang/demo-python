@@ -4,6 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import getaccountmembershipsresponse as shared_getaccountmembershipsresponse
+from ..shared import role as shared_role
 from typing import Optional
 
 
@@ -19,6 +20,8 @@ class GetAccountMembershipsSecurity:
 @dataclasses.dataclass
 class GetAccountMembershipsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
+    managed_org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'managed_org_id', 'style': 'form', 'explode': True }})
+    role: Optional[shared_role.Role] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'role', 'style': 'form', 'explode': True }})
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     
 

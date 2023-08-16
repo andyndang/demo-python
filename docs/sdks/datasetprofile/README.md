@@ -28,76 +28,55 @@ s = songbird.Songbird()
 
 req = operations.CreateReferenceProfileRequest(
     create_reference_profile_request=shared.CreateReferenceProfileRequest(
-        alias='molestiae',
-        dataset_timestamp=799159,
+        alias='nam',
+        dataset_timestamp=639921,
         segments=[
             shared.Segment(
                 tags=[
                     shared.SegmentTag(
+                        key='deleniti',
+                        value='hic',
+                    ),
+                ],
+            ),
+            shared.Segment(
+                tags=[
+                    shared.SegmentTag(
                         key='totam',
-                        value='porro',
+                        value='beatae',
                     ),
                     shared.SegmentTag(
-                        key='dolorum',
-                        value='dicta',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='officia',
-                        value='occaecati',
+                        key='commodi',
+                        value='molestiae',
                     ),
                     shared.SegmentTag(
-                        key='fugit',
-                        value='deleniti',
+                        key='modi',
+                        value='qui',
                     ),
                     shared.SegmentTag(
-                        key='hic',
-                        value='optio',
+                        key='impedit',
+                        value='cum',
                     ),
                 ],
             ),
             shared.Segment(
                 tags=[
                     shared.SegmentTag(
-                        key='beatae',
-                        value='commodi',
+                        key='ipsum',
+                        value='excepturi',
                     ),
                     shared.SegmentTag(
-                        key='molestiae',
-                        value='modi',
-                    ),
-                    shared.SegmentTag(
-                        key='qui',
-                        value='impedit',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='esse',
-                        value='ipsum',
-                    ),
-                    shared.SegmentTag(
-                        key='excepturi',
-                        value='aspernatur',
-                    ),
-                    shared.SegmentTag(
-                        key='perferendis',
-                        value='ad',
+                        key='aspernatur',
+                        value='perferendis',
                     ),
                 ],
             ),
         ],
         tags=[
+            'natus',
             'sed',
-            'iste',
-            'dolor',
         ],
-        version='natus',
+        version='iste',
     ),
     dataset_id='model-123',
     org_id='org-123',
@@ -308,8 +287,7 @@ s = songbird.Songbird()
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'hic',
-            'saepe',
+            'natus',
         ],
     ),
     dataset_id='model-123',

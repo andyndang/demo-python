@@ -3,13 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getaccountmembershipsresponse as shared_getaccountmembershipsresponse
+from ..shared import accountorganization as shared_accountorganization
 from typing import Optional
 
 
 
 @dataclasses.dataclass
-class GetOrgRoleMembershipsSecurity:
+class ListManagedOrganizationsSecurity:
     api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
     
 
@@ -17,21 +17,19 @@ class GetOrgRoleMembershipsSecurity:
 
 
 @dataclasses.dataclass
-class GetOrgRoleMembershipsRequest:
-    managed_org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'managed_org_id', 'style': 'simple', 'explode': False }})
+class ListManagedOrganizationsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
-    role: str = dataclasses.field(metadata={'path_param': { 'field_name': 'role', 'style': 'simple', 'explode': False }})
     
 
 
 
 
 @dataclasses.dataclass
-class GetOrgRoleMembershipsResponse:
+class ListManagedOrganizationsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    get_account_memberships_response: Optional[shared_getaccountmembershipsresponse.GetAccountMembershipsResponse] = dataclasses.field(default=None)
-    r"""GetOrgRoleMemberships default response"""
+    account_organizations: Optional[list[shared_accountorganization.AccountOrganization]] = dataclasses.field(default=None)
+    r"""ListManagedOrganizations default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

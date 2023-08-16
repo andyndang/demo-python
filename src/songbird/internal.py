@@ -599,34 +599,6 @@ class Internal:
         return res
 
     
-    def get_org_role_memberships(self, request: operations.GetOrgRoleMembershipsRequest, security: operations.GetOrgRoleMembershipsSecurity) -> operations.GetOrgRoleMembershipsResponse:
-        r"""Get memberships for a specific org and role
-        Get memberships in a specific organization and role within the account
-        """
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.GetOrgRoleMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships/{managed_org_id}/{role}', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
-        
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
-        
-        http_res = client.request('GET', url, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.GetOrgRoleMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if True:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.GetAccountMembershipsResponse])
-                res.get_account_memberships_response = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
     def get_organization(self, request: operations.GetOrganizationRequest, security: operations.GetOrganizationSecurity) -> operations.GetOrganizationResponse:
         r"""Get the metadata about an organization.
         Returns various metadata about an organization
@@ -835,6 +807,34 @@ class Internal:
         return res
 
     
+    def list_managed_organizations(self, request: operations.ListManagedOrganizationsRequest, security: operations.ListManagedOrganizationsSecurity) -> operations.ListManagedOrganizationsResponse:
+        r"""List managed organizations for a parent organization
+        List managed organizations for a parent organization
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.ListManagedOrganizationsRequest, base_url, '/v0/accounts/org/{org_id}/organizations', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.ListManagedOrganizationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[list[shared.AccountOrganization]])
+                res.account_organizations = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def list_monitor_config_v3_versions(self, request: operations.ListMonitorConfigV3VersionsRequest, security: operations.ListMonitorConfigV3VersionsSecurity) -> operations.ListMonitorConfigV3VersionsResponse:
         r"""List the monitor config document versions for a given dataset.
         List the monitor config document versions for a given dataset.
@@ -984,33 +984,34 @@ class Internal:
         return res
 
     
-    def patch_org_role_memberships(self, request: operations.PatchOrgRoleMembershipsRequest, security: operations.PatchOrgRoleMembershipsSecurity) -> operations.PatchOrgRoleMembershipsResponse:
+    def patch_organization_memberships(self, request: operations.PatchOrganizationMembershipsRequest, security: operations.PatchOrganizationMembershipsSecurity) -> operations.PatchOrganizationMembershipsResponse:
         r"""Add or delete memberships in a specific role and managed organization
         Add or delete all of the memberships in a specific role and managed organization
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PatchOrgRoleMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships/{managed_org_id}/{role}', request)
+        url = utils.generate_url(operations.PatchOrganizationMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "patch_account_memberships_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        query_params = utils.get_query_params(operations.PatchOrganizationMembershipsRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
+        http_res = client.request('PATCH', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.PatchOrgRoleMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PatchOrganizationMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
-                res.void = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
+                res.response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1144,33 +1145,34 @@ class Internal:
         return res
 
     
-    def put_org_role_memberships(self, request: operations.PutOrgRoleMembershipsRequest, security: operations.PutOrgRoleMembershipsSecurity) -> operations.PutOrgRoleMembershipsResponse:
+    def put_organization_memberships(self, request: operations.PutOrganizationMembershipsRequest, security: operations.PutOrganizationMembershipsSecurity) -> operations.PutOrganizationMembershipsResponse:
         r"""Replace the memberships in a specific role and managed organization
         Replace all of the memberships in a specific role and managed organization
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = utils.generate_url(operations.PutOrgRoleMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships/{managed_org_id}/{role}', request)
+        url = utils.generate_url(operations.PutOrganizationMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "put_account_memberships_request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
+        query_params = utils.get_query_params(operations.PutOrganizationMembershipsRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('PUT', url, data=data, files=form, headers=headers)
+        http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
-        res = operations.PutOrgRoleMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PutOrganizationMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
-                res.void = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
+                res.response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

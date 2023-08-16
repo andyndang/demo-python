@@ -1,6 +1,6 @@
 # Response
 
-UpdateConnection default response
+PatchOrganizationMemberships default response
 
 
 ## Fields

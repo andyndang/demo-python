@@ -48,10 +48,10 @@ if res.status_code == 200:
 * [get_account_memberships](docs/sdks/account/README.md#get_account_memberships) - Get memberships in an account
 * [get_account_user_by_email](docs/sdks/account/README.md#get_account_user_by_email) - Get account user by email
 * [get_account_user_by_id](docs/sdks/account/README.md#get_account_user_by_id) - Get account user by user_id
-* [get_org_role_memberships](docs/sdks/account/README.md#get_org_role_memberships) - Get memberships for a specific org and role
 * [list_account_users](docs/sdks/account/README.md#list_account_users) - List users in an account
-* [patch_org_role_memberships](docs/sdks/account/README.md#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
-* [put_org_role_memberships](docs/sdks/account/README.md#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
+* [list_managed_organizations](docs/sdks/account/README.md#list_managed_organizations) - List managed organizations for a parent organization
+* [patch_organization_memberships](docs/sdks/account/README.md#patch_organization_memberships) - Add or delete memberships in a specific role and managed organization
+* [put_organization_memberships](docs/sdks/account/README.md#put_organization_memberships) - Replace the memberships in a specific role and managed organization
 * [update_account_user](docs/sdks/account/README.md#update_account_user) - Update account user
 
 ### [admin](docs/sdks/admin/README.md)
@@ -122,7 +122,6 @@ if res.status_code == 200:
 * [get_memberships_by_org](docs/sdks/internal/README.md#get_memberships_by_org) - Get memberships for an org.
 * [get_monitor_config_v3_version](docs/sdks/internal/README.md#get_monitor_config_v3_version) - Get the monitor config document version for a given dataset.
 * [get_notification_settings](docs/sdks/internal/README.md#get_notification_settings) - Get notification settings for an org
-* [get_org_role_memberships](docs/sdks/internal/README.md#get_org_role_memberships) - Get memberships for a specific org and role
 * [get_organization](docs/sdks/internal/README.md#get_organization) - Get the metadata about an organization.
 * [get_user](docs/sdks/internal/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/internal/README.md#get_user_by_email) - Get a user by their email.
@@ -130,17 +129,18 @@ if res.status_code == 200:
 * [list_account_users](docs/sdks/internal/README.md#list_account_users) - List users in an account
 * [list_api_keys](docs/sdks/internal/README.md#list_api_keys) - List API key metadata for a given organization and user
 * [list_jobs](docs/sdks/internal/README.md#list_jobs) - List all of the jobs in a workspace.
+* [list_managed_organizations](docs/sdks/internal/README.md#list_managed_organizations) - List managed organizations for a parent organization
 * [list_monitor_config_v3_versions](docs/sdks/internal/README.md#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
 * [list_organizations](docs/sdks/internal/README.md#list_organizations) - Get a list of all of the organization ids.
 * [list_segments](docs/sdks/internal/README.md#list_segments) - Returns a list of segments
 * [~~partially_update_org~~](docs/sdks/internal/README.md#partially_update_org) - Update some fields of an organization to non-null values :warning: **Deprecated**
 * [partially_update_organization](docs/sdks/internal/README.md#partially_update_organization) - Update some fields of an organization to non-null values
-* [patch_org_role_memberships](docs/sdks/internal/README.md#patch_org_role_memberships) - Add or delete memberships in a specific role and managed organization
+* [patch_organization_memberships](docs/sdks/internal/README.md#patch_organization_memberships) - Add or delete memberships in a specific role and managed organization
 * [post_monitor_config_validation_job](docs/sdks/internal/README.md#post_monitor_config_validation_job) - Create a monitor config validation job for all configs
 * [provision_aws_marketplace_new_user](docs/sdks/internal/README.md#provision_aws_marketplace_new_user) - Create resources for a new user coming from AWS Marketplace
 * [provision_databricks_connection](docs/sdks/internal/README.md#provision_databricks_connection) - Create resources for a new user coming from Databricks
 * [provision_new_user](docs/sdks/internal/README.md#provision_new_user) - Create the resources that a new user needs to use WhyLabs via the website.
-* [put_org_role_memberships](docs/sdks/internal/README.md#put_org_role_memberships) - Replace the memberships in a specific role and managed organization
+* [put_organization_memberships](docs/sdks/internal/README.md#put_organization_memberships) - Replace the memberships in a specific role and managed organization
 * [put_request_monitor_run_config](docs/sdks/internal/README.md#put_request_monitor_run_config) - Put the RequestMonitorRun config into S3.
 * [refresh_connection](docs/sdks/internal/README.md#refresh_connection) - Refresh metadata for a workspace connection.
 * [register_databricks_connection](docs/sdks/internal/README.md#register_databricks_connection) - Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
