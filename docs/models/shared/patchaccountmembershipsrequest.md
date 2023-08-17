@@ -1,6 +1,6 @@
 # PatchAccountMembershipsRequest
 
-Request for the PatchOrgRoleMemberships API
+Request for the PatchAccountMemberships API
 
 
 ## Fields

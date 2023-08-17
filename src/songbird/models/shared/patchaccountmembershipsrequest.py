@@ -10,7 +10,7 @@ from songbird import utils
 
 @dataclasses.dataclass
 class PatchAccountMembershipsRequest:
-    r"""Request for the PatchOrgRoleMemberships API"""
+    r"""Request for the PatchAccountMemberships API"""
     user_ids_to_add: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIdsToAdd') }})
     r"""A list of userIds that should be members"""
     user_ids_to_delete: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIdsToDelete') }})

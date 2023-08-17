@@ -10,7 +10,7 @@ from songbird import utils
 
 @dataclasses.dataclass
 class PutAccountMembershipsRequest:
-    r"""Request for the PutOrgRoleMemberships API"""
+    r"""Request for the PutAccountMemberships API"""
     user_ids: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userIds') }})
     r"""A list of userIds that should be members"""
     

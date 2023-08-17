@@ -1,6 +1,6 @@
 # PutAccountMembershipsRequest
 
-Request for the PutOrgRoleMemberships API
+Request for the PutAccountMemberships API
 
 
 ## Fields
