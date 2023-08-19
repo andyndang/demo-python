@@ -242,8 +242,8 @@ class Account:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
-                res.response = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.StatusResponse])
+                res.status_response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -276,8 +276,8 @@ class Account:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
-                res.response = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.StatusResponse])
+                res.status_response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

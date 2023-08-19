@@ -1,6 +1,6 @@
 # Response
 
-PatchOrganizationMemberships default response
+DeleteAccountUser default response
 
 
 ## Fields

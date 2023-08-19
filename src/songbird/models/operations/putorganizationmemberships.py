@@ -4,8 +4,8 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import putaccountmembershipsrequest as shared_putaccountmembershipsrequest
-from ..shared import response as shared_response
 from ..shared import role as shared_role
+from ..shared import statusresponse as shared_statusresponse
 from typing import Optional
 
 
@@ -34,7 +34,7 @@ class PutOrganizationMembershipsResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    response: Optional[shared_response.Response] = dataclasses.field(default=None)
+    status_response: Optional[shared_statusresponse.StatusResponse] = dataclasses.field(default=None)
     r"""PutOrganizationMemberships default response"""
     
 

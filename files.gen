@@ -156,6 +156,8 @@ src/songbird/models/shared/organizationrolemembers.py
 src/songbird/models/shared/role.py
 src/songbird/models/shared/member.py
 src/songbird/models/shared/accountorganization.py
+src/songbird/models/shared/statusresponse.py
+src/songbird/models/shared/errorstatus.py
 src/songbird/models/shared/patchaccountmembershipsrequest.py
 src/songbird/models/shared/putaccountmembershipsrequest.py
 src/songbird/models/shared/updateaccountuserrequest.py
@@ -634,6 +636,8 @@ docs/models/shared/organizationrolemembers.md
 docs/models/shared/role.md
 docs/models/shared/member.md
 docs/models/shared/accountorganization.md
+docs/models/shared/statusresponse.md
+docs/models/shared/errorstatus.md
 docs/models/shared/patchaccountmembershipsrequest.md
 docs/models/shared/putaccountmembershipsrequest.md
 docs/models/shared/updateaccountuserrequest.md
