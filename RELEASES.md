@@ -245,3 +245,11 @@ Based on:
 - Speakeasy CLI 1.74.3 (2.86.6) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.21.3] .
+
+## 2023-08-24 00:23:30
+### Changes
+Based on:
+- OpenAPI Doc 0.1 
+- Speakeasy CLI 1.74.9 (2.86.10) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.21.4] .

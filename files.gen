@@ -57,8 +57,10 @@ src/songbird/models/operations/createreferenceprofile.py
 src/songbird/models/operations/deleteanalyzerresults.py
 src/songbird/models/operations/deletedatasetprofiles.py
 src/songbird/models/operations/deletereferenceprofile.py
+src/songbird/models/operations/getprofiletraces.py
 src/songbird/models/operations/getreferenceprofile.py
 src/songbird/models/operations/hidesegments.py
+src/songbird/models/operations/listprofiletraces.py
 src/songbird/models/operations/listreferenceprofiles.py
 src/songbird/models/operations/listsegments.py
 src/songbird/models/operations/getcolumnweights.py
@@ -202,6 +204,7 @@ src/songbird/models/shared/segment.py
 src/songbird/models/shared/segmenttag.py
 src/songbird/models/shared/deleteanalyzerresultsresponse.py
 src/songbird/models/shared/deletedatasetprofilesresponse.py
+src/songbird/models/shared/profiletrace.py
 src/songbird/models/shared/referenceprofileitemresponse.py
 src/songbird/models/shared/segmentslistrequest.py
 src/songbird/models/shared/segmentlistresponse.py
@@ -378,12 +381,18 @@ docs/models/operations/deletedatasetprofilesresponse.md
 docs/models/operations/deletereferenceprofilesecurity.md
 docs/models/operations/deletereferenceprofilerequest.md
 docs/models/operations/deletereferenceprofileresponse.md
+docs/models/operations/getprofiletracessecurity.md
+docs/models/operations/getprofiletracesrequest.md
+docs/models/operations/getprofiletracesresponse.md
 docs/models/operations/getreferenceprofilesecurity.md
 docs/models/operations/getreferenceprofilerequest.md
 docs/models/operations/getreferenceprofileresponse.md
 docs/models/operations/hidesegmentssecurity.md
 docs/models/operations/hidesegmentsrequest.md
 docs/models/operations/hidesegmentsresponse.md
+docs/models/operations/listprofiletracessecurity.md
+docs/models/operations/listprofiletracesrequest.md
+docs/models/operations/listprofiletracesresponse.md
 docs/models/operations/listreferenceprofilessecurity.md
 docs/models/operations/listreferenceprofilesrequest.md
 docs/models/operations/listreferenceprofilesresponse.md
@@ -691,6 +700,7 @@ docs/models/shared/segment.md
 docs/models/shared/segmenttag.md
 docs/models/shared/deleteanalyzerresultsresponse.md
 docs/models/shared/deletedatasetprofilesresponse.md
+docs/models/shared/profiletrace.md
 docs/models/shared/referenceprofileitemresponse.md
 docs/models/shared/segmentslistrequest.md
 docs/models/shared/segmentlistresponse.md

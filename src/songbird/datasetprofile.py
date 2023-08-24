@@ -133,6 +133,34 @@ class DatasetProfile:
         return res
 
     
+    def get_profile_traces(self, request: operations.GetProfileTracesRequest, security: operations.GetProfileTracesSecurity) -> operations.GetProfileTracesResponse:
+        r"""Returns a list for profile traces matching a trace id
+        Returns a list of profile traces matching a trace id
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetProfileTracesRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{dataset_id}/trace/{trace_id}', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetProfileTracesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[list[shared.ProfileTrace]])
+                res.profile_traces = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def get_reference_profile(self, request: operations.GetReferenceProfileRequest, security: operations.GetReferenceProfileSecurity) -> operations.GetReferenceProfileResponse:
         r"""Returns a single reference profile
         Returns a Reference Profile.
@@ -188,6 +216,35 @@ class DatasetProfile:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def list_profile_traces(self, request: operations.ListProfileTracesRequest, security: operations.ListProfileTracesSecurity) -> operations.ListProfileTracesResponse:
+        r"""Returns a list for profile traces
+        Returns a list of profile traces.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.ListProfileTracesRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{dataset_id}/trace', request)
+        headers = {}
+        query_params = utils.get_query_params(operations.ListProfileTracesRequest, request)
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, params=query_params, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.ListProfileTracesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[list[shared.ProfileTrace]])
+                res.profile_traces = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

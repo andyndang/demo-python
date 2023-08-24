@@ -86,8 +86,10 @@ if res.status_code == 200:
 * [delete_analyzer_results](docs/sdks/datasetprofile/README.md#delete_analyzer_results) - Deletes a set of analyzer results
 * [delete_dataset_profiles](docs/sdks/datasetprofile/README.md#delete_dataset_profiles) - Deletes a set of dataset profiles
 * [delete_reference_profile](docs/sdks/datasetprofile/README.md#delete_reference_profile) - Delete a single reference profile
+* [get_profile_traces](docs/sdks/datasetprofile/README.md#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](docs/sdks/datasetprofile/README.md#get_reference_profile) - Returns a single reference profile
 * [hide_segments](docs/sdks/datasetprofile/README.md#hide_segments) - Hides a list of segments
+* [list_profile_traces](docs/sdks/datasetprofile/README.md#list_profile_traces) - Returns a list for profile traces
 * [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 
