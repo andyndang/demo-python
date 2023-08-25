@@ -1,6 +1,6 @@
 # ProfileTrace
 
-A single reference item response.
+A single profile trace item
 
 
 ## Fields

@@ -93,6 +93,10 @@ if res.status_code == 200:
 * [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 
+### [debug_events](docs/sdks/debugevents/README.md)
+
+* [log_debug_event](docs/sdks/debugevents/README.md#log_debug_event) - Log a debug event
+
 ### [feature_weights](docs/sdks/featureweights/README.md)
 
 * [get_column_weights](docs/sdks/featureweights/README.md#get_column_weights) - Get column weights for the specified dataset

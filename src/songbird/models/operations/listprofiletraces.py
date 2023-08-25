@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import profiletrace as shared_profiletrace
+from ..shared import profiletracesresponse as shared_profiletracesresponse
 from typing import Optional
 
 
@@ -26,6 +26,8 @@ class ListProfileTracesRequest:
     r"""Your company's unique organization ID"""
     to_epoch: int = dataclasses.field(metadata={'query_param': { 'field_name': 'to_epoch', 'style': 'form', 'explode': True }})
     r"""Milli epoch time that represents the end of the time range to query."""
+    limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
+    offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     
 
 
@@ -35,7 +37,7 @@ class ListProfileTracesRequest:
 class ListProfileTracesResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()
-    profile_traces: Optional[list[shared_profiletrace.ProfileTrace]] = dataclasses.field(default=None)
+    profile_traces_response: Optional[shared_profiletracesresponse.ProfileTracesResponse] = dataclasses.field(default=None)
     r"""The metadata for the summarized dataset profile including paths to JSON and protobuf data"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     

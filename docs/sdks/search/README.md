@@ -18,7 +18,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.WhyLabsSearchRequest(
-    query='officiis',
+    query='incidunt',
 )
 
 res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(

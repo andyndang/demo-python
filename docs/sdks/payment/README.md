@@ -16,7 +16,7 @@ import songbird
 
 s = songbird.Songbird()
 
-req = 'aliquid'
+req = 'fugiat'
 
 res = s.payment.stripe_payment_endpoint(req)
 

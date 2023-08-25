@@ -141,20 +141,21 @@ class DatasetProfile:
         
         url = utils.generate_url(operations.GetProfileTracesRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{dataset_id}/trace/{trace_id}', request)
         headers = {}
+        query_params = utils.get_query_params(operations.GetProfileTracesRequest, request)
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = utils.configure_security_client(self.sdk_configuration.client, security)
         
-        http_res = client.request('GET', url, headers=headers)
+        http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
 
         res = operations.GetProfileTracesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.ProfileTrace]])
-                res.profile_traces = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ProfileTracesResponse])
+                res.profile_traces_response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -243,8 +244,8 @@ class DatasetProfile:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.ProfileTrace]])
-                res.profile_traces = out
+                out = utils.unmarshal_json(http_res.text, Optional[shared.ProfileTracesResponse])
+                res.profile_traces_response = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 

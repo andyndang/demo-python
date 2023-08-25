@@ -7,6 +7,7 @@ from .apikey import APIKey
 from .databricks import Databricks
 from .dataset_metadata import DatasetMetadata
 from .datasetprofile import DatasetProfile
+from .debugevents import DebugEvents
 from .feature_weights import FeatureWeights
 from .featureflags import FeatureFlags
 from .internal import Internal
@@ -33,6 +34,7 @@ class Songbird:
     databricks: Databricks
     dataset_metadata: DatasetMetadata
     dataset_profile: DatasetProfile
+    debug_events: DebugEvents
     feature_weights: FeatureWeights
     feature_flags: FeatureFlags
     internal: Internal
@@ -88,6 +90,7 @@ class Songbird:
         self.databricks = Databricks(self.sdk_configuration)
         self.dataset_metadata = DatasetMetadata(self.sdk_configuration)
         self.dataset_profile = DatasetProfile(self.sdk_configuration)
+        self.debug_events = DebugEvents(self.sdk_configuration)
         self.feature_weights = FeatureWeights(self.sdk_configuration)
         self.feature_flags = FeatureFlags(self.sdk_configuration)
         self.internal = Internal(self.sdk_configuration)

@@ -5,6 +5,7 @@ src/songbird/apikey.py
 src/songbird/databricks.py
 src/songbird/dataset_metadata.py
 src/songbird/datasetprofile.py
+src/songbird/debugevents.py
 src/songbird/feature_weights.py
 src/songbird/featureflags.py
 src/songbird/internal.py
@@ -63,6 +64,7 @@ src/songbird/models/operations/hidesegments.py
 src/songbird/models/operations/listprofiletraces.py
 src/songbird/models/operations/listreferenceprofiles.py
 src/songbird/models/operations/listsegments.py
+src/songbird/models/operations/logdebugevent.py
 src/songbird/models/operations/getcolumnweights.py
 src/songbird/models/operations/putcolumnweights.py
 src/songbird/models/operations/getfeatureflags.py
@@ -204,10 +206,12 @@ src/songbird/models/shared/segment.py
 src/songbird/models/shared/segmenttag.py
 src/songbird/models/shared/deleteanalyzerresultsresponse.py
 src/songbird/models/shared/deletedatasetprofilesresponse.py
+src/songbird/models/shared/profiletracesresponse.py
 src/songbird/models/shared/profiletrace.py
 src/songbird/models/shared/referenceprofileitemresponse.py
 src/songbird/models/shared/segmentslistrequest.py
 src/songbird/models/shared/segmentlistresponse.py
+src/songbird/models/shared/debugevent.py
 src/songbird/models/shared/entityweightrecord.py
 src/songbird/models/shared/segmentweight.py
 src/songbird/models/shared/entityweightrecordmetadata.py
@@ -287,6 +291,7 @@ docs/sdks/apikey/README.md
 docs/sdks/databricks/README.md
 docs/sdks/datasetmetadata/README.md
 docs/sdks/datasetprofile/README.md
+docs/sdks/debugevents/README.md
 docs/sdks/featureweights/README.md
 docs/sdks/featureflags/README.md
 docs/sdks/internal/README.md
@@ -399,6 +404,9 @@ docs/models/operations/listreferenceprofilesresponse.md
 docs/models/operations/listsegmentssecurity.md
 docs/models/operations/listsegmentsrequest.md
 docs/models/operations/listsegmentsresponse.md
+docs/models/operations/logdebugeventsecurity.md
+docs/models/operations/logdebugeventrequest.md
+docs/models/operations/logdebugeventresponse.md
 docs/models/operations/getcolumnweightssecurity.md
 docs/models/operations/getcolumnweightsrequest.md
 docs/models/operations/getcolumnweightsresponse.md
@@ -700,10 +708,12 @@ docs/models/shared/segment.md
 docs/models/shared/segmenttag.md
 docs/models/shared/deleteanalyzerresultsresponse.md
 docs/models/shared/deletedatasetprofilesresponse.md
+docs/models/shared/profiletracesresponse.md
 docs/models/shared/profiletrace.md
 docs/models/shared/referenceprofileitemresponse.md
 docs/models/shared/segmentslistrequest.md
 docs/models/shared/segmentlistresponse.md
+docs/models/shared/debugevent.md
 docs/models/shared/entityweightrecord.md
 docs/models/shared/segmentweight.md
 docs/models/shared/entityweightrecordmetadata.md

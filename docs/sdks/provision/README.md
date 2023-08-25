@@ -20,11 +20,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='dolorem',
-    email='Dameon94@gmail.com',
+    customer_id_token='ab',
+    email='Marietta_Kris@hotmail.com',
     expect_existing=False,
-    model_name='excepturi',
-    org_name='cum',
+    model_name='deleniti',
+    org_name='omnis',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -61,9 +61,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Jennifer68@yahoo.com',
+    email='Michaela.Zboncak@hotmail.com',
     expect_existing_user=False,
-    id='4100674e-bf69-4280-91ba-77a89ebf737a',
+    id='7ae4203c-e5e6-4a95-98a0-d446ce2af7a7',
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -100,10 +100,10 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Diamond22@hotmail.com',
+    email='Pat73@gmail.com',
     expect_existing=False,
-    model_name='optio',
-    org_name='accusamus',
+    model_name='accusamus',
+    org_name='numquam',
     subscription_tier=shared.SubscriptionTier.PAID,
 )
 
@@ -141,17 +141,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='saepe',
-    cloud_provider='suscipit',
+    access_token='dolorem',
+    cloud_provider='sapiente',
     connection_established=False,
-    connection_id='deserunt',
+    connection_id='totam',
     demo=False,
-    email='Ephraim_Sipes@yahoo.com',
+    email='Alden15@yahoo.com',
     free_trial=False,
-    hostname='abandoned-supplier.biz',
-    port=273542,
-    workspace_id='vel',
-    workspace_url='quod',
+    hostname='improbable-redhead.info',
+    port=646265,
+    workspace_id='quam',
+    workspace_url='ipsum',
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(

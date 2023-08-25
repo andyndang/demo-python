@@ -247,6 +247,8 @@ s = songbird.Songbird()
 
 req = operations.GetProfileTracesRequest(
     dataset_id='model-123',
+    limit=50,
+    offset=0,
     org_id='org-123',
     trace_id='a756f8bb-de30-48a2-be41-178ae6af7100',
 )
@@ -375,6 +377,8 @@ s = songbird.Songbird()
 req = operations.ListProfileTracesRequest(
     dataset_id='model-123',
     from_epoch=1577836800000,
+    limit=50,
+    offset=0,
     org_id='org-123',
     to_epoch=1893456000000,
 )

@@ -378,39 +378,49 @@ s = songbird.Songbird()
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "nemo": shared.ColumnSchema(
+            "nostrum": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "voluptatibus": shared.ColumnSchema(
+            "hic": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "perferendis": shared.ColumnSchema(
+            "recusandae": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
-            "fugiat": shared.ColumnSchema(
+            "omnis": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='amet',
-            updated_timestamp=11714,
-            version=764912,
+            author='facilis',
+            updated_timestamp=596656,
+            version=31838,
         ),
         metrics={
-            "hic": shared.MetricSchema(
+            "consequuntur": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
             ),
-            "libero": shared.MetricSchema(
+            "blanditiis": shared.MetricSchema(
+                column='estimated_prediction',
+                default_metric='median',
+                label='estimated_prediction.median',
+            ),
+            "error": shared.MetricSchema(
+                column='estimated_prediction',
+                default_metric='median',
+                label='estimated_prediction.median',
+            ),
+            "eaque": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
