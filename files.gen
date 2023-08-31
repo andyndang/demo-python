@@ -784,3 +784,4 @@ docs/models/shared/createsessionresponse.md
 docs/models/shared/createsessionrequest.md
 docs/models/shared/getsessionresponse.md
 docs/models/shared/sessionmetadata.md
+.gitattributes
