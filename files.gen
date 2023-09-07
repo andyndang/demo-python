@@ -126,6 +126,7 @@ src/songbird/models/operations/deletemonitor.py
 src/songbird/models/operations/getanalyzer.py
 src/songbird/models/operations/getmonitor.py
 src/songbird/models/operations/getmonitorconfigv3.py
+src/songbird/models/operations/listconstraints.py
 src/songbird/models/operations/patchmonitorconfigv3.py
 src/songbird/models/operations/putanalyzer.py
 src/songbird/models/operations/putmonitor.py
@@ -579,6 +580,9 @@ docs/models/operations/getmonitorresponse.md
 docs/models/operations/getmonitorconfigv3security.md
 docs/models/operations/getmonitorconfigv3request.md
 docs/models/operations/getmonitorconfigv3response.md
+docs/models/operations/listconstraintssecurity.md
+docs/models/operations/listconstraintsrequest.md
+docs/models/operations/listconstraintsresponse.md
 docs/models/operations/patchmonitorconfigv3security.md
 docs/models/operations/patchmonitorconfigv3request.md
 docs/models/operations/patchmonitorconfigv3response.md

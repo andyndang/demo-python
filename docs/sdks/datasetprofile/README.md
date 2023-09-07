@@ -30,55 +30,22 @@ s = songbird.Songbird()
 
 req = operations.CreateReferenceProfileRequest(
     create_reference_profile_request=shared.CreateReferenceProfileRequest(
-        alias='nam',
-        dataset_timestamp=639921,
+        alias='quo',
+        dataset_timestamp=140350,
         segments=[
             shared.Segment(
                 tags=[
                     shared.SegmentTag(
-                        key='deleniti',
-                        value='hic',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='totam',
-                        value='beatae',
-                    ),
-                    shared.SegmentTag(
-                        key='commodi',
-                        value='molestiae',
-                    ),
-                    shared.SegmentTag(
-                        key='modi',
-                        value='qui',
-                    ),
-                    shared.SegmentTag(
-                        key='impedit',
-                        value='cum',
-                    ),
-                ],
-            ),
-            shared.Segment(
-                tags=[
-                    shared.SegmentTag(
-                        key='ipsum',
-                        value='excepturi',
-                    ),
-                    shared.SegmentTag(
-                        key='aspernatur',
-                        value='perferendis',
+                        key='at',
+                        value='at',
                     ),
                 ],
             ),
         ],
         tags=[
-            'natus',
-            'sed',
+            'maiores',
         ],
-        version='iste',
+        version='molestiae',
     ),
     dataset_id='model-123',
     org_id='org-123',
@@ -332,7 +299,7 @@ s = songbird.Songbird()
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'natus',
+            'quod',
         ],
     ),
     dataset_id='model-123',

@@ -21,8 +21,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.GetConnectionRequest(
-    org_id='quo',
-    workspace_id='odit',
+    org_id='iusto',
+    workspace_id='excepturi',
 )
 
 res = s.databricks.get_connection(req, operations.GetConnectionSecurity(
@@ -59,8 +59,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ListJobsRequest(
-    org_id='at',
-    workspace_id='at',
+    org_id='nisi',
+    workspace_id='recusandae',
 )
 
 res = s.databricks.list_jobs(req, operations.ListJobsSecurity(
@@ -97,8 +97,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RefreshConnectionRequest(
-    org_id='maiores',
-    workspace_id='molestiae',
+    org_id='temporibus',
+    workspace_id='ab',
 )
 
 res = s.databricks.refresh_connection(req, operations.RefreshConnectionSecurity(
@@ -135,9 +135,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RunJobRequest(
-    job_id=799159,
-    org_id='quod',
-    workspace_id='esse',
+    job_id=337396,
+    org_id='veritatis',
+    workspace_id='deserunt',
 )
 
 res = s.databricks.run_job(req, operations.RunJobSecurity(
@@ -177,10 +177,10 @@ req = shared.UpdateConnectionRequest(
     changes=shared.UpdateConnectionChanges(
         connected=False,
         demo=False,
-        org_id='totam',
+        org_id='perferendis',
     ),
-    org_id='porro',
-    workspace_id='dolorum',
+    org_id='ipsam',
+    workspace_id='repellendus',
 )
 
 res = s.databricks.update_connection(req, operations.UpdateConnectionSecurity(

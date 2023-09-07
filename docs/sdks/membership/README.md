@@ -28,11 +28,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.AddMembershipRequest(
-    created_by='maxime',
+    created_by='natus',
     default=False,
-    email='Keven.Connelly@yahoo.com',
-    org_id='ab',
-    role=shared.Role.VIEWER,
+    email='Jarred.Aufderhar@yahoo.com',
+    org_id='distinctio',
+    role=shared.Role.MEMBER,
 )
 
 res = s.membership.create_membership(req, operations.CreateMembershipSecurity(
@@ -71,7 +71,7 @@ s = songbird.Songbird()
 req = operations.CreateOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    role=shared.Role.VIEWER,
+    role=shared.Role.ADMIN,
     set_default=False,
 )
 
@@ -109,7 +109,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetDefaultMembershipForEmailRequest(
-    email='Jacey.Johnston86@yahoo.com',
+    email='Geraldine.Mosciski87@gmail.com',
 )
 
 res = s.membership.get_default_membership_for_email(req, operations.GetDefaultMembershipForEmailSecurity(
@@ -146,7 +146,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetMembershipsRequest(
-    user_id='nemo',
+    user_id='aspernatur',
 )
 
 res = s.membership.get_memberships(req, operations.GetMembershipsSecurity(
@@ -183,7 +183,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetMembershipsByEmailRequest(
-    email='Agnes1@hotmail.com',
+    email='Eliane.Bosco@gmail.com',
 )
 
 res = s.membership.get_memberships_by_email(req, operations.GetMembershipsByEmailSecurity(
@@ -220,7 +220,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetMembershipsByOrgRequest(
-    org_id='cumque',
+    org_id='provident',
 )
 
 res = s.membership.get_memberships_by_org(req, operations.GetMembershipsByOrgSecurity(
@@ -294,8 +294,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RemoveMembershipRequest(
-    email='Tyreek.Renner33@yahoo.com',
-    org_id='totam',
+    email='Kiley_Bartoletti@yahoo.com',
+    org_id='mollitia',
 )
 
 res = s.membership.remove_membership_by_email(req, operations.RemoveMembershipByEmailSecurity(
@@ -370,8 +370,8 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SetDefaultMembershipRequest(
-    org_id='dignissimos',
-    user_id='eaque',
+    org_id='ad',
+    user_id='eum',
 )
 
 res = s.membership.set_default_membership(req, operations.SetDefaultMembershipSecurity(
@@ -408,9 +408,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.UpdateMembershipRequest(
-    email='Cody17@yahoo.com',
-    org_id='minus',
-    role=shared.Role.MEMBER,
+    email='Sophie.Connelly@gmail.com',
+    org_id='iure',
+    role=shared.Role.VIEWER,
 )
 
 res = s.membership.update_membership_by_email(req, operations.UpdateMembershipByEmailSecurity(
@@ -449,7 +449,7 @@ s = songbird.Songbird()
 req = operations.UpdateOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    role=shared.Role.ADMIN,
+    role=shared.Role.VIEWER,
 )
 
 res = s.membership.update_organization_membership(req, operations.UpdateOrganizationMembershipSecurity(

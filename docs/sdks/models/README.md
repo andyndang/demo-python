@@ -378,49 +378,19 @@ s = songbird.Songbird()
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "nostrum": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
-            "hic": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
-            "recusandae": shared.ColumnSchema(
-                classifier='input',
-                data_type='fractional',
-                discreteness='discrete',
-            ),
-            "omnis": shared.ColumnSchema(
+            "eius": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='facilis',
-            updated_timestamp=596656,
-            version=31838,
+            author='maxime',
+            updated_timestamp=537023,
+            version=703889,
         ),
         metrics={
-            "consequuntur": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "blanditiis": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "error": shared.MetricSchema(
-                column='estimated_prediction',
-                default_metric='median',
-                label='estimated_prediction.median',
-            ),
-            "eaque": shared.MetricSchema(
+            "in": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',

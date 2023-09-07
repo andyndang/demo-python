@@ -209,6 +209,7 @@ if res.status_code == 200:
 * [get_monitor](docs/sdks/monitor/README.md#get_monitor) - Get the monitor config for a given dataset.
 * [get_monitor_config_v3](docs/sdks/monitor/README.md#get_monitor_config_v3) - Get the monitor config document for a given dataset.
 * [get_monitor_config_v3_version](docs/sdks/monitor/README.md#get_monitor_config_v3_version) - Get the monitor config document version for a given dataset.
+* [list_constraints](docs/sdks/monitor/README.md#list_constraints) - List the constraints for a given dataset.
 * [list_monitor_config_v3_versions](docs/sdks/monitor/README.md#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
 * [patch_monitor_config_v3](docs/sdks/monitor/README.md#patch_monitor_config_v3) - Patch an updated monitor config document for a given dataset.
 * [put_analyzer](docs/sdks/monitor/README.md#put_analyzer) - Save the analyzer config for a given dataset.

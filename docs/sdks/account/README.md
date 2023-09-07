@@ -299,21 +299,15 @@ s = songbird.Songbird()
 req = operations.PatchOrganizationMembershipsRequest(
     patch_account_memberships_request=shared.PatchAccountMembershipsRequest(
         user_ids_to_add=[
-            'tempora',
-            'suscipit',
-            'molestiae',
-            'minus',
+            'delectus',
         ],
         user_ids_to_delete=[
-            'voluptatum',
-            'iusto',
-            'excepturi',
-            'nisi',
+            'tempora',
         ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.VIEWER,
+    role=shared.Role.MEMBER,
 )
 
 res = s.account.patch_organization_memberships(req, operations.PatchOrganizationMembershipsSecurity(
@@ -352,15 +346,12 @@ s = songbird.Songbird()
 req = operations.PutOrganizationMembershipsRequest(
     put_account_memberships_request=shared.PutAccountMembershipsRequest(
         user_ids=[
-            'ab',
-            'quis',
-            'veritatis',
-            'deserunt',
+            'molestiae',
         ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.ADMIN,
+    role=shared.Role.VIEWER,
 )
 
 res = s.account.put_organization_memberships(req, operations.PutOrganizationMembershipsSecurity(
@@ -399,8 +390,8 @@ s = songbird.Songbird()
 req = operations.UpdateAccountUserRequest(
     update_account_user_request=shared.UpdateAccountUserRequest(
         active=False,
-        external_id='ipsam',
-        user_schema='repellendus',
+        external_id='placeat',
+        user_schema='voluptatum',
     ),
     org_id='org-123',
     user_id='user-123',

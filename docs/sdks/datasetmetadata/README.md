@@ -95,7 +95,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.PutDatasetMetadataRequest(
-    request_body='dicta',
+    request_body='sapiente',
     dataset_id='model-123',
     org_id='org-123',
 )

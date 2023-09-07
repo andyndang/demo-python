@@ -18,7 +18,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.WhyLabsSearchRequest(
-    query='incidunt',
+    query='quaerat',
 )
 
 res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(
@@ -55,7 +55,7 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.SearchIndexRequest(
-    org_id='qui',
+    org_id='accusamus',
     type=shared.SearchIndexType.ENTITY_SCHEMA,
 )
 

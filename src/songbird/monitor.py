@@ -177,6 +177,34 @@ class Monitor:
         return res
 
     
+    def list_constraints(self, request: operations.ListConstraintsRequest, security: operations.ListConstraintsSecurity) -> operations.ListConstraintsResponse:
+        r"""List the constraints for a given dataset.
+        List the constraints for a given dataset.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.ListConstraintsRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/constraints', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        
+        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.ListConstraintsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[list[str]])
+                res.list_constraints_default_application_json_strings = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def list_monitor_config_v3_versions(self, request: operations.ListMonitorConfigV3VersionsRequest, security: operations.ListMonitorConfigV3VersionsSecurity) -> operations.ListMonitorConfigV3VersionsResponse:
         r"""List the monitor config document versions for a given dataset.
         List the monitor config document versions for a given dataset.

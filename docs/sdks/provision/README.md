@@ -20,11 +20,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='ab',
-    email='Marietta_Kris@hotmail.com',
+    customer_id_token='corporis',
+    email='Morgan33@hotmail.com',
     expect_existing=False,
-    model_name='deleniti',
-    org_name='omnis',
+    model_name='totam',
+    org_name='dignissimos',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req, operations.ProvisionAWSMarketplaceNewUserSecurity(
@@ -61,9 +61,9 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Michaela.Zboncak@hotmail.com',
+    email='Eulah1@gmail.com',
     expect_existing_user=False,
-    id='7ae4203c-e5e6-4a95-98a0-d446ce2af7a7',
+    id='2c73d5fe-9b90-4c28-909b-3fe49a8d9cbf',
 )
 
 res = s.provision.provision_databricks_connection(req, operations.ProvisionDatabricksConnectionSecurity(
@@ -100,11 +100,11 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.ProvisionNewUserRequest(
-    email='Pat73@gmail.com',
+    email='Kayden20@gmail.com',
     expect_existing=False,
-    model_name='accusamus',
-    org_name='numquam',
-    subscription_tier=shared.SubscriptionTier.PAID,
+    model_name='dolor',
+    org_name='qui',
+    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.provision.provision_new_user(req, operations.ProvisionNewUserSecurity(
@@ -141,17 +141,17 @@ from songbird.models import operations, shared
 s = songbird.Songbird()
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='dolorem',
-    cloud_provider='sapiente',
+    access_token='hic',
+    cloud_provider='excepturi',
     connection_established=False,
-    connection_id='totam',
+    connection_id='cum',
     demo=False,
-    email='Alden15@yahoo.com',
+    email='Jennifer68@yahoo.com',
     free_trial=False,
-    hostname='improbable-redhead.info',
-    port=646265,
-    workspace_id='quam',
-    workspace_url='ipsum',
+    hostname='expensive-bite.com',
+    port=56418,
+    workspace_id='iure',
+    workspace_url='odio',
 )
 
 res = s.provision.register_databricks_connection(req, operations.RegisterDatabricksConnectionSecurity(

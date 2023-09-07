@@ -26,24 +26,12 @@ req = operations.BatchCreateReferenceProfileUploadRequest(
     batch_log_reference_request=shared.BatchLogReferenceRequest(
         references=[
             shared.LogReferenceRequest(
-                alias='pariatur',
-                dataset_timestamp=747080,
-            ),
-            shared.LogReferenceRequest(
-                alias='dicta',
-                dataset_timestamp=674848,
-            ),
-            shared.LogReferenceRequest(
-                alias='totam',
-                dataset_timestamp=276894,
-            ),
-            shared.LogReferenceRequest(
-                alias='aspernatur',
-                dataset_timestamp=174909,
+                alias='voluptatibus',
+                dataset_timestamp=377752,
             ),
         ],
     ),
-    session_id='distinctio',
+    session_id='natus',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -77,8 +65,8 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.ClaimGuestSessionRequest(
-    org_id='facilis',
-    session_id='aliquid',
+    org_id='eos',
+    session_id='atque',
 )
 
 res = s.sessions.claim_guest_session(req, operations.ClaimGuestSessionSecurity(
@@ -116,23 +104,15 @@ s = songbird.Songbird()
 
 req = operations.CreateDatasetProfileUploadRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=463150,
+        dataset_timestamp=24678,
         segment_tags=[
             shared.SegmentTag(
-                key='temporibus',
-                value='qui',
-            ),
-            shared.SegmentTag(
-                key='neque',
-                value='fugit',
-            ),
-            shared.SegmentTag(
-                key='magni',
-                value='odio',
+                key='fugiat',
+                value='ab',
             ),
         ],
     ),
-    session_id='sunt',
+    session_id='soluta',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -167,10 +147,10 @@ s = songbird.Songbird()
 
 req = operations.CreateReferenceProfileUploadRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='ullam',
-        dataset_timestamp=722081,
+        alias='dolorum',
+        dataset_timestamp=478596,
     ),
-    session_id='hic',
+    session_id='voluptate',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
@@ -204,7 +184,7 @@ from songbird.models import shared
 s = songbird.Songbird()
 
 req = shared.CreateSessionRequest(
-    user_id='voluptatem',
+    user_id='dolorum',
 )
 
 res = s.sessions.create_session(req)
@@ -238,7 +218,7 @@ from songbird.models import operations
 s = songbird.Songbird()
 
 req = operations.GetSessionRequest(
-    session_id='cumque',
+    session_id='deleniti',
 )
 
 res = s.sessions.get_session(req, operations.GetSessionSecurity(
@@ -277,15 +257,13 @@ s = songbird.Songbird()
 req = operations.GetSessionProfileObservatoryLinkRequest(
     get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
         batch_profile_timestamps=[
-            748664,
-            92596,
-            903720,
+            607045,
         ],
         reference_profile_ids=[
-            'veritatis',
+            'necessitatibus',
         ],
     ),
-    session_id='nobis',
+    session_id='distinctio',
 )
 
 res = s.sessions.get_session_profile_observatory_link(req)

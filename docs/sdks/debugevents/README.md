@@ -19,29 +19,21 @@ s = songbird.Songbird()
 
 req = operations.LogDebugEventRequest(
     debug_event=shared.DebugEvent(
-        content='laboriosam',
-        creation_timestamp=943749,
-        dataset_timestamp=902599,
+        content='quod',
+        creation_timestamp=461479,
+        dataset_timestamp=520478,
         segment=shared.Segment(
             tags=[
                 shared.SegmentTag(
-                    key='in',
-                    value='corporis',
-                ),
-                shared.SegmentTag(
-                    key='iste',
-                    value='iure',
-                ),
-                shared.SegmentTag(
-                    key='saepe',
-                    value='quidem',
+                    key='porro',
+                    value='dolorum',
                 ),
             ],
         ),
         tags=[
-            'ipsa',
+            'dicta',
         ],
-        trace_id='reiciendis',
+        trace_id='nam',
     ),
     dataset_id='model-123',
     org_id='org-123',
