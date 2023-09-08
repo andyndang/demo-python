@@ -1,7 +1,5 @@
 # SearchResponse
 
-WhyLabs Search default response
-
 
 ## Fields
 

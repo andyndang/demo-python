@@ -1,7 +1,5 @@
 # DeleteDatasetProfilesResponse
 
-The [DeleteDatasetProfilesResponse] if operation succeeds
-
 
 ## Fields
 

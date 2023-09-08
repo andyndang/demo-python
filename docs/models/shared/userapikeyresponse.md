@@ -1,7 +1,5 @@
 # UserAPIKeyResponse
 
-An key metadata object but no secret values
-
 
 ## Fields
 

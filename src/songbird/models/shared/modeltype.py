@@ -4,7 +4,6 @@ from __future__ import annotations
 from enum import Enum
 
 class ModelType(str, Enum):
-    r"""The [ModelType] of the dataset"""
     CLASSIFICATION = 'CLASSIFICATION'
     REGRESSION = 'REGRESSION'
     EMBEDDINGS = 'EMBEDDINGS'

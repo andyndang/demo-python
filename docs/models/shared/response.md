@@ -1,7 +1,5 @@
 # Response
 
-DeleteAccountUser default response
-
 
 ## Fields
 

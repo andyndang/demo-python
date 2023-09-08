@@ -1,7 +1,5 @@
 # StatusResponse
 
-PatchOrganizationMemberships default response
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # TimePeriod
 
-The [TimePeriod] for data aggregation/alerting for a model
-
 
 ## Values
 

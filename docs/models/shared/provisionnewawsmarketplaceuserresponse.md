@@ -1,7 +1,5 @@
 # ProvisionNewAWSMarketplaceUserResponse
 
-ProvisionAWSMarketplaceNewUser default response
-
 
 ## Fields
 

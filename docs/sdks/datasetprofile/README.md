@@ -9,7 +9,6 @@
 * [get_profile_traces](#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](#get_reference_profile) - Returns a single reference profile
 * [hide_segments](#hide_segments) - Hides a list of segments
-* [list_profile_traces](#list_profile_traces) - Returns a list for profile traces
 * [list_reference_profiles](#list_reference_profiles) - Returns a list for reference profiles
 * [list_segments](#list_segments) - Returns a list of segments
 
@@ -325,50 +324,6 @@ if res.status_code == 200:
 ### Response
 
 **[operations.HideSegmentsResponse](../../models/operations/hidesegmentsresponse.md)**
-
-
-## list_profile_traces
-
-Returns a list of profile traces.
-
-        
-
-### Example Usage
-
-```python
-import songbird
-from songbird.models import operations
-
-s = songbird.Songbird()
-
-req = operations.ListProfileTracesRequest(
-    dataset_id='model-123',
-    from_epoch=1577836800000,
-    limit=50,
-    offset=0,
-    org_id='org-123',
-    to_epoch=1893456000000,
-)
-
-res = s.dataset_profile.list_profile_traces(req, operations.ListProfileTracesSecurity(
-    api_key_auth="",
-))
-
-if res.status_code == 200:
-    # handle response
-```
-
-### Parameters
-
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.ListProfileTracesRequest](../../models/operations/listprofiletracesrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.ListProfileTracesSecurity](../../models/operations/listprofiletracessecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
-
-
-### Response
-
-**[operations.ListProfileTracesResponse](../../models/operations/listprofiletracesresponse.md)**
 
 
 ## list_reference_profiles

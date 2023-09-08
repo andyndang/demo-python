@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class StatusResponse:
-    r"""PatchOrganizationMemberships default response"""
     errors: Optional[list[shared_errorstatus.ErrorStatus]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('errors'), 'exclude': lambda f: f is None }})
     request_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestId'), 'exclude': lambda f: f is None }})
     

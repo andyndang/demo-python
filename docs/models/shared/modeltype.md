@@ -1,7 +1,5 @@
 # ModelType
 
-The [ModelType] of the dataset
-
 
 ## Values
 

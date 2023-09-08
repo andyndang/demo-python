@@ -1,7 +1,5 @@
 # GetConnectionResponse
 
-GetConnection default response
-
 
 ## Fields
 

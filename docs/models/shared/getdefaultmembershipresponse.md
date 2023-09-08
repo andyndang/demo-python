@@ -1,7 +1,5 @@
 # GetDefaultMembershipResponse
 
-GetDefaultMembershipForEmail default response
-
 
 ## Fields
 

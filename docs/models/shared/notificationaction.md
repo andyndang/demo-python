@@ -1,7 +1,5 @@
 # NotificationAction
 
-GetNotificationAction default response
-
 
 ## Fields
 

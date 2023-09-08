@@ -10,7 +10,6 @@ from songbird import utils
 
 @dataclasses.dataclass
 class ProvisionDatabricksConnectionResponse:
-    r"""ProvisionDatabricksConnection default response"""
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})
     user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})
     workspace_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workspaceId') }})

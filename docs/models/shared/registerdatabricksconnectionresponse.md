@@ -1,7 +1,5 @@
 # RegisterDatabricksConnectionResponse
 
-RegisterDatabricksConnection default response
-
 
 ## Fields
 

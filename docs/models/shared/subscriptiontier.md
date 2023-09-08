@@ -1,7 +1,5 @@
 # SubscriptionTier
 
-Organization's subscription tier. Should be PAID for real customers
-
 
 ## Values
 

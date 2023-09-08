@@ -1,7 +1,5 @@
 # RunJobResponse
 
-RunJob default response
-
 
 ## Fields
 

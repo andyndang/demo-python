@@ -1,7 +1,5 @@
 # Void
 
-ClaimGuestSession default response
-
 
 ## Fields
 

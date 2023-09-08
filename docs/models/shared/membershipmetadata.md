@@ -1,7 +1,5 @@
 # MembershipMetadata
 
-CreateMembership default response
-
 
 ## Fields
 

@@ -61,7 +61,6 @@ src/songbird/models/operations/deletereferenceprofile.py
 src/songbird/models/operations/getprofiletraces.py
 src/songbird/models/operations/getreferenceprofile.py
 src/songbird/models/operations/hidesegments.py
-src/songbird/models/operations/listprofiletraces.py
 src/songbird/models/operations/listreferenceprofiles.py
 src/songbird/models/operations/listsegments.py
 src/songbird/models/operations/logdebugevent.py
@@ -396,9 +395,6 @@ docs/models/operations/getreferenceprofileresponse.md
 docs/models/operations/hidesegmentssecurity.md
 docs/models/operations/hidesegmentsrequest.md
 docs/models/operations/hidesegmentsresponse.md
-docs/models/operations/listprofiletracessecurity.md
-docs/models/operations/listprofiletracesrequest.md
-docs/models/operations/listprofiletracesresponse.md
 docs/models/operations/listreferenceprofilessecurity.md
 docs/models/operations/listreferenceprofilesrequest.md
 docs/models/operations/listreferenceprofilesresponse.md

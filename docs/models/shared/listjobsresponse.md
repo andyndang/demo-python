@@ -1,7 +1,5 @@
 # ListJobsResponse
 
-ListJobs default response
-
 
 ## Fields
 

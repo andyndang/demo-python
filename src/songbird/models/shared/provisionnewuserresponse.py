@@ -10,7 +10,6 @@ from songbird import utils
 
 @dataclasses.dataclass
 class ProvisionNewUserResponse:
-    r"""ProvisionNewUser default response"""
     model_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})
     user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})

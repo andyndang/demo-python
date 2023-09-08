@@ -89,7 +89,6 @@ if res.status_code == 200:
 * [get_profile_traces](docs/sdks/datasetprofile/README.md#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](docs/sdks/datasetprofile/README.md#get_reference_profile) - Returns a single reference profile
 * [hide_segments](docs/sdks/datasetprofile/README.md#hide_segments) - Hides a list of segments
-* [list_profile_traces](docs/sdks/datasetprofile/README.md#list_profile_traces) - Returns a list for profile traces
 * [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 

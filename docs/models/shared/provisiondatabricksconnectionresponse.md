@@ -1,7 +1,5 @@
 # ProvisionDatabricksConnectionResponse
 
-ProvisionDatabricksConnection default response
-
 
 ## Fields
 

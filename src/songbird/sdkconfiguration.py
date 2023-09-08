@@ -3,6 +3,8 @@
 import requests
 from dataclasses import dataclass
 
+from .utils.retries import RetryConfig
+
 
 SERVERS = [
     'https://api.whylabsapp.com',
@@ -17,8 +19,9 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '0.1'
-    sdk_version: str = '1.24.3'
-    gen_version: str = '2.101.0'
+    sdk_version: str = '1.24.4'
+    gen_version: str = '2.107.0'
+    retry_config: RetryConfig = None
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
         if self.server_url:

@@ -1,7 +1,5 @@
 # ProvisionNewUserResponse
 
-ProvisionNewUser default response
-
 
 ## Fields
 

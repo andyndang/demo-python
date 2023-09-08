@@ -1,7 +1,5 @@
 # EntityWeightRecord
 
-GetColumnWeights default response
-
 
 ## Fields
 

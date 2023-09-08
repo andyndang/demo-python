@@ -1,7 +1,5 @@
 # DeleteAnalyzerResultsResponse
 
-The [DeleteAnalyzerResultsResponse] if operation succeeds
-
 
 ## Fields
 
