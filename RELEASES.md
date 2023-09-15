@@ -333,3 +333,11 @@ Based on:
 - Speakeasy CLI 1.82.5 (2.108.3) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [python v1.24.5] .
+
+## 2023-09-15 00:24:45
+### Changes
+Based on:
+- OpenAPI Doc 0.1 
+- Speakeasy CLI 1.83.3 (2.112.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [python v1.24.6] .
