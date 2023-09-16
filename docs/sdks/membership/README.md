@@ -1,4 +1,4 @@
-# membership
+# Membership
 
 ### Available Operations
 

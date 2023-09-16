@@ -1,4 +1,4 @@
-# dataset_metadata
+# DatasetMetadata
 
 ### Available Operations
 

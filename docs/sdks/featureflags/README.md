@@ -1,4 +1,4 @@
-# feature_flags
+# FeatureFlags
 
 ### Available Operations
 

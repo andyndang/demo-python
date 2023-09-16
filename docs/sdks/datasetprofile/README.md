@@ -1,4 +1,4 @@
-# dataset_profile
+# DatasetProfile
 
 ### Available Operations
 

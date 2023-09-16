@@ -1,4 +1,4 @@
-# debug_events
+# DebugEvents
 
 ### Available Operations
 

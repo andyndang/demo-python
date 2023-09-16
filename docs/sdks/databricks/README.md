@@ -1,4 +1,4 @@
-# databricks
+# Databricks
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# feature_weights
+# FeatureWeights
 
 ### Available Operations
 

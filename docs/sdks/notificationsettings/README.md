@@ -1,4 +1,4 @@
-# notification_settings
+# NotificationSettings
 
 ### Available Operations
 

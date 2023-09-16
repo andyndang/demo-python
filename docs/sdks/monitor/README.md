@@ -1,4 +1,4 @@
-# monitor
+# Monitor
 
 ### Available Operations
 

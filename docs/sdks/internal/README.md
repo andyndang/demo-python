@@ -1,4 +1,4 @@
-# internal
+# Internal
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# schema
+# Schema
 
 ### Available Operations
 

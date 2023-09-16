@@ -1,4 +1,4 @@
-# organizations
+# Organizations
 
 ### Available Operations
 
