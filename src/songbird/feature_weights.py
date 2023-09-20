@@ -48,7 +48,7 @@ class FeatureWeights:
         
         url = utils.generate_url(operations.PutColumnWeightsRequest, base_url, '/v0/organizations/{org_id}/dataset/{dataset_id}/weights', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

@@ -241,7 +241,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PatchMonitorConfigV3Request, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/v3', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -274,7 +274,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutAnalyzerRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/analyzer/{analyzer_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -307,7 +307,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutMonitorRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/monitor/{monitor_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -340,7 +340,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutMonitorConfigV3Request, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/v3', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -405,7 +405,7 @@ class Monitor:
         
         url = utils.generate_url(operations.ValidateMonitorConfigV3Request, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/v3/validate', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
