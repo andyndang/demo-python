@@ -23,21 +23,23 @@ Create an account user
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.CreateAccountUserRequest(
     create_account_user_request=shared.CreateAccountUserRequest(
         active=False,
-        email='Linda.Oberbrunner@yahoo.com',
-        external_id='magnam',
-        user_schema='debitis',
+        email='Vincenzo.Goldner@gmail.com',
+        external_id='minus',
+        user_schema='placeat',
     ),
     org_id='org-123',
 )
 
-res = s.account.create_account_user(req, operations.CreateAccountUserSecurity(
-    api_key_auth="",
-))
+res = s.account.create_account_user(req)
 
 if res.status_code == 200:
     # handle response
@@ -45,10 +47,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.CreateAccountUserRequest](../../models/operations/createaccountuserrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.CreateAccountUserSecurity](../../models/operations/createaccountusersecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.CreateAccountUserRequest](../../models/operations/createaccountuserrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response
@@ -64,18 +65,20 @@ Delete an account user's details
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteAccountUserRequest(
     org_id='org-123',
     user_id='user-123',
 )
 
-res = s.account.delete_account_user(req, operations.DeleteAccountUserSecurity(
-    api_key_auth="",
-))
+res = s.account.delete_account_user(req)
 
 if res.status_code == 200:
     # handle response
@@ -83,10 +86,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.DeleteAccountUserRequest](../../models/operations/deleteaccountuserrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.DeleteAccountUserSecurity](../../models/operations/deleteaccountusersecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.DeleteAccountUserRequest](../../models/operations/deleteaccountuserrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response
@@ -104,18 +106,20 @@ Get memberships in the account organization and any managed organizations
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetAccountMembershipsRequest(
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.ADMIN,
+    role=shared.Role.MEMBER,
     user_id='user-123',
 )
 
-res = s.account.get_account_memberships(req, operations.GetAccountMembershipsSecurity(
-    api_key_auth="",
-))
+res = s.account.get_account_memberships(req)
 
 if res.status_code == 200:
     # handle response
@@ -123,10 +127,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetAccountMembershipsRequest](../../models/operations/getaccountmembershipsrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetAccountMembershipsSecurity](../../models/operations/getaccountmembershipssecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetAccountMembershipsRequest](../../models/operations/getaccountmembershipsrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -142,18 +145,20 @@ Get account user by email
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetAccountUserByEmailRequest(
     email='user@whylabs.ai',
     org_id='org-123',
 )
 
-res = s.account.get_account_user_by_email(req, operations.GetAccountUserByEmailSecurity(
-    api_key_auth="",
-))
+res = s.account.get_account_user_by_email(req)
 
 if res.status_code == 200:
     # handle response
@@ -161,10 +166,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetAccountUserByEmailRequest](../../models/operations/getaccountuserbyemailrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetAccountUserByEmailSecurity](../../models/operations/getaccountuserbyemailsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetAccountUserByEmailRequest](../../models/operations/getaccountuserbyemailrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -180,18 +184,20 @@ Get account user by user_id
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetAccountUserByIDRequest(
     org_id='org-123',
     user_id='user-123',
 )
 
-res = s.account.get_account_user_by_id(req, operations.GetAccountUserByIDSecurity(
-    api_key_auth="",
-))
+res = s.account.get_account_user_by_id(req)
 
 if res.status_code == 200:
     # handle response
@@ -199,10 +205,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetAccountUserByIDRequest](../../models/operations/getaccountuserbyidrequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.GetAccountUserByIDSecurity](../../models/operations/getaccountuserbyidsecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GetAccountUserByIDRequest](../../models/operations/getaccountuserbyidrequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -218,17 +223,19 @@ List users in the account organization and any managed organizations
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListAccountUsersRequest(
     org_id='org-123',
 )
 
-res = s.account.list_account_users(req, operations.ListAccountUsersSecurity(
-    api_key_auth="",
-))
+res = s.account.list_account_users(req)
 
 if res.status_code == 200:
     # handle response
@@ -236,10 +243,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.ListAccountUsersRequest](../../models/operations/listaccountusersrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.ListAccountUsersSecurity](../../models/operations/listaccountuserssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.ListAccountUsersRequest](../../models/operations/listaccountusersrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -255,17 +261,19 @@ List managed organizations for a parent organization
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListManagedOrganizationsRequest(
     org_id='org-123',
 )
 
-res = s.account.list_managed_organizations(req, operations.ListManagedOrganizationsSecurity(
-    api_key_auth="",
-))
+res = s.account.list_managed_organizations(req)
 
 if res.status_code == 200:
     # handle response
@@ -273,10 +281,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.ListManagedOrganizationsRequest](../../models/operations/listmanagedorganizationsrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.ListManagedOrganizationsSecurity](../../models/operations/listmanagedorganizationssecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.ListManagedOrganizationsRequest](../../models/operations/listmanagedorganizationsrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
@@ -294,15 +301,19 @@ Add or delete all of the memberships in a specific role and managed organization
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PatchOrganizationMembershipsRequest(
     patch_account_memberships_request=shared.PatchAccountMembershipsRequest(
         user_ids_to_add=[
-            'delectus',
+            'iusto',
         ],
         user_ids_to_delete=[
-            'tempora',
+            'excepturi',
         ],
     ),
     managed_org_id='org-123',
@@ -310,9 +321,7 @@ req = operations.PatchOrganizationMembershipsRequest(
     role=shared.Role.MEMBER,
 )
 
-res = s.account.patch_organization_memberships(req, operations.PatchOrganizationMembershipsSecurity(
-    api_key_auth="",
-))
+res = s.account.patch_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
@@ -320,10 +329,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.PatchOrganizationMembershipsRequest](../../models/operations/patchorganizationmembershipsrequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.PatchOrganizationMembershipsSecurity](../../models/operations/patchorganizationmembershipssecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.PatchOrganizationMembershipsRequest](../../models/operations/patchorganizationmembershipsrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
@@ -341,12 +349,16 @@ Replace all of the memberships in a specific role and managed organization
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutOrganizationMembershipsRequest(
     put_account_memberships_request=shared.PutAccountMembershipsRequest(
         user_ids=[
-            'molestiae',
+            'recusandae',
         ],
     ),
     managed_org_id='org-123',
@@ -354,9 +366,7 @@ req = operations.PutOrganizationMembershipsRequest(
     role=shared.Role.VIEWER,
 )
 
-res = s.account.put_organization_memberships(req, operations.PutOrganizationMembershipsSecurity(
-    api_key_auth="",
-))
+res = s.account.put_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
@@ -364,10 +374,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.PutOrganizationMembershipsRequest](../../models/operations/putorganizationmembershipsrequest.md)   | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `security`                                                                                                     | [operations.PutOrganizationMembershipsSecurity](../../models/operations/putorganizationmembershipssecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.PutOrganizationMembershipsRequest](../../models/operations/putorganizationmembershipsrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
@@ -385,21 +394,23 @@ Update an account user's details
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.UpdateAccountUserRequest(
     update_account_user_request=shared.UpdateAccountUserRequest(
         active=False,
-        external_id='placeat',
-        user_schema='voluptatum',
+        external_id='ab',
+        user_schema='quis',
     ),
     org_id='org-123',
     user_id='user-123',
 )
 
-res = s.account.update_account_user(req, operations.UpdateAccountUserSecurity(
-    api_key_auth="",
-))
+res = s.account.update_account_user(req)
 
 if res.status_code == 200:
     # handle response
@@ -407,10 +418,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.UpdateAccountUserRequest](../../models/operations/updateaccountuserrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.UpdateAccountUserSecurity](../../models/operations/updateaccountusersecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.UpdateAccountUserRequest](../../models/operations/updateaccountuserrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response

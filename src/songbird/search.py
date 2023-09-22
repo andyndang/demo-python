@@ -12,7 +12,7 @@ class Search:
         self.sdk_configuration = sdk_config
         
     
-    def why_labs_search(self, request: operations.WhyLabsSearchRequest, security: operations.WhyLabsSearchSecurity) -> operations.WhyLabsSearchResponse:
+    def why_labs_search(self, request: operations.WhyLabsSearchRequest) -> operations.WhyLabsSearchResponse:
         r"""WhyLabs Search
         WhyLabs Search
         """
@@ -24,7 +24,7 @@ class Search:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,7 +41,7 @@ class Search:
         return res
 
     
-    def why_labs_search_indexing(self, request: shared.SearchIndexRequest, security: operations.WhyLabsSearchIndexingSecurity) -> operations.WhyLabsSearchIndexingResponse:
+    def why_labs_search_indexing(self, request: shared.SearchIndexRequest) -> operations.WhyLabsSearchIndexingResponse:
         r"""WhyLabs Search Indexing
         WhyLabs Search Indexing
         """
@@ -57,7 +57,7 @@ class Search:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

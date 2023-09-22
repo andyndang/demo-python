@@ -25,6 +25,7 @@ from .search import Search
 from .sessions import Sessions
 from .user import User
 from songbird import utils
+from songbird.models import shared
 
 class Songbird:
     r"""WhyLabs Songbird: WhyLabs API that enables end-to-end AI observability"""
@@ -54,6 +55,7 @@ class Songbird:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -62,6 +64,8 @@ class Songbird:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -76,7 +80,7 @@ class Songbird:
         if client is None:
             client = requests_http.Session()
         
-        security_client = client
+        security_client = utils.configure_security_client(client, security)
         
         if server_url is not None:
             if url_params is not None:

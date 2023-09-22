@@ -12,7 +12,7 @@ class Admin:
         self.sdk_configuration = sdk_config
         
     
-    def generate_report(self, request: operations.GenerateReportRequest, security: operations.GenerateReportSecurity) -> operations.GenerateReportResponse:
+    def generate_report(self, request: operations.GenerateReportRequest) -> operations.GenerateReportResponse:
         r"""Generate an admin report
         Generate an admin report
         """
@@ -24,7 +24,7 @@ class Admin:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,7 +41,7 @@ class Admin:
         return res
 
     
-    def post_monitor_config_validation_job(self, security: operations.PostMonitorConfigValidationJobSecurity) -> operations.PostMonitorConfigValidationJobResponse:
+    def post_monitor_config_validation_job(self) -> operations.PostMonitorConfigValidationJobResponse:
         r"""Create a monitor config validation job for all configs
         Create a monitor config validation job for all configs
         """
@@ -52,7 +52,7 @@ class Admin:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

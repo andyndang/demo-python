@@ -25,9 +25,13 @@ Delete the analyzer config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteAnalyzerRequest(
     analyzer_id='drift-analyzer',
@@ -35,9 +39,7 @@ req = operations.DeleteAnalyzerRequest(
     org_id='org-123',
 )
 
-res = s.monitor.delete_analyzer(req, operations.DeleteAnalyzerSecurity(
-    api_key_auth="",
-))
+res = s.monitor.delete_analyzer(req)
 
 if res.status_code == 200:
     # handle response
@@ -45,10 +47,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.DeleteAnalyzerRequest](../../models/operations/deleteanalyzerrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.DeleteAnalyzerSecurity](../../models/operations/deleteanalyzersecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.DeleteAnalyzerRequest](../../models/operations/deleteanalyzerrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -64,9 +65,13 @@ Delete the monitor for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteMonitorRequest(
     dataset_id='model-123',
@@ -74,9 +79,7 @@ req = operations.DeleteMonitorRequest(
     org_id='org-123',
 )
 
-res = s.monitor.delete_monitor(req, operations.DeleteMonitorSecurity(
-    api_key_auth="",
-))
+res = s.monitor.delete_monitor(req)
 
 if res.status_code == 200:
     # handle response
@@ -84,10 +87,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.DeleteMonitorRequest](../../models/operations/deletemonitorrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.DeleteMonitorSecurity](../../models/operations/deletemonitorsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.DeleteMonitorRequest](../../models/operations/deletemonitorrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -103,9 +105,13 @@ Get the analyzer config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetAnalyzerRequest(
     analyzer_id='drift-analyzer',
@@ -113,9 +119,7 @@ req = operations.GetAnalyzerRequest(
     org_id='org-123',
 )
 
-res = s.monitor.get_analyzer(req, operations.GetAnalyzerSecurity(
-    api_key_auth="",
-))
+res = s.monitor.get_analyzer(req)
 
 if res.status_code == 200:
     # handle response
@@ -123,10 +127,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.GetAnalyzerRequest](../../models/operations/getanalyzerrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.GetAnalyzerSecurity](../../models/operations/getanalyzersecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.GetAnalyzerRequest](../../models/operations/getanalyzerrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -142,9 +145,13 @@ Get the monitor config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetMonitorRequest(
     dataset_id='model-123',
@@ -152,9 +159,7 @@ req = operations.GetMonitorRequest(
     org_id='org-123',
 )
 
-res = s.monitor.get_monitor(req, operations.GetMonitorSecurity(
-    api_key_auth="",
-))
+res = s.monitor.get_monitor(req)
 
 if res.status_code == 200:
     # handle response
@@ -162,10 +167,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.GetMonitorRequest](../../models/operations/getmonitorrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.GetMonitorSecurity](../../models/operations/getmonitorsecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.GetMonitorRequest](../../models/operations/getmonitorrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -181,9 +185,13 @@ Get the monitor config document for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetMonitorConfigV3Request(
     dataset_id='model-123',
@@ -192,9 +200,7 @@ req = operations.GetMonitorConfigV3Request(
     org_id='org-123',
 )
 
-res = s.monitor.get_monitor_config_v3(req, operations.GetMonitorConfigV3Security(
-    api_key_auth="",
-))
+res = s.monitor.get_monitor_config_v3(req)
 
 if res.status_code == 200:
     # handle response
@@ -202,10 +208,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetMonitorConfigV3Request](../../models/operations/getmonitorconfigv3request.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.GetMonitorConfigV3Security](../../models/operations/getmonitorconfigv3security.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GetMonitorConfigV3Request](../../models/operations/getmonitorconfigv3request.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -221,9 +226,13 @@ Get the monitor config document version for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetMonitorConfigV3VersionRequest(
     dataset_id='model-123',
@@ -231,9 +240,7 @@ req = operations.GetMonitorConfigV3VersionRequest(
     version_id='4920545486e2a4cdf0f770c09748e663',
 )
 
-res = s.monitor.get_monitor_config_v3_version(req, operations.GetMonitorConfigV3VersionSecurity(
-    api_key_auth="",
-))
+res = s.monitor.get_monitor_config_v3_version(req)
 
 if res.status_code == 200:
     # handle response
@@ -241,10 +248,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.GetMonitorConfigV3VersionRequest](../../models/operations/getmonitorconfigv3versionrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.GetMonitorConfigV3VersionSecurity](../../models/operations/getmonitorconfigv3versionsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.GetMonitorConfigV3VersionRequest](../../models/operations/getmonitorconfigv3versionrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -260,18 +266,20 @@ List the constraints for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListConstraintsRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.monitor.list_constraints(req, operations.ListConstraintsSecurity(
-    api_key_auth="",
-))
+res = s.monitor.list_constraints(req)
 
 if res.status_code == 200:
     # handle response
@@ -279,10 +287,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.ListConstraintsRequest](../../models/operations/listconstraintsrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.ListConstraintsSecurity](../../models/operations/listconstraintssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.ListConstraintsRequest](../../models/operations/listconstraintsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -298,18 +305,20 @@ List the monitor config document versions for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListMonitorConfigV3VersionsRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.monitor.list_monitor_config_v3_versions(req, operations.ListMonitorConfigV3VersionsSecurity(
-    api_key_auth="",
-))
+res = s.monitor.list_monitor_config_v3_versions(req)
 
 if res.status_code == 200:
     # handle response
@@ -317,10 +326,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.ListMonitorConfigV3VersionsRequest](../../models/operations/listmonitorconfigv3versionsrequest.md)   | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `security`                                                                                                       | [operations.ListMonitorConfigV3VersionsSecurity](../../models/operations/listmonitorconfigv3versionssecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.ListMonitorConfigV3VersionsRequest](../../models/operations/listmonitorconfigv3versionsrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 
 
 ### Response
@@ -336,19 +344,21 @@ Save an updated monitor config document for a given dataset.  Monitors and analy
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PatchMonitorConfigV3Request(
-    request_body='architecto',
+    request_body='nihil',
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.monitor.patch_monitor_config_v3(req, operations.PatchMonitorConfigV3Security(
-    api_key_auth="",
-))
+res = s.monitor.patch_monitor_config_v3(req)
 
 if res.status_code == 200:
     # handle response
@@ -356,10 +366,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [operations.PatchMonitorConfigV3Request](../../models/operations/patchmonitorconfigv3request.md)   | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.PatchMonitorConfigV3Security](../../models/operations/patchmonitorconfigv3security.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
+| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `request`                                                                                        | [operations.PatchMonitorConfigV3Request](../../models/operations/patchmonitorconfigv3request.md) | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
 
 
 ### Response
@@ -375,20 +384,22 @@ Save the analyzer config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutAnalyzerRequest(
-    request_body='architecto',
+    request_body='repellat',
     analyzer_id='drift-analyzer',
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.monitor.put_analyzer(req, operations.PutAnalyzerSecurity(
-    api_key_auth="",
-))
+res = s.monitor.put_analyzer(req)
 
 if res.status_code == 200:
     # handle response
@@ -396,10 +407,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.PutAnalyzerRequest](../../models/operations/putanalyzerrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.PutAnalyzerSecurity](../../models/operations/putanalyzersecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.PutAnalyzerRequest](../../models/operations/putanalyzerrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -415,20 +425,22 @@ Save the monitor for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutMonitorRequest(
-    request_body='repudiandae',
+    request_body='quibusdam',
     dataset_id='model-123',
     monitor_id='drift-monitor-123',
     org_id='org-123',
 )
 
-res = s.monitor.put_monitor(req, operations.PutMonitorSecurity(
-    api_key_auth="",
-))
+res = s.monitor.put_monitor(req)
 
 if res.status_code == 200:
     # handle response
@@ -436,10 +448,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.PutMonitorRequest](../../models/operations/putmonitorrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.PutMonitorSecurity](../../models/operations/putmonitorsecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.PutMonitorRequest](../../models/operations/putmonitorrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -455,19 +466,21 @@ Save the monitor config document for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutMonitorConfigV3Request(
-    request_body='ullam',
+    request_body='sed',
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.monitor.put_monitor_config_v3(req, operations.PutMonitorConfigV3Security(
-    api_key_auth="",
-))
+res = s.monitor.put_monitor_config_v3(req)
 
 if res.status_code == 200:
     # handle response
@@ -475,10 +488,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.PutMonitorConfigV3Request](../../models/operations/putmonitorconfigv3request.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.PutMonitorConfigV3Security](../../models/operations/putmonitorconfigv3security.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.PutMonitorConfigV3Request](../../models/operations/putmonitorconfigv3request.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -494,14 +506,18 @@ Put the RequestMonitorRun config into S3.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutRequestMonitorRunConfigRequest(
     request_body=operations.PutRequestMonitorRunConfigRequestBody(
         analyzer_ids=[
-            'expedita',
+            'saepe',
         ],
         end_timestamp=1893456000000,
         overwrite=False,
@@ -511,9 +527,7 @@ req = operations.PutRequestMonitorRunConfigRequest(
     org_id='org-123',
 )
 
-res = s.monitor.put_request_monitor_run_config(req, operations.PutRequestMonitorRunConfigSecurity(
-    api_key_auth="",
-))
+res = s.monitor.put_request_monitor_run_config(req)
 
 if res.status_code == 200:
     # handle response
@@ -521,10 +535,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.PutRequestMonitorRunConfigRequest](../../models/operations/putrequestmonitorrunconfigrequest.md)   | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `security`                                                                                                     | [operations.PutRequestMonitorRunConfigSecurity](../../models/operations/putrequestmonitorrunconfigsecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.PutRequestMonitorRunConfigRequest](../../models/operations/putrequestmonitorrunconfigrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
@@ -540,20 +553,22 @@ Validate the monitor config document for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ValidateMonitorConfigV3Request(
-    request_body='nihil',
+    request_body='pariatur',
     dataset_id='model-123',
     org_id='org-123',
     verbose=False,
 )
 
-res = s.monitor.validate_monitor_config_v3(req, operations.ValidateMonitorConfigV3Security(
-    api_key_auth="",
-))
+res = s.monitor.validate_monitor_config_v3(req)
 
 if res.status_code == 200:
     # handle response
@@ -561,10 +576,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ValidateMonitorConfigV3Request](../../models/operations/validatemonitorconfigv3request.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.ValidateMonitorConfigV3Security](../../models/operations/validatemonitorconfigv3security.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ValidateMonitorConfigV3Request](../../models/operations/validatemonitorconfigv3request.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response

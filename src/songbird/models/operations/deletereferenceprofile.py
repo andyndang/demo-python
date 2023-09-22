@@ -8,14 +8,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class DeleteReferenceProfileSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class DeleteReferenceProfileRequest:
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
     r"""The unique model ID in your company."""

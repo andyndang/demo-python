@@ -12,18 +12,20 @@ Get feature flags for the specified user/org
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetFeatureFlagsRequest(
-    org_id='occaecati',
-    user_id='fugit',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.feature_flags.get_feature_flags(req, operations.GetFeatureFlagsSecurity(
-    api_key_auth="",
-))
+req = operations.GetFeatureFlagsRequest(
+    org_id='commodi',
+    user_id='molestiae',
+)
+
+res = s.feature_flags.get_feature_flags(req)
 
 if res.status_code == 200:
     # handle response
@@ -31,10 +33,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetFeatureFlagsRequest](../../models/operations/getfeatureflagsrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.GetFeatureFlagsSecurity](../../models/operations/getfeatureflagssecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetFeatureFlagsRequest](../../models/operations/getfeatureflagsrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response

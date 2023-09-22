@@ -20,18 +20,22 @@ Create multiple reference profile uploads for a given session.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.BatchCreateReferenceProfileUploadRequest(
     batch_log_reference_request=shared.BatchLogReferenceRequest(
         references=[
             shared.LogReferenceRequest(
-                alias='voluptatibus',
-                dataset_timestamp=377752,
+                alias='fugiat',
+                dataset_timestamp=67249,
             ),
         ],
     ),
-    session_id='natus',
+    session_id='soluta',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -60,18 +64,20 @@ Claim a guest session, copying its model data into another org and expiring the 
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.ClaimGuestSessionRequest(
-    org_id='eos',
-    session_id='atque',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.sessions.claim_guest_session(req, operations.ClaimGuestSessionSecurity(
-    api_key_auth="",
-))
+req = operations.ClaimGuestSessionRequest(
+    org_id='dolorum',
+    session_id='iusto',
+)
+
+res = s.sessions.claim_guest_session(req)
 
 if res.status_code == 200:
     # handle response
@@ -79,10 +85,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [operations.ClaimGuestSessionRequest](../../models/operations/claimguestsessionrequest.md)   | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.ClaimGuestSessionSecurity](../../models/operations/claimguestsessionsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `request`                                                                                  | [operations.ClaimGuestSessionRequest](../../models/operations/claimguestsessionrequest.md) | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
 
 
 ### Response
@@ -100,19 +105,23 @@ Create an upload for a given session.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.CreateDatasetProfileUploadRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=24678,
+        dataset_timestamp=453697,
         segment_tags=[
             shared.SegmentTag(
-                key='fugiat',
-                value='ab',
+                key='dolorum',
+                value='deleniti',
             ),
         ],
     ),
-    session_id='soluta',
+    session_id='omnis',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -143,14 +152,18 @@ Create a reference profile upload for a given session.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.CreateReferenceProfileUploadRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='dolorum',
-        dataset_timestamp=478596,
+        alias='necessitatibus',
+        dataset_timestamp=714697,
     ),
-    session_id='voluptate',
+    session_id='asperiores',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
@@ -181,10 +194,14 @@ Create a new session that can be used to upload dataset profiles from whylogs fo
 import songbird
 from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = shared.CreateSessionRequest(
-    user_id='dolorum',
+    user_id='nihil',
 )
 
 res = s.sessions.create_session(req)
@@ -213,17 +230,19 @@ Get information about a session.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetSessionRequest(
-    session_id='deleniti',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.sessions.get_session(req, operations.GetSessionSecurity(
-    api_key_auth="",
-))
+req = operations.GetSessionRequest(
+    session_id='ipsum',
+)
+
+res = s.sessions.get_session(req)
 
 if res.status_code == 200:
     # handle response
@@ -231,10 +250,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.GetSessionRequest](../../models/operations/getsessionrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.GetSessionSecurity](../../models/operations/getsessionsecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.GetSessionRequest](../../models/operations/getsessionrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -252,18 +270,22 @@ Get observatory links for profiles in a given session. A max of 3 profiles can b
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetSessionProfileObservatoryLinkRequest(
     get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
         batch_profile_timestamps=[
-            607045,
+            456015,
         ],
         reference_profile_ids=[
-            'necessitatibus',
+            'id',
         ],
     ),
-    session_id='distinctio',
+    session_id='saepe',
 )
 
 res = s.sessions.get_session_profile_observatory_link(req)

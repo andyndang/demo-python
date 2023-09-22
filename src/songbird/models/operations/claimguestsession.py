@@ -9,14 +9,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ClaimGuestSessionSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class ClaimGuestSessionRequest:
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})

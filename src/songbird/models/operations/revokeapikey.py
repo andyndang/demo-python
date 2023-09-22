@@ -9,14 +9,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class RevokeAPIKeySecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class RevokeAPIKeyRequest:
     key_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'key_id', 'style': 'form', 'explode': True }})
     r"""ID of the key to revoke

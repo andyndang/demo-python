@@ -14,18 +14,20 @@ Delete dataset metadata for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteDatasetMetadataRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.dataset_metadata.delete_dataset_metadata(req, operations.DeleteDatasetMetadataSecurity(
-    api_key_auth="",
-))
+res = s.dataset_metadata.delete_dataset_metadata(req)
 
 if res.status_code == 200:
     # handle response
@@ -33,10 +35,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.DeleteDatasetMetadataRequest](../../models/operations/deletedatasetmetadatarequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.DeleteDatasetMetadataSecurity](../../models/operations/deletedatasetmetadatasecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.DeleteDatasetMetadataRequest](../../models/operations/deletedatasetmetadatarequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -52,18 +53,20 @@ Get dataset metadata for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetDatasetMetadataRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.dataset_metadata.get_dataset_metadata(req, operations.GetDatasetMetadataSecurity(
-    api_key_auth="",
-))
+res = s.dataset_metadata.get_dataset_metadata(req)
 
 if res.status_code == 200:
     # handle response
@@ -71,10 +74,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.GetDatasetMetadataRequest](../../models/operations/getdatasetmetadatarequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.GetDatasetMetadataSecurity](../../models/operations/getdatasetmetadatasecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.GetDatasetMetadataRequest](../../models/operations/getdatasetmetadatarequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -90,19 +92,21 @@ Put dataset metadata for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutDatasetMetadataRequest(
-    request_body='sapiente',
+    request_body='quod',
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.dataset_metadata.put_dataset_metadata(req, operations.PutDatasetMetadataSecurity(
-    api_key_auth="",
-))
+res = s.dataset_metadata.put_dataset_metadata(req)
 
 if res.status_code == 200:
     # handle response
@@ -110,10 +114,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.PutDatasetMetadataRequest](../../models/operations/putdatasetmetadatarequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.PutDatasetMetadataSecurity](../../models/operations/putdatasetmetadatasecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.PutDatasetMetadataRequest](../../models/operations/putdatasetmetadatarequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response

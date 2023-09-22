@@ -9,14 +9,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class WhyLabsSearchIndexingSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class WhyLabsSearchIndexingResponse:
     content_type: str = dataclasses.field()
     status_code: int = dataclasses.field()

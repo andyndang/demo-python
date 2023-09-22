@@ -9,14 +9,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetMembershipsByEmailSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class GetMembershipsByEmailRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     

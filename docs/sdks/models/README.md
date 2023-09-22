@@ -26,7 +26,11 @@ Create a model
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.CreateModelRequest(
     model_id='model-123',
@@ -36,9 +40,7 @@ req = operations.CreateModelRequest(
     time_period=shared.TimePeriod.P1_D,
 )
 
-res = s.models.create_model(req, operations.CreateModelSecurity(
-    api_key_auth="",
-))
+res = s.models.create_model(req)
 
 if res.status_code == 200:
     # handle response
@@ -46,10 +48,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.CreateModelRequest](../../models/operations/createmodelrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.CreateModelSecurity](../../models/operations/createmodelsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.CreateModelRequest](../../models/operations/createmodelrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -65,18 +66,20 @@ Mark a model as inactive
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeactivateModelRequest(
     model_id='model-123',
     org_id='org-123',
 )
 
-res = s.models.deactivate_model(req, operations.DeactivateModelSecurity(
-    api_key_auth="",
-))
+res = s.models.deactivate_model(req)
 
 if res.status_code == 200:
     # handle response
@@ -84,10 +87,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.DeactivateModelRequest](../../models/operations/deactivatemodelrequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.DeactivateModelSecurity](../../models/operations/deactivatemodelsecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.DeactivateModelRequest](../../models/operations/deactivatemodelrequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -103,18 +105,20 @@ Delete the entity schema config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteEntitySchemaRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.models.delete_entity_schema(req, operations.DeleteEntitySchemaSecurity(
-    api_key_auth="",
-))
+res = s.models.delete_entity_schema(req)
 
 if res.status_code == 200:
     # handle response
@@ -122,10 +126,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `request`                                                                                      | [operations.DeleteEntitySchemaRequest](../../models/operations/deleteentityschemarequest.md)   | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
-| `security`                                                                                     | [operations.DeleteEntitySchemaSecurity](../../models/operations/deleteentityschemasecurity.md) | :heavy_check_mark:                                                                             | The security requirements to use for the request.                                              |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `request`                                                                                    | [operations.DeleteEntitySchemaRequest](../../models/operations/deleteentityschemarequest.md) | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
 
 
 ### Response
@@ -141,9 +144,13 @@ Delete the entity schema of a single column for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteEntitySchemaColumnRequest(
     column_id='feature-123',
@@ -151,9 +158,7 @@ req = operations.DeleteEntitySchemaColumnRequest(
     org_id='org-123',
 )
 
-res = s.models.delete_entity_schema_column(req, operations.DeleteEntitySchemaColumnSecurity(
-    api_key_auth="",
-))
+res = s.models.delete_entity_schema_column(req)
 
 if res.status_code == 200:
     # handle response
@@ -161,10 +166,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.DeleteEntitySchemaColumnRequest](../../models/operations/deleteentityschemacolumnrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.DeleteEntitySchemaColumnSecurity](../../models/operations/deleteentityschemacolumnsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.DeleteEntitySchemaColumnRequest](../../models/operations/deleteentityschemacolumnrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
@@ -180,9 +184,13 @@ Delete the schema of a single metric for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteEntitySchemaMetricRequest(
     dataset_id='model-123',
@@ -190,9 +198,7 @@ req = operations.DeleteEntitySchemaMetricRequest(
     org_id='org-123',
 )
 
-res = s.models.delete_entity_schema_metric(req, operations.DeleteEntitySchemaMetricSecurity(
-    api_key_auth="",
-))
+res = s.models.delete_entity_schema_metric(req)
 
 if res.status_code == 200:
     # handle response
@@ -200,10 +206,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.DeleteEntitySchemaMetricRequest](../../models/operations/deleteentityschemametricrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.DeleteEntitySchemaMetricSecurity](../../models/operations/deleteentityschemametricsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.DeleteEntitySchemaMetricRequest](../../models/operations/deleteentityschemametricrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
@@ -219,18 +224,20 @@ Get the entity schema config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetEntitySchemaRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.models.get_entity_schema(req, operations.GetEntitySchemaSecurity(
-    api_key_auth="",
-))
+res = s.models.get_entity_schema(req)
 
 if res.status_code == 200:
     # handle response
@@ -238,10 +245,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.GetEntitySchemaRequest](../../models/operations/getentityschemarequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.GetEntitySchemaSecurity](../../models/operations/getentityschemasecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.GetEntitySchemaRequest](../../models/operations/getentityschemarequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -257,9 +263,13 @@ Get the entity schema of a single column for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetEntitySchemaColumnRequest(
     column_id='feature-123',
@@ -267,9 +277,7 @@ req = operations.GetEntitySchemaColumnRequest(
     org_id='org-123',
 )
 
-res = s.models.get_entity_schema_column(req, operations.GetEntitySchemaColumnSecurity(
-    api_key_auth="",
-))
+res = s.models.get_entity_schema_column(req)
 
 if res.status_code == 200:
     # handle response
@@ -277,10 +285,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetEntitySchemaColumnRequest](../../models/operations/getentityschemacolumnrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetEntitySchemaColumnSecurity](../../models/operations/getentityschemacolumnsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetEntitySchemaColumnRequest](../../models/operations/getentityschemacolumnrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -296,18 +303,20 @@ Returns various metadata about a model
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetModelRequest(
     model_id='model-123',
     org_id='org-123',
 )
 
-res = s.models.get_model(req, operations.GetModelSecurity(
-    api_key_auth="",
-))
+res = s.models.get_model(req)
 
 if res.status_code == 200:
     # handle response
@@ -315,10 +324,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [operations.GetModelRequest](../../models/operations/getmodelrequest.md)   | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `security`                                                                 | [operations.GetModelSecurity](../../models/operations/getmodelsecurity.md) | :heavy_check_mark:                                                         | The security requirements to use for the request.                          |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [operations.GetModelRequest](../../models/operations/getmodelrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
@@ -334,17 +342,19 @@ Get a list of all of the model ids for an organization.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListModelsRequest(
     org_id='org-123',
 )
 
-res = s.models.list_models(req, operations.ListModelsSecurity(
-    api_key_auth="",
-))
+res = s.models.list_models(req)
 
 if res.status_code == 200:
     # handle response
@@ -352,10 +362,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [operations.ListModelsRequest](../../models/operations/listmodelsrequest.md)   | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.ListModelsSecurity](../../models/operations/listmodelssecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [operations.ListModelsRequest](../../models/operations/listmodelsrequest.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -373,24 +382,28 @@ Save the entity schema config for a given dataset.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "eius": shared.ColumnSchema(
+            "architecto": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
         metadata=shared.SchemaMetadata(
-            author='maxime',
-            updated_timestamp=537023,
-            version=703889,
+            author='architecto',
+            updated_timestamp=919483,
+            version=352312,
         ),
         metrics={
-            "in": shared.MetricSchema(
+            "expedita": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
@@ -401,9 +414,7 @@ req = operations.PutEntitySchemaRequest(
     org_id='org-123',
 )
 
-res = s.models.put_entity_schema(req, operations.PutEntitySchemaSecurity(
-    api_key_auth="",
-))
+res = s.models.put_entity_schema(req)
 
 if res.status_code == 200:
     # handle response
@@ -411,10 +422,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
-| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `request`                                                                                | [operations.PutEntitySchemaRequest](../../models/operations/putentityschemarequest.md)   | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
-| `security`                                                                               | [operations.PutEntitySchemaSecurity](../../models/operations/putentityschemasecurity.md) | :heavy_check_mark:                                                                       | The security requirements to use for the request.                                        |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [operations.PutEntitySchemaRequest](../../models/operations/putentityschemarequest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
@@ -432,7 +442,11 @@ Save the entity schema of a single column for a given dataset.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutEntitySchemaColumnRequest(
     column_schema=shared.ColumnSchema(
@@ -445,9 +459,7 @@ req = operations.PutEntitySchemaColumnRequest(
     org_id='org-123',
 )
 
-res = s.models.put_entity_schema_column(req, operations.PutEntitySchemaColumnSecurity(
-    api_key_auth="",
-))
+res = s.models.put_entity_schema_column(req)
 
 if res.status_code == 200:
     # handle response
@@ -455,10 +467,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PutEntitySchemaColumnRequest](../../models/operations/putentityschemacolumnrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.PutEntitySchemaColumnSecurity](../../models/operations/putentityschemacolumnsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PutEntitySchemaColumnRequest](../../models/operations/putentityschemacolumnrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -476,7 +487,11 @@ Save the schema of a single metric for a given dataset.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutEntitySchemaMetricRequest(
     metric_schema=shared.MetricSchema(
@@ -488,9 +503,7 @@ req = operations.PutEntitySchemaMetricRequest(
     org_id='org-123',
 )
 
-res = s.models.put_entity_schema_metric(req, operations.PutEntitySchemaMetricSecurity(
-    api_key_auth="",
-))
+res = s.models.put_entity_schema_metric(req)
 
 if res.status_code == 200:
     # handle response
@@ -498,10 +511,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PutEntitySchemaMetricRequest](../../models/operations/putentityschemametricrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.PutEntitySchemaMetricSecurity](../../models/operations/putentityschemametricsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PutEntitySchemaMetricRequest](../../models/operations/putentityschemametricrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -519,7 +531,11 @@ Update a model's metadata
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.UpdateModelRequest(
     model_id='model-123',
@@ -529,9 +545,7 @@ req = operations.UpdateModelRequest(
     time_period=shared.TimePeriod.P1_D,
 )
 
-res = s.models.update_model(req, operations.UpdateModelSecurity(
-    api_key_auth="",
-))
+res = s.models.update_model(req)
 
 if res.status_code == 200:
     # handle response
@@ -539,10 +553,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.UpdateModelRequest](../../models/operations/updatemodelrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.UpdateModelSecurity](../../models/operations/updatemodelsecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.UpdateModelRequest](../../models/operations/updatemodelrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response

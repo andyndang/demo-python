@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetAccountMembershipsSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class GetAccountMembershipsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     managed_org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'managed_org_id', 'style': 'form', 'explode': True }})

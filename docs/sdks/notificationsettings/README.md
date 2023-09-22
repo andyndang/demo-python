@@ -27,18 +27,20 @@ Add new notification action
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.AddNotificationActionRequest(
-    request_body='repellat',
-    action_id='user-action',
-    org_id='org-123',
-    type=shared.ActionType.NA,
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.notification_settings.add_notification_action(req, operations.AddNotificationActionSecurity(
-    api_key_auth="",
-))
+req = operations.AddNotificationActionRequest(
+    request_body='accusantium',
+    action_id='user-action',
+    org_id='org-123',
+    type=shared.ActionType.EMAIL,
+)
+
+res = s.notification_settings.add_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -46,10 +48,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.AddNotificationActionRequest](../../models/operations/addnotificationactionrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.AddNotificationActionSecurity](../../models/operations/addnotificationactionsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.AddNotificationActionRequest](../../models/operations/addnotificationactionrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -65,18 +66,20 @@ Delete notification action
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DeleteNotificationActionRequest(
     action_id='user-action',
     org_id='org-123',
 )
 
-res = s.notification_settings.delete_notification_action(req, operations.DeleteNotificationActionSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.delete_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -84,10 +87,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.DeleteNotificationActionRequest](../../models/operations/deletenotificationactionrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.DeleteNotificationActionSecurity](../../models/operations/deletenotificationactionsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.DeleteNotificationActionRequest](../../models/operations/deletenotificationactionrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
@@ -103,18 +105,20 @@ Disable notification action
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.DisableNotificationActionRequest(
     action_id='user-action',
     org_id='org-123',
 )
 
-res = s.notification_settings.disable_notification_action(req, operations.DisableNotificationActionSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.disable_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -122,10 +126,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.DisableNotificationActionRequest](../../models/operations/disablenotificationactionrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.DisableNotificationActionSecurity](../../models/operations/disablenotificationactionsecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.DisableNotificationActionRequest](../../models/operations/disablenotificationactionrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -141,18 +144,20 @@ Enable notification action
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.EnableNotificationActionRequest(
     action_id='user-action',
     org_id='org-123',
 )
 
-res = s.notification_settings.enable_notification_action(req, operations.EnableNotificationActionSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.enable_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -160,10 +165,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.EnableNotificationActionRequest](../../models/operations/enablenotificationactionrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.EnableNotificationActionSecurity](../../models/operations/enablenotificationactionsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.EnableNotificationActionRequest](../../models/operations/enablenotificationactionrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
@@ -179,18 +183,20 @@ Get notification action for id
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetNotificationActionRequest(
     action_id='user-action',
     org_id='org-123',
 )
 
-res = s.notification_settings.get_notification_action(req, operations.GetNotificationActionSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.get_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -198,10 +204,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetNotificationActionRequest](../../models/operations/getnotificationactionrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetNotificationActionSecurity](../../models/operations/getnotificationactionsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetNotificationActionRequest](../../models/operations/getnotificationactionrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -217,17 +222,19 @@ Get notification settings for an org
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetNotificationSettingsRequest(
-    org_id='sed',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.notification_settings.get_notification_settings(req, operations.GetNotificationSettingsSecurity(
-    api_key_auth="",
-))
+req = operations.GetNotificationSettingsRequest(
+    org_id='praesentium',
+)
+
+res = s.notification_settings.get_notification_settings(req)
 
 if res.status_code == 200:
     # handle response
@@ -235,10 +242,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.GetNotificationSettingsRequest](../../models/operations/getnotificationsettingsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.GetNotificationSettingsSecurity](../../models/operations/getnotificationsettingssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.GetNotificationSettingsRequest](../../models/operations/getnotificationsettingsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
@@ -254,17 +260,19 @@ Get notification actions for an org
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListNotificationActionsRequest(
     org_id='org-123',
 )
 
-res = s.notification_settings.list_notification_actions(req, operations.ListNotificationActionsSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.list_notification_actions(req)
 
 if res.status_code == 200:
     # handle response
@@ -272,10 +280,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [operations.ListNotificationActionsRequest](../../models/operations/listnotificationactionsrequest.md)   | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.ListNotificationActionsSecurity](../../models/operations/listnotificationactionssecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                              | [operations.ListNotificationActionsRequest](../../models/operations/listnotificationactionsrequest.md) | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
 
 
 ### Response
@@ -293,18 +300,20 @@ Add new notification action
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.PutNotificationActionRequest(
-    request_body='saepe',
-    action_id='user-action',
-    org_id='org-123',
-    type=shared.ActionType.NA,
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.notification_settings.put_notification_action(req, operations.PutNotificationActionSecurity(
-    api_key_auth="",
-))
+req = operations.PutNotificationActionRequest(
+    request_body='natus',
+    action_id='user-action',
+    org_id='org-123',
+    type=shared.ActionType.EMAIL,
+)
+
+res = s.notification_settings.put_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -312,10 +321,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.PutNotificationActionRequest](../../models/operations/putnotificationactionrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.PutNotificationActionSecurity](../../models/operations/putnotificationactionsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.PutNotificationActionRequest](../../models/operations/putnotificationactionrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -331,18 +339,20 @@ Test a notification action
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.TestNotificationActionRequest(
     action_id='user-action',
     org_id='org-123',
 )
 
-res = s.notification_settings.test_notification_action(req, operations.TestNotificationActionSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.test_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -350,10 +360,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.TestNotificationActionRequest](../../models/operations/testnotificationactionrequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.TestNotificationActionSecurity](../../models/operations/testnotificationactionsecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.TestNotificationActionRequest](../../models/operations/testnotificationactionrequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response
@@ -371,18 +380,20 @@ Update notification action
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.UpdateNotificationActionRequest(
-    request_body='accusantium',
-    action_id='user-action',
-    org_id='org-123',
-    type=shared.ActionType.EMAIL,
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.notification_settings.update_notification_action(req, operations.UpdateNotificationActionSecurity(
-    api_key_auth="",
-))
+req = operations.UpdateNotificationActionRequest(
+    request_body='sunt',
+    action_id='user-action',
+    org_id='org-123',
+    type=shared.ActionType.NA,
+)
+
+res = s.notification_settings.update_notification_action(req)
 
 if res.status_code == 200:
     # handle response
@@ -390,10 +401,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                  | [operations.UpdateNotificationActionRequest](../../models/operations/updatenotificationactionrequest.md)   | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
-| `security`                                                                                                 | [operations.UpdateNotificationActionSecurity](../../models/operations/updatenotificationactionsecurity.md) | :heavy_check_mark:                                                                                         | The security requirements to use for the request.                                                          |
+| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
+| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                | [operations.UpdateNotificationActionRequest](../../models/operations/updatenotificationactionrequest.md) | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
 
 
 ### Response
@@ -411,19 +421,15 @@ Update notification settings for an org
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.UpdateNotificationSettingsRequest(
     notification_settings=shared.NotificationSettings(
         email_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.WEEKLY,
-            day_of_week=shared.NotificationSettingsDay.THURSDAY,
-            enabled=False,
-            local24_hour_of_day=166847,
-            local_minute_of_hour=123820,
-            local_timezone='quo',
-        ),
-        pager_duty_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.INDIVIDUAL,
             day_of_week=shared.NotificationSettingsDay.SATURDAY,
             enabled=False,
@@ -431,7 +437,7 @@ req = operations.UpdateNotificationSettingsRequest(
             local_minute_of_hour=411397,
             local_timezone='excepturi',
         ),
-        slack_settings=shared.UberNotificationSchedule(
+        pager_duty_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.HOURLY,
             day_of_week=shared.NotificationSettingsDay.TUESDAY,
             enabled=False,
@@ -439,13 +445,19 @@ req = operations.UpdateNotificationSettingsRequest(
             local_minute_of_hour=69167,
             local_timezone='maiores',
         ),
+        slack_settings=shared.UberNotificationSchedule(
+            cadence=shared.NotificationSqsMessageCadence.WEEKLY,
+            day_of_week=shared.NotificationSettingsDay.TUESDAY,
+            enabled=False,
+            local24_hour_of_day=453543,
+            local_minute_of_hour=420075,
+            local_timezone='nam',
+        ),
     ),
-    org_id='quidem',
+    org_id='eaque',
 )
 
-res = s.notification_settings.update_notification_settings(req, operations.UpdateNotificationSettingsSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.update_notification_settings(req)
 
 if res.status_code == 200:
     # handle response
@@ -453,10 +465,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                      | [operations.UpdateNotificationSettingsRequest](../../models/operations/updatenotificationsettingsrequest.md)   | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
-| `security`                                                                                                     | [operations.UpdateNotificationSettingsSecurity](../../models/operations/updatenotificationsettingssecurity.md) | :heavy_check_mark:                                                                                             | The security requirements to use for the request.                                                              |
+| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
+| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| `request`                                                                                                    | [operations.UpdateNotificationSettingsRequest](../../models/operations/updatenotificationsettingsrequest.md) | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
 
 
 ### Response
@@ -472,24 +483,20 @@ Get dummy notification action payload
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 
-res = s.notification_settings.get_email_notification_action_payload(operations.GetEmailNotificationActionPayloadSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.get_email_notification_action_payload()
 
 if res.status_code == 200:
     # handle response
 ```
-
-### Parameters
-
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                   | [operations.GetEmailNotificationActionPayloadSecurity](../../models/operations/getemailnotificationactionpayloadsecurity.md) | :heavy_check_mark:                                                                                                           | The security requirements to use for the request.                                                                            |
 
 
 ### Response
@@ -505,24 +512,20 @@ Get dummy notification action payload
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 
-res = s.notification_settings.get_pager_duty_notification_action_payload(operations.GetPagerDutyNotificationActionPayloadSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.get_pager_duty_notification_action_payload()
 
 if res.status_code == 200:
     # handle response
 ```
-
-### Parameters
-
-| Parameter                                                                                                                            | Type                                                                                                                                 | Required                                                                                                                             | Description                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `security`                                                                                                                           | [operations.GetPagerDutyNotificationActionPayloadSecurity](../../models/operations/getpagerdutynotificationactionpayloadsecurity.md) | :heavy_check_mark:                                                                                                                   | The security requirements to use for the request.                                                                                    |
 
 
 ### Response
@@ -538,24 +541,20 @@ Get dummy notification action payload
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 
-res = s.notification_settings.get_slack_notification_action_payload(operations.GetSlackNotificationActionPayloadSecurity(
-    api_key_auth="",
-))
+res = s.notification_settings.get_slack_notification_action_payload()
 
 if res.status_code == 200:
     # handle response
 ```
-
-### Parameters
-
-| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                   | [operations.GetSlackNotificationActionPayloadSecurity](../../models/operations/getslacknotificationactionpayloadsecurity.md) | :heavy_check_mark:                                                                                                           | The security requirements to use for the request.                                                                            |
 
 
 ### Response

@@ -8,14 +8,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetMonitorSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class GetMonitorRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     monitor_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'monitor_id', 'style': 'simple', 'explode': False }})

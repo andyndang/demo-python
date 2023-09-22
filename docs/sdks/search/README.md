@@ -13,17 +13,19 @@ WhyLabs Search
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.WhyLabsSearchRequest(
-    query='quaerat',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.search.why_labs_search(req, operations.WhyLabsSearchSecurity(
-    api_key_auth="",
-))
+req = operations.WhyLabsSearchRequest(
+    query='eos',
+)
+
+res = s.search.why_labs_search(req)
 
 if res.status_code == 200:
     # handle response
@@ -31,10 +33,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.WhyLabsSearchRequest](../../models/operations/whylabssearchrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.WhyLabsSearchSecurity](../../models/operations/whylabssearchsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.WhyLabsSearchRequest](../../models/operations/whylabssearchrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -50,18 +51,20 @@ WhyLabs Search Indexing
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.SearchIndexRequest(
-    org_id='accusamus',
-    type=shared.SearchIndexType.ENTITY_SCHEMA,
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.search.why_labs_search_indexing(req, operations.WhyLabsSearchIndexingSecurity(
-    api_key_auth="",
-))
+req = shared.SearchIndexRequest(
+    org_id='atque',
+    type=shared.SearchIndexType.MODELS,
+)
+
+res = s.search.why_labs_search_indexing(req)
 
 if res.status_code == 200:
     # handle response
@@ -69,10 +72,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [shared.SearchIndexRequest](../../models/shared/searchindexrequest.md)                               | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.WhyLabsSearchIndexingSecurity](../../models/operations/whylabssearchindexingsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [shared.SearchIndexRequest](../../models/shared/searchindexrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response

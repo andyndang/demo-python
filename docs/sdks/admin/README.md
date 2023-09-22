@@ -15,15 +15,17 @@ Generate an admin report
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GenerateReportRequest(
     report_type=shared.AdminReportType.SESSIONS,
 )
 
-res = s.admin.generate_report(req, operations.GenerateReportSecurity(
-    api_key_auth="",
-))
+res = s.admin.generate_report(req)
 
 if res.status_code == 200:
     # handle response
@@ -31,10 +33,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GenerateReportRequest](../../models/operations/generatereportrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GenerateReportSecurity](../../models/operations/generatereportsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GenerateReportRequest](../../models/operations/generatereportrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -50,24 +51,20 @@ Create a monitor config validation job for all configs
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 
-res = s.admin.post_monitor_config_validation_job(operations.PostMonitorConfigValidationJobSecurity(
-    api_key_auth="",
-))
+res = s.admin.post_monitor_config_validation_job()
 
 if res.status_code == 200:
     # handle response
 ```
-
-### Parameters
-
-| Parameter                                                                                                              | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                             | [operations.PostMonitorConfigValidationJobSecurity](../../models/operations/postmonitorconfigvalidationjobsecurity.md) | :heavy_check_mark:                                                                                                     | The security requirements to use for the request.                                                                      |
 
 
 ### Response

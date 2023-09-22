@@ -12,11 +12,15 @@ Endpoint for Stripe payment webhooks
 
 ```python
 import songbird
+from songbird.models import shared
 
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
-s = songbird.Songbird()
-
-req = 'cumque'
+req = 'dolores'
 
 res = s.payment.stripe_payment_endpoint(req)
 

@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateReferenceProfileSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class CreateReferenceProfileRequest:
     create_reference_profile_request: shared_createreferenceprofilerequest.CreateReferenceProfileRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})

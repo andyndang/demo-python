@@ -12,17 +12,19 @@ Get the current supported schema of the  monitor configuration
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetMonitorConfigSchemaRequest(
     org_id='org-123',
 )
 
-res = s.schema.get_monitor_config_schema(req, operations.GetMonitorConfigSchemaSecurity(
-    api_key_auth="",
-))
+res = s.schema.get_monitor_config_schema(req)
 
 if res.status_code == 200:
     # handle response
@@ -30,10 +32,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                              | [operations.GetMonitorConfigSchemaRequest](../../models/operations/getmonitorconfigschemarequest.md)   | :heavy_check_mark:                                                                                     | The request object to use for the request.                                                             |
-| `security`                                                                                             | [operations.GetMonitorConfigSchemaSecurity](../../models/operations/getmonitorconfigschemasecurity.md) | :heavy_check_mark:                                                                                     | The security requirements to use for the request.                                                      |
+| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `request`                                                                                            | [operations.GetMonitorConfigSchemaRequest](../../models/operations/getmonitorconfigschemarequest.md) | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
 
 
 ### Response

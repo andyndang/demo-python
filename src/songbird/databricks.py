@@ -12,7 +12,7 @@ class Databricks:
         self.sdk_configuration = sdk_config
         
     
-    def get_connection(self, request: shared.GetConnectionRequest, security: operations.GetConnectionSecurity) -> operations.GetConnectionResponse:
+    def get_connection(self, request: shared.GetConnectionRequest) -> operations.GetConnectionResponse:
         r"""Get the connection metadata for a given org
         Get the connection metadata for a given org
         """
@@ -28,7 +28,7 @@ class Databricks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,7 +45,7 @@ class Databricks:
         return res
 
     
-    def list_jobs(self, request: shared.ListJobsRequest, security: operations.ListJobsSecurity) -> operations.ListJobsResponse:
+    def list_jobs(self, request: shared.ListJobsRequest) -> operations.ListJobsResponse:
         r"""List all of the jobs in a workspace.
         List all of the jobs in a workspace.
         """
@@ -61,7 +61,7 @@ class Databricks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,7 +78,7 @@ class Databricks:
         return res
 
     
-    def refresh_connection(self, request: shared.RefreshConnectionRequest, security: operations.RefreshConnectionSecurity) -> operations.RefreshConnectionResponse:
+    def refresh_connection(self, request: shared.RefreshConnectionRequest) -> operations.RefreshConnectionResponse:
         r"""Refresh metadata for a workspace connection.
         Refresh metadata for a workspace connection.
         """
@@ -94,7 +94,7 @@ class Databricks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -111,7 +111,7 @@ class Databricks:
         return res
 
     
-    def run_job(self, request: shared.RunJobRequest, security: operations.RunJobSecurity) -> operations.RunJobResponse:
+    def run_job(self, request: shared.RunJobRequest) -> operations.RunJobResponse:
         r"""Run an existing job in a given databricks workspace.
         Run an existing job in a given databricks workspace.
         """
@@ -127,7 +127,7 @@ class Databricks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -144,7 +144,7 @@ class Databricks:
         return res
 
     
-    def update_connection(self, request: shared.UpdateConnectionRequest, security: operations.UpdateConnectionSecurity) -> operations.UpdateConnectionResponse:
+    def update_connection(self, request: shared.UpdateConnectionRequest) -> operations.UpdateConnectionResponse:
         r"""Update the connection metadata for a given org
         Update the connection metadata for a given org
         """
@@ -160,7 +160,7 @@ class Databricks:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

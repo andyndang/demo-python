@@ -12,7 +12,7 @@ class APIKey:
         self.sdk_configuration = sdk_config
         
     
-    def create_api_key(self, request: operations.CreateAPIKeyRequest, security: operations.CreateAPIKeySecurity) -> operations.CreateAPIKeyResponse:
+    def create_api_key(self, request: operations.CreateAPIKeyRequest) -> operations.CreateAPIKeyResponse:
         r"""Generate an API key for a user.
         Generates an API key for a given user. Must be called either by system administrator or by the user themselves
         """
@@ -24,7 +24,7 @@ class APIKey:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,7 +41,7 @@ class APIKey:
         return res
 
     
-    def get_api_key(self, request: operations.GetAPIKeyRequest, security: operations.GetAPIKeySecurity) -> operations.GetAPIKeyResponse:
+    def get_api_key(self, request: operations.GetAPIKeyRequest) -> operations.GetAPIKeyResponse:
         r"""Get an api key by its id
         Get an api key by its id
         """
@@ -52,7 +52,7 @@ class APIKey:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -69,7 +69,7 @@ class APIKey:
         return res
 
     
-    def list_api_keys(self, request: operations.ListAPIKeysRequest, security: operations.ListAPIKeysSecurity) -> operations.ListAPIKeysResponse:
+    def list_api_keys(self, request: operations.ListAPIKeysRequest) -> operations.ListAPIKeysResponse:
         r"""List API key metadata for a given organization and user
         Returns the API key metadata for a given organization and user
         """
@@ -81,7 +81,7 @@ class APIKey:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -98,7 +98,7 @@ class APIKey:
         return res
 
     
-    def revoke_api_key(self, request: operations.RevokeAPIKeyRequest, security: operations.RevokeAPIKeySecurity) -> operations.RevokeAPIKeyResponse:
+    def revoke_api_key(self, request: operations.RevokeAPIKeyRequest) -> operations.RevokeAPIKeyResponse:
         r"""Revoke the given API Key, removing its ability to access WhyLabs systems
         Revokes the given API Key
         """
@@ -110,7 +110,7 @@ class APIKey:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

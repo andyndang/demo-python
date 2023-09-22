@@ -11,14 +11,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateModelSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class CreateModelRequest:
     model_name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'model_name', 'style': 'form', 'explode': True }})
     r"""The name of a model"""

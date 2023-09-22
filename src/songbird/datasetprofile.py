@@ -12,7 +12,7 @@ class DatasetProfile:
         self.sdk_configuration = sdk_config
         
     
-    def create_reference_profile(self, request: operations.CreateReferenceProfileRequest, security: operations.CreateReferenceProfileSecurity) -> operations.CreateReferenceProfileResponse:
+    def create_reference_profile(self, request: operations.CreateReferenceProfileRequest) -> operations.CreateReferenceProfileResponse:
         r"""Returns data needed to uploading the reference profile
         Returns data needed to upload the reference profile. Supports uploading segmented reference profiles. 
                     If segments are omitted, provides data needed to upload a single reference profile. 
@@ -30,7 +30,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,7 +47,7 @@ class DatasetProfile:
         return res
 
     
-    def delete_analyzer_results(self, request: operations.DeleteAnalyzerResultsRequest, security: operations.DeleteAnalyzerResultsSecurity) -> operations.DeleteAnalyzerResultsResponse:
+    def delete_analyzer_results(self, request: operations.DeleteAnalyzerResultsRequest) -> operations.DeleteAnalyzerResultsResponse:
         r"""Deletes a set of analyzer results
         Deletes a set of analyzer results. Returns false if scheduling deletion encountered some error.
         """
@@ -59,7 +59,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -76,7 +76,7 @@ class DatasetProfile:
         return res
 
     
-    def delete_dataset_profiles(self, request: operations.DeleteDatasetProfilesRequest, security: operations.DeleteDatasetProfilesSecurity) -> operations.DeleteDatasetProfilesResponse:
+    def delete_dataset_profiles(self, request: operations.DeleteDatasetProfilesRequest) -> operations.DeleteDatasetProfilesResponse:
         r"""Deletes a set of dataset profiles
         Deletes a set of dataset profiles. Returns false if scheduling deletion encountered some error.
         """
@@ -88,7 +88,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -105,7 +105,7 @@ class DatasetProfile:
         return res
 
     
-    def delete_reference_profile(self, request: operations.DeleteReferenceProfileRequest, security: operations.DeleteReferenceProfileSecurity) -> operations.DeleteReferenceProfileResponse:
+    def delete_reference_profile(self, request: operations.DeleteReferenceProfileRequest) -> operations.DeleteReferenceProfileResponse:
         r"""Delete a single reference profile
         Delete a a Reference Profile. Returns false if the deletion encountered some error.
         """
@@ -116,7 +116,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -133,7 +133,7 @@ class DatasetProfile:
         return res
 
     
-    def get_profile_traces(self, request: operations.GetProfileTracesRequest, security: operations.GetProfileTracesSecurity) -> operations.GetProfileTracesResponse:
+    def get_profile_traces(self, request: operations.GetProfileTracesRequest) -> operations.GetProfileTracesResponse:
         r"""Returns a list for profile traces matching a trace id
         Returns a list of profile traces matching a trace id
         """
@@ -145,7 +145,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -162,7 +162,7 @@ class DatasetProfile:
         return res
 
     
-    def get_reference_profile(self, request: operations.GetReferenceProfileRequest, security: operations.GetReferenceProfileSecurity) -> operations.GetReferenceProfileResponse:
+    def get_reference_profile(self, request: operations.GetReferenceProfileRequest) -> operations.GetReferenceProfileResponse:
         r"""Returns a single reference profile
         Returns a Reference Profile.
         """
@@ -173,7 +173,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -190,7 +190,7 @@ class DatasetProfile:
         return res
 
     
-    def hide_segments(self, request: operations.HideSegmentsRequest, security: operations.HideSegmentsSecurity) -> operations.HideSegmentsResponse:
+    def hide_segments(self, request: operations.HideSegmentsRequest) -> operations.HideSegmentsResponse:
         r"""Hides a list of segments
         Returns a list of segments that were hidden for a dataset.
         """
@@ -206,7 +206,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -223,7 +223,7 @@ class DatasetProfile:
         return res
 
     
-    def list_reference_profiles(self, request: operations.ListReferenceProfilesRequest, security: operations.ListReferenceProfilesSecurity) -> operations.ListReferenceProfilesResponse:
+    def list_reference_profiles(self, request: operations.ListReferenceProfilesRequest) -> operations.ListReferenceProfilesResponse:
         r"""Returns a list for reference profiles
         Returns a list of Reference Profiles.
         """
@@ -235,7 +235,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -252,7 +252,7 @@ class DatasetProfile:
         return res
 
     
-    def list_segments(self, request: operations.ListSegmentsRequest, security: operations.ListSegmentsSecurity) -> operations.ListSegmentsResponse:
+    def list_segments(self, request: operations.ListSegmentsRequest) -> operations.ListSegmentsResponse:
         r"""Returns a list of segments
         Returns a list of segments for the dataset.
         """
@@ -263,7 +263,7 @@ class DatasetProfile:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

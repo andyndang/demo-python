@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetProfileObservatoryLinkSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class GetProfileObservatoryLinkRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     get_profile_observatory_link_request: shared_getprofileobservatorylinkrequest.GetProfileObservatoryLinkRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})

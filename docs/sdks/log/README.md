@@ -16,24 +16,26 @@ Get observatory links for profiles in a given org/model. A max of 3 profiles can
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetProfileObservatoryLinkRequest(
     get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
         batch_profile_timestamps=[
-            725255,
+            643990,
         ],
         reference_profile_ids=[
-            'id',
+            'nisi',
         ],
     ),
-    dataset_id='blanditiis',
-    org_id='deleniti',
+    dataset_id='vel',
+    org_id='natus',
 )
 
-res = s.log.get_profile_observatory_link(req, operations.GetProfileObservatoryLinkSecurity(
-    api_key_auth="",
-))
+res = s.log.get_profile_observatory_link(req)
 
 if res.status_code == 200:
     # handle response
@@ -41,10 +43,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                    | Type                                                                                                         | Required                                                                                                     | Description                                                                                                  |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                    | [operations.GetProfileObservatoryLinkRequest](../../models/operations/getprofileobservatorylinkrequest.md)   | :heavy_check_mark:                                                                                           | The request object to use for the request.                                                                   |
-| `security`                                                                                                   | [operations.GetProfileObservatoryLinkSecurity](../../models/operations/getprofileobservatorylinksecurity.md) | :heavy_check_mark:                                                                                           | The security requirements to use for the request.                                                            |
+| Parameter                                                                                                  | Type                                                                                                       | Required                                                                                                   | Description                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                  | [operations.GetProfileObservatoryLinkRequest](../../models/operations/getprofileobservatorylinkrequest.md) | :heavy_check_mark:                                                                                         | The request object to use for the request.                                                                 |
 
 
 ### Response
@@ -62,15 +63,19 @@ Like /log, except this api doesn't take the actual profile content. It returns a
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=956084,
+        dataset_timestamp=606393,
         segment_tags=[
             shared.SegmentTag(
-                key='amet',
-                value='deserunt',
+                key='molestiae',
+                value='perferendis',
             ),
         ],
     ),
@@ -78,9 +83,7 @@ req = operations.LogAsyncRequest(
     org_id='org-123',
 )
 
-res = s.log.log_async(req, operations.LogAsyncSecurity(
-    api_key_auth="",
-))
+res = s.log.log_async(req)
 
 if res.status_code == 200:
     # handle response
@@ -88,10 +91,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [operations.LogAsyncRequest](../../models/operations/logasyncrequest.md)   | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `security`                                                                 | [operations.LogAsyncSecurity](../../models/operations/logasyncsecurity.md) | :heavy_check_mark:                                                         | The security requirements to use for the request.                          |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [operations.LogAsyncRequest](../../models/operations/logasyncrequest.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
@@ -109,20 +111,22 @@ Reference profiles can be used for.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.LogReferenceRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='nisi',
-        dataset_timestamp=423855,
+        alias='nihil',
+        dataset_timestamp=301575,
     ),
     model_id='model-123',
     org_id='org-123',
 )
 
-res = s.log.log_reference(req, operations.LogReferenceSecurity(
-    api_key_auth="",
-))
+res = s.log.log_reference(req)
 
 if res.status_code == 200:
     # handle response
@@ -130,10 +134,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.LogReferenceRequest](../../models/operations/logreferencerequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.LogReferenceSecurity](../../models/operations/logreferencesecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.LogReferenceRequest](../../models/operations/logreferencerequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response

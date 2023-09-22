@@ -16,18 +16,20 @@ Get the connection metadata for a given org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.GetConnectionRequest(
-    org_id='iusto',
-    workspace_id='excepturi',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.databricks.get_connection(req, operations.GetConnectionSecurity(
-    api_key_auth="",
-))
+req = shared.GetConnectionRequest(
+    org_id='veritatis',
+    workspace_id='deserunt',
+)
+
+res = s.databricks.get_connection(req)
 
 if res.status_code == 200:
     # handle response
@@ -35,10 +37,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [shared.GetConnectionRequest](../../models/shared/getconnectionrequest.md)           | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.GetConnectionSecurity](../../models/operations/getconnectionsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [shared.GetConnectionRequest](../../models/shared/getconnectionrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -54,18 +55,20 @@ List all of the jobs in a workspace.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.ListJobsRequest(
-    org_id='nisi',
-    workspace_id='recusandae',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.databricks.list_jobs(req, operations.ListJobsSecurity(
-    api_key_auth="",
-))
+req = shared.ListJobsRequest(
+    org_id='perferendis',
+    workspace_id='ipsam',
+)
+
+res = s.databricks.list_jobs(req)
 
 if res.status_code == 200:
     # handle response
@@ -73,10 +76,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [shared.ListJobsRequest](../../models/shared/listjobsrequest.md)           | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
-| `security`                                                                 | [operations.ListJobsSecurity](../../models/operations/listjobssecurity.md) | :heavy_check_mark:                                                         | The security requirements to use for the request.                          |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `request`                                                        | [shared.ListJobsRequest](../../models/shared/listjobsrequest.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
 
 
 ### Response
@@ -92,18 +94,20 @@ Refresh metadata for a workspace connection.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.RefreshConnectionRequest(
-    org_id='temporibus',
-    workspace_id='ab',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.databricks.refresh_connection(req, operations.RefreshConnectionSecurity(
-    api_key_auth="",
-))
+req = shared.RefreshConnectionRequest(
+    org_id='repellendus',
+    workspace_id='sapiente',
+)
+
+res = s.databricks.refresh_connection(req)
 
 if res.status_code == 200:
     # handle response
@@ -111,10 +115,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
-| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| `request`                                                                                    | [shared.RefreshConnectionRequest](../../models/shared/refreshconnectionrequest.md)           | :heavy_check_mark:                                                                           | The request object to use for the request.                                                   |
-| `security`                                                                                   | [operations.RefreshConnectionSecurity](../../models/operations/refreshconnectionsecurity.md) | :heavy_check_mark:                                                                           | The security requirements to use for the request.                                            |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [shared.RefreshConnectionRequest](../../models/shared/refreshconnectionrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -130,19 +133,21 @@ Run an existing job in a given databricks workspace.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.RunJobRequest(
-    job_id=337396,
-    org_id='veritatis',
-    workspace_id='deserunt',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.databricks.run_job(req, operations.RunJobSecurity(
-    api_key_auth="",
-))
+req = shared.RunJobRequest(
+    job_id=778157,
+    org_id='odit',
+    workspace_id='at',
+)
+
+res = s.databricks.run_job(req)
 
 if res.status_code == 200:
     # handle response
@@ -150,10 +155,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `request`                                                              | [shared.RunJobRequest](../../models/shared/runjobrequest.md)           | :heavy_check_mark:                                                     | The request object to use for the request.                             |
-| `security`                                                             | [operations.RunJobSecurity](../../models/operations/runjobsecurity.md) | :heavy_check_mark:                                                     | The security requirements to use for the request.                      |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `request`                                                    | [shared.RunJobRequest](../../models/shared/runjobrequest.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
 
 
 ### Response
@@ -169,23 +173,25 @@ Update the connection metadata for a given org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = shared.UpdateConnectionRequest(
     changes=shared.UpdateConnectionChanges(
         connected=False,
         demo=False,
-        org_id='perferendis',
+        org_id='at',
     ),
-    org_id='ipsam',
-    workspace_id='repellendus',
+    org_id='maiores',
+    workspace_id='molestiae',
 )
 
-res = s.databricks.update_connection(req, operations.UpdateConnectionSecurity(
-    api_key_auth="",
-))
+res = s.databricks.update_connection(req)
 
 if res.status_code == 200:
     # handle response
@@ -193,10 +199,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [shared.UpdateConnectionRequest](../../models/shared/updateconnectionrequest.md)           | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.UpdateConnectionSecurity](../../models/operations/updateconnectionsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [shared.UpdateConnectionRequest](../../models/shared/updateconnectionrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response

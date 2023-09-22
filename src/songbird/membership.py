@@ -12,7 +12,7 @@ class Membership:
         self.sdk_configuration = sdk_config
         
     
-    def create_membership(self, request: shared.AddMembershipRequest, security: operations.CreateMembershipSecurity) -> operations.CreateMembershipResponse:
+    def create_membership(self, request: shared.AddMembershipRequest) -> operations.CreateMembershipResponse:
         r"""Create a membership for a user, making them apart of an organization. Uses the user's current email address.
         Create a membership for a user, making them apart of an organization. Uses the user's current email address.
         """
@@ -28,7 +28,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,7 +45,7 @@ class Membership:
         return res
 
     
-    def create_organization_membership(self, request: operations.CreateOrganizationMembershipRequest, security: operations.CreateOrganizationMembershipSecurity) -> operations.CreateOrganizationMembershipResponse:
+    def create_organization_membership(self, request: operations.CreateOrganizationMembershipRequest) -> operations.CreateOrganizationMembershipResponse:
         r"""Create a membership for a user, making them apart of an organization. Uses the user's current email address.
         Create a membership for a user, making them apart of an organization. Uses the user's current email address.
         """
@@ -57,7 +57,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -74,7 +74,7 @@ class Membership:
         return res
 
     
-    def get_default_membership_for_email(self, request: operations.GetDefaultMembershipForEmailRequest, security: operations.GetDefaultMembershipForEmailSecurity) -> operations.GetDefaultMembershipForEmailResponse:
+    def get_default_membership_for_email(self, request: operations.GetDefaultMembershipForEmailRequest) -> operations.GetDefaultMembershipForEmailResponse:
         r"""Get the default membership for a user.
         Get the default membership for a user.
         """
@@ -86,7 +86,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -103,7 +103,7 @@ class Membership:
         return res
 
     
-    def get_memberships(self, request: operations.GetMembershipsRequest, security: operations.GetMembershipsSecurity) -> operations.GetMembershipsResponse:
+    def get_memberships(self, request: operations.GetMembershipsRequest) -> operations.GetMembershipsResponse:
         r"""Get memberships for a user.
         Get memberships for a user.
         """
@@ -114,7 +114,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -131,7 +131,7 @@ class Membership:
         return res
 
     
-    def get_memberships_by_email(self, request: operations.GetMembershipsByEmailRequest, security: operations.GetMembershipsByEmailSecurity) -> operations.GetMembershipsByEmailResponse:
+    def get_memberships_by_email(self, request: operations.GetMembershipsByEmailRequest) -> operations.GetMembershipsByEmailResponse:
         r"""Get memberships for a user given that user's email address.
         Get memberships for a user given that user's email address.
         """
@@ -143,7 +143,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -160,7 +160,7 @@ class Membership:
         return res
 
     
-    def get_memberships_by_org(self, request: operations.GetMembershipsByOrgRequest, security: operations.GetMembershipsByOrgSecurity) -> operations.GetMembershipsByOrgResponse:
+    def get_memberships_by_org(self, request: operations.GetMembershipsByOrgRequest) -> operations.GetMembershipsByOrgResponse:
         r"""Get memberships for an org.
         Get memberships for an org.
         """
@@ -171,7 +171,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -188,7 +188,7 @@ class Membership:
         return res
 
     
-    def list_organization_memberships(self, request: operations.ListOrganizationMembershipsRequest, security: operations.ListOrganizationMembershipsSecurity) -> operations.ListOrganizationMembershipsResponse:
+    def list_organization_memberships(self, request: operations.ListOrganizationMembershipsRequest) -> operations.ListOrganizationMembershipsResponse:
         r"""List organization memberships
         list memberships for an organization
         """
@@ -199,7 +199,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -216,7 +216,7 @@ class Membership:
         return res
 
     
-    def remove_membership_by_email(self, request: shared.RemoveMembershipRequest, security: operations.RemoveMembershipByEmailSecurity) -> operations.RemoveMembershipByEmailResponse:
+    def remove_membership_by_email(self, request: shared.RemoveMembershipRequest) -> operations.RemoveMembershipByEmailResponse:
         r"""Removes membership in a given org from a user, using the user's email address.
         Removes membership in a given org from a user, using the user's email address.
         """
@@ -232,7 +232,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -249,7 +249,7 @@ class Membership:
         return res
 
     
-    def remove_organization_membership(self, request: operations.RemoveOrganizationMembershipRequest, security: operations.RemoveOrganizationMembershipSecurity) -> operations.RemoveOrganizationMembershipResponse:
+    def remove_organization_membership(self, request: operations.RemoveOrganizationMembershipRequest) -> operations.RemoveOrganizationMembershipResponse:
         r"""Removes membership in a given org from a user, using the user's email address.
         Removes membership in a given org from a user, using the user's email address.
         """
@@ -261,7 +261,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -278,7 +278,7 @@ class Membership:
         return res
 
     
-    def set_default_membership(self, request: shared.SetDefaultMembershipRequest, security: operations.SetDefaultMembershipSecurity) -> operations.SetDefaultMembershipResponse:
+    def set_default_membership(self, request: shared.SetDefaultMembershipRequest) -> operations.SetDefaultMembershipResponse:
         r"""Sets the organization that should be used when logging a user in
         Sets the organization that should be used when logging a user in
         """
@@ -294,7 +294,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -311,7 +311,7 @@ class Membership:
         return res
 
     
-    def update_membership_by_email(self, request: shared.UpdateMembershipRequest, security: operations.UpdateMembershipByEmailSecurity) -> operations.UpdateMembershipByEmailResponse:
+    def update_membership_by_email(self, request: shared.UpdateMembershipRequest) -> operations.UpdateMembershipByEmailResponse:
         r"""Updates the role in an membership
         Updates the role in an membership, given the organization and the user's email address.
         """
@@ -327,7 +327,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -344,7 +344,7 @@ class Membership:
         return res
 
     
-    def update_organization_membership(self, request: operations.UpdateOrganizationMembershipRequest, security: operations.UpdateOrganizationMembershipSecurity) -> operations.UpdateOrganizationMembershipResponse:
+    def update_organization_membership(self, request: operations.UpdateOrganizationMembershipRequest) -> operations.UpdateOrganizationMembershipResponse:
         r"""Updates the role in an membership
         Updates the role in an membership, given the organization and the user's email address.
         """
@@ -356,7 +356,7 @@ class Membership:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

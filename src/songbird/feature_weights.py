@@ -12,7 +12,7 @@ class FeatureWeights:
         self.sdk_configuration = sdk_config
         
     
-    def get_column_weights(self, request: operations.GetColumnWeightsRequest, security: operations.GetColumnWeightsSecurity) -> operations.GetColumnWeightsResponse:
+    def get_column_weights(self, request: operations.GetColumnWeightsRequest) -> operations.GetColumnWeightsResponse:
         r"""Get column weights for the specified dataset
         Get column weights for the specified dataset
         """
@@ -23,7 +23,7 @@ class FeatureWeights:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -40,7 +40,7 @@ class FeatureWeights:
         return res
 
     
-    def put_column_weights(self, request: operations.PutColumnWeightsRequest, security: operations.PutColumnWeightsSecurity) -> operations.PutColumnWeightsResponse:
+    def put_column_weights(self, request: operations.PutColumnWeightsRequest) -> operations.PutColumnWeightsResponse:
         r"""Put column weights for the specified dataset
         Put column weights for the specified dataset
         """
@@ -56,7 +56,7 @@ class FeatureWeights:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

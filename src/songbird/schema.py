@@ -11,7 +11,7 @@ class Schema:
         self.sdk_configuration = sdk_config
         
     
-    def get_monitor_config_schema(self, request: operations.GetMonitorConfigSchemaRequest, security: operations.GetMonitorConfigSchemaSecurity) -> operations.GetMonitorConfigSchemaResponse:
+    def get_monitor_config_schema(self, request: operations.GetMonitorConfigSchemaRequest) -> operations.GetMonitorConfigSchemaResponse:
         r"""Get the current supported schema of the monitor configuration
         Get the current supported schema of the  monitor configuration
         """
@@ -22,7 +22,7 @@ class Schema:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

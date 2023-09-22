@@ -15,17 +15,19 @@ Create a user.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.CreateUserRequest(
-    email='Janessa_Emmerich@hotmail.com',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.user.create_user(req, operations.CreateUserSecurity(
-    api_key_auth="",
-))
+req = shared.CreateUserRequest(
+    email='Brigitte75@gmail.com',
+)
+
+res = s.user.create_user(req)
 
 if res.status_code == 200:
     # handle response
@@ -33,10 +35,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.CreateUserRequest](../../models/shared/createuserrequest.md)           | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.CreateUserSecurity](../../models/operations/createusersecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [shared.CreateUserRequest](../../models/shared/createuserrequest.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 
 
 ### Response
@@ -52,17 +53,19 @@ Get a user by their id.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetUserRequest(
-    user_id='saepe',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.user.get_user(req, operations.GetUserSecurity(
-    api_key_auth="",
-))
+req = operations.GetUserRequest(
+    user_id='accusamus',
+)
+
+res = s.user.get_user(req)
 
 if res.status_code == 200:
     # handle response
@@ -70,10 +73,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `request`                                                                | [operations.GetUserRequest](../../models/operations/getuserrequest.md)   | :heavy_check_mark:                                                       | The request object to use for the request.                               |
-| `security`                                                               | [operations.GetUserSecurity](../../models/operations/getusersecurity.md) | :heavy_check_mark:                                                       | The security requirements to use for the request.                        |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [operations.GetUserRequest](../../models/operations/getuserrequest.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
@@ -89,17 +91,19 @@ Get a user by their email.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetUserByEmailRequest(
-    email='Brigitte75@gmail.com',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.user.get_user_by_email(req, operations.GetUserByEmailSecurity(
-    api_key_auth="",
-))
+req = operations.GetUserByEmailRequest(
+    email='Summer_Hoppe@gmail.com',
+)
+
+res = s.user.get_user_by_email(req)
 
 if res.status_code == 200:
     # handle response
@@ -107,10 +111,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetUserByEmailRequest](../../models/operations/getuserbyemailrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetUserByEmailSecurity](../../models/operations/getuserbyemailsecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetUserByEmailRequest](../../models/operations/getuserbyemailrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -126,19 +129,21 @@ Update a user.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.User(
-    email='Emmanuelle_Turner@hotmail.com',
-    preferences='provident',
-    user_id='minima',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.user.update_user(req, operations.UpdateUserSecurity(
-    api_key_auth="",
-))
+req = shared.User(
+    email='Rickie.Leannon@gmail.com',
+    preferences='at',
+    user_id='quaerat',
+)
+
+res = s.user.update_user(req)
 
 if res.status_code == 200:
     # handle response
@@ -146,10 +151,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.User](../../models/shared/user.md)                                     | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
-| `security`                                                                     | [operations.UpdateUserSecurity](../../models/operations/updateusersecurity.md) | :heavy_check_mark:                                                             | The security requirements to use for the request.                              |
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [shared.User](../../models/shared/user.md) | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response

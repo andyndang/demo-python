@@ -12,7 +12,7 @@ class Log:
         self.sdk_configuration = sdk_config
         
     
-    def get_profile_observatory_link(self, request: operations.GetProfileObservatoryLinkRequest, security: operations.GetProfileObservatoryLinkSecurity) -> operations.GetProfileObservatoryLinkResponse:
+    def get_profile_observatory_link(self, request: operations.GetProfileObservatoryLinkRequest) -> operations.GetProfileObservatoryLinkResponse:
         r"""Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
         Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
         """
@@ -28,7 +28,7 @@ class Log:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,7 +45,7 @@ class Log:
         return res
 
     
-    def log_async(self, request: operations.LogAsyncRequest, security: operations.LogAsyncSecurity) -> operations.LogAsyncResponse:
+    def log_async(self, request: operations.LogAsyncRequest) -> operations.LogAsyncResponse:
         r"""Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
         Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
         """
@@ -61,7 +61,7 @@ class Log:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,7 +78,7 @@ class Log:
         return res
 
     
-    def log_reference(self, request: operations.LogReferenceRequest, security: operations.LogReferenceSecurity) -> operations.LogReferenceResponse:
+    def log_reference(self, request: operations.LogReferenceRequest) -> operations.LogReferenceResponse:
         r"""Returns a presigned URL for uploading the reference profile to.
         Reference profiles can be used for.
         """
@@ -94,7 +94,7 @@ class Log:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

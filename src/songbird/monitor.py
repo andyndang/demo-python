@@ -12,7 +12,7 @@ class Monitor:
         self.sdk_configuration = sdk_config
         
     
-    def delete_analyzer(self, request: operations.DeleteAnalyzerRequest, security: operations.DeleteAnalyzerSecurity) -> operations.DeleteAnalyzerResponse:
+    def delete_analyzer(self, request: operations.DeleteAnalyzerRequest) -> operations.DeleteAnalyzerResponse:
         r"""Delete the analyzer config for a given dataset.
         Delete the analyzer config for a given dataset.
         """
@@ -23,7 +23,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -40,7 +40,7 @@ class Monitor:
         return res
 
     
-    def delete_monitor(self, request: operations.DeleteMonitorRequest, security: operations.DeleteMonitorSecurity) -> operations.DeleteMonitorResponse:
+    def delete_monitor(self, request: operations.DeleteMonitorRequest) -> operations.DeleteMonitorResponse:
         r"""Delete the monitor for a given dataset.
         Delete the monitor for a given dataset.
         """
@@ -51,7 +51,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -68,7 +68,7 @@ class Monitor:
         return res
 
     
-    def get_analyzer(self, request: operations.GetAnalyzerRequest, security: operations.GetAnalyzerSecurity) -> operations.GetAnalyzerResponse:
+    def get_analyzer(self, request: operations.GetAnalyzerRequest) -> operations.GetAnalyzerResponse:
         r"""Get the analyzer config for a given dataset.
         Get the analyzer config for a given dataset.
         """
@@ -79,7 +79,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -95,7 +95,7 @@ class Monitor:
         return res
 
     
-    def get_monitor(self, request: operations.GetMonitorRequest, security: operations.GetMonitorSecurity) -> operations.GetMonitorResponse:
+    def get_monitor(self, request: operations.GetMonitorRequest) -> operations.GetMonitorResponse:
         r"""Get the monitor config for a given dataset.
         Get the monitor config for a given dataset.
         """
@@ -106,7 +106,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -122,7 +122,7 @@ class Monitor:
         return res
 
     
-    def get_monitor_config_v3(self, request: operations.GetMonitorConfigV3Request, security: operations.GetMonitorConfigV3Security) -> operations.GetMonitorConfigV3Response:
+    def get_monitor_config_v3(self, request: operations.GetMonitorConfigV3Request) -> operations.GetMonitorConfigV3Response:
         r"""Get the monitor config document for a given dataset.
         Get the monitor config document for a given dataset.
         """
@@ -134,7 +134,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -150,7 +150,7 @@ class Monitor:
         return res
 
     
-    def get_monitor_config_v3_version(self, request: operations.GetMonitorConfigV3VersionRequest, security: operations.GetMonitorConfigV3VersionSecurity) -> operations.GetMonitorConfigV3VersionResponse:
+    def get_monitor_config_v3_version(self, request: operations.GetMonitorConfigV3VersionRequest) -> operations.GetMonitorConfigV3VersionResponse:
         r"""Get the monitor config document version for a given dataset.
         Get the monitor config document version for a given dataset.
         """
@@ -161,7 +161,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -177,7 +177,7 @@ class Monitor:
         return res
 
     
-    def list_constraints(self, request: operations.ListConstraintsRequest, security: operations.ListConstraintsSecurity) -> operations.ListConstraintsResponse:
+    def list_constraints(self, request: operations.ListConstraintsRequest) -> operations.ListConstraintsResponse:
         r"""List the constraints for a given dataset.
         List the constraints for a given dataset.
         """
@@ -188,7 +188,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -205,7 +205,7 @@ class Monitor:
         return res
 
     
-    def list_monitor_config_v3_versions(self, request: operations.ListMonitorConfigV3VersionsRequest, security: operations.ListMonitorConfigV3VersionsSecurity) -> operations.ListMonitorConfigV3VersionsResponse:
+    def list_monitor_config_v3_versions(self, request: operations.ListMonitorConfigV3VersionsRequest) -> operations.ListMonitorConfigV3VersionsResponse:
         r"""List the monitor config document versions for a given dataset.
         List the monitor config document versions for a given dataset.
         """
@@ -216,7 +216,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -233,7 +233,7 @@ class Monitor:
         return res
 
     
-    def patch_monitor_config_v3(self, request: operations.PatchMonitorConfigV3Request, security: operations.PatchMonitorConfigV3Security) -> operations.PatchMonitorConfigV3Response:
+    def patch_monitor_config_v3(self, request: operations.PatchMonitorConfigV3Request) -> operations.PatchMonitorConfigV3Response:
         r"""Patch an updated monitor config document for a given dataset.
         Save an updated monitor config document for a given dataset.  Monitors and analyzers matching an existing ID are replaced.
         """
@@ -249,7 +249,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -266,7 +266,7 @@ class Monitor:
         return res
 
     
-    def put_analyzer(self, request: operations.PutAnalyzerRequest, security: operations.PutAnalyzerSecurity) -> operations.PutAnalyzerResponse:
+    def put_analyzer(self, request: operations.PutAnalyzerRequest) -> operations.PutAnalyzerResponse:
         r"""Save the analyzer config for a given dataset.
         Save the analyzer config for a given dataset.
         """
@@ -282,7 +282,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -299,7 +299,7 @@ class Monitor:
         return res
 
     
-    def put_monitor(self, request: operations.PutMonitorRequest, security: operations.PutMonitorSecurity) -> operations.PutMonitorResponse:
+    def put_monitor(self, request: operations.PutMonitorRequest) -> operations.PutMonitorResponse:
         r"""Save the monitor for a given dataset.
         Save the monitor for a given dataset.
         """
@@ -315,7 +315,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -332,7 +332,7 @@ class Monitor:
         return res
 
     
-    def put_monitor_config_v3(self, request: operations.PutMonitorConfigV3Request, security: operations.PutMonitorConfigV3Security) -> operations.PutMonitorConfigV3Response:
+    def put_monitor_config_v3(self, request: operations.PutMonitorConfigV3Request) -> operations.PutMonitorConfigV3Response:
         r"""Save the monitor config document for a given dataset.
         Save the monitor config document for a given dataset.
         """
@@ -348,7 +348,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -365,7 +365,7 @@ class Monitor:
         return res
 
     
-    def put_request_monitor_run_config(self, request: operations.PutRequestMonitorRunConfigRequest, security: operations.PutRequestMonitorRunConfigSecurity) -> operations.PutRequestMonitorRunConfigResponse:
+    def put_request_monitor_run_config(self, request: operations.PutRequestMonitorRunConfigRequest) -> operations.PutRequestMonitorRunConfigResponse:
         r"""Put the RequestMonitorRun config into S3.
         Put the RequestMonitorRun config into S3.
         """
@@ -381,7 +381,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -397,7 +397,7 @@ class Monitor:
         return res
 
     
-    def validate_monitor_config_v3(self, request: operations.ValidateMonitorConfigV3Request, security: operations.ValidateMonitorConfigV3Security) -> operations.ValidateMonitorConfigV3Response:
+    def validate_monitor_config_v3(self, request: operations.ValidateMonitorConfigV3Request) -> operations.ValidateMonitorConfigV3Response:
         r"""Validate the monitor config document for a given dataset.
         Validate the monitor config document for a given dataset.
         """
@@ -414,7 +414,7 @@ class Monitor:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

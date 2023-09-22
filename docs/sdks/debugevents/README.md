@@ -15,33 +15,35 @@ Create a debug event.
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.LogDebugEventRequest(
     debug_event=shared.DebugEvent(
-        content='quod',
-        creation_timestamp=461479,
-        dataset_timestamp=520478,
+        content='officia',
+        creation_timestamp=582020,
+        dataset_timestamp=143353,
         segment=shared.Segment(
             tags=[
                 shared.SegmentTag(
-                    key='porro',
-                    value='dolorum',
+                    key='deleniti',
+                    value='hic',
                 ),
             ],
         ),
         tags=[
-            'dicta',
+            'optio',
         ],
-        trace_id='nam',
+        trace_id='totam',
     ),
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.debug_events.log_debug_event(req, operations.LogDebugEventSecurity(
-    api_key_auth="",
-))
+res = s.debug_events.log_debug_event(req)
 
 if res.status_code == 200:
     # handle response
@@ -49,10 +51,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
-| `request`                                                                            | [operations.LogDebugEventRequest](../../models/operations/logdebugeventrequest.md)   | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
-| `security`                                                                           | [operations.LogDebugEventSecurity](../../models/operations/logdebugeventsecurity.md) | :heavy_check_mark:                                                                   | The security requirements to use for the request.                                    |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [operations.LogDebugEventRequest](../../models/operations/logdebugeventrequest.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response

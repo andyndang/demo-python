@@ -12,7 +12,7 @@ class User:
         self.sdk_configuration = sdk_config
         
     
-    def create_user(self, request: shared.CreateUserRequest, security: operations.CreateUserSecurity) -> operations.CreateUserResponse:
+    def create_user(self, request: shared.CreateUserRequest) -> operations.CreateUserResponse:
         r"""Create a user.
         Create a user.
         """
@@ -28,7 +28,7 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -45,7 +45,7 @@ class User:
         return res
 
     
-    def get_user(self, request: operations.GetUserRequest, security: operations.GetUserSecurity) -> operations.GetUserResponse:
+    def get_user(self, request: operations.GetUserRequest) -> operations.GetUserResponse:
         r"""Get a user by their id.
         Get a user by their id.
         """
@@ -56,7 +56,7 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -73,7 +73,7 @@ class User:
         return res
 
     
-    def get_user_by_email(self, request: operations.GetUserByEmailRequest, security: operations.GetUserByEmailSecurity) -> operations.GetUserByEmailResponse:
+    def get_user_by_email(self, request: operations.GetUserByEmailRequest) -> operations.GetUserByEmailResponse:
         r"""Get a user by their email.
         Get a user by their email.
         """
@@ -85,7 +85,7 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -102,7 +102,7 @@ class User:
         return res
 
     
-    def update_user(self, request: shared.User, security: operations.UpdateUserSecurity) -> operations.UpdateUserResponse:
+    def update_user(self, request: shared.User) -> operations.UpdateUserResponse:
         r"""Update a user.
         Update a user.
         """
@@ -118,7 +118,7 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

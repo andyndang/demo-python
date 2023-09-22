@@ -23,21 +23,23 @@ Create a membership for a user, making them apart of an organization. Uses the u
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = shared.AddMembershipRequest(
-    created_by='natus',
+    created_by='distinctio',
     default=False,
-    email='Jarred.Aufderhar@yahoo.com',
-    org_id='distinctio',
+    email='Edward_Greenfelder@yahoo.com',
+    org_id='nobis',
     role=shared.Role.MEMBER,
 )
 
-res = s.membership.create_membership(req, operations.CreateMembershipSecurity(
-    api_key_auth="",
-))
+res = s.membership.create_membership(req)
 
 if res.status_code == 200:
     # handle response
@@ -45,10 +47,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [shared.AddMembershipRequest](../../models/shared/addmembershiprequest.md)                 | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.CreateMembershipSecurity](../../models/operations/createmembershipsecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [shared.AddMembershipRequest](../../models/shared/addmembershiprequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -66,18 +67,20 @@ Create a membership for a user, making them apart of an organization. Uses the u
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.CreateOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    role=shared.Role.ADMIN,
+    role=shared.Role.VIEWER,
     set_default=False,
 )
 
-res = s.membership.create_organization_membership(req, operations.CreateOrganizationMembershipSecurity(
-    api_key_auth="",
-))
+res = s.membership.create_organization_membership(req)
 
 if res.status_code == 200:
     # handle response
@@ -85,10 +88,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.CreateOrganizationMembershipRequest](../../models/operations/createorganizationmembershiprequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.CreateOrganizationMembershipSecurity](../../models/operations/createorganizationmembershipsecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.CreateOrganizationMembershipRequest](../../models/operations/createorganizationmembershiprequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
@@ -104,17 +106,19 @@ Get the default membership for a user.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetDefaultMembershipForEmailRequest(
-    email='Geraldine.Mosciski87@gmail.com',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.membership.get_default_membership_for_email(req, operations.GetDefaultMembershipForEmailSecurity(
-    api_key_auth="",
-))
+req = operations.GetDefaultMembershipForEmailRequest(
+    email='Baylee56@gmail.com',
+)
+
+res = s.membership.get_default_membership_for_email(req)
 
 if res.status_code == 200:
     # handle response
@@ -122,10 +126,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.GetDefaultMembershipForEmailRequest](../../models/operations/getdefaultmembershipforemailrequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.GetDefaultMembershipForEmailSecurity](../../models/operations/getdefaultmembershipforemailsecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.GetDefaultMembershipForEmailRequest](../../models/operations/getdefaultmembershipforemailrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
@@ -141,17 +144,19 @@ Get memberships for a user.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetMembershipsRequest(
-    user_id='aspernatur',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.membership.get_memberships(req, operations.GetMembershipsSecurity(
-    api_key_auth="",
-))
+req = operations.GetMembershipsRequest(
+    user_id='ullam',
+)
+
+res = s.membership.get_memberships(req)
 
 if res.status_code == 200:
     # handle response
@@ -159,10 +164,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [operations.GetMembershipsRequest](../../models/operations/getmembershipsrequest.md)   | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
-| `security`                                                                             | [operations.GetMembershipsSecurity](../../models/operations/getmembershipssecurity.md) | :heavy_check_mark:                                                                     | The security requirements to use for the request.                                      |
+| Parameter                                                                            | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `request`                                                                            | [operations.GetMembershipsRequest](../../models/operations/getmembershipsrequest.md) | :heavy_check_mark:                                                                   | The request object to use for the request.                                           |
 
 
 ### Response
@@ -178,17 +182,19 @@ Get memberships for a user given that user's email address.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetMembershipsByEmailRequest(
-    email='Eliane.Bosco@gmail.com',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.membership.get_memberships_by_email(req, operations.GetMembershipsByEmailSecurity(
-    api_key_auth="",
-))
+req = operations.GetMembershipsByEmailRequest(
+    email='Katrina65@yahoo.com',
+)
+
+res = s.membership.get_memberships_by_email(req)
 
 if res.status_code == 200:
     # handle response
@@ -196,10 +202,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                            | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
-| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| `request`                                                                                            | [operations.GetMembershipsByEmailRequest](../../models/operations/getmembershipsbyemailrequest.md)   | :heavy_check_mark:                                                                                   | The request object to use for the request.                                                           |
-| `security`                                                                                           | [operations.GetMembershipsByEmailSecurity](../../models/operations/getmembershipsbyemailsecurity.md) | :heavy_check_mark:                                                                                   | The security requirements to use for the request.                                                    |
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [operations.GetMembershipsByEmailRequest](../../models/operations/getmembershipsbyemailrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
 
 
 ### Response
@@ -215,17 +220,19 @@ Get memberships for an org.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
-
-req = operations.GetMembershipsByOrgRequest(
-    org_id='provident',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.membership.get_memberships_by_org(req, operations.GetMembershipsByOrgSecurity(
-    api_key_auth="",
-))
+req = operations.GetMembershipsByOrgRequest(
+    org_id='reiciendis',
+)
+
+res = s.membership.get_memberships_by_org(req)
 
 if res.status_code == 200:
     # handle response
@@ -233,10 +240,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                        | Type                                                                                             | Required                                                                                         | Description                                                                                      |
-| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| `request`                                                                                        | [operations.GetMembershipsByOrgRequest](../../models/operations/getmembershipsbyorgrequest.md)   | :heavy_check_mark:                                                                               | The request object to use for the request.                                                       |
-| `security`                                                                                       | [operations.GetMembershipsByOrgSecurity](../../models/operations/getmembershipsbyorgsecurity.md) | :heavy_check_mark:                                                                               | The security requirements to use for the request.                                                |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [operations.GetMembershipsByOrgRequest](../../models/operations/getmembershipsbyorgrequest.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
@@ -252,17 +258,19 @@ list memberships for an organization
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListOrganizationMembershipsRequest(
     org_id='org-123',
 )
 
-res = s.membership.list_organization_memberships(req, operations.ListOrganizationMembershipsSecurity(
-    api_key_auth="",
-))
+res = s.membership.list_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
@@ -270,10 +278,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                        | [operations.ListOrganizationMembershipsRequest](../../models/operations/listorganizationmembershipsrequest.md)   | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
-| `security`                                                                                                       | [operations.ListOrganizationMembershipsSecurity](../../models/operations/listorganizationmembershipssecurity.md) | :heavy_check_mark:                                                                                               | The security requirements to use for the request.                                                                |
+| Parameter                                                                                                      | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
+| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                      | [operations.ListOrganizationMembershipsRequest](../../models/operations/listorganizationmembershipsrequest.md) | :heavy_check_mark:                                                                                             | The request object to use for the request.                                                                     |
 
 
 ### Response
@@ -289,18 +296,20 @@ Removes membership in a given org from a user, using the user's email address.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.RemoveMembershipRequest(
-    email='Kiley_Bartoletti@yahoo.com',
-    org_id='mollitia',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.membership.remove_membership_by_email(req, operations.RemoveMembershipByEmailSecurity(
-    api_key_auth="",
-))
+req = shared.RemoveMembershipRequest(
+    email='Emmie89@yahoo.com',
+    org_id='odit',
+)
+
+res = s.membership.remove_membership_by_email(req)
 
 if res.status_code == 200:
     # handle response
@@ -308,10 +317,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [shared.RemoveMembershipRequest](../../models/shared/removemembershiprequest.md)                         | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.RemoveMembershipByEmailSecurity](../../models/operations/removemembershipbyemailsecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [shared.RemoveMembershipRequest](../../models/shared/removemembershiprequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -327,18 +335,20 @@ Removes membership in a given org from a user, using the user's email address.
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.RemoveOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
 )
 
-res = s.membership.remove_organization_membership(req, operations.RemoveOrganizationMembershipSecurity(
-    api_key_auth="",
-))
+res = s.membership.remove_organization_membership(req)
 
 if res.status_code == 200:
     # handle response
@@ -346,10 +356,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.RemoveOrganizationMembershipRequest](../../models/operations/removeorganizationmembershiprequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.RemoveOrganizationMembershipSecurity](../../models/operations/removeorganizationmembershipsecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.RemoveOrganizationMembershipRequest](../../models/operations/removeorganizationmembershiprequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response
@@ -365,18 +374,20 @@ Sets the organization that should be used when logging a user in
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
-
-req = shared.SetDefaultMembershipRequest(
-    org_id='ad',
-    user_id='eum',
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
 )
 
-res = s.membership.set_default_membership(req, operations.SetDefaultMembershipSecurity(
-    api_key_auth="",
-))
+req = shared.SetDefaultMembershipRequest(
+    org_id='nemo',
+    user_id='quasi',
+)
+
+res = s.membership.set_default_membership(req)
 
 if res.status_code == 200:
     # handle response
@@ -384,10 +395,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
-| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| `request`                                                                                          | [shared.SetDefaultMembershipRequest](../../models/shared/setdefaultmembershiprequest.md)           | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
-| `security`                                                                                         | [operations.SetDefaultMembershipSecurity](../../models/operations/setdefaultmembershipsecurity.md) | :heavy_check_mark:                                                                                 | The security requirements to use for the request.                                                  |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [shared.SetDefaultMembershipRequest](../../models/shared/setdefaultmembershiprequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -403,19 +413,21 @@ Updates the role in an membership, given the organization and the user's email a
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = shared.UpdateMembershipRequest(
-    email='Sophie.Connelly@gmail.com',
-    org_id='iure',
+    email='Wilton80@yahoo.com',
+    org_id='deleniti',
     role=shared.Role.VIEWER,
 )
 
-res = s.membership.update_membership_by_email(req, operations.UpdateMembershipByEmailSecurity(
-    api_key_auth="",
-))
+res = s.membership.update_membership_by_email(req)
 
 if res.status_code == 200:
     # handle response
@@ -423,10 +435,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                | Type                                                                                                     | Required                                                                                                 | Description                                                                                              |
-| -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                | [shared.UpdateMembershipRequest](../../models/shared/updatemembershiprequest.md)                         | :heavy_check_mark:                                                                                       | The request object to use for the request.                                                               |
-| `security`                                                                                               | [operations.UpdateMembershipByEmailSecurity](../../models/operations/updatemembershipbyemailsecurity.md) | :heavy_check_mark:                                                                                       | The security requirements to use for the request.                                                        |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [shared.UpdateMembershipRequest](../../models/shared/updatemembershiprequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -444,17 +455,19 @@ Updates the role in an membership, given the organization and the user's email a
 import songbird
 from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.UpdateOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    role=shared.Role.VIEWER,
+    role=shared.Role.MEMBER,
 )
 
-res = s.membership.update_organization_membership(req, operations.UpdateOrganizationMembershipSecurity(
-    api_key_auth="",
-))
+res = s.membership.update_organization_membership(req)
 
 if res.status_code == 200:
     # handle response
@@ -462,10 +475,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                                          | Type                                                                                                               | Required                                                                                                           | Description                                                                                                        |
-| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `request`                                                                                                          | [operations.UpdateOrganizationMembershipRequest](../../models/operations/updateorganizationmembershiprequest.md)   | :heavy_check_mark:                                                                                                 | The request object to use for the request.                                                                         |
-| `security`                                                                                                         | [operations.UpdateOrganizationMembershipSecurity](../../models/operations/updateorganizationmembershipsecurity.md) | :heavy_check_mark:                                                                                                 | The security requirements to use for the request.                                                                  |
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.UpdateOrganizationMembershipRequest](../../models/operations/updateorganizationmembershiprequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
 
 
 ### Response

@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateOrganizationSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class CreateOrganizationRequest:
     name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'name', 'style': 'form', 'explode': True }})
     r"""The name of the organization"""

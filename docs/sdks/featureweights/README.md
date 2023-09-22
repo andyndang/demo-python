@@ -13,18 +13,20 @@ Get column weights for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetColumnWeightsRequest(
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.feature_weights.get_column_weights(req, operations.GetColumnWeightsSecurity(
-    api_key_auth="",
-))
+res = s.feature_weights.get_column_weights(req)
 
 if res.status_code == 200:
     # handle response
@@ -32,10 +34,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.GetColumnWeightsRequest](../../models/operations/getcolumnweightsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.GetColumnWeightsSecurity](../../models/operations/getcolumnweightssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.GetColumnWeightsRequest](../../models/operations/getcolumnweightsrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response
@@ -51,19 +52,21 @@ Put column weights for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.PutColumnWeightsRequest(
-    request_body='officia',
+    request_body='beatae',
     dataset_id='model-123',
     org_id='org-123',
 )
 
-res = s.feature_weights.put_column_weights(req, operations.PutColumnWeightsSecurity(
-    api_key_auth="",
-))
+res = s.feature_weights.put_column_weights(req)
 
 if res.status_code == 200:
     # handle response
@@ -71,10 +74,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                                  | Type                                                                                       | Required                                                                                   | Description                                                                                |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| `request`                                                                                  | [operations.PutColumnWeightsRequest](../../models/operations/putcolumnweightsrequest.md)   | :heavy_check_mark:                                                                         | The request object to use for the request.                                                 |
-| `security`                                                                                 | [operations.PutColumnWeightsSecurity](../../models/operations/putcolumnweightssecurity.md) | :heavy_check_mark:                                                                         | The security requirements to use for the request.                                          |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `request`                                                                                | [operations.PutColumnWeightsRequest](../../models/operations/putcolumnweightsrequest.md) | :heavy_check_mark:                                                                       | The request object to use for the request.                                               |
 
 
 ### Response

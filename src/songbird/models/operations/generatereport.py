@@ -10,14 +10,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GenerateReportSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class GenerateReportRequest:
     report_type: shared_adminreporttype.AdminReportType = dataclasses.field(metadata={'query_param': { 'field_name': 'report_type', 'style': 'form', 'explode': True }})
     r"""A type of admin report."""

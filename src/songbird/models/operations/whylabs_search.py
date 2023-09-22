@@ -9,14 +9,6 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class WhyLabsSearchSecurity:
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-
-
-
-@dataclasses.dataclass
 class WhyLabsSearchRequest:
     query: str = dataclasses.field(metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     

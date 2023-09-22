@@ -15,9 +15,13 @@ Generates an API key for a given user. Must be called either by system administr
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.CreateAPIKeyRequest(
     alias='MLApplicationName',
@@ -29,9 +33,7 @@ req = operations.CreateAPIKeyRequest(
     user_id='user-123',
 )
 
-res = s.api_key.create_api_key(req, operations.CreateAPIKeySecurity(
-    api_key_auth="",
-))
+res = s.api_key.create_api_key(req)
 
 if res.status_code == 200:
     # handle response
@@ -39,10 +41,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.CreateAPIKeyRequest](../../models/operations/createapikeyrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.CreateAPIKeySecurity](../../models/operations/createapikeysecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.CreateAPIKeyRequest](../../models/operations/createapikeyrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response
@@ -58,18 +59,20 @@ Get an api key by its id
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.GetAPIKeyRequest(
     key_id='fh4dUNV3WQ',
     org_id='org-123',
 )
 
-res = s.api_key.get_api_key(req, operations.GetAPIKeySecurity(
-    api_key_auth="",
-))
+res = s.api_key.get_api_key(req)
 
 if res.status_code == 200:
     # handle response
@@ -77,10 +80,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| `request`                                                                    | [operations.GetAPIKeyRequest](../../models/operations/getapikeyrequest.md)   | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
-| `security`                                                                   | [operations.GetAPIKeySecurity](../../models/operations/getapikeysecurity.md) | :heavy_check_mark:                                                           | The security requirements to use for the request.                            |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `request`                                                                  | [operations.GetAPIKeyRequest](../../models/operations/getapikeyrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
 
 
 ### Response
@@ -96,18 +98,20 @@ Returns the API key metadata for a given organization and user
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.ListAPIKeysRequest(
     org_id='org-123',
     user_id='user-123',
 )
 
-res = s.api_key.list_api_keys(req, operations.ListAPIKeysSecurity(
-    api_key_auth="",
-))
+res = s.api_key.list_api_keys(req)
 
 if res.status_code == 200:
     # handle response
@@ -115,10 +119,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.ListAPIKeysRequest](../../models/operations/listapikeysrequest.md)   | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-| `security`                                                                       | [operations.ListAPIKeysSecurity](../../models/operations/listapikeyssecurity.md) | :heavy_check_mark:                                                               | The security requirements to use for the request.                                |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [operations.ListAPIKeysRequest](../../models/operations/listapikeysrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
@@ -134,9 +137,13 @@ Revokes the given API Key
 
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
 
 req = operations.RevokeAPIKeyRequest(
     key_id='HMiFAgQeNb',
@@ -144,9 +151,7 @@ req = operations.RevokeAPIKeyRequest(
     user_id='user-123',
 )
 
-res = s.api_key.revoke_api_key(req, operations.RevokeAPIKeySecurity(
-    api_key_auth="",
-))
+res = s.api_key.revoke_api_key(req)
 
 if res.status_code == 200:
     # handle response
@@ -154,10 +159,9 @@ if res.status_code == 200:
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [operations.RevokeAPIKeyRequest](../../models/operations/revokeapikeyrequest.md)   | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
-| `security`                                                                         | [operations.RevokeAPIKeySecurity](../../models/operations/revokeapikeysecurity.md) | :heavy_check_mark:                                                                 | The security requirements to use for the request.                                  |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `request`                                                                        | [operations.RevokeAPIKeyRequest](../../models/operations/revokeapikeyrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
 
 
 ### Response

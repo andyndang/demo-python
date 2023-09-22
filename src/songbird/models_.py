@@ -12,7 +12,7 @@ class Models:
         self.sdk_configuration = sdk_config
         
     
-    def create_model(self, request: operations.CreateModelRequest, security: operations.CreateModelSecurity) -> operations.CreateModelResponse:
+    def create_model(self, request: operations.CreateModelRequest) -> operations.CreateModelResponse:
         r"""Create a model with a given name and a time period
         Create a model
         """
@@ -24,7 +24,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -41,7 +41,7 @@ class Models:
         return res
 
     
-    def deactivate_model(self, request: operations.DeactivateModelRequest, security: operations.DeactivateModelSecurity) -> operations.DeactivateModelResponse:
+    def deactivate_model(self, request: operations.DeactivateModelRequest) -> operations.DeactivateModelResponse:
         r"""Mark a model as inactive
         Mark a model as inactive
         """
@@ -52,7 +52,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -69,7 +69,7 @@ class Models:
         return res
 
     
-    def delete_entity_schema(self, request: operations.DeleteEntitySchemaRequest, security: operations.DeleteEntitySchemaSecurity) -> operations.DeleteEntitySchemaResponse:
+    def delete_entity_schema(self, request: operations.DeleteEntitySchemaRequest) -> operations.DeleteEntitySchemaResponse:
         r"""Delete the entity schema config for a given dataset.
         Delete the entity schema config for a given dataset.
         """
@@ -80,7 +80,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -97,7 +97,7 @@ class Models:
         return res
 
     
-    def delete_entity_schema_column(self, request: operations.DeleteEntitySchemaColumnRequest, security: operations.DeleteEntitySchemaColumnSecurity) -> operations.DeleteEntitySchemaColumnResponse:
+    def delete_entity_schema_column(self, request: operations.DeleteEntitySchemaColumnRequest) -> operations.DeleteEntitySchemaColumnResponse:
         r"""Delete the entity schema of a single column for a given dataset.
         Delete the entity schema of a single column for a given dataset.
         """
@@ -108,7 +108,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -125,7 +125,7 @@ class Models:
         return res
 
     
-    def delete_entity_schema_metric(self, request: operations.DeleteEntitySchemaMetricRequest, security: operations.DeleteEntitySchemaMetricSecurity) -> operations.DeleteEntitySchemaMetricResponse:
+    def delete_entity_schema_metric(self, request: operations.DeleteEntitySchemaMetricRequest) -> operations.DeleteEntitySchemaMetricResponse:
         r"""Delete the schema of a single metric for a given dataset.
         Delete the schema of a single metric for a given dataset.
         """
@@ -136,7 +136,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -153,7 +153,7 @@ class Models:
         return res
 
     
-    def get_entity_schema(self, request: operations.GetEntitySchemaRequest, security: operations.GetEntitySchemaSecurity) -> operations.GetEntitySchemaResponse:
+    def get_entity_schema(self, request: operations.GetEntitySchemaRequest) -> operations.GetEntitySchemaResponse:
         r"""Get the entity schema config for a given dataset.
         Get the entity schema config for a given dataset.
         """
@@ -164,7 +164,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -181,7 +181,7 @@ class Models:
         return res
 
     
-    def get_entity_schema_column(self, request: operations.GetEntitySchemaColumnRequest, security: operations.GetEntitySchemaColumnSecurity) -> operations.GetEntitySchemaColumnResponse:
+    def get_entity_schema_column(self, request: operations.GetEntitySchemaColumnRequest) -> operations.GetEntitySchemaColumnResponse:
         r"""Get the entity schema of a single column for a given dataset.
         Get the entity schema of a single column for a given dataset.
         """
@@ -192,7 +192,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -209,7 +209,7 @@ class Models:
         return res
 
     
-    def get_model(self, request: operations.GetModelRequest, security: operations.GetModelSecurity) -> operations.GetModelResponse:
+    def get_model(self, request: operations.GetModelRequest) -> operations.GetModelResponse:
         r"""Get a model metadata
         Returns various metadata about a model
         """
@@ -220,7 +220,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -237,7 +237,7 @@ class Models:
         return res
 
     
-    def list_models(self, request: operations.ListModelsRequest, security: operations.ListModelsSecurity) -> operations.ListModelsResponse:
+    def list_models(self, request: operations.ListModelsRequest) -> operations.ListModelsResponse:
         r"""Get a list of all of the model ids for an organization.
         Get a list of all of the model ids for an organization.
         """
@@ -248,7 +248,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -265,7 +265,7 @@ class Models:
         return res
 
     
-    def put_entity_schema(self, request: operations.PutEntitySchemaRequest, security: operations.PutEntitySchemaSecurity) -> operations.PutEntitySchemaResponse:
+    def put_entity_schema(self, request: operations.PutEntitySchemaRequest) -> operations.PutEntitySchemaResponse:
         r"""Save the entity schema config for a given dataset.
         Save the entity schema config for a given dataset.
         """
@@ -281,7 +281,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -298,7 +298,7 @@ class Models:
         return res
 
     
-    def put_entity_schema_column(self, request: operations.PutEntitySchemaColumnRequest, security: operations.PutEntitySchemaColumnSecurity) -> operations.PutEntitySchemaColumnResponse:
+    def put_entity_schema_column(self, request: operations.PutEntitySchemaColumnRequest) -> operations.PutEntitySchemaColumnResponse:
         r"""Save the entity schema of a single column for a given dataset.
         Save the entity schema of a single column for a given dataset.
         """
@@ -314,7 +314,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -331,7 +331,7 @@ class Models:
         return res
 
     
-    def put_entity_schema_metric(self, request: operations.PutEntitySchemaMetricRequest, security: operations.PutEntitySchemaMetricSecurity) -> operations.PutEntitySchemaMetricResponse:
+    def put_entity_schema_metric(self, request: operations.PutEntitySchemaMetricRequest) -> operations.PutEntitySchemaMetricResponse:
         r"""Save the schema of a single metric for a given dataset.
         Save the schema of a single metric for a given dataset.
         """
@@ -347,7 +347,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -364,7 +364,7 @@ class Models:
         return res
 
     
-    def update_model(self, request: operations.UpdateModelRequest, security: operations.UpdateModelSecurity) -> operations.UpdateModelResponse:
+    def update_model(self, request: operations.UpdateModelRequest) -> operations.UpdateModelResponse:
         r"""Update a model's metadata
         Update a model's metadata
         """
@@ -376,7 +376,7 @@ class Models:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
