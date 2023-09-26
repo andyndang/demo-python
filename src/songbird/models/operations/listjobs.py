@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class ListJobsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_jobs_response: Optional[shared_listjobsresponse.ListJobsResponse] = dataclasses.field(default=None)
     r"""ListJobs default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

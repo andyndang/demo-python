@@ -21,9 +21,12 @@ class CreateReferenceProfileUploadRequest:
 @dataclasses.dataclass
 class CreateReferenceProfileUploadResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     log_session_reference_response: Optional[shared_logsessionreferenceresponse.LogSessionReferenceResponse] = dataclasses.field(default=None)
     r"""CreateReferenceProfileUpload default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -24,9 +24,12 @@ class ListAPIKeysRequest:
 @dataclasses.dataclass
 class ListAPIKeysResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_user_api_keys: Optional[shared_listuserapikeys.ListUserAPIKeys] = dataclasses.field(default=None)
     r"""A list of objects with key ID and other metadata about the keys, but no secret values"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

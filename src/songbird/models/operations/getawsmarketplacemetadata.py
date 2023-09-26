@@ -19,9 +19,12 @@ class GetAWSMarketplaceMetadataRequest:
 @dataclasses.dataclass
 class GetAWSMarketplaceMetadataResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_marketplace_metadata_response: Optional[shared_getmarketplacemetadataresponse.GetMarketplaceMetadataResponse] = dataclasses.field(default=None)
     r"""GetAWSMarketplaceMetadata default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -23,9 +23,12 @@ class DeleteReferenceProfileRequest:
 @dataclasses.dataclass
 class DeleteReferenceProfileResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_reference_profile_default_application_json_boolean: Optional[bool] = dataclasses.field(default=None)
     r"""true if successful, false if we encounter failures"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

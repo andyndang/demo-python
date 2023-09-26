@@ -19,9 +19,12 @@ class GetNotificationSettingsRequest:
 @dataclasses.dataclass
 class GetNotificationSettingsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_notification_settings_response: Optional[shared_getnotificationsettingsresponse.GetNotificationSettingsResponse] = dataclasses.field(default=None)
     r"""GetNotificationSettings default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

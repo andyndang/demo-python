@@ -11,8 +11,11 @@ from typing import Optional
 @dataclasses.dataclass
 class RefreshConnectionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     refresh_connection_by_org_id_response: Optional[shared_refreshconnectionbyorgidresponse.RefreshConnectionByOrgIDResponse] = dataclasses.field(default=None)
     r"""RefreshConnection default response"""
     

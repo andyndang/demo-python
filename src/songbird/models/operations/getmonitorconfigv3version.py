@@ -20,9 +20,12 @@ class GetMonitorConfigV3VersionRequest:
 @dataclasses.dataclass
 class GetMonitorConfigV3VersionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_monitor_config_v3_version_default_application_json_string: Optional[str] = dataclasses.field(default=None)
     r"""GetMonitorConfigV3Version default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

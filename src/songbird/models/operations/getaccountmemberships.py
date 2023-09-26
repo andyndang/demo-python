@@ -23,9 +23,12 @@ class GetAccountMembershipsRequest:
 @dataclasses.dataclass
 class GetAccountMembershipsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_account_memberships_response: Optional[shared_getaccountmembershipsresponse.GetAccountMembershipsResponse] = dataclasses.field(default=None)
     r"""GetAccountMemberships default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

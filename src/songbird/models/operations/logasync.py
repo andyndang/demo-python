@@ -22,9 +22,12 @@ class LogAsyncRequest:
 @dataclasses.dataclass
 class LogAsyncResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     async_log_response: Optional[shared_asynclogresponse.AsyncLogResponse] = dataclasses.field(default=None)
     r"""LogAsync default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

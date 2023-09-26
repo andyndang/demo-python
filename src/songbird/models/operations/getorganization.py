@@ -20,9 +20,12 @@ class GetOrganizationRequest:
 @dataclasses.dataclass
 class GetOrganizationResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     organization_metadata: Optional[shared_organizationmetadata.OrganizationMetadata] = dataclasses.field(default=None)
     r"""The organization metadata"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

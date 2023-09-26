@@ -48,9 +48,12 @@ class UpdateOrgRequest:
 @dataclasses.dataclass
 class UpdateOrgResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     organization_summary: Optional[shared_organizationsummary.OrganizationSummary] = dataclasses.field(default=None)
     r"""A summary of the organization object if succeeds"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

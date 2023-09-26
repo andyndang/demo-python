@@ -23,9 +23,12 @@ class LogDebugEventRequest:
 @dataclasses.dataclass
 class LogDebugEventResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     log_debug_event_default_application_json_string: Optional[str] = dataclasses.field(default=None)
     r"""202 if the response is accepted"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

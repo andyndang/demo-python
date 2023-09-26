@@ -24,9 +24,12 @@ class DeleteAnalyzerResultsRequest:
 @dataclasses.dataclass
 class DeleteAnalyzerResultsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_analyzer_results_response: Optional[shared_deleteanalyzerresultsresponse.DeleteAnalyzerResultsResponse] = dataclasses.field(default=None)
     r"""The [DeleteAnalyzerResultsResponse] if operation succeeds"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

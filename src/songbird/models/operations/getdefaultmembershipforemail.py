@@ -19,9 +19,12 @@ class GetDefaultMembershipForEmailRequest:
 @dataclasses.dataclass
 class GetDefaultMembershipForEmailResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     get_default_membership_response: Optional[shared_getdefaultmembershipresponse.GetDefaultMembershipResponse] = dataclasses.field(default=None)
     r"""GetDefaultMembershipForEmail default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

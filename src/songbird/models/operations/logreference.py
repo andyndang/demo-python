@@ -22,9 +22,12 @@ class LogReferenceRequest:
 @dataclasses.dataclass
 class LogReferenceResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     log_reference_response: Optional[shared_logreferenceresponse.LogReferenceResponse] = dataclasses.field(default=None)
     r"""LogReference default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

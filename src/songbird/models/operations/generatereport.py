@@ -21,9 +21,12 @@ class GenerateReportRequest:
 @dataclasses.dataclass
 class GenerateReportResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     admin_report_response: Optional[shared_adminreportresponse.AdminReportResponse] = dataclasses.field(default=None)
     r"""GenerateReport default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

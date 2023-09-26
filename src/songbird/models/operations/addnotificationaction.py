@@ -23,8 +23,11 @@ class AddNotificationActionRequest:
 @dataclasses.dataclass
 class AddNotificationActionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     void: Optional[shared_void.Void] = dataclasses.field(default=None)
     r"""AddNotificationAction default response"""
     
