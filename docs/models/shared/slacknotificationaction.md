@@ -7,4 +7,4 @@ Slack payload for Notification Actions
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `slack_webhook`    | *str*              | :heavy_check_mark: | N/A                |
+| `slack_webhook`    | *Optional[str]*    | :heavy_check_mark: | N/A                |

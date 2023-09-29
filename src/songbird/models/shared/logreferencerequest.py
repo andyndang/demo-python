@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class LogReferenceRequest:
     r"""Request payload for LogReference."""
-    alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias'), 'exclude': lambda f: f is None }})
-    dataset_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetTimestamp'), 'exclude': lambda f: f is None }})
+    alias: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alias') }})
+    dataset_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetTimestamp') }})
     
 

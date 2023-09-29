@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class AdminReportResponse:
     r"""A response for the admin report."""
-    download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('downloadUrl'), 'exclude': lambda f: f is None }})
-    request_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestId'), 'exclude': lambda f: f is None }})
+    download_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('downloadUrl') }})
+    request_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestId') }})
     
 

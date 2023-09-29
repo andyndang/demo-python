@@ -26,8 +26,8 @@ s = songbird.Songbird(
 )
 
 req = shared.GetConnectionRequest(
-    org_id='veritatis',
-    workspace_id='deserunt',
+    org_id='Gloves truck',
+    workspace_id='male XML',
 )
 
 res = s.databricks.get_connection(req)
@@ -65,8 +65,8 @@ s = songbird.Songbird(
 )
 
 req = shared.ListJobsRequest(
-    org_id='perferendis',
-    workspace_id='ipsam',
+    org_id='Rubber',
+    workspace_id='continually Northwest',
 )
 
 res = s.databricks.list_jobs(req)
@@ -104,8 +104,8 @@ s = songbird.Songbird(
 )
 
 req = shared.RefreshConnectionRequest(
-    org_id='repellendus',
-    workspace_id='sapiente',
+    org_id='Non deliverables',
+    workspace_id='red',
 )
 
 res = s.databricks.refresh_connection(req)
@@ -143,9 +143,9 @@ s = songbird.Songbird(
 )
 
 req = shared.RunJobRequest(
-    job_id=778157,
-    org_id='odit',
-    workspace_id='at',
+    job_id=353621,
+    org_id='menace card',
+    workspace_id='Movies Diesel',
 )
 
 res = s.databricks.run_job(req)
@@ -186,10 +186,10 @@ req = shared.UpdateConnectionRequest(
     changes=shared.UpdateConnectionChanges(
         connected=False,
         demo=False,
-        org_id='at',
+        org_id='Jazz',
     ),
-    org_id='maiores',
-    workspace_id='molestiae',
+    org_id='Guadeloupe transmitting',
+    workspace_id='up teal',
 )
 
 res = s.databricks.update_connection(req)

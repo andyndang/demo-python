@@ -33,11 +33,11 @@ s = songbird.Songbird(
 )
 
 req = shared.AddMembershipRequest(
-    created_by='distinctio',
+    created_by='fall',
     default=False,
-    email='Edward_Greenfelder@yahoo.com',
-    org_id='nobis',
-    role=shared.Role.MEMBER,
+    email='Adell75@gmail.com',
+    org_id='Classical',
+    role=shared.Role.VIEWER,
 )
 
 res = s.membership.create_membership(req)
@@ -77,7 +77,7 @@ s = songbird.Songbird(
 req = operations.CreateOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
-    role=shared.Role.VIEWER,
+    role=shared.Role.MEMBER,
     set_default=False,
 )
 
@@ -116,7 +116,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetDefaultMembershipForEmailRequest(
-    email='Baylee56@gmail.com',
+    email='Jake.Dibbert@hotmail.com',
 )
 
 res = s.membership.get_default_membership_for_email(req)
@@ -154,7 +154,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsRequest(
-    user_id='ullam',
+    user_id='Chrysler',
 )
 
 res = s.membership.get_memberships(req)
@@ -192,7 +192,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsByEmailRequest(
-    email='Katrina65@yahoo.com',
+    email='Giles.Grady@gmail.com',
 )
 
 res = s.membership.get_memberships_by_email(req)
@@ -230,7 +230,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsByOrgRequest(
-    org_id='reiciendis',
+    org_id='Sterling',
 )
 
 res = s.membership.get_memberships_by_org(req)
@@ -306,8 +306,8 @@ s = songbird.Songbird(
 )
 
 req = shared.RemoveMembershipRequest(
-    email='Emmie89@yahoo.com',
-    org_id='odit',
+    email='Shaun79@gmail.com',
+    org_id='quisquam Legacy purple',
 )
 
 res = s.membership.remove_membership_by_email(req)
@@ -384,8 +384,8 @@ s = songbird.Songbird(
 )
 
 req = shared.SetDefaultMembershipRequest(
-    org_id='nemo',
-    user_id='quasi',
+    org_id='Francium transparent',
+    user_id='Cloned iste once',
 )
 
 res = s.membership.set_default_membership(req)
@@ -423,9 +423,9 @@ s = songbird.Songbird(
 )
 
 req = shared.UpdateMembershipRequest(
-    email='Wilton80@yahoo.com',
-    org_id='deleniti',
-    role=shared.Role.VIEWER,
+    email='Minnie42@hotmail.com',
+    org_id='compress Hyundai leading',
+    role=shared.Role.ADMIN,
 )
 
 res = s.membership.update_membership_by_email(req)

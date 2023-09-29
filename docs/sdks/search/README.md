@@ -23,7 +23,7 @@ s = songbird.Songbird(
 )
 
 req = operations.WhyLabsSearchRequest(
-    query='eos',
+    query='Fish yowza East',
 )
 
 res = s.search.why_labs_search(req)
@@ -61,7 +61,7 @@ s = songbird.Songbird(
 )
 
 req = shared.SearchIndexRequest(
-    org_id='atque',
+    org_id='challenge',
     type=shared.SearchIndexType.MODELS,
 )
 

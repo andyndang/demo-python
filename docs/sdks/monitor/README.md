@@ -354,7 +354,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PatchMonitorConfigV3Request(
-    request_body='nihil',
+    request_body='reinvent Reggae',
     dataset_id='model-123',
     org_id='org-123',
 )
@@ -394,7 +394,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutAnalyzerRequest(
-    request_body='repellat',
+    request_body='Iridium Dominican',
     analyzer_id='drift-analyzer',
     dataset_id='model-123',
     org_id='org-123',
@@ -435,7 +435,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutMonitorRequest(
-    request_body='quibusdam',
+    request_body='synthesize EXE ordinary',
     dataset_id='model-123',
     monitor_id='drift-monitor-123',
     org_id='org-123',
@@ -476,7 +476,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutMonitorConfigV3Request(
-    request_body='sed',
+    request_body='Keyboard parallelism user',
     dataset_id='model-123',
     org_id='org-123',
 )
@@ -518,7 +518,7 @@ s = songbird.Songbird(
 req = operations.PutRequestMonitorRunConfigRequest(
     request_body=operations.PutRequestMonitorRunConfigRequestBody(
         analyzer_ids=[
-            'saepe',
+            'female',
         ],
         end_timestamp=1893456000000,
         overwrite=False,
@@ -563,7 +563,7 @@ s = songbird.Songbird(
 )
 
 req = operations.ValidateMonitorConfigV3Request(
-    request_body='pariatur',
+    request_body='Man tesla',
     dataset_id='model-123',
     org_id='org-123',
     verbose=False,

@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `email`            | *str*              | :heavy_check_mark: | N/A                |
-| `org_id`           | *str*              | :heavy_check_mark: | N/A                |
+| `email`            | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `org_id`           | *Optional[str]*    | :heavy_check_mark: | N/A                |

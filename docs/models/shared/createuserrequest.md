@@ -7,4 +7,4 @@ Request for creating a new user
 
 | Field                   | Type                    | Required                | Description             |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-| `email`                 | *str*                   | :heavy_check_mark:      | The users email address |
+| `email`                 | *Optional[str]*         | :heavy_check_mark:      | The users email address |

@@ -14,7 +14,7 @@ class CreateOrganizationMembershipRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     role: shared_role.Role = dataclasses.field(metadata={'query_param': { 'field_name': 'role', 'style': 'form', 'explode': True }})
-    set_default: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'set_default', 'style': 'form', 'explode': True }})
+    set_default: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'set_default', 'style': 'form', 'explode': True }})
     
 
 

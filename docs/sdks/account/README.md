@@ -33,9 +33,9 @@ s = songbird.Songbird(
 req = operations.CreateAccountUserRequest(
     create_account_user_request=shared.CreateAccountUserRequest(
         active=False,
-        email='Vincenzo.Goldner@gmail.com',
-        external_id='minus',
-        user_schema='placeat',
+        email='Jason_Skiles63@yahoo.com',
+        external_id='parsing Fresh repellendus',
+        user_schema='RAM',
     ),
     org_id='org-123',
 )
@@ -116,7 +116,7 @@ s = songbird.Songbird(
 req = operations.GetAccountMembershipsRequest(
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.MEMBER,
+    role=shared.Role.VIEWER,
     user_id='user-123',
 )
 
@@ -311,15 +311,15 @@ s = songbird.Songbird(
 req = operations.PatchOrganizationMembershipsRequest(
     patch_account_memberships_request=shared.PatchAccountMembershipsRequest(
         user_ids_to_add=[
-            'iusto',
+            'revenge',
         ],
         user_ids_to_delete=[
-            'excepturi',
+            'Fiat',
         ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.MEMBER,
+    role=shared.Role.VIEWER,
 )
 
 res = s.account.patch_organization_memberships(req)
@@ -359,12 +359,12 @@ s = songbird.Songbird(
 req = operations.PutOrganizationMembershipsRequest(
     put_account_memberships_request=shared.PutAccountMembershipsRequest(
         user_ids=[
-            'recusandae',
+            'commitment',
         ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.VIEWER,
+    role=shared.Role.ADMIN,
 )
 
 res = s.account.put_organization_memberships(req)
@@ -404,8 +404,8 @@ s = songbird.Songbird(
 req = operations.UpdateAccountUserRequest(
     update_account_user_request=shared.UpdateAccountUserRequest(
         active=False,
-        external_id='ab',
-        user_schema='quis',
+        external_id='Shirt Steel SUV',
+        user_schema='Islands',
     ),
     org_id='org-123',
     user_id='user-123',

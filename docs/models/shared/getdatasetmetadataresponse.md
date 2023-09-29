@@ -7,4 +7,4 @@ Response for getting dataset metadata
 
 | Field                                | Type                                 | Required                             | Description                          |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| `metadata`                           | *str*                                | :heavy_check_mark:                   | Metadata information for the dataset |
+| `metadata`                           | *Optional[str]*                      | :heavy_check_mark:                   | Metadata information for the dataset |

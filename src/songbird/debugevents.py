@@ -19,13 +19,13 @@ class DebugEvents:
         
         url = utils.generate_url(operations.LogDebugEventRequest, base_url, '/v0/organizations/{org_id}/debug-events/resources/{dataset_id}/debug-events/log', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "debug_event", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "debug_event", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

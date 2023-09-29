@@ -34,22 +34,22 @@ s = songbird.Songbird(
 
 req = operations.CreateReferenceProfileRequest(
     create_reference_profile_request=shared.CreateReferenceProfileRequest(
-        alias='quod',
-        dataset_timestamp=461479,
+        alias='Loan',
+        dataset_timestamp=23025,
         segments=[
             shared.Segment(
                 tags=[
                     shared.SegmentTag(
-                        key='totam',
-                        value='porro',
+                        key='<key>',
+                        value='male Administrator',
                     ),
                 ],
             ),
         ],
         tags=[
-            'dolorum',
+            'online',
         ],
-        version='dicta',
+        version='wireless superstructure interactive',
     ),
     dataset_id='model-123',
     org_id='org-123',
@@ -309,7 +309,7 @@ s = songbird.Songbird(
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'nam',
+            'yellow',
         ],
     ),
     dataset_id='model-123',

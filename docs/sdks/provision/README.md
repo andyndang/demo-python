@@ -25,11 +25,11 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='quis',
-    email='Jenifer.Becker@yahoo.com',
+    customer_id_token='copy innovate',
+    email='Alfredo_Smith@yahoo.com',
     expect_existing=False,
-    model_name='eos',
-    org_name='perferendis',
+    model_name='rehash male',
+    org_name='auxiliary',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req)
@@ -67,9 +67,9 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionDatabricksConnectionRequest(
-    email='Peggie87@gmail.com',
+    email='Alexandria_Ernser@yahoo.com',
     expect_existing_user=False,
-    id='5fe9b90c-2890-49b3-be49-a8d9cbf48633',
+    id='<ID>',
 )
 
 res = s.provision.provision_databricks_connection(req)
@@ -107,10 +107,10 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionNewUserRequest(
-    email='Christy_Erdman73@gmail.com',
+    email='Alec40@hotmail.com',
     expect_existing=False,
-    model_name='voluptate',
-    org_name='dignissimos',
+    model_name='Botswana',
+    org_name='Account',
     subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
 
@@ -149,17 +149,17 @@ s = songbird.Songbird(
 )
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='amet',
-    cloud_provider='dolorum',
+    access_token='laborum Borders',
+    cloud_provider='aspernatur silver',
     connection_established=False,
-    connection_id='numquam',
+    connection_id='Tools South',
     demo=False,
-    email='Anderson.Bednar@gmail.com',
+    email='Samir_Monahan@yahoo.com',
     free_trial=False,
-    hostname='frightening-synergy.net',
-    port=976405,
-    workspace_id='voluptas',
-    workspace_url='natus',
+    hostname='slimy-referendum.org',
+    port=978605,
+    workspace_id='Hatchback Wyoming TCP',
+    workspace_url='Cayman Gasoline',
 )
 
 res = s.provision.register_databricks_connection(req)

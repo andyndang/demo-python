@@ -14,9 +14,9 @@ s = songbird.Songbird(
 req = operations.CreateAccountUserRequest(
     create_account_user_request=shared.CreateAccountUserRequest(
         active=False,
-        email='Larue_Rau85@yahoo.com',
-        external_id='corrupti',
-        user_schema='illum',
+        email='Jason_Skiles63@yahoo.com',
+        external_id='parsing Fresh repellendus',
+        user_schema='RAM',
     ),
     org_id='org-123',
 )

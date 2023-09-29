@@ -39,7 +39,7 @@ req = operations.CreateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
+    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.organizations.create_organization(req)
@@ -77,7 +77,7 @@ s = songbird.Songbird(
 )
 
 req = operations.DeleteOrganizationRequest(
-    org_id='nemo',
+    org_id='Luxurious phew Suffolk',
 )
 
 res = s.organizations.delete_organization(req)
@@ -115,7 +115,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetAWSMarketplaceMetadataRequest(
-    org_id='voluptatibus',
+    org_id='World',
 )
 
 res = s.organizations.get_aws_marketplace_metadata(req)
@@ -153,7 +153,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetOrganizationRequest(
-    org_id='perferendis',
+    org_id='unleash Auto optio',
 )
 
 res = s.organizations.get_organization(req)
@@ -223,14 +223,14 @@ s = songbird.Songbird(
 
 req = operations.PartiallyUpdateOrgRequest(
     request_body=operations.PartiallyUpdateOrgRequestBody(
-        org_id='fugiat',
+        org_id='West Passaic',
     ),
     domain='acme.ai',
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.FREE,
+    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.organizations.partially_update_org(req)
@@ -273,11 +273,11 @@ req = operations.PartiallyUpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='aut',
+    org_id='Program Personal',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.organizations.partially_update_organization(req)
@@ -318,7 +318,7 @@ s = songbird.Songbird(
 
 req = operations.UpdateOrgRequest(
     request_body=operations.UpdateOrgRequestBody(
-        org_id='corporis',
+        org_id='Bedfordshire Mississippi',
     ),
     domain='acme.ai',
     email_domains='acme.ai,acme.com',
@@ -371,7 +371,7 @@ req = operations.UpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='libero',
+    org_id='Male Slovenia',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',

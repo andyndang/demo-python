@@ -23,7 +23,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GenerateReportRequest(
-    report_type=shared.AdminReportType.SESSIONS,
+    report_type='World',
 )
 
 res = s.admin.generate_report(req)

@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `query`            | *str*              | :heavy_check_mark: | N/A                |
+| `query`            | *Optional[str]*    | :heavy_check_mark: | N/A                |

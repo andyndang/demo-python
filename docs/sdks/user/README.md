@@ -25,7 +25,7 @@ s = songbird.Songbird(
 )
 
 req = shared.CreateUserRequest(
-    email='Brigitte75@gmail.com',
+    email='Richie.Kuhic95@yahoo.com',
 )
 
 res = s.user.create_user(req)
@@ -63,7 +63,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetUserRequest(
-    user_id='accusamus',
+    user_id='Gold',
 )
 
 res = s.user.get_user(req)
@@ -101,7 +101,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetUserByEmailRequest(
-    email='Summer_Hoppe@gmail.com',
+    email='Chauncey12@yahoo.com',
 )
 
 res = s.user.get_user_by_email(req)
@@ -139,9 +139,9 @@ s = songbird.Songbird(
 )
 
 req = shared.User(
-    email='Rickie.Leannon@gmail.com',
-    preferences='at',
-    user_id='quaerat',
+    email='Madison.Jacobi47@yahoo.com',
+    preferences='experiences Dynamic Northwest',
+    user_id='Passenger upward',
 )
 
 res = s.user.update_user(req)

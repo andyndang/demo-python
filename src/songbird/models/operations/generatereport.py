@@ -4,15 +4,13 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import adminreportresponse as shared_adminreportresponse
-from ..shared import adminreporttype as shared_adminreporttype
-from typing import Optional
+from typing import Final, Optional
 
 
 
 @dataclasses.dataclass
 class GenerateReportRequest:
-    report_type: shared_adminreporttype.AdminReportType = dataclasses.field(metadata={'query_param': { 'field_name': 'report_type', 'style': 'form', 'explode': True }})
-    r"""A type of admin report."""
+    REPORT_TYPE: Final[str] = dataclasses.field(default='SESSIONS', metadata={'query_param': { 'field_name': 'report_type', 'style': 'form', 'explode': True }})
     
 
 

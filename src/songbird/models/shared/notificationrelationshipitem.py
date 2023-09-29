@@ -2,19 +2,18 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import notificationrelationshiptype as shared_notificationrelationshiptype
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class NotificationRelationshipItem:
-    dataset_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetId'), 'exclude': lambda f: f is None }})
-    item_display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('itemDisplayName'), 'exclude': lambda f: f is None }})
-    item_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('itemId'), 'exclude': lambda f: f is None }})
-    type: Optional[shared_notificationrelationshiptype.NotificationRelationshipType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    dataset_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetId') }})
+    item_display_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('itemDisplayName') }})
+    item_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('itemId') }})
+    TYPE: Final[Optional[str]] = dataclasses.field(default='MONITOR', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

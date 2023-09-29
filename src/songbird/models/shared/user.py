@@ -16,7 +16,7 @@ class User:
     r"""The user's email address."""
     user_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId') }})
     r"""The id of the user."""
-    preferences: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preferences'), 'exclude': lambda f: f is None }})
+    preferences: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preferences') }})
     r"""The user's JSON serialized preferences. Schema defined in Dashbird."""
     
 

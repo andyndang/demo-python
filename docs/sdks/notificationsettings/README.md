@@ -35,10 +35,10 @@ s = songbird.Songbird(
 )
 
 req = operations.AddNotificationActionRequest(
-    request_body='accusantium',
+    request_body='withdrawal',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.EMAIL,
+    type=shared.ActionType.NA,
 )
 
 res = s.notification_settings.add_notification_action(req)
@@ -232,7 +232,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='praesentium',
+    org_id='virtual drive parallel',
 )
 
 res = s.notification_settings.get_notification_settings(req)
@@ -308,10 +308,10 @@ s = songbird.Songbird(
 )
 
 req = operations.PutNotificationActionRequest(
-    request_body='natus',
+    request_body='provided',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.EMAIL,
+    type=shared.ActionType.NA,
 )
 
 res = s.notification_settings.put_notification_action(req)
@@ -388,7 +388,7 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateNotificationActionRequest(
-    request_body='sunt',
+    request_body='female perfectly',
     action_id='user-action',
     org_id='org-123',
     type=shared.ActionType.NA,
@@ -431,31 +431,31 @@ s = songbird.Songbird(
 req = operations.UpdateNotificationSettingsRequest(
     notification_settings=shared.NotificationSettings(
         email_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.INDIVIDUAL,
-            day_of_week=shared.NotificationSettingsDay.SATURDAY,
+            cadence=shared.NotificationSqsMessageCadence.HOURLY,
+            day_of_week=shared.NotificationSettingsDay.MONDAY,
             enabled=False,
-            local24_hour_of_day=807319,
-            local_minute_of_hour=411397,
-            local_timezone='excepturi',
+            local24_hour_of_day=809295,
+            local_minute_of_hour=562664,
+            local_timezone='Massachusetts Account',
         ),
         pager_duty_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.HOURLY,
-            day_of_week=shared.NotificationSettingsDay.TUESDAY,
+            cadence=shared.NotificationSqsMessageCadence.DAILY,
+            day_of_week=shared.NotificationSettingsDay.FRIDAY,
             enabled=False,
-            local24_hour_of_day=33222,
-            local_minute_of_hour=69167,
-            local_timezone='maiores',
+            local24_hour_of_day=434265,
+            local_minute_of_hour=931930,
+            local_timezone='North ranch weber',
         ),
         slack_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.WEEKLY,
-            day_of_week=shared.NotificationSettingsDay.TUESDAY,
+            cadence=shared.NotificationSqsMessageCadence.HOURLY,
+            day_of_week=shared.NotificationSettingsDay.WEDNESDAY,
             enabled=False,
-            local24_hour_of_day=453543,
-            local_minute_of_hour=420075,
-            local_timezone='nam',
+            local24_hour_of_day=22141,
+            local_minute_of_hour=554543,
+            local_timezone='Lamborghini neural towards',
         ),
     ),
-    org_id='eaque',
+    org_id='pink',
 )
 
 res = s.notification_settings.update_notification_settings(req)

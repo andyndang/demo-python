@@ -13,8 +13,8 @@ from typing import Optional
 @dataclasses.dataclass
 class ProfileTracesResponse:
     r"""Response for listing profile traces"""
-    next_offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextOffset'), 'exclude': lambda f: f is None }})
+    next_offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextOffset') }})
     traces: Optional[list[shared_profiletrace.ProfileTrace]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('traces'), 'exclude': lambda f: f is None }})
-    truncated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('truncated'), 'exclude': lambda f: f is None }})
+    truncated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('truncated') }})
     
 

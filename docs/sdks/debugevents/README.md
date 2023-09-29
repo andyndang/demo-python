@@ -24,21 +24,21 @@ s = songbird.Songbird(
 
 req = operations.LogDebugEventRequest(
     debug_event=shared.DebugEvent(
-        content='officia',
-        creation_timestamp=582020,
-        dataset_timestamp=143353,
+        content='circuit Minor quip',
+        creation_timestamp=935264,
+        dataset_timestamp=378309,
         segment=shared.Segment(
             tags=[
                 shared.SegmentTag(
-                    key='deleniti',
-                    value='hic',
+                    key='<key>',
+                    value='brr Home',
                 ),
             ],
         ),
         tags=[
-            'optio',
+            'East',
         ],
-        trace_id='totam',
+        trace_id='aw',
     ),
     dataset_id='model-123',
     org_id='org-123',

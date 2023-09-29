@@ -26,14 +26,14 @@ s = songbird.Songbird(
 req = operations.GetProfileObservatoryLinkRequest(
     get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
         batch_profile_timestamps=[
-            643990,
+            926863,
         ],
         reference_profile_ids=[
-            'nisi',
+            'Marketing',
         ],
     ),
-    dataset_id='vel',
-    org_id='natus',
+    dataset_id='Diesel Bloomington matrix',
+    org_id='Tools Southwest Northeast',
 )
 
 res = s.log.get_profile_observatory_link(req)
@@ -72,11 +72,11 @@ s = songbird.Songbird(
 
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=606393,
+        dataset_timestamp=506585,
         segment_tags=[
             shared.SegmentTag(
-                key='molestiae',
-                value='perferendis',
+                key='<key>',
+                value='Fresh degree',
             ),
         ],
     ),
@@ -120,8 +120,8 @@ s = songbird.Songbird(
 
 req = operations.LogReferenceRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='nihil',
-        dataset_timestamp=301575,
+        alias='Northwest',
+        dataset_timestamp=196670,
     ),
     model_id='model-123',
     org_id='org-123',

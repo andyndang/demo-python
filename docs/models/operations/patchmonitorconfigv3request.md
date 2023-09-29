@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        | Example            |
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| `request_body`     | *str*              | :heavy_check_mark: | N/A                |                    |
-| `dataset_id`       | *str*              | :heavy_check_mark: | N/A                | model-123          |
-| `org_id`           | *str*              | :heavy_check_mark: | N/A                | org-123            |
+| `request_body`     | *Optional[str]*    | :heavy_check_mark: | N/A                |                    |
+| `dataset_id`       | *Optional[str]*    | :heavy_check_mark: | N/A                | model-123          |
+| `org_id`           | *Optional[str]*    | :heavy_check_mark: | N/A                | org-123            |

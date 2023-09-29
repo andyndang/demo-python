@@ -31,12 +31,12 @@ req = operations.BatchCreateReferenceProfileUploadRequest(
     batch_log_reference_request=shared.BatchLogReferenceRequest(
         references=[
             shared.LogReferenceRequest(
-                alias='fugiat',
-                dataset_timestamp=67249,
+                alias='East',
+                dataset_timestamp=140471,
             ),
         ],
     ),
-    session_id='soluta',
+    session_id='Regional',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -74,8 +74,8 @@ s = songbird.Songbird(
 )
 
 req = operations.ClaimGuestSessionRequest(
-    org_id='dolorum',
-    session_id='iusto',
+    org_id='lively Car Mobility',
+    session_id='Chesapeake Missouri',
 )
 
 res = s.sessions.claim_guest_session(req)
@@ -114,15 +114,15 @@ s = songbird.Songbird(
 
 req = operations.CreateDatasetProfileUploadRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=453697,
+        dataset_timestamp=967561,
         segment_tags=[
             shared.SegmentTag(
-                key='dolorum',
-                value='deleniti',
+                key='<key>',
+                value='yellow Response',
             ),
         ],
     ),
-    session_id='omnis',
+    session_id='Crew sunbeam',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -161,10 +161,10 @@ s = songbird.Songbird(
 
 req = operations.CreateReferenceProfileUploadRequest(
     log_reference_request=shared.LogReferenceRequest(
-        alias='necessitatibus',
-        dataset_timestamp=714697,
+        alias='payment Keyboard',
+        dataset_timestamp=723764,
     ),
-    session_id='asperiores',
+    session_id='Handmade Concrete navigating',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
@@ -202,7 +202,7 @@ s = songbird.Songbird(
 )
 
 req = shared.CreateSessionRequest(
-    user_id='nihil',
+    user_id='beyond',
 )
 
 res = s.sessions.create_session(req)
@@ -240,7 +240,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetSessionRequest(
-    session_id='ipsum',
+    session_id='Shilling Nobelium crucifixion',
 )
 
 res = s.sessions.get_session(req)
@@ -280,13 +280,13 @@ s = songbird.Songbird(
 req = operations.GetSessionProfileObservatoryLinkRequest(
     get_profile_observatory_link_request=shared.GetProfileObservatoryLinkRequest(
         batch_profile_timestamps=[
-            456015,
+            495187,
         ],
         reference_profile_ids=[
-            'id',
+            'Games',
         ],
     ),
-    session_id='saepe',
+    session_id='deposit towards Southeast',
 )
 
 res = s.sessions.get_session_profile_observatory_link(req)
