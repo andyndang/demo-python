@@ -324,7 +324,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GenerateReportRequest(
-    report_type='World',
+    report_type=shared.AdminReportType.SESSIONS,
 )
 
 res = s.internal.generate_report(req)

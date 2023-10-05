@@ -3,6 +3,6 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `report_type`      | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `report_type`                                                                  | [Optional[shared.AdminReportType]](undefined/models/shared/adminreporttype.md) | :heavy_check_mark:                                                             | A type of admin report.                                                        |

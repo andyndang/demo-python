@@ -166,6 +166,7 @@ src/songbird/models/shared/patchaccountmembershipsrequest.py
 src/songbird/models/shared/putaccountmembershipsrequest.py
 src/songbird/models/shared/updateaccountuserrequest.py
 src/songbird/models/shared/adminreportresponse.py
+src/songbird/models/shared/adminreporttype.py
 src/songbird/models/shared/void.py
 src/songbird/models/shared/userapikey.py
 src/songbird/models/shared/userapikeyresponse.py
@@ -268,6 +269,7 @@ src/songbird/models/shared/listmodelsresponse.py
 src/songbird/models/shared/actiontype.py
 src/songbird/models/shared/notificationaction.py
 src/songbird/models/shared/notificationrelationshipitem.py
+src/songbird/models/shared/notificationrelationshiptype.py
 src/songbird/models/shared/notificationactionpayload.py
 src/songbird/models/shared/emailnotificationaction.py
 src/songbird/models/shared/pagerdutynotificationaction.py
@@ -520,6 +522,7 @@ docs/models/shared/patchaccountmembershipsrequest.md
 docs/models/shared/putaccountmembershipsrequest.md
 docs/models/shared/updateaccountuserrequest.md
 docs/models/shared/adminreportresponse.md
+docs/models/shared/adminreporttype.md
 docs/models/shared/void.md
 docs/models/shared/userapikey.md
 docs/models/shared/userapikeyresponse.md
@@ -631,6 +634,7 @@ docs/models/shared/listmodelsresponse.md
 docs/models/shared/actiontype.md
 docs/models/shared/notificationaction.md
 docs/models/shared/notificationrelationshipitem.md
+docs/models/shared/notificationrelationshiptype.md
 docs/models/shared/notificationactionpayload.md
 docs/models/shared/emailnotificationaction.md
 docs/models/shared/pagerdutynotificationaction.md
