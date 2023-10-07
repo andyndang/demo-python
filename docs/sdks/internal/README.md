@@ -77,10 +77,7 @@ s = songbird.Songbird(
 
 req = operations.CreateAccountUserRequest(
     create_account_user_request=shared.CreateAccountUserRequest(
-        active=False,
         email='Jason_Skiles63@yahoo.com',
-        external_id='parsing Fresh repellendus',
-        user_schema='RAM',
     ),
     org_id='org-123',
 )
@@ -120,11 +117,9 @@ s = songbird.Songbird(
 )
 
 req = shared.AddMembershipRequest(
-    created_by='fall',
-    default=False,
-    email='Adell75@gmail.com',
-    org_id='Classical',
-    role=shared.Role.VIEWER,
+    email='Willie1@gmail.com',
+    org_id='Soft',
+    role=shared.Role.ADMIN,
 )
 
 res = s.internal.create_membership(req)
@@ -171,7 +166,6 @@ req = operations.CreateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.internal.create_organization(req)
@@ -402,7 +396,6 @@ s = songbird.Songbird(
 req = operations.GetAccountMembershipsRequest(
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.VIEWER,
     user_id='user-123',
 )
 
@@ -557,10 +550,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = shared.GetConnectionRequest(
-    org_id='Gloves truck',
-    workspace_id='male XML',
-)
+req = shared.GetConnectionRequest()
 
 res = s.internal.get_connection(req)
 
@@ -1102,10 +1092,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = shared.ListJobsRequest(
-    org_id='Rubber',
-    workspace_id='continually Northwest',
-)
+req = shared.ListJobsRequest()
 
 res = s.internal.list_jobs(req)
 
@@ -1291,15 +1278,12 @@ s = songbird.Songbird(
 )
 
 req = operations.PartiallyUpdateOrgRequest(
-    request_body=operations.PartiallyUpdateOrgRequestBody(
-        org_id='West Passaic',
-    ),
+    request_body=operations.PartiallyUpdateOrgRequestBody(),
     domain='acme.ai',
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.internal.partially_update_org(req)
@@ -1346,7 +1330,6 @@ req = operations.PartiallyUpdateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.internal.partially_update_organization(req)
@@ -1463,7 +1446,6 @@ s = songbird.Songbird(
 req = shared.ProvisionNewMarketplaceUserRequest(
     customer_id_token='copy innovate',
     email='Alfredo_Smith@yahoo.com',
-    expect_existing=False,
     model_name='rehash male',
     org_name='auxiliary',
 )
@@ -1544,7 +1526,6 @@ s = songbird.Songbird(
 
 req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
-    expect_existing=False,
     model_name='Botswana',
     org_name='Account',
     subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
@@ -1632,10 +1613,22 @@ s = songbird.Songbird(
 req = operations.PutRequestMonitorRunConfigRequest(
     request_body=operations.PutRequestMonitorRunConfigRequestBody(
         analyzer_ids=[
-            'female',
+            'd',
+            'r',
+            'i',
+            'f',
+            't',
+            '-',
+            'a',
+            'n',
+            'a',
+            'l',
+            'y',
+            'z',
+            'e',
+            'r',
         ],
         end_timestamp=1893456000000,
-        overwrite=False,
         start_timestamp=1577836800000,
     ),
     dataset_id='model-123',
@@ -1676,10 +1669,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = shared.RefreshConnectionRequest(
-    org_id='Non deliverables',
-    workspace_id='red',
-)
+req = shared.RefreshConnectionRequest()
 
 res = s.internal.refresh_connection(req)
 
@@ -1718,11 +1708,9 @@ s = songbird.Songbird(
 req = shared.RegisterDatabricksConnectionRequest(
     access_token='laborum Borders',
     cloud_provider='aspernatur silver',
-    connection_established=False,
     connection_id='Tools South',
     demo=False,
     email='Samir_Monahan@yahoo.com',
-    free_trial=False,
     hostname='slimy-referendum.org',
     port=978605,
     workspace_id='Hatchback Wyoming TCP',
@@ -1804,8 +1792,6 @@ s = songbird.Songbird(
 
 req = shared.RunJobRequest(
     job_id=353621,
-    org_id='menace card',
-    workspace_id='Movies Diesel',
 )
 
 res = s.internal.run_job(req)
@@ -1918,11 +1904,7 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateAccountUserRequest(
-    update_account_user_request=shared.UpdateAccountUserRequest(
-        active=False,
-        external_id='Shirt Steel SUV',
-        user_schema='Islands',
-    ),
+    update_account_user_request=shared.UpdateAccountUserRequest(),
     org_id='org-123',
     user_id='user-123',
 )
@@ -1962,13 +1944,7 @@ s = songbird.Songbird(
 )
 
 req = shared.UpdateConnectionRequest(
-    changes=shared.UpdateConnectionChanges(
-        connected=False,
-        demo=False,
-        org_id='Jazz',
-    ),
-    org_id='Guadeloupe transmitting',
-    workspace_id='up teal',
+    changes=shared.UpdateConnectionChanges(),
 )
 
 res = s.internal.update_connection(req)
@@ -2049,30 +2025,18 @@ req = operations.UpdateNotificationSettingsRequest(
     notification_settings=shared.NotificationSettings(
         email_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.HOURLY,
-            day_of_week=shared.NotificationSettingsDay.MONDAY,
             enabled=False,
-            local24_hour_of_day=809295,
-            local_minute_of_hour=562664,
-            local_timezone='Massachusetts Account',
         ),
         pager_duty_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.DAILY,
-            day_of_week=shared.NotificationSettingsDay.FRIDAY,
             enabled=False,
-            local24_hour_of_day=434265,
-            local_minute_of_hour=931930,
-            local_timezone='North ranch weber',
         ),
         slack_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.HOURLY,
-            day_of_week=shared.NotificationSettingsDay.WEDNESDAY,
+            cadence=shared.NotificationSqsMessageCadence.INDIVIDUAL,
             enabled=False,
-            local24_hour_of_day=22141,
-            local_minute_of_hour=554543,
-            local_timezone='Lamborghini neural towards',
         ),
     ),
-    org_id='pink',
+    org_id='deposit Account',
 )
 
 res = s.internal.update_notification_settings(req)
@@ -2112,9 +2076,7 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateOrgRequest(
-    request_body=operations.UpdateOrgRequestBody(
-        org_id='Bedfordshire Mississippi',
-    ),
+    request_body=operations.UpdateOrgRequestBody(),
     domain='acme.ai',
     email_domains='acme.ai,acme.com',
     name='ACME, Inc',
@@ -2123,7 +2085,6 @@ req = operations.UpdateOrgRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
 
 res = s.internal.update_org(req)
@@ -2170,7 +2131,6 @@ req = operations.UpdateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.internal.update_organization(req)
@@ -2209,8 +2169,7 @@ s = songbird.Songbird(
 
 req = shared.User(
     email='Madison.Jacobi47@yahoo.com',
-    preferences='experiences Dynamic Northwest',
-    user_id='Passenger upward',
+    user_id='experiences Dynamic Northwest',
 )
 
 res = s.internal.update_user(req)
@@ -2285,10 +2244,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = shared.SearchIndexRequest(
-    org_id='challenge',
-    type=shared.SearchIndexType.MODELS,
-)
+req = shared.SearchIndexRequest()
 
 res = s.internal.why_labs_search_indexing(req)
 

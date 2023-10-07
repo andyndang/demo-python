@@ -60,10 +60,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = shared.SearchIndexRequest(
-    org_id='challenge',
-    type=shared.SearchIndexType.MODELS,
-)
+req = shared.SearchIndexRequest()
 
 res = s.search.why_labs_search_indexing(req)
 

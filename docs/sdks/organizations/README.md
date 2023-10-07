@@ -39,7 +39,6 @@ req = operations.CreateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.organizations.create_organization(req)
@@ -222,15 +221,12 @@ s = songbird.Songbird(
 )
 
 req = operations.PartiallyUpdateOrgRequest(
-    request_body=operations.PartiallyUpdateOrgRequestBody(
-        org_id='West Passaic',
-    ),
+    request_body=operations.PartiallyUpdateOrgRequestBody(),
     domain='acme.ai',
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.organizations.partially_update_org(req)
@@ -277,7 +273,6 @@ req = operations.PartiallyUpdateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.organizations.partially_update_organization(req)
@@ -317,9 +312,7 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateOrgRequest(
-    request_body=operations.UpdateOrgRequestBody(
-        org_id='Bedfordshire Mississippi',
-    ),
+    request_body=operations.UpdateOrgRequestBody(),
     domain='acme.ai',
     email_domains='acme.ai,acme.com',
     name='ACME, Inc',
@@ -328,7 +321,6 @@ req = operations.UpdateOrgRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
 )
 
 res = s.organizations.update_org(req)
@@ -375,7 +367,6 @@ req = operations.UpdateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
-    subscription_tier=shared.SubscriptionTier.AWS_MARKETPLACE,
 )
 
 res = s.organizations.update_organization(req)

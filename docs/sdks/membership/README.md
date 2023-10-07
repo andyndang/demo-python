@@ -33,11 +33,9 @@ s = songbird.Songbird(
 )
 
 req = shared.AddMembershipRequest(
-    created_by='fall',
-    default=False,
-    email='Adell75@gmail.com',
-    org_id='Classical',
-    role=shared.Role.VIEWER,
+    email='Willie1@gmail.com',
+    org_id='Soft',
+    role=shared.Role.ADMIN,
 )
 
 res = s.membership.create_membership(req)
@@ -78,7 +76,6 @@ req = operations.CreateOrganizationMembershipRequest(
     email='user@whylabs.ai',
     org_id='org-123',
     role=shared.Role.MEMBER,
-    set_default=False,
 )
 
 res = s.membership.create_organization_membership(req)

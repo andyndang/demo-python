@@ -140,8 +140,7 @@ s = songbird.Songbird(
 
 req = shared.User(
     email='Madison.Jacobi47@yahoo.com',
-    preferences='experiences Dynamic Northwest',
-    user_id='Passenger upward',
+    user_id='experiences Dynamic Northwest',
 )
 
 res = s.user.update_user(req)

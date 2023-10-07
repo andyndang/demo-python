@@ -34,22 +34,16 @@ s = songbird.Songbird(
 
 req = operations.CreateReferenceProfileRequest(
     create_reference_profile_request=shared.CreateReferenceProfileRequest(
-        alias='Loan',
-        dataset_timestamp=23025,
         segments=[
             shared.Segment(
                 tags=[
-                    shared.SegmentTag(
-                        key='<key>',
-                        value='male Administrator',
-                    ),
+                    shared.SegmentTag(),
                 ],
             ),
         ],
         tags=[
-            'online',
+            'Massachusetts',
         ],
-        version='wireless superstructure interactive',
     ),
     dataset_id='model-123',
     org_id='org-123',

@@ -432,30 +432,18 @@ req = operations.UpdateNotificationSettingsRequest(
     notification_settings=shared.NotificationSettings(
         email_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.HOURLY,
-            day_of_week=shared.NotificationSettingsDay.MONDAY,
             enabled=False,
-            local24_hour_of_day=809295,
-            local_minute_of_hour=562664,
-            local_timezone='Massachusetts Account',
         ),
         pager_duty_settings=shared.UberNotificationSchedule(
             cadence=shared.NotificationSqsMessageCadence.DAILY,
-            day_of_week=shared.NotificationSettingsDay.FRIDAY,
             enabled=False,
-            local24_hour_of_day=434265,
-            local_minute_of_hour=931930,
-            local_timezone='North ranch weber',
         ),
         slack_settings=shared.UberNotificationSchedule(
-            cadence=shared.NotificationSqsMessageCadence.HOURLY,
-            day_of_week=shared.NotificationSettingsDay.WEDNESDAY,
+            cadence=shared.NotificationSqsMessageCadence.INDIVIDUAL,
             enabled=False,
-            local24_hour_of_day=22141,
-            local_minute_of_hour=554543,
-            local_timezone='Lamborghini neural towards',
         ),
     ),
-    org_id='pink',
+    org_id='deposit Account',
 )
 
 res = s.notification_settings.update_notification_settings(req)

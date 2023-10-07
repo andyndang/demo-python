@@ -392,19 +392,15 @@ s = songbird.Songbird(
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "aliquid": shared.ColumnSchema(
+            "hardware": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
             ),
         },
-        metadata=shared.SchemaMetadata(
-            author='Island Folding',
-            updated_timestamp=142480,
-            version=307044,
-        ),
+        metadata=shared.SchemaMetadata(),
         metrics={
-            "placeat": shared.MetricSchema(
+            "Island": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',

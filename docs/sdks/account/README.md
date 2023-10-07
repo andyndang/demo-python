@@ -32,10 +32,7 @@ s = songbird.Songbird(
 
 req = operations.CreateAccountUserRequest(
     create_account_user_request=shared.CreateAccountUserRequest(
-        active=False,
         email='Jason_Skiles63@yahoo.com',
-        external_id='parsing Fresh repellendus',
-        user_schema='RAM',
     ),
     org_id='org-123',
 )
@@ -116,7 +113,6 @@ s = songbird.Songbird(
 req = operations.GetAccountMembershipsRequest(
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.VIEWER,
     user_id='user-123',
 )
 
@@ -402,11 +398,7 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateAccountUserRequest(
-    update_account_user_request=shared.UpdateAccountUserRequest(
-        active=False,
-        external_id='Shirt Steel SUV',
-        user_schema='Islands',
-    ),
+    update_account_user_request=shared.UpdateAccountUserRequest(),
     org_id='org-123',
     user_id='user-123',
 )

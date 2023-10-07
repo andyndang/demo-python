@@ -72,12 +72,8 @@ s = songbird.Songbird(
 
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=506585,
         segment_tags=[
-            shared.SegmentTag(
-                key='<key>',
-                value='Fresh degree',
-            ),
+            shared.SegmentTag(),
         ],
     ),
     dataset_id='model-123',
@@ -119,10 +115,7 @@ s = songbird.Songbird(
 )
 
 req = operations.LogReferenceRequest(
-    log_reference_request=shared.LogReferenceRequest(
-        alias='Northwest',
-        dataset_timestamp=196670,
-    ),
+    log_reference_request=shared.LogReferenceRequest(),
     model_id='model-123',
     org_id='org-123',
 )

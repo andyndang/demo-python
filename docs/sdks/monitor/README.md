@@ -196,8 +196,6 @@ s = songbird.Songbird(
 
 req = operations.GetMonitorConfigV3Request(
     dataset_id='model-123',
-    include_entity_schema=False,
-    include_entity_weights=False,
     org_id='org-123',
 )
 
@@ -518,10 +516,22 @@ s = songbird.Songbird(
 req = operations.PutRequestMonitorRunConfigRequest(
     request_body=operations.PutRequestMonitorRunConfigRequestBody(
         analyzer_ids=[
-            'female',
+            'd',
+            'r',
+            'i',
+            'f',
+            't',
+            '-',
+            'a',
+            'n',
+            'a',
+            'l',
+            'y',
+            'z',
+            'e',
+            'r',
         ],
         end_timestamp=1893456000000,
-        overwrite=False,
         start_timestamp=1577836800000,
     ),
     dataset_id='model-123',
@@ -566,7 +576,6 @@ req = operations.ValidateMonitorConfigV3Request(
     request_body='Man tesla',
     dataset_id='model-123',
     org_id='org-123',
-    verbose=False,
 )
 
 res = s.monitor.validate_monitor_config_v3(req)

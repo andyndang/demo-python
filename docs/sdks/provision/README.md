@@ -27,7 +27,6 @@ s = songbird.Songbird(
 req = shared.ProvisionNewMarketplaceUserRequest(
     customer_id_token='copy innovate',
     email='Alfredo_Smith@yahoo.com',
-    expect_existing=False,
     model_name='rehash male',
     org_name='auxiliary',
 )
@@ -108,7 +107,6 @@ s = songbird.Songbird(
 
 req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
-    expect_existing=False,
     model_name='Botswana',
     org_name='Account',
     subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
@@ -151,11 +149,9 @@ s = songbird.Songbird(
 req = shared.RegisterDatabricksConnectionRequest(
     access_token='laborum Borders',
     cloud_provider='aspernatur silver',
-    connection_established=False,
     connection_id='Tools South',
     demo=False,
     email='Samir_Monahan@yahoo.com',
-    free_trial=False,
     hostname='slimy-referendum.org',
     port=978605,
     workspace_id='Hatchback Wyoming TCP',

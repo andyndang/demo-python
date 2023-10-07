@@ -29,7 +29,11 @@ req = operations.CreateAPIKeyRequest(
     expiration_time=1577836800000,
     org_id='org-123',
     scopes=[
-        ':user',
+        ':',
+        'u',
+        's',
+        'e',
+        'r',
     ],
     user_id='user-123',
 )

@@ -30,13 +30,10 @@ s = songbird.Songbird(
 req = operations.BatchCreateReferenceProfileUploadRequest(
     batch_log_reference_request=shared.BatchLogReferenceRequest(
         references=[
-            shared.LogReferenceRequest(
-                alias='East',
-                dataset_timestamp=140471,
-            ),
+            shared.LogReferenceRequest(),
         ],
     ),
-    session_id='Regional',
+    session_id='East',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -114,15 +111,11 @@ s = songbird.Songbird(
 
 req = operations.CreateDatasetProfileUploadRequest(
     log_async_request=shared.LogAsyncRequest(
-        dataset_timestamp=967561,
         segment_tags=[
-            shared.SegmentTag(
-                key='<key>',
-                value='yellow Response',
-            ),
+            shared.SegmentTag(),
         ],
     ),
-    session_id='Crew sunbeam',
+    session_id='microchip New invoice',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -160,11 +153,8 @@ s = songbird.Songbird(
 )
 
 req = operations.CreateReferenceProfileUploadRequest(
-    log_reference_request=shared.LogReferenceRequest(
-        alias='payment Keyboard',
-        dataset_timestamp=723764,
-    ),
-    session_id='Handmade Concrete navigating',
+    log_reference_request=shared.LogReferenceRequest(),
+    session_id='payment Keyboard',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
