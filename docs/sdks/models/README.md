@@ -396,11 +396,14 @@ req = operations.PutEntitySchemaRequest(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
+                tags=[
+                    'Island',
+                ],
             ),
         },
         metadata=shared.SchemaMetadata(),
         metrics={
-            "Island": shared.MetricSchema(
+            "Folding": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
@@ -450,6 +453,9 @@ req = operations.PutEntitySchemaColumnRequest(
         classifier='input',
         data_type='fractional',
         discreteness='discrete',
+        tags=[
+            'Folk',
+        ],
     ),
     column_id='feature-123',
     dataset_id='model-123',
