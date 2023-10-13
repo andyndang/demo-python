@@ -891,34 +891,6 @@ class Internal:
         return res
 
     
-    def list_segments(self, request: operations.ListSegmentsRequest) -> operations.ListSegmentsResponse:
-        r"""Returns a list of segments
-        Returns a list of segments for the dataset.
-        """
-        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
-        
-        url = utils.generate_url(operations.ListSegmentsRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{model_id}/segments', request)
-        headers = {}
-        headers['Accept'] = 'application/json'
-        headers['user-agent'] = self.sdk_configuration.user_agent
-        
-        client = self.sdk_configuration.security_client
-        
-        http_res = client.request('GET', url, headers=headers)
-        content_type = http_res.headers.get('Content-Type')
-
-        res = operations.ListSegmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
-        
-        if True:
-            if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.SegmentListResponse])
-                res.segment_list_response = out
-            else:
-                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
-
-        return res
-
-    
     def partially_update_org(self, request: operations.PartiallyUpdateOrgRequest) -> operations.PartiallyUpdateOrgResponse:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same

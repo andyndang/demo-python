@@ -32,6 +32,7 @@ res = s.dataset_metadata.delete_dataset_metadata(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -71,6 +72,7 @@ res = s.dataset_metadata.get_dataset_metadata(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -111,6 +113,7 @@ res = s.dataset_metadata.put_dataset_metadata(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

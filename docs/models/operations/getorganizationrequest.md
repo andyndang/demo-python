@@ -5,4 +5,4 @@
 
 | Field                            | Type                             | Required                         | Description                      |
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `org_id`                         | *Optional[str]*                  | :heavy_check_mark:               | The unique ID of an organization |
+| `org_id`                         | *str*                            | :heavy_check_mark:               | The unique ID of an organization |

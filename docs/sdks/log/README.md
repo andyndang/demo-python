@@ -40,6 +40,7 @@ res = s.log.get_profile_observatory_link(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.log.log_async(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -124,6 +126,7 @@ res = s.log.log_reference(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

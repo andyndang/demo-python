@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `run_id`           | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `run_id`           | *int*              | :heavy_check_mark: | N/A                |

@@ -30,6 +30,7 @@ res = s.search.why_labs_search(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -66,6 +67,7 @@ res = s.search.why_labs_search_indexing(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

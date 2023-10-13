@@ -41,6 +41,7 @@ res = s.debug_events.log_debug_event(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

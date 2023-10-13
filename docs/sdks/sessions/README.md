@@ -40,6 +40,7 @@ res = s.sessions.batch_create_reference_profile_upload(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -79,6 +80,7 @@ res = s.sessions.claim_guest_session(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -122,6 +124,7 @@ res = s.sessions.create_dataset_profile_upload(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -161,6 +164,7 @@ res = s.sessions.create_reference_profile_upload(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -199,6 +203,7 @@ res = s.sessions.create_session(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -237,6 +242,7 @@ res = s.sessions.get_session(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -283,6 +289,7 @@ res = s.sessions.get_session_profile_observatory_link(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

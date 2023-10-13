@@ -45,6 +45,7 @@ res = s.organizations.create_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -83,6 +84,7 @@ res = s.organizations.delete_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -121,6 +123,7 @@ res = s.organizations.get_aws_marketplace_metadata(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -159,6 +162,7 @@ res = s.organizations.get_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -194,6 +198,7 @@ res = s.organizations.list_organizations()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -233,6 +238,7 @@ res = s.organizations.partially_update_org(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -279,6 +285,7 @@ res = s.organizations.partially_update_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -327,6 +334,7 @@ res = s.organizations.update_org(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -373,6 +381,7 @@ res = s.organizations.update_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

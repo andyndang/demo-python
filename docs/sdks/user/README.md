@@ -32,6 +32,7 @@ res = s.user.create_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -70,6 +71,7 @@ res = s.user.get_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -108,6 +110,7 @@ res = s.user.get_user_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -147,6 +150,7 @@ res = s.user.update_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

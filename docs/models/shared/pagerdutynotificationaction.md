@@ -7,4 +7,4 @@ Pager Duty payload for Notification Actions
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `pager_duty_key`   | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `pager_duty_key`   | *str*              | :heavy_check_mark: | N/A                |

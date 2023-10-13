@@ -35,6 +35,7 @@ res = s.provision.provision_aws_marketplace_new_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -75,6 +76,7 @@ res = s.provision.provision_databricks_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -116,6 +118,7 @@ res = s.provision.provision_new_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -162,6 +165,7 @@ res = s.provision.register_databricks_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

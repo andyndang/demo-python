@@ -53,6 +53,7 @@ res = s.dataset_profile.create_reference_profile(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -96,6 +97,7 @@ res = s.dataset_profile.delete_analyzer_results(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -140,6 +142,7 @@ res = s.dataset_profile.delete_dataset_profiles(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -182,6 +185,7 @@ res = s.dataset_profile.delete_reference_profile(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -226,6 +230,7 @@ res = s.dataset_profile.get_profile_traces(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -268,6 +273,7 @@ res = s.dataset_profile.get_reference_profile(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -314,6 +320,7 @@ res = s.dataset_profile.hide_segments(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -357,6 +364,7 @@ res = s.dataset_profile.list_reference_profiles(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -398,6 +406,7 @@ res = s.dataset_profile.list_segments(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

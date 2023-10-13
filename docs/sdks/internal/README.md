@@ -33,7 +33,6 @@
 * [list_managed_organizations](#list_managed_organizations) - List managed organizations for a parent organization
 * [list_monitor_config_v3_versions](#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
 * [list_organizations](#list_organizations) - Get a list of all of the organization ids.
-* [list_segments](#list_segments) - Returns a list of segments
 * [~~partially_update_org~~](#partially_update_org) - Update some fields of an organization to non-null values :warning: **Deprecated**
 * [partially_update_organization](#partially_update_organization) - Update some fields of an organization to non-null values
 * [patch_organization_memberships](#patch_organization_memberships) - Add or delete memberships in a specific role and managed organization
@@ -86,6 +85,7 @@ res = s.internal.create_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -126,6 +126,7 @@ res = s.internal.create_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -172,6 +173,7 @@ res = s.internal.create_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -210,6 +212,7 @@ res = s.internal.create_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -249,6 +252,7 @@ res = s.internal.delete_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -287,6 +291,7 @@ res = s.internal.delete_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -325,6 +330,7 @@ res = s.internal.generate_report(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -363,6 +369,7 @@ res = s.internal.get_aws_marketplace_metadata(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -403,6 +410,7 @@ res = s.internal.get_account_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -442,6 +450,7 @@ res = s.internal.get_account_user_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -481,6 +490,7 @@ res = s.internal.get_account_user_by_id(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -520,6 +530,7 @@ res = s.internal.get_api_key(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -556,6 +567,7 @@ res = s.internal.get_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -594,6 +606,7 @@ res = s.internal.get_default_membership_for_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -633,6 +646,7 @@ res = s.internal.get_feature_flags(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -671,6 +685,7 @@ res = s.internal.get_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -709,6 +724,7 @@ res = s.internal.get_memberships_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -747,6 +763,7 @@ res = s.internal.get_memberships_by_org(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -787,6 +804,7 @@ res = s.internal.get_monitor_config_v3_version(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -825,6 +843,7 @@ res = s.internal.get_notification_settings(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -863,6 +882,7 @@ res = s.internal.get_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -901,6 +921,7 @@ res = s.internal.get_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -939,6 +960,7 @@ res = s.internal.get_user_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -985,6 +1007,7 @@ res = s.internal.hide_segments(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1023,6 +1046,7 @@ res = s.internal.list_account_users(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1062,6 +1086,7 @@ res = s.internal.list_api_keys(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1098,6 +1123,7 @@ res = s.internal.list_jobs(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1136,6 +1162,7 @@ res = s.internal.list_managed_organizations(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1175,6 +1202,7 @@ res = s.internal.list_monitor_config_v3_versions(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1210,53 +1238,13 @@ res = s.internal.list_organizations()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.ListOrganizationsResponse](../../models/operations/listorganizationsresponse.md)**
-
-
-## list_segments
-
-Returns a list of segments for the dataset.
-
-        
-
-### Example Usage
-
-```python
-import songbird
-from songbird.models import operations, shared
-
-s = songbird.Songbird(
-    security=shared.Security(
-        api_key_auth="",
-    ),
-)
-
-req = operations.ListSegmentsRequest(
-    model_id='model-123',
-    org_id='org-123',
-)
-
-res = s.internal.list_segments(req)
-
-if res.status_code == 200:
-    # handle response
-```
-
-### Parameters
-
-| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
-| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| `request`                                                                        | [operations.ListSegmentsRequest](../../models/operations/listsegmentsrequest.md) | :heavy_check_mark:                                                               | The request object to use for the request.                                       |
-
-
-### Response
-
-**[operations.ListSegmentsResponse](../../models/operations/listsegmentsresponse.md)**
 
 
 ## ~~partially_update_org~~
@@ -1290,6 +1278,7 @@ res = s.internal.partially_update_org(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1336,6 +1325,7 @@ res = s.internal.partially_update_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1384,6 +1374,7 @@ res = s.internal.patch_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1419,6 +1410,7 @@ res = s.internal.post_monitor_config_validation_job()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -1454,6 +1446,7 @@ res = s.internal.provision_aws_marketplace_new_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1494,6 +1487,7 @@ res = s.internal.provision_databricks_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1535,6 +1529,7 @@ res = s.internal.provision_new_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1580,6 +1575,7 @@ res = s.internal.put_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1639,6 +1635,7 @@ res = s.internal.put_request_monitor_run_config(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1675,6 +1672,7 @@ res = s.internal.refresh_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1721,6 +1719,7 @@ res = s.internal.register_databricks_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1760,6 +1759,7 @@ res = s.internal.remove_membership_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1798,6 +1798,7 @@ res = s.internal.run_job(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1837,6 +1838,7 @@ res = s.internal.set_default_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1873,6 +1875,7 @@ res = s.internal.stripe_payment_endpoint(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1913,6 +1916,7 @@ res = s.internal.update_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1951,6 +1955,7 @@ res = s.internal.update_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -1991,6 +1996,7 @@ res = s.internal.update_membership_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2043,6 +2049,7 @@ res = s.internal.update_notification_settings(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2091,6 +2098,7 @@ res = s.internal.update_org(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2137,6 +2145,7 @@ res = s.internal.update_organization(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2176,6 +2185,7 @@ res = s.internal.update_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2214,6 +2224,7 @@ res = s.internal.why_labs_search(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -2250,6 +2261,7 @@ res = s.internal.why_labs_search_indexing(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

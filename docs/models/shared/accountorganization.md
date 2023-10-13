@@ -8,4 +8,4 @@ Response for the GetAccountMemberships API
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `name`             | *Optional[str]*    | :heavy_minus_sign: | Organization name  |
-| `org_id`           | *Optional[str]*    | :heavy_check_mark: | Organization ID    |
+| `org_id`           | *str*              | :heavy_check_mark: | Organization ID    |

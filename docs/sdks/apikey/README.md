@@ -42,6 +42,7 @@ res = s.api_key.create_api_key(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -81,6 +82,7 @@ res = s.api_key.get_api_key(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.api_key.list_api_keys(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -160,6 +163,7 @@ res = s.api_key.revoke_api_key(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

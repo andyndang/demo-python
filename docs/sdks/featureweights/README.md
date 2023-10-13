@@ -31,6 +31,7 @@ res = s.feature_weights.get_column_weights(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -71,6 +72,7 @@ res = s.feature_weights.put_column_weights(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

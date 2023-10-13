@@ -41,6 +41,7 @@ res = s.account.create_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -80,6 +81,7 @@ res = s.account.delete_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.account.get_account_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -159,6 +162,7 @@ res = s.account.get_account_user_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -198,6 +202,7 @@ res = s.account.get_account_user_by_id(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -236,6 +241,7 @@ res = s.account.list_account_users(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -274,6 +280,7 @@ res = s.account.list_managed_organizations(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -322,6 +329,7 @@ res = s.account.patch_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -367,6 +375,7 @@ res = s.account.put_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -407,6 +416,7 @@ res = s.account.update_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

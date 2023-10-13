@@ -30,6 +30,7 @@ res = s.admin.generate_report(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -65,6 +66,7 @@ res = s.admin.post_monitor_config_validation_job()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 

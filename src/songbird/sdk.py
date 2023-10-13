@@ -55,7 +55,7 @@ class Songbird:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key_auth: str,
+                 security: shared.Security = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: dict[str, str] = None,
@@ -64,8 +64,8 @@ class Songbird:
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param api_key_auth: The api_key_auth required for authentication
-        :type api_key_auth: str
+        :param security: The security details required for authentication
+        :type security: shared.Security
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations

@@ -45,6 +45,7 @@ res = s.models.create_model(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.models.deactivate_model(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,6 +125,7 @@ res = s.models.delete_entity_schema(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -163,6 +166,7 @@ res = s.models.delete_entity_schema_column(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -203,6 +207,7 @@ res = s.models.delete_entity_schema_metric(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -242,6 +247,7 @@ res = s.models.get_entity_schema(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -282,6 +288,7 @@ res = s.models.get_entity_schema_column(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -321,6 +328,7 @@ res = s.models.get_model(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -359,6 +367,7 @@ res = s.models.list_models(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -418,6 +427,7 @@ res = s.models.put_entity_schema(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -466,6 +476,7 @@ res = s.models.put_entity_schema_column(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -510,6 +521,7 @@ res = s.models.put_entity_schema_metric(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -552,6 +564,7 @@ res = s.models.update_model(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

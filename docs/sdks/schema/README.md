@@ -29,6 +29,7 @@ res = s.schema.get_monitor_config_schema(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

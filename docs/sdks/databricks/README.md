@@ -31,6 +31,7 @@ res = s.databricks.get_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -67,6 +68,7 @@ res = s.databricks.list_jobs(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -103,6 +105,7 @@ res = s.databricks.refresh_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -141,6 +144,7 @@ res = s.databricks.run_job(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -179,6 +183,7 @@ res = s.databricks.update_connection(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

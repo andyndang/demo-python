@@ -30,6 +30,7 @@ res = s.feature_flags.get_feature_flags(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

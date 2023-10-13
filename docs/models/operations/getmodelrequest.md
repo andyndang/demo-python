@@ -5,5 +5,5 @@
 
 | Field                       | Type                        | Required                    | Description                 | Example                     |
 | --------------------------- | --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `model_id`                  | *Optional[str]*             | :heavy_check_mark:          | The ID of a model           | model-123                   |
-| `org_id`                    | *Optional[str]*             | :heavy_check_mark:          | The name of an organization | org-123                     |
+| `model_id`                  | *str*                       | :heavy_check_mark:          | The ID of a model           | model-123                   |
+| `org_id`                    | *str*                       | :heavy_check_mark:          | The name of an organization | org-123                     |

@@ -42,6 +42,7 @@ res = s.membership.create_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -82,6 +83,7 @@ res = s.membership.create_organization_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -120,6 +122,7 @@ res = s.membership.get_default_membership_for_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -158,6 +161,7 @@ res = s.membership.get_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -196,6 +200,7 @@ res = s.membership.get_memberships_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -234,6 +239,7 @@ res = s.membership.get_memberships_by_org(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -272,6 +278,7 @@ res = s.membership.list_organization_memberships(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -311,6 +318,7 @@ res = s.membership.remove_membership_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -350,6 +358,7 @@ res = s.membership.remove_organization_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -389,6 +398,7 @@ res = s.membership.set_default_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -429,6 +439,7 @@ res = s.membership.update_membership_by_email(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -469,6 +480,7 @@ res = s.membership.update_organization_membership(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

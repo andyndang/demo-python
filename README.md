@@ -31,6 +31,7 @@ res = s.account.create_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
@@ -134,7 +135,6 @@ if res.status_code == 200:
 * [list_managed_organizations](docs/sdks/internal/README.md#list_managed_organizations) - List managed organizations for a parent organization
 * [list_monitor_config_v3_versions](docs/sdks/internal/README.md#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
 * [list_organizations](docs/sdks/internal/README.md#list_organizations) - Get a list of all of the organization ids.
-* [list_segments](docs/sdks/internal/README.md#list_segments) - Returns a list of segments
 * [~~partially_update_org~~](docs/sdks/internal/README.md#partially_update_org) - Update some fields of an organization to non-null values :warning: **Deprecated**
 * [partially_update_organization](docs/sdks/internal/README.md#partially_update_organization) - Update some fields of an organization to non-null values
 * [patch_organization_memberships](docs/sdks/internal/README.md#patch_organization_memberships) - Add or delete memberships in a specific role and managed organization

@@ -27,6 +27,7 @@ res = s.payment.stripe_payment_endpoint(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters

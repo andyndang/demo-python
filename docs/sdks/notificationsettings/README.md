@@ -45,6 +45,7 @@ res = s.notification_settings.add_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,6 +85,7 @@ res = s.notification_settings.delete_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,6 +125,7 @@ res = s.notification_settings.disable_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -162,6 +165,7 @@ res = s.notification_settings.enable_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -201,6 +205,7 @@ res = s.notification_settings.get_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -239,6 +244,7 @@ res = s.notification_settings.get_notification_settings(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -277,6 +283,7 @@ res = s.notification_settings.list_notification_actions(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -318,6 +325,7 @@ res = s.notification_settings.put_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -357,6 +365,7 @@ res = s.notification_settings.test_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -398,6 +407,7 @@ res = s.notification_settings.update_notification_action(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -450,6 +460,7 @@ res = s.notification_settings.update_notification_settings(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -485,6 +496,7 @@ res = s.notification_settings.get_email_notification_action_payload()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -514,6 +526,7 @@ res = s.notification_settings.get_pager_duty_notification_action_payload()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
@@ -543,6 +556,7 @@ res = s.notification_settings.get_slack_notification_action_payload()
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
 
 
