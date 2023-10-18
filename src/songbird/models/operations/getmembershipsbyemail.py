@@ -7,12 +7,10 @@ from ..shared import getmembershipsresponse as shared_getmembershipsresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetMembershipsByEmailRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     
-
 
 
 

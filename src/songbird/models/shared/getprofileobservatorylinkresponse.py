@@ -4,15 +4,14 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetProfileObservatoryLinkResponse:
     r"""Response for the GetProfileObservatoryLink api"""
-    individual_observatory_urls: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('individualObservatoryUrls'), 'exclude': lambda f: f is None }})
+    individual_observatory_urls: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('individualObservatoryUrls'), 'exclude': lambda f: f is None }})
     observatory_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('observatoryUrl'), 'exclude': lambda f: f is None }})
     
 

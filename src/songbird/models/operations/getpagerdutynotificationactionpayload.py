@@ -7,7 +7,6 @@ from ..shared import pagerdutynotificationaction as shared_pagerdutynotification
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetPagerDutyNotificationActionPayloadResponse:
     content_type: str = dataclasses.field()

@@ -8,13 +8,11 @@ from ..shared import getprofileobservatorylinkresponse as shared_getprofileobser
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSessionProfileObservatoryLinkRequest:
     get_profile_observatory_link_request: shared_getprofileobservatorylinkrequest.GetProfileObservatoryLinkRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

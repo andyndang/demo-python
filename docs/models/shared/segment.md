@@ -5,4 +5,4 @@
 
 | Field                                                 | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `tags`                                                | list[[SegmentTag](../../models/shared/segmenttag.md)] | :heavy_minus_sign:                                    | N/A                                                   |
+| `tags`                                                | List[[SegmentTag](../../models/shared/segmenttag.md)] | :heavy_minus_sign:                                    | N/A                                                   |

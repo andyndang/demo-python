@@ -9,7 +9,6 @@ from ..shared import statusresponse as shared_statusresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PatchOrganizationMembershipsRequest:
     managed_org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'managed_org_id', 'style': 'form', 'explode': True }})
@@ -17,7 +16,6 @@ class PatchOrganizationMembershipsRequest:
     patch_account_memberships_request: shared_patchaccountmembershipsrequest.PatchAccountMembershipsRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     role: shared_role.Role = dataclasses.field(metadata={'query_param': { 'field_name': 'role', 'style': 'form', 'explode': True }})
     
-
 
 
 

@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UberNotificationSchedule:
     r"""Combination of all possible schedule types, a hacky workaround for bugs in generated clients that use polymorphic types.

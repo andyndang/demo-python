@@ -7,14 +7,12 @@ from ..shared import columnschema as shared_columnschema
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetEntitySchemaColumnRequest:
     column_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'column_id', 'style': 'simple', 'explode': False }})
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

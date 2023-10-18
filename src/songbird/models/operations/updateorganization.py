@@ -8,7 +8,6 @@ from ..shared import subscriptiontier as shared_subscriptiontier
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateOrganizationRequest:
     name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'name', 'style': 'form', 'explode': True }})
@@ -30,7 +29,6 @@ class UpdateOrganizationRequest:
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'subscription_tier', 'style': 'form', 'explode': True }})
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
-
 
 
 

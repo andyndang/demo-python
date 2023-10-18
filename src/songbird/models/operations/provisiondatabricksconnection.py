@@ -7,7 +7,6 @@ from ..shared import provisiondatabricksconnectionresponse as shared_provisionda
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ProvisionDatabricksConnectionResponse:
     content_type: str = dataclasses.field()

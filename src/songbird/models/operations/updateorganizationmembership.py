@@ -8,14 +8,12 @@ from ..shared import role as shared_role
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateOrganizationMembershipRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     role: shared_role.Role = dataclasses.field(metadata={'query_param': { 'field_name': 'role', 'style': 'form', 'explode': True }})
     
-
 
 
 

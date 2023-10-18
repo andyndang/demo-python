@@ -8,7 +8,6 @@ from ..shared import createreferenceprofileresponse as shared_createreferencepro
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateReferenceProfileRequest:
     create_reference_profile_request: shared_createreferenceprofilerequest.CreateReferenceProfileRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
@@ -17,7 +16,6 @@ class CreateReferenceProfileRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     
-
 
 
 

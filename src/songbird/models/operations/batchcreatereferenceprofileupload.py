@@ -8,13 +8,11 @@ from ..shared import batchlogsessionreferenceresponse as shared_batchlogsessionr
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class BatchCreateReferenceProfileUploadRequest:
     batch_log_reference_request: shared_batchlogreferencerequest.BatchLogReferenceRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
 from songbird.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class Account:
     sdk_configuration: SDKConfiguration
@@ -180,7 +180,7 @@ class Account:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.AccountUser]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.AccountUser]])
                 res.account_users = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -208,7 +208,7 @@ class Account:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.AccountOrganization]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.AccountOrganization]])
                 res.account_organizations = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -7,7 +7,6 @@ from ..shared import emailnotificationaction as shared_emailnotificationaction
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetEmailNotificationActionPayloadResponse:
     content_type: str = dataclasses.field()

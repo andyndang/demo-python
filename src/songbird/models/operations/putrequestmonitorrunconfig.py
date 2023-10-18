@@ -5,19 +5,17 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PutRequestMonitorRunConfigRequestBody:
-    analyzer_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analyzer_ids'), 'exclude': lambda f: f is None }})
+    analyzer_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analyzer_ids'), 'exclude': lambda f: f is None }})
     end_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_timestamp'), 'exclude': lambda f: f is None }})
     overwrite: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('overwrite'), 'exclude': lambda f: f is None }})
     start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_timestamp'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -27,7 +25,6 @@ class PutRequestMonitorRunConfigRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     request_body: PutRequestMonitorRunConfigRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

@@ -7,7 +7,6 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MetricSchema:
     r"""Schema for user-defined metrics"""

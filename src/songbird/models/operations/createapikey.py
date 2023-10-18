@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import userapikey as shared_userapikey
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -20,10 +19,9 @@ class CreateAPIKeyRequest:
     """
     expiration_time: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'expiration_time', 'style': 'form', 'explode': True }})
     r"""Expiration time in epoch milliseconds"""
-    scopes: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'scopes', 'style': 'form', 'explode': True }})
+    scopes: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'scopes', 'style': 'form', 'explode': True }})
     r"""Scopes of the token"""
     
-
 
 
 

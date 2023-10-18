@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ColumnSchema:
     r"""Column schema for a given column"""
@@ -18,7 +17,7 @@ class ColumnSchema:
     r"""The data type of the columns. Setting this field affects the default grouping (i.e integral columns)"""
     discreteness: Optional[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('discreteness') }})
     r"""Whether a column should be discrete or continuous. Changing this column will change the default grouping (discrete columns vs. continuous columns"""
-    tags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags') }})
+    tags: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags') }})
     r"""Metadata tags for the column schema information"""
     
 

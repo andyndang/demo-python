@@ -8,13 +8,11 @@ from ..shared import adminreporttype as shared_adminreporttype
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GenerateReportRequest:
     report_type: shared_adminreporttype.AdminReportType = dataclasses.field(metadata={'query_param': { 'field_name': 'report_type', 'style': 'form', 'explode': True }})
     r"""A type of admin report."""
     
-
 
 
 

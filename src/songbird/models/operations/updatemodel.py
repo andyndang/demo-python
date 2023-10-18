@@ -9,7 +9,6 @@ from ..shared import timeperiod as shared_timeperiod
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateModelRequest:
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
@@ -23,7 +22,6 @@ class UpdateModelRequest:
     model_type: Optional[shared_modeltype.ModelType] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'model_type', 'style': 'form', 'explode': True }})
     r"""The [ModelType] of the dataset"""
     
-
 
 
 

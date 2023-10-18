@@ -7,14 +7,12 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteEntitySchemaMetricRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     metric_label: str = dataclasses.field(metadata={'path_param': { 'field_name': 'metric_label', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

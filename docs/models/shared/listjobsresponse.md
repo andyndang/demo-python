@@ -5,4 +5,4 @@
 
 | Field                                                       | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `jobs`                                                      | list[[DTOJobsJobDTO](../../models/shared/dtojobsjobdto.md)] | :heavy_check_mark:                                          | N/A                                                         |
+| `jobs`                                                      | List[[DTOJobsJobDTO](../../models/shared/dtojobsjobdto.md)] | :heavy_check_mark:                                          | N/A                                                         |

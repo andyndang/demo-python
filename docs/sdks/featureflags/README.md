@@ -22,8 +22,8 @@ s = songbird.Songbird(
 )
 
 req = operations.GetFeatureFlagsRequest(
-    org_id='Southwest Salad phew',
-    user_id='whiteboard',
+    org_id='boo',
+    user_id='frankly',
 )
 
 res = s.feature_flags.get_feature_flags(req)

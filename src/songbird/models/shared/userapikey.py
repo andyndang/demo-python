@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UserAPIKey:
     r"""Response when creating an API key successfully"""
@@ -28,7 +27,7 @@ class UserAPIKey:
     r"""The full value of the key. This is not persisted in the system"""
     revoked: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('revoked') }})
     r"""Whether the key has been revoked"""
-    scopes: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopes') }})
+    scopes: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('scopes') }})
     r"""Scope of the key"""
     
 

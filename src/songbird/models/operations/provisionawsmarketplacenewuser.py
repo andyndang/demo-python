@@ -7,7 +7,6 @@ from ..shared import provisionnewawsmarketplaceuserresponse as shared_provisionn
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ProvisionAWSMarketplaceNewUserResponse:
     content_type: str = dataclasses.field()

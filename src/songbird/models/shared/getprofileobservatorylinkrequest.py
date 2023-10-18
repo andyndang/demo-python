@@ -4,15 +4,14 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetProfileObservatoryLinkRequest:
     r"""Get a url for viewing profiles in the observatory"""
-    batch_profile_timestamps: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('batchProfileTimestamps'), 'exclude': lambda f: f is None }})
-    reference_profile_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('referenceProfileIds'), 'exclude': lambda f: f is None }})
+    batch_profile_timestamps: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('batchProfileTimestamps'), 'exclude': lambda f: f is None }})
+    reference_profile_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('referenceProfileIds'), 'exclude': lambda f: f is None }})
     
 

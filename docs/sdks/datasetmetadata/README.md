@@ -104,7 +104,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutDatasetMetadataRequest(
-    request_body='Associate Gender white',
+    request_body='Director',
     dataset_id='model-123',
     org_id='org-123',
 )

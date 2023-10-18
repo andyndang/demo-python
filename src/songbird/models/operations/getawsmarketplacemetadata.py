@@ -7,12 +7,10 @@ from ..shared import getmarketplacemetadataresponse as shared_getmarketplacemeta
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAWSMarketplaceMetadataRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -7,7 +7,6 @@ from ..shared import membershipmetadata as shared_membershipmetadata
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateMembershipResponse:
     content_type: str = dataclasses.field()

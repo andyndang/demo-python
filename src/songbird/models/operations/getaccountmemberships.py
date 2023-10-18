@@ -8,7 +8,6 @@ from ..shared import role as shared_role
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAccountMembershipsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class GetAccountMembershipsRequest:
     role: Optional[shared_role.Role] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'role', 'style': 'form', 'explode': True }})
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     
-
 
 
 

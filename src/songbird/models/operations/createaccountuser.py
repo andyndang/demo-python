@@ -8,13 +8,11 @@ from ..shared import createaccountuserrequest as shared_createaccountuserrequest
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateAccountUserRequest:
     create_account_user_request: shared_createaccountuserrequest.CreateAccountUserRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

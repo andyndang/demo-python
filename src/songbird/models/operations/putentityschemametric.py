@@ -8,14 +8,12 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PutEntitySchemaMetricRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     metric_schema: shared_metricschema.MetricSchema = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

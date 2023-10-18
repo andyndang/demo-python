@@ -7,7 +7,6 @@ from ..shared import user as shared_user
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateUserResponse:
     content_type: str = dataclasses.field()

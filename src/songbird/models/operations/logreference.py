@@ -8,14 +8,12 @@ from ..shared import logreferenceresponse as shared_logreferenceresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class LogReferenceRequest:
     log_reference_request: shared_logreferencerequest.LogReferenceRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -118,8 +118,8 @@ s = songbird.Songbird(
 
 req = shared.AddMembershipRequest(
     email='Willie1@gmail.com',
-    org_id='Soft',
-    role=shared.Role.ADMIN,
+    org_id='24/7',
+    role=shared.Role.VIEWER,
 )
 
 res = s.internal.create_membership(req)
@@ -284,7 +284,7 @@ s = songbird.Songbird(
 )
 
 req = operations.DeleteOrganizationRequest(
-    org_id='Luxurious phew Suffolk',
+    org_id='Coupe',
 )
 
 res = s.internal.delete_organization(req)
@@ -362,7 +362,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetAWSMarketplaceMetadataRequest(
-    org_id='World',
+    org_id='Toys',
 )
 
 res = s.internal.get_aws_marketplace_metadata(req)
@@ -638,8 +638,8 @@ s = songbird.Songbird(
 )
 
 req = operations.GetFeatureFlagsRequest(
-    org_id='Southwest Salad phew',
-    user_id='whiteboard',
+    org_id='boo',
+    user_id='frankly',
 )
 
 res = s.internal.get_feature_flags(req)
@@ -678,7 +678,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsRequest(
-    user_id='Chrysler',
+    user_id='Keyboard',
 )
 
 res = s.internal.get_memberships(req)
@@ -756,7 +756,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsByOrgRequest(
-    org_id='Sterling',
+    org_id='Donna',
 )
 
 res = s.internal.get_memberships_by_org(req)
@@ -836,7 +836,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='virtual drive parallel',
+    org_id='Operative',
 )
 
 res = s.internal.get_notification_settings(req)
@@ -875,7 +875,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetOrganizationRequest(
-    org_id='unleash Auto optio',
+    org_id='hertz',
 )
 
 res = s.internal.get_organization(req)
@@ -914,7 +914,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetUserRequest(
-    user_id='Gold',
+    user_id='Northwest',
 )
 
 res = s.internal.get_user(req)
@@ -1315,7 +1315,7 @@ req = operations.PartiallyUpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='Program Personal',
+    org_id='SCSI',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
@@ -1436,10 +1436,10 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='copy innovate',
-    email='Alfredo_Smith@yahoo.com',
-    model_name='rehash male',
-    org_name='auxiliary',
+    customer_id_token='Infrastructure',
+    email='Emery.Rempel@gmail.com',
+    model_name='Maserati',
+    org_name='woman',
 )
 
 res = s.internal.provision_aws_marketplace_new_user(req)
@@ -1520,9 +1520,9 @@ s = songbird.Songbird(
 
 req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
-    model_name='Botswana',
-    org_name='Account',
-    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
+    model_name='Ergonomic',
+    org_name='Northwest',
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.internal.provision_new_user(req)
@@ -1704,15 +1704,15 @@ s = songbird.Songbird(
 )
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='laborum Borders',
-    cloud_provider='aspernatur silver',
-    connection_id='Tools South',
+    access_token='logistical',
+    cloud_provider='Operations',
+    connection_id='Carolina',
     demo=False,
-    email='Samir_Monahan@yahoo.com',
-    hostname='slimy-referendum.org',
-    port=978605,
-    workspace_id='Hatchback Wyoming TCP',
-    workspace_url='Cayman Gasoline',
+    email='Christophe81@yahoo.com',
+    hostname='far-flung-mushroom.org',
+    port=610134,
+    workspace_id='Account',
+    workspace_url='Oganesson',
 )
 
 res = s.internal.register_databricks_connection(req)
@@ -1752,7 +1752,7 @@ s = songbird.Songbird(
 
 req = shared.RemoveMembershipRequest(
     email='Shaun79@gmail.com',
-    org_id='quisquam Legacy purple',
+    org_id='yippee',
 )
 
 res = s.internal.remove_membership_by_email(req)
@@ -1830,8 +1830,8 @@ s = songbird.Songbird(
 )
 
 req = shared.SetDefaultMembershipRequest(
-    org_id='Francium transparent',
-    user_id='Cloned iste once',
+    org_id='1080p',
+    user_id='Krypton',
 )
 
 res = s.internal.set_default_membership(req)
@@ -1988,7 +1988,7 @@ s = songbird.Songbird(
 
 req = shared.UpdateMembershipRequest(
     email='Minnie42@hotmail.com',
-    org_id='compress Hyundai leading',
+    org_id='salmon',
     role=shared.Role.ADMIN,
 )
 
@@ -2042,7 +2042,7 @@ req = operations.UpdateNotificationSettingsRequest(
             enabled=False,
         ),
     ),
-    org_id='deposit Account',
+    org_id='voluptate',
 )
 
 res = s.internal.update_notification_settings(req)
@@ -2135,7 +2135,7 @@ req = operations.UpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='Male Slovenia',
+    org_id='pixel',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
@@ -2178,7 +2178,7 @@ s = songbird.Songbird(
 
 req = shared.User(
     email='Madison.Jacobi47@yahoo.com',
-    user_id='experiences Dynamic Northwest',
+    user_id='newton',
 )
 
 res = s.internal.update_user(req)
@@ -2217,7 +2217,7 @@ s = songbird.Songbird(
 )
 
 req = operations.WhyLabsSearchRequest(
-    query='Fish yowza East',
+    query='for',
 )
 
 res = s.internal.why_labs_search(req)

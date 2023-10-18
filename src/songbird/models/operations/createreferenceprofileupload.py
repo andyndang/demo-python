@@ -8,13 +8,11 @@ from ..shared import logsessionreferenceresponse as shared_logsessionreferencere
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateReferenceProfileUploadRequest:
     log_reference_request: shared_logreferencerequest.LogReferenceRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

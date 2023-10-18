@@ -7,7 +7,6 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class StripePaymentEndpointResponse:
     content_type: str = dataclasses.field()

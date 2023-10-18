@@ -7,5 +7,5 @@ Response for the GetProfileObservatoryLink api
 
 | Field                         | Type                          | Required                      | Description                   |
 | ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
-| `individual_observatory_urls` | list[*str*]                   | :heavy_minus_sign:            | N/A                           |
+| `individual_observatory_urls` | List[*str*]                   | :heavy_minus_sign:            | N/A                           |
 | `observatory_url`             | *Optional[str]*               | :heavy_minus_sign:            | N/A                           |

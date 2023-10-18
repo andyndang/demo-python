@@ -7,13 +7,11 @@ from ..shared import void as shared_void
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class RemoveOrganizationMembershipRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

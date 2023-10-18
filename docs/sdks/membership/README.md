@@ -34,8 +34,8 @@ s = songbird.Songbird(
 
 req = shared.AddMembershipRequest(
     email='Willie1@gmail.com',
-    org_id='Soft',
-    role=shared.Role.ADMIN,
+    org_id='24/7',
+    role=shared.Role.VIEWER,
 )
 
 res = s.membership.create_membership(req)
@@ -154,7 +154,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsRequest(
-    user_id='Chrysler',
+    user_id='Keyboard',
 )
 
 res = s.membership.get_memberships(req)
@@ -232,7 +232,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsByOrgRequest(
-    org_id='Sterling',
+    org_id='Donna',
 )
 
 res = s.membership.get_memberships_by_org(req)
@@ -311,7 +311,7 @@ s = songbird.Songbird(
 
 req = shared.RemoveMembershipRequest(
     email='Shaun79@gmail.com',
-    org_id='quisquam Legacy purple',
+    org_id='yippee',
 )
 
 res = s.membership.remove_membership_by_email(req)
@@ -390,8 +390,8 @@ s = songbird.Songbird(
 )
 
 req = shared.SetDefaultMembershipRequest(
-    org_id='Francium transparent',
-    user_id='Cloned iste once',
+    org_id='1080p',
+    user_id='Krypton',
 )
 
 res = s.membership.set_default_membership(req)
@@ -431,7 +431,7 @@ s = songbird.Songbird(
 
 req = shared.UpdateMembershipRequest(
     email='Minnie42@hotmail.com',
-    org_id='compress Hyundai leading',
+    org_id='salmon',
     role=shared.Role.ADMIN,
 )
 

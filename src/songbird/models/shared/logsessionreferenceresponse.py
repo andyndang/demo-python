@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LogSessionReferenceResponse:
     r"""Response payload for uploading reference profile."""

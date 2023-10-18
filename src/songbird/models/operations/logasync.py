@@ -8,14 +8,12 @@ from ..shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class LogAsyncRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     log_async_request: shared_logasyncrequest.LogAsyncRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

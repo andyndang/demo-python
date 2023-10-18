@@ -7,12 +7,10 @@ from ..shared import searchresponse as shared_searchresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class WhyLabsSearchRequest:
     query: str = dataclasses.field(metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     
-
 
 
 

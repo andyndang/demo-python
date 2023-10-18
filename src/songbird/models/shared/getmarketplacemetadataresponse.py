@@ -8,7 +8,6 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetMarketplaceMetadataResponse:
     r"""Response for listing organization"""

@@ -7,7 +7,6 @@ from ..shared import debugevent as shared_debugevent
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class LogDebugEventRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class LogDebugEventRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     
-
 
 
 

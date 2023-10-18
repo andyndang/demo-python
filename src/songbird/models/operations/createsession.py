@@ -7,7 +7,6 @@ from ..shared import createsessionresponse as shared_createsessionresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateSessionResponse:
     content_type: str = dataclasses.field()

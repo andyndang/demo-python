@@ -25,10 +25,10 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='copy innovate',
-    email='Alfredo_Smith@yahoo.com',
-    model_name='rehash male',
-    org_name='auxiliary',
+    customer_id_token='Infrastructure',
+    email='Emery.Rempel@gmail.com',
+    model_name='Maserati',
+    org_name='woman',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req)
@@ -109,9 +109,9 @@ s = songbird.Songbird(
 
 req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
-    model_name='Botswana',
-    org_name='Account',
-    subscription_tier=shared.SubscriptionTier.SUBSCRIPTION,
+    model_name='Ergonomic',
+    org_name='Northwest',
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.provision.provision_new_user(req)
@@ -150,15 +150,15 @@ s = songbird.Songbird(
 )
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='laborum Borders',
-    cloud_provider='aspernatur silver',
-    connection_id='Tools South',
+    access_token='logistical',
+    cloud_provider='Operations',
+    connection_id='Carolina',
     demo=False,
-    email='Samir_Monahan@yahoo.com',
-    hostname='slimy-referendum.org',
-    port=978605,
-    workspace_id='Hatchback Wyoming TCP',
-    workspace_url='Cayman Gasoline',
+    email='Christophe81@yahoo.com',
+    hostname='far-flung-mushroom.org',
+    port=610134,
+    workspace_id='Account',
+    workspace_url='Oganesson',
 )
 
 res = s.provision.register_databricks_connection(req)

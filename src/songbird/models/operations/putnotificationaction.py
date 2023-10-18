@@ -8,7 +8,6 @@ from ..shared import void as shared_void
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PutNotificationActionRequest:
     action_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'action_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class PutNotificationActionRequest:
     request_body: str = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     type: shared_actiontype.ActionType = dataclasses.field(metadata={'path_param': { 'field_name': 'type', 'style': 'simple', 'explode': False }})
     
-
 
 
 

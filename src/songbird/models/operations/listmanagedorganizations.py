@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import accountorganization as shared_accountorganization
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -15,14 +14,13 @@ class ListManagedOrganizationsRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListManagedOrganizationsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    account_organizations: Optional[list[shared_accountorganization.AccountOrganization]] = dataclasses.field(default=None)
+    account_organizations: Optional[List[shared_accountorganization.AccountOrganization]] = dataclasses.field(default=None)
     r"""ListManagedOrganizations default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

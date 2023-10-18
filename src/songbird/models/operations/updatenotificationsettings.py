@@ -7,13 +7,11 @@ from ..shared import notificationsettings as shared_notificationsettings
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateNotificationSettingsRequest:
     notification_settings: shared_notificationsettings.NotificationSettings = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -7,7 +7,6 @@ from ..shared import modelmetadataresponse as shared_modelmetadataresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeactivateModelRequest:
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
@@ -15,7 +14,6 @@ class DeactivateModelRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""The organization ID"""
     
-
 
 
 

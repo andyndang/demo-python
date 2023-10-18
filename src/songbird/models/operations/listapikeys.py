@@ -7,7 +7,6 @@ from ..shared import listuserapikeys as shared_listuserapikeys
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListAPIKeysRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
@@ -17,7 +16,6 @@ class ListAPIKeysRequest:
      A list of objects with key ID and other metadata about the keys, but no secret values
     """
     
-
 
 
 

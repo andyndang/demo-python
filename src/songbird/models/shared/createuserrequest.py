@@ -7,7 +7,6 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateUserRequest:
     r"""Request for creating a new user"""

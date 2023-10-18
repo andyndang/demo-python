@@ -7,7 +7,6 @@ from songbird import utils
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CreateSessionResponse:
     r"""Response for creating sessions"""

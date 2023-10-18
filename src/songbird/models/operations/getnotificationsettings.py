@@ -7,12 +7,10 @@ from ..shared import getnotificationsettingsresponse as shared_getnotificationse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetNotificationSettingsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

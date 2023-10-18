@@ -7,7 +7,6 @@ from ..shared import deleteanalyzerresultsresponse as shared_deleteanalyzerresul
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteAnalyzerResultsRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
@@ -17,7 +16,6 @@ class DeleteAnalyzerResultsRequest:
     end_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'end_timestamp', 'style': 'form', 'explode': True }})
     start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'start_timestamp', 'style': 'form', 'explode': True }})
     
-
 
 
 

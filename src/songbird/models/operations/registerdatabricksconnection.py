@@ -7,7 +7,6 @@ from ..shared import registerdatabricksconnectionresponse as shared_registerdata
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class RegisterDatabricksConnectionResponse:
     content_type: str = dataclasses.field()

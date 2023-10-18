@@ -7,14 +7,12 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PutMonitorConfigV3Request:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     request_body: str = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

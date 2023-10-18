@@ -35,10 +35,10 @@ s = songbird.Songbird(
 )
 
 req = operations.AddNotificationActionRequest(
-    request_body='withdrawal',
+    request_body='applications',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.NA,
+    type=shared.ActionType.EMAIL,
 )
 
 res = s.notification_settings.add_notification_action(req)
@@ -237,7 +237,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='virtual drive parallel',
+    org_id='Operative',
 )
 
 res = s.notification_settings.get_notification_settings(req)
@@ -315,7 +315,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutNotificationActionRequest(
-    request_body='provided',
+    request_body='and',
     action_id='user-action',
     org_id='org-123',
     type=shared.ActionType.NA,
@@ -397,10 +397,10 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateNotificationActionRequest(
-    request_body='female perfectly',
+    request_body='Union',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.NA,
+    type=shared.ActionType.EMAIL,
 )
 
 res = s.notification_settings.update_notification_action(req)
@@ -453,7 +453,7 @@ req = operations.UpdateNotificationSettingsRequest(
             enabled=False,
         ),
     ),
-    org_id='deposit Account',
+    org_id='voluptate',
 )
 
 res = s.notification_settings.update_notification_settings(req)

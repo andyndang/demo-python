@@ -5,14 +5,14 @@ import dataclasses
 from ..shared import organizationrolemembers as shared_organizationrolemembers
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GetAccountMembershipsResponse:
     r"""Response for the GetAccountMemberships API"""
-    memberships: list[shared_organizationrolemembers.OrganizationRoleMembers] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('memberships') }})
+    memberships: List[shared_organizationrolemembers.OrganizationRoleMembers] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('memberships') }})
     r"""A list of memberships in the account"""
     
 

@@ -7,7 +7,6 @@ from ..shared import refreshconnectionbyorgidresponse as shared_refreshconnectio
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class RefreshConnectionResponse:
     content_type: str = dataclasses.field()

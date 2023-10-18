@@ -6,7 +6,6 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetMonitorConfigV3Request:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
@@ -14,7 +13,6 @@ class GetMonitorConfigV3Request:
     include_entity_schema: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_entity_schema', 'style': 'form', 'explode': True }})
     include_entity_weights: Optional[bool] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'include_entity_weights', 'style': 'form', 'explode': True }})
     
-
 
 
 

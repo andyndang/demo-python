@@ -8,7 +8,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ProvisionNewMarketplaceUserRequest:
     customer_id_token: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('customerIdToken') }})

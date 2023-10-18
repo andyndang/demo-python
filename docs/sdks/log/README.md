@@ -32,8 +32,8 @@ req = operations.GetProfileObservatoryLinkRequest(
             'Marketing',
         ],
     ),
-    dataset_id='Diesel Bloomington matrix',
-    org_id='Tools Southwest Northeast',
+    dataset_id='substantial',
+    org_id='North',
 )
 
 res = s.log.get_profile_observatory_link(req)

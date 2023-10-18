@@ -8,7 +8,6 @@ from ..shared import response as shared_response
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PutEntitySchemaColumnRequest:
     column_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'column_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class PutEntitySchemaColumnRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

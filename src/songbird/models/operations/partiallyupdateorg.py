@@ -11,13 +11,11 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PartiallyUpdateOrgRequestBody:
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id'), 'exclude': lambda f: f is None }})
     r"""The unique ID of an organization. If an organization with this ID does not exist, this method will throw an exception."""
     
-
 
 
 
@@ -37,7 +35,6 @@ class PartiallyUpdateOrgRequest:
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'subscription_tier', 'style': 'form', 'explode': True }})
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
-
 
 
 

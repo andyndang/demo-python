@@ -7,12 +7,10 @@ from ..shared import user as shared_user
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetUserByEmailRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     
-
 
 
 

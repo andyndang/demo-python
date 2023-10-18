@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import accountuser as shared_accountuser
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -15,14 +14,13 @@ class ListAccountUsersRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListAccountUsersResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    account_users: Optional[list[shared_accountuser.AccountUser]] = dataclasses.field(default=None)
+    account_users: Optional[List[shared_accountuser.AccountUser]] = dataclasses.field(default=None)
     r"""ListAccountUsers default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

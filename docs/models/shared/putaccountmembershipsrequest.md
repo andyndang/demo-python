@@ -7,4 +7,4 @@ Request for the PutAccountMemberships API
 
 | Field                                    | Type                                     | Required                                 | Description                              |
 | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-| `user_ids`                               | list[*str*]                              | :heavy_check_mark:                       | A list of userIds that should be members |
+| `user_ids`                               | List[*str*]                              | :heavy_check_mark:                       | A list of userIds that should be members |

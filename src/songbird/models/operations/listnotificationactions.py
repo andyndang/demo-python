@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import notificationaction as shared_notificationaction
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -15,14 +14,13 @@ class ListNotificationActionsRequest:
 
 
 
-
 @dataclasses.dataclass
 class ListNotificationActionsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    notification_actions: Optional[list[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
+    notification_actions: Optional[List[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
     r"""ListNotificationActions default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

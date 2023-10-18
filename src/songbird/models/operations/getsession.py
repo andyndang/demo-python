@@ -7,12 +7,10 @@ from ..shared import getsessionresponse as shared_getsessionresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSessionRequest:
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

@@ -7,13 +7,11 @@ from ..shared import entityweightrecord as shared_entityweightrecord
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetColumnWeightsRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

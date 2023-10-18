@@ -7,7 +7,6 @@ from ..shared import void as shared_void
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PostMonitorConfigValidationJobResponse:
     content_type: str = dataclasses.field()

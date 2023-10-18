@@ -7,7 +7,6 @@ from ..shared import provisionnewuserresponse as shared_provisionnewuserresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ProvisionNewUserResponse:
     content_type: str = dataclasses.field()

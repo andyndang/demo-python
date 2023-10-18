@@ -7,12 +7,10 @@ from ..shared import listorganizationmembershipsresponse as shared_listorganizat
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListOrganizationMembershipsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

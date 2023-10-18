@@ -8,7 +8,6 @@ from ..shared import segmentslistrequest as shared_segmentslistrequest
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class HideSegmentsRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
@@ -17,7 +16,6 @@ class HideSegmentsRequest:
     r"""Your company's unique organization ID"""
     segments_list_request: shared_segmentslistrequest.SegmentsListRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
-
 
 
 

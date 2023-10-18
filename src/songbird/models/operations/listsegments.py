@@ -7,7 +7,6 @@ from ..shared import segmentlistresponse as shared_segmentlistresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListSegmentsRequest:
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
@@ -15,7 +14,6 @@ class ListSegmentsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     
-
 
 
 

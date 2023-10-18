@@ -7,13 +7,11 @@ from ..shared import featureflags as shared_featureflags
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetFeatureFlagsRequest:
     org_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'org_id', 'style': 'form', 'explode': True }})
     user_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
     
-
 
 
 

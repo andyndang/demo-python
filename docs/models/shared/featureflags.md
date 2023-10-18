@@ -7,4 +7,4 @@ Feature flag state
 
 | Field                      | Type                       | Required                   | Description                |
 | -------------------------- | -------------------------- | -------------------------- | -------------------------- |
-| `flag_values`              | dict[str, *bool*]          | :heavy_check_mark:         | The state of feature flags |
+| `flag_values`              | Dict[str, *bool*]          | :heavy_check_mark:         | The state of feature flags |

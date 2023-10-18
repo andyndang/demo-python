@@ -7,7 +7,6 @@ from ..shared import deletedatasetprofilesresponse as shared_deletedatasetprofil
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class DeleteDatasetProfilesRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
@@ -21,7 +20,6 @@ class DeleteDatasetProfilesRequest:
     profile_start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'profile_start_timestamp', 'style': 'form', 'explode': True }})
     r"""Optional, scope deleting profiles from and more recent than the timestamp"""
     
-
 
 
 

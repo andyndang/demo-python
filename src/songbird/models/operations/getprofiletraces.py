@@ -7,7 +7,6 @@ from ..shared import profiletracesresponse as shared_profiletracesresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetProfileTracesRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
@@ -16,7 +15,6 @@ class GetProfileTracesRequest:
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     offset: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'offset', 'style': 'form', 'explode': True }})
     
-
 
 
 

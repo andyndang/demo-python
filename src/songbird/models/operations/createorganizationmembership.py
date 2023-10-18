@@ -8,7 +8,6 @@ from ..shared import role as shared_role
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateOrganizationMembershipRequest:
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
@@ -16,7 +15,6 @@ class CreateOrganizationMembershipRequest:
     role: shared_role.Role = dataclasses.field(metadata={'query_param': { 'field_name': 'role', 'style': 'form', 'explode': True }})
     set_default: Optional[bool] = dataclasses.field(default=False, metadata={'query_param': { 'field_name': 'set_default', 'style': 'form', 'explode': True }})
     
-
 
 
 

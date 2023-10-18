@@ -7,7 +7,6 @@ from ..shared import referenceprofileitemresponse as shared_referenceprofileitem
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetReferenceProfileRequest:
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
@@ -17,7 +16,6 @@ class GetReferenceProfileRequest:
     reference_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'reference_id', 'style': 'simple', 'explode': False }})
     r"""Unique reference Id."""
     
-
 
 
 

@@ -7,7 +7,6 @@ from ..shared import slacknotificationaction as shared_slacknotificationaction
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSlackNotificationActionPayloadResponse:
     content_type: str = dataclasses.field()

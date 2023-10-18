@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
 from songbird.models import errors, operations, shared
-from typing import Optional
+from typing import List, Optional
 
 class NotificationSettings:
     sdk_configuration: SDKConfiguration
@@ -205,7 +205,7 @@ class NotificationSettings:
         
         if True:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[list[shared.NotificationAction]])
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.NotificationAction]])
                 res.notification_actions = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

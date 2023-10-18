@@ -6,14 +6,12 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetMonitorConfigV3VersionRequest:
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     version_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'version_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 

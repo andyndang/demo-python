@@ -33,7 +33,7 @@ req = operations.BatchCreateReferenceProfileUploadRequest(
             shared.LogReferenceRequest(),
         ],
     ),
-    session_id='East',
+    session_id='Alabama',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -72,8 +72,8 @@ s = songbird.Songbird(
 )
 
 req = operations.ClaimGuestSessionRequest(
-    org_id='lively Car Mobility',
-    session_id='Chesapeake Missouri',
+    org_id='cyan',
+    session_id='deposit',
 )
 
 res = s.sessions.claim_guest_session(req)
@@ -117,7 +117,7 @@ req = operations.CreateDatasetProfileUploadRequest(
             shared.SegmentTag(),
         ],
     ),
-    session_id='microchip New invoice',
+    session_id='lest',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -157,7 +157,7 @@ s = songbird.Songbird(
 
 req = operations.CreateReferenceProfileUploadRequest(
     log_reference_request=shared.LogReferenceRequest(),
-    session_id='payment Keyboard',
+    session_id='Funk',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
@@ -196,7 +196,7 @@ s = songbird.Songbird(
 )
 
 req = shared.CreateSessionRequest(
-    user_id='beyond',
+    user_id='West',
 )
 
 res = s.sessions.create_session(req)
@@ -235,7 +235,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetSessionRequest(
-    session_id='Shilling Nobelium crucifixion',
+    session_id='hoof',
 )
 
 res = s.sessions.get_session(req)
@@ -282,7 +282,7 @@ req = operations.GetSessionProfileObservatoryLinkRequest(
             'Games',
         ],
     ),
-    session_id='deposit towards Southeast',
+    session_id='Extended',
 )
 
 res = s.sessions.get_session_profile_observatory_link(req)

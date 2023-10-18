@@ -7,13 +7,11 @@ from ..shared import listmodelsresponse as shared_listmodelsresponse
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class ListModelsRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     
-
 
 
 

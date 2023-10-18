@@ -8,13 +8,11 @@ from ..shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class CreateDatasetProfileUploadRequest:
     log_async_request: shared_logasyncrequest.LogAsyncRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
-
 
 
 
