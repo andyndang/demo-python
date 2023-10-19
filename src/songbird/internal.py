@@ -627,6 +627,34 @@ class Internal:
         return res
 
     
+    def get_organization_subscriptions(self, request: operations.GetOrganizationSubscriptionsRequest) -> operations.GetOrganizationSubscriptionsResponse:
+        r"""Get organization subscription details
+        Get organization subscription details
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetOrganizationSubscriptionsRequest, base_url, '/v0/subscriptions/org/{org_id}', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetOrganizationSubscriptionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.SubscriptionSummary]])
+                res.subscription_summaries = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
     def get_user(self, request: operations.GetUserRequest) -> operations.GetUserResponse:
         r"""Get a user by their id.
         Get a user by their id.

@@ -24,6 +24,7 @@
 * [get_monitor_config_v3_version](#get_monitor_config_v3_version) - Get the monitor config document version for a given dataset.
 * [get_notification_settings](#get_notification_settings) - Get notification settings for an org
 * [get_organization](#get_organization) - Get the metadata about an organization.
+* [get_organization_subscriptions](#get_organization_subscriptions) - Get organization subscription details
 * [get_user](#get_user) - Get a user by their id.
 * [get_user_by_email](#get_user_by_email) - Get a user by their email.
 * [hide_segments](#hide_segments) - Hides a list of segments
@@ -895,6 +896,45 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetOrganizationResponse](../../models/operations/getorganizationresponse.md)**
+
+
+## get_organization_subscriptions
+
+Get organization subscription details
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations, shared
+
+s = songbird.Songbird(
+    security=shared.Security(
+        api_key_auth="",
+    ),
+)
+
+req = operations.GetOrganizationSubscriptionsRequest(
+    org_id='purple',
+)
+
+res = s.internal.get_organization_subscriptions(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                        | Type                                                                                                             | Required                                                                                                         | Description                                                                                                      |
+| ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                        | [operations.GetOrganizationSubscriptionsRequest](../../models/operations/getorganizationsubscriptionsrequest.md) | :heavy_check_mark:                                                                                               | The request object to use for the request.                                                                       |
+
+
+### Response
+
+**[operations.GetOrganizationSubscriptionsResponse](../../models/operations/getorganizationsubscriptionsresponse.md)**
 
 
 ## get_user

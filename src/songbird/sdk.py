@@ -23,6 +23,7 @@ from .schema import Schema
 from .sdkconfiguration import SDKConfiguration
 from .search import Search
 from .sessions import Sessions
+from .subscription import Subscription
 from .user import User
 from songbird import utils
 from songbird.models import shared
@@ -51,6 +52,7 @@ class Songbird:
     schema: Schema
     search: Search
     sessions: Sessions
+    subscription: Subscription
     user: User
 
     sdk_configuration: SDKConfiguration
@@ -115,5 +117,6 @@ class Songbird:
         self.schema = Schema(self.sdk_configuration)
         self.search = Search(self.sdk_configuration)
         self.sessions = Sessions(self.sdk_configuration)
+        self.subscription = Subscription(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
     

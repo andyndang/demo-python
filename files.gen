@@ -20,6 +20,7 @@ src/songbird/provision.py
 src/songbird/schema.py
 src/songbird/search.py
 src/songbird/sessions.py
+src/songbird/subscription.py
 src/songbird/user.py
 src/songbird/sdk.py
 pylintrc
@@ -79,6 +80,7 @@ src/songbird/models/operations/getmembershipsbyorg.py
 src/songbird/models/operations/getmonitorconfigv3version.py
 src/songbird/models/operations/getnotificationsettings.py
 src/songbird/models/operations/getorganization.py
+src/songbird/models/operations/getorganizationsubscriptions.py
 src/songbird/models/operations/getuser.py
 src/songbird/models/operations/getuserbyemail.py
 src/songbird/models/operations/listmonitorconfigv3versions.py
@@ -234,6 +236,9 @@ src/songbird/models/shared/membership.py
 src/songbird/models/shared/getmembershipsresponse.py
 src/songbird/models/shared/getnotificationsettingsresponse.py
 src/songbird/models/shared/organizationmetadata.py
+src/songbird/models/shared/subscriptionsummary.py
+src/songbird/models/shared/subscriptionproductsummary.py
+src/songbird/models/shared/subscriptionproductfeature.py
 src/songbird/models/shared/monitorconfigversion.py
 src/songbird/models/shared/listorganizationsresponse.py
 src/songbird/models/shared/provisionnewawsmarketplaceuserresponse.py
@@ -376,6 +381,8 @@ docs/models/operations/getnotificationsettingsrequest.md
 docs/models/operations/getnotificationsettingsresponse.md
 docs/models/operations/getorganizationrequest.md
 docs/models/operations/getorganizationresponse.md
+docs/models/operations/getorganizationsubscriptionsrequest.md
+docs/models/operations/getorganizationsubscriptionsresponse.md
 docs/models/operations/getuserrequest.md
 docs/models/operations/getuserresponse.md
 docs/models/operations/getuserbyemailrequest.md
@@ -599,6 +606,9 @@ docs/models/shared/membership.md
 docs/models/shared/getmembershipsresponse.md
 docs/models/shared/getnotificationsettingsresponse.md
 docs/models/shared/organizationmetadata.md
+docs/models/shared/subscriptionsummary.md
+docs/models/shared/subscriptionproductsummary.md
+docs/models/shared/subscriptionproductfeature.md
 docs/models/shared/monitorconfigversion.md
 docs/models/shared/listorganizationsresponse.md
 docs/models/shared/provisionnewawsmarketplaceuserresponse.md
@@ -670,5 +680,6 @@ docs/sdks/provision/README.md
 docs/sdks/schema/README.md
 docs/sdks/search/README.md
 docs/sdks/sessions/README.md
+docs/sdks/subscription/README.md
 docs/sdks/user/README.md
 .gitattributes

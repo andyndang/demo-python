@@ -126,6 +126,7 @@ if res.status_code == 200:
 * [get_monitor_config_v3_version](docs/sdks/internal/README.md#get_monitor_config_v3_version) - Get the monitor config document version for a given dataset.
 * [get_notification_settings](docs/sdks/internal/README.md#get_notification_settings) - Get notification settings for an org
 * [get_organization](docs/sdks/internal/README.md#get_organization) - Get the metadata about an organization.
+* [get_organization_subscriptions](docs/sdks/internal/README.md#get_organization_subscriptions) - Get organization subscription details
 * [get_user](docs/sdks/internal/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/internal/README.md#get_user_by_email) - Get a user by their email.
 * [hide_segments](docs/sdks/internal/README.md#hide_segments) - Hides a list of segments
@@ -272,6 +273,10 @@ if res.status_code == 200:
 * [create_session](docs/sdks/sessions/README.md#create_session) - Create a new session that can be used to upload dataset profiles from whylogs for display in whylabs.
 * [get_session](docs/sdks/sessions/README.md#get_session) - Get information about a session.
 * [get_session_profile_observatory_link](docs/sdks/sessions/README.md#get_session_profile_observatory_link) - Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
+
+### [subscription](docs/sdks/subscription/README.md)
+
+* [get_organization_subscriptions](docs/sdks/subscription/README.md#get_organization_subscriptions) - Get organization subscription details
 
 ### [user](docs/sdks/user/README.md)
 
