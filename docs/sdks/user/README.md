@@ -64,7 +64,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetUserRequest(
-    user_id='Northwest',
+    user_id='string',
 )
 
 res = s.user.get_user(req)
@@ -143,7 +143,7 @@ s = songbird.Songbird(
 
 req = shared.User(
     email='Madison.Jacobi47@yahoo.com',
-    user_id='newton',
+    user_id='string',
 )
 
 res = s.user.update_user(req)

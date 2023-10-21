@@ -77,7 +77,7 @@ s = songbird.Songbird(
 )
 
 req = operations.DeleteOrganizationRequest(
-    org_id='Coupe',
+    org_id='string',
 )
 
 res = s.organizations.delete_organization(req)
@@ -116,7 +116,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetAWSMarketplaceMetadataRequest(
-    org_id='Toys',
+    org_id='string',
 )
 
 res = s.organizations.get_aws_marketplace_metadata(req)
@@ -155,7 +155,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetOrganizationRequest(
-    org_id='hertz',
+    org_id='string',
 )
 
 res = s.organizations.get_organization(req)
@@ -275,7 +275,7 @@ req = operations.PartiallyUpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='SCSI',
+    org_id='string',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
@@ -371,7 +371,7 @@ req = operations.UpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='pixel',
+    org_id='string',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',

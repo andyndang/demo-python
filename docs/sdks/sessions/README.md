@@ -33,7 +33,7 @@ req = operations.BatchCreateReferenceProfileUploadRequest(
             shared.LogReferenceRequest(),
         ],
     ),
-    session_id='Alabama',
+    session_id='string',
 )
 
 res = s.sessions.batch_create_reference_profile_upload(req)
@@ -72,8 +72,8 @@ s = songbird.Songbird(
 )
 
 req = operations.ClaimGuestSessionRequest(
-    org_id='cyan',
-    session_id='deposit',
+    org_id='string',
+    session_id='string',
 )
 
 res = s.sessions.claim_guest_session(req)
@@ -117,7 +117,7 @@ req = operations.CreateDatasetProfileUploadRequest(
             shared.SegmentTag(),
         ],
     ),
-    session_id='lest',
+    session_id='string',
 )
 
 res = s.sessions.create_dataset_profile_upload(req)
@@ -157,7 +157,7 @@ s = songbird.Songbird(
 
 req = operations.CreateReferenceProfileUploadRequest(
     log_reference_request=shared.LogReferenceRequest(),
-    session_id='Funk',
+    session_id='string',
 )
 
 res = s.sessions.create_reference_profile_upload(req)
@@ -196,7 +196,7 @@ s = songbird.Songbird(
 )
 
 req = shared.CreateSessionRequest(
-    user_id='West',
+    user_id='string',
 )
 
 res = s.sessions.create_session(req)
@@ -235,7 +235,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetSessionRequest(
-    session_id='hoof',
+    session_id='string',
 )
 
 res = s.sessions.get_session(req)
@@ -279,10 +279,10 @@ req = operations.GetSessionProfileObservatoryLinkRequest(
             495187,
         ],
         reference_profile_ids=[
-            'Games',
+            'string',
         ],
     ),
-    session_id='Extended',
+    session_id='string',
 )
 
 res = s.sessions.get_session_profile_observatory_link(req)

@@ -30,7 +30,7 @@ req = operations.LogDebugEventRequest(
             ],
         ),
         tags=[
-            'ohm',
+            'string',
         ],
     ),
     dataset_id='model-123',

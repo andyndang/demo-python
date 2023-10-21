@@ -29,11 +29,11 @@ req = operations.GetProfileObservatoryLinkRequest(
             926863,
         ],
         reference_profile_ids=[
-            'Marketing',
+            'string',
         ],
     ),
-    dataset_id='substantial',
-    org_id='North',
+    dataset_id='string',
+    org_id='string',
 )
 
 res = s.log.get_profile_observatory_link(req)

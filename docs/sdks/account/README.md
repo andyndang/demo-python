@@ -314,10 +314,10 @@ s = songbird.Songbird(
 req = operations.PatchOrganizationMembershipsRequest(
     patch_account_memberships_request=shared.PatchAccountMembershipsRequest(
         user_ids_to_add=[
-            'revenge',
+            'string',
         ],
         user_ids_to_delete=[
-            'Fiat',
+            'string',
         ],
     ),
     managed_org_id='org-123',
@@ -363,12 +363,12 @@ s = songbird.Songbird(
 req = operations.PutOrganizationMembershipsRequest(
     put_account_memberships_request=shared.PutAccountMembershipsRequest(
         user_ids=[
-            'commitment',
+            'string',
         ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.ADMIN,
+    role=shared.Role.VIEWER,
 )
 
 res = s.account.put_organization_memberships(req)

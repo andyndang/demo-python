@@ -23,7 +23,7 @@ s = songbird.Songbird(
 )
 
 req = operations.WhyLabsSearchRequest(
-    query='for',
+    query='string',
 )
 
 res = s.search.why_labs_search(req)

@@ -21,7 +21,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = 'East'
+req = 'string'
 
 res = s.payment.stripe_payment_endpoint(req)
 

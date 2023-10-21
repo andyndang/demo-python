@@ -360,7 +360,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PatchMonitorConfigV3Request(
-    request_body='GB',
+    request_body='string',
     dataset_id='model-123',
     org_id='org-123',
 )
@@ -401,7 +401,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutAnalyzerRequest(
-    request_body='District',
+    request_body='string',
     analyzer_id='drift-analyzer',
     dataset_id='model-123',
     org_id='org-123',
@@ -443,7 +443,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutMonitorRequest(
-    request_body='Bicycle',
+    request_body='string',
     dataset_id='model-123',
     monitor_id='drift-monitor-123',
     org_id='org-123',
@@ -485,7 +485,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutMonitorConfigV3Request(
-    request_body='before',
+    request_body='string',
     dataset_id='model-123',
     org_id='org-123',
 )
@@ -586,7 +586,7 @@ s = songbird.Songbird(
 )
 
 req = operations.ValidateMonitorConfigV3Request(
-    request_body='Communications',
+    request_body='string',
     dataset_id='model-123',
     org_id='org-123',
 )

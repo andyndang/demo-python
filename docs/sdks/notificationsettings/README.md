@@ -35,10 +35,10 @@ s = songbird.Songbird(
 )
 
 req = operations.AddNotificationActionRequest(
-    request_body='applications',
+    request_body='string',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.EMAIL,
+    type=shared.ActionType.SLACK,
 )
 
 res = s.notification_settings.add_notification_action(req)
@@ -237,7 +237,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='Operative',
+    org_id='string',
 )
 
 res = s.notification_settings.get_notification_settings(req)
@@ -315,10 +315,10 @@ s = songbird.Songbird(
 )
 
 req = operations.PutNotificationActionRequest(
-    request_body='and',
+    request_body='string',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.NA,
+    type=shared.ActionType.EMAIL,
 )
 
 res = s.notification_settings.put_notification_action(req)
@@ -397,10 +397,10 @@ s = songbird.Songbird(
 )
 
 req = operations.UpdateNotificationActionRequest(
-    request_body='Union',
+    request_body='string',
     action_id='user-action',
     org_id='org-123',
-    type=shared.ActionType.EMAIL,
+    type=shared.ActionType.PAGER_DUTY,
 )
 
 res = s.notification_settings.update_notification_action(req)
@@ -453,7 +453,7 @@ req = operations.UpdateNotificationSettingsRequest(
             enabled=False,
         ),
     ),
-    org_id='voluptate',
+    org_id='string',
 )
 
 res = s.notification_settings.update_notification_settings(req)

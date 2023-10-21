@@ -63,7 +63,7 @@ s = songbird.Songbird(
 )
 
 req = operations.PutColumnWeightsRequest(
-    request_body='California',
+    request_body='string',
     dataset_id='model-123',
     org_id='org-123',
 )

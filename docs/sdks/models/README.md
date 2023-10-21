@@ -401,18 +401,18 @@ s = songbird.Songbird(
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "hardware": shared.ColumnSchema(
+            "key": shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
                 tags=[
-                    'Island',
+                    'string',
                 ],
             ),
         },
         metadata=shared.SchemaMetadata(),
         metrics={
-            "Folding": shared.MetricSchema(
+            "key": shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',
@@ -464,7 +464,7 @@ req = operations.PutEntitySchemaColumnRequest(
         data_type='fractional',
         discreteness='discrete',
         tags=[
-            'Folk',
+            'string',
         ],
     ),
     column_id='feature-123',

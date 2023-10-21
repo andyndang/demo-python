@@ -22,7 +22,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetOrganizationSubscriptionsRequest(
-    org_id='purple',
+    org_id='string',
 )
 
 res = s.subscription.get_organization_subscriptions(req)

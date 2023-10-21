@@ -42,7 +42,7 @@ req = operations.CreateReferenceProfileRequest(
             ),
         ],
         tags=[
-            'Massachusetts',
+            'string',
         ],
     ),
     dataset_id='model-123',
@@ -309,7 +309,7 @@ s = songbird.Songbird(
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'yellow',
+            'string',
         ],
     ),
     dataset_id='model-123',

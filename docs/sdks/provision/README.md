@@ -25,10 +25,10 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='Infrastructure',
-    email='Emery.Rempel@gmail.com',
-    model_name='Maserati',
-    org_name='woman',
+    customer_id_token='string',
+    email='Karina72@yahoo.com',
+    model_name='string',
+    org_name='string',
 )
 
 res = s.provision.provision_aws_marketplace_new_user(req)
@@ -109,9 +109,9 @@ s = songbird.Songbird(
 
 req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
-    model_name='Ergonomic',
-    org_name='Northwest',
-    subscription_tier=shared.SubscriptionTier.PAID,
+    model_name='string',
+    org_name='string',
+    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.provision.provision_new_user(req)
@@ -150,15 +150,15 @@ s = songbird.Songbird(
 )
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='logistical',
-    cloud_provider='Operations',
-    connection_id='Carolina',
+    access_token='string',
+    cloud_provider='string',
+    connection_id='string',
     demo=False,
-    email='Christophe81@yahoo.com',
-    hostname='far-flung-mushroom.org',
-    port=610134,
-    workspace_id='Account',
-    workspace_url='Oganesson',
+    email='Kim53@yahoo.com',
+    hostname='glistening-mobile.com',
+    port=797817,
+    workspace_id='string',
+    workspace_url='string',
 )
 
 res = s.provision.register_databricks_connection(req)

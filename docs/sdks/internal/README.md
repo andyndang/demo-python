@@ -119,8 +119,8 @@ s = songbird.Songbird(
 
 req = shared.AddMembershipRequest(
     email='Willie1@gmail.com',
-    org_id='24/7',
-    role=shared.Role.VIEWER,
+    org_id='string',
+    role=shared.Role.ADMIN,
 )
 
 res = s.internal.create_membership(req)
@@ -285,7 +285,7 @@ s = songbird.Songbird(
 )
 
 req = operations.DeleteOrganizationRequest(
-    org_id='Coupe',
+    org_id='string',
 )
 
 res = s.internal.delete_organization(req)
@@ -363,7 +363,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetAWSMarketplaceMetadataRequest(
-    org_id='Toys',
+    org_id='string',
 )
 
 res = s.internal.get_aws_marketplace_metadata(req)
@@ -639,8 +639,8 @@ s = songbird.Songbird(
 )
 
 req = operations.GetFeatureFlagsRequest(
-    org_id='boo',
-    user_id='frankly',
+    org_id='string',
+    user_id='string',
 )
 
 res = s.internal.get_feature_flags(req)
@@ -679,7 +679,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsRequest(
-    user_id='Keyboard',
+    user_id='string',
 )
 
 res = s.internal.get_memberships(req)
@@ -757,7 +757,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetMembershipsByOrgRequest(
-    org_id='Donna',
+    org_id='string',
 )
 
 res = s.internal.get_memberships_by_org(req)
@@ -837,7 +837,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetNotificationSettingsRequest(
-    org_id='Operative',
+    org_id='string',
 )
 
 res = s.internal.get_notification_settings(req)
@@ -876,7 +876,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetOrganizationRequest(
-    org_id='hertz',
+    org_id='string',
 )
 
 res = s.internal.get_organization(req)
@@ -915,7 +915,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetOrganizationSubscriptionsRequest(
-    org_id='purple',
+    org_id='string',
 )
 
 res = s.internal.get_organization_subscriptions(req)
@@ -954,7 +954,7 @@ s = songbird.Songbird(
 )
 
 req = operations.GetUserRequest(
-    user_id='Northwest',
+    user_id='string',
 )
 
 res = s.internal.get_user(req)
@@ -1036,7 +1036,7 @@ s = songbird.Songbird(
 req = operations.HideSegmentsRequest(
     segments_list_request=shared.SegmentsListRequest(
         segments=[
-            'yellow',
+            'string',
         ],
     ),
     dataset_id='model-123',
@@ -1355,7 +1355,7 @@ req = operations.PartiallyUpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='SCSI',
+    org_id='string',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
@@ -1399,10 +1399,10 @@ s = songbird.Songbird(
 req = operations.PatchOrganizationMembershipsRequest(
     patch_account_memberships_request=shared.PatchAccountMembershipsRequest(
         user_ids_to_add=[
-            'revenge',
+            'string',
         ],
         user_ids_to_delete=[
-            'Fiat',
+            'string',
         ],
     ),
     managed_org_id='org-123',
@@ -1476,10 +1476,10 @@ s = songbird.Songbird(
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
-    customer_id_token='Infrastructure',
-    email='Emery.Rempel@gmail.com',
-    model_name='Maserati',
-    org_name='woman',
+    customer_id_token='string',
+    email='Karina72@yahoo.com',
+    model_name='string',
+    org_name='string',
 )
 
 res = s.internal.provision_aws_marketplace_new_user(req)
@@ -1560,9 +1560,9 @@ s = songbird.Songbird(
 
 req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
-    model_name='Ergonomic',
-    org_name='Northwest',
-    subscription_tier=shared.SubscriptionTier.PAID,
+    model_name='string',
+    org_name='string',
+    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.internal.provision_new_user(req)
@@ -1603,12 +1603,12 @@ s = songbird.Songbird(
 req = operations.PutOrganizationMembershipsRequest(
     put_account_memberships_request=shared.PutAccountMembershipsRequest(
         user_ids=[
-            'commitment',
+            'string',
         ],
     ),
     managed_org_id='org-123',
     org_id='org-123',
-    role=shared.Role.ADMIN,
+    role=shared.Role.VIEWER,
 )
 
 res = s.internal.put_organization_memberships(req)
@@ -1744,15 +1744,15 @@ s = songbird.Songbird(
 )
 
 req = shared.RegisterDatabricksConnectionRequest(
-    access_token='logistical',
-    cloud_provider='Operations',
-    connection_id='Carolina',
+    access_token='string',
+    cloud_provider='string',
+    connection_id='string',
     demo=False,
-    email='Christophe81@yahoo.com',
-    hostname='far-flung-mushroom.org',
-    port=610134,
-    workspace_id='Account',
-    workspace_url='Oganesson',
+    email='Kim53@yahoo.com',
+    hostname='glistening-mobile.com',
+    port=797817,
+    workspace_id='string',
+    workspace_url='string',
 )
 
 res = s.internal.register_databricks_connection(req)
@@ -1792,7 +1792,7 @@ s = songbird.Songbird(
 
 req = shared.RemoveMembershipRequest(
     email='Shaun79@gmail.com',
-    org_id='yippee',
+    org_id='string',
 )
 
 res = s.internal.remove_membership_by_email(req)
@@ -1870,8 +1870,8 @@ s = songbird.Songbird(
 )
 
 req = shared.SetDefaultMembershipRequest(
-    org_id='1080p',
-    user_id='Krypton',
+    org_id='string',
+    user_id='string',
 )
 
 res = s.internal.set_default_membership(req)
@@ -1909,7 +1909,7 @@ s = songbird.Songbird(
     ),
 )
 
-req = 'East'
+req = 'string'
 
 res = s.internal.stripe_payment_endpoint(req)
 
@@ -2028,8 +2028,8 @@ s = songbird.Songbird(
 
 req = shared.UpdateMembershipRequest(
     email='Minnie42@hotmail.com',
-    org_id='salmon',
-    role=shared.Role.ADMIN,
+    org_id='string',
+    role=shared.Role.VIEWER,
 )
 
 res = s.internal.update_membership_by_email(req)
@@ -2082,7 +2082,7 @@ req = operations.UpdateNotificationSettingsRequest(
             enabled=False,
         ),
     ),
-    org_id='voluptate',
+    org_id='string',
 )
 
 res = s.internal.update_notification_settings(req)
@@ -2175,7 +2175,7 @@ req = operations.UpdateOrganizationRequest(
     name='ACME, Inc',
     notification_email_address='notifications@acme.ai',
     observatory_url='https://hub.whylabsapp.com',
-    org_id='pixel',
+    org_id='string',
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
@@ -2218,7 +2218,7 @@ s = songbird.Songbird(
 
 req = shared.User(
     email='Madison.Jacobi47@yahoo.com',
-    user_id='newton',
+    user_id='string',
 )
 
 res = s.internal.update_user(req)
@@ -2257,7 +2257,7 @@ s = songbird.Songbird(
 )
 
 req = operations.WhyLabsSearchRequest(
-    query='for',
+    query='string',
 )
 
 res = s.internal.why_labs_search(req)
