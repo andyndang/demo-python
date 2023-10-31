@@ -12,7 +12,7 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DTOClustersClusterLogConfDTO:
-    
     dbfs: Optional[shared_dto_clusters_dbfsstorageinfodto.DTOClustersDbfsStorageInfoDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dbfs'), 'exclude': lambda f: f is None }})
     s3: Optional[shared_dto_clusters_s3storageinfodto.DTOClustersS3StorageInfoDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3'), 'exclude': lambda f: f is None }})
     
+

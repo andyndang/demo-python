@@ -10,7 +10,6 @@ from songbird import utils
 @dataclasses.dataclass
 class MetricSchema:
     r"""Schema for user-defined metrics"""
-    
     column: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('column') }})
     r"""Entity column to extract the metric from"""
     default_metric: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultMetric') }})
@@ -18,3 +17,4 @@ class MetricSchema:
     label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('label') }})
     r"""User-friendly label for the metric. This should be a unique for the entity."""
     
+

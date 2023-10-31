@@ -4,34 +4,32 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import referenceprofileitemresponse as shared_referenceprofileitemresponse
-from typing import Optional
+from typing import List, Optional
 
-
-@dataclasses.dataclass
-class ListReferenceProfilesSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclasses.dataclass
 class ListReferenceProfilesRequest:
-    
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
     r"""The unique model ID in your company."""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     from_epoch: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from_epoch', 'style': 'form', 'explode': True }})
-    r"""Milli epoch time that represents the end of the time range to query."""
+    r"""Milli epoch time that represents the end of the time range to query based on the upload timestamp."""
     to_epoch: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'to_epoch', 'style': 'form', 'explode': True }})
-    r"""Milli epoch time that represents the end of the time range to query."""
+    r"""Milli epoch time that represents the end of the time range to query based on the upload timestamp."""
     
+
+
 
 @dataclasses.dataclass
 class ListReferenceProfilesResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    reference_profile_item_responses: Optional[list[shared_referenceprofileitemresponse.ReferenceProfileItemResponse]] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    reference_profile_item_responses: Optional[List[shared_referenceprofileitemresponse.ReferenceProfileItemResponse]] = dataclasses.field(default=None)
     r"""The metadata for the summarized dataset profile including paths to JSON and protobuf data"""
     
+

@@ -4,7 +4,6 @@ from __future__ import annotations
 from enum import Enum
 
 class TimePeriod(str, Enum):
-    r"""The [TimePeriod] for data aggregation/alerting for a model"""
     P1_M = 'P1M'
     P1_W = 'P1W'
     P1_D = 'P1D'

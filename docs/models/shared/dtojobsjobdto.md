@@ -1,0 +1,11 @@
+# DTOJobsJobDTO
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `created_time`                                                                  | [date](https://docs.python.org/3/library/datetime.html#date-objects)            | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `creator_user_name`                                                             | *Optional[str]*                                                                 | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `job_id`                                                                        | *Optional[int]*                                                                 | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `settings`                                                                      | [Optional[DTOJobsJobSettingsDTO]](../../models/shared/dtojobsjobsettingsdto.md) | :heavy_minus_sign:                                                              | N/A                                                                             |

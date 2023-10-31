@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class Organizations:
@@ -12,7 +12,7 @@ class Organizations:
         self.sdk_configuration = sdk_config
         
     
-    def create_organization(self, request: operations.CreateOrganizationRequest, security: operations.CreateOrganizationSecurity) -> operations.CreateOrganizationResponse:
+    def create_organization(self, request: operations.CreateOrganizationRequest) -> operations.CreateOrganizationResponse:
         r"""Create an organization
         Create an organization
         """
@@ -22,9 +22,9 @@ class Organizations:
         headers = {}
         query_params = utils.get_query_params(operations.CreateOrganizationRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -35,11 +35,13 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def delete_organization(self, request: operations.DeleteOrganizationRequest, security: operations.DeleteOrganizationSecurity) -> operations.DeleteOrganizationResponse:
+    def delete_organization(self, request: operations.DeleteOrganizationRequest) -> operations.DeleteOrganizationResponse:
         r"""Delete an org
         Delete an org
         """
@@ -48,9 +50,9 @@ class Organizations:
         url = utils.generate_url(operations.DeleteOrganizationRequest, base_url, '/v0/organizations/{org_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -61,11 +63,13 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def get_aws_marketplace_metadata(self, request: operations.GetAWSMarketplaceMetadataRequest, security: operations.GetAWSMarketplaceMetadataSecurity) -> operations.GetAWSMarketplaceMetadataResponse:
+    def get_aws_marketplace_metadata(self, request: operations.GetAWSMarketplaceMetadataRequest) -> operations.GetAWSMarketplaceMetadataResponse:
         r"""Get marketplace metadata for an org if any exists.
         Get marketplace metadata for an org if any exists.
         """
@@ -74,9 +78,9 @@ class Organizations:
         url = utils.generate_url(operations.GetAWSMarketplaceMetadataRequest, base_url, '/v0/organizations/{org_id}/marketplace-metadata/', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -87,11 +91,13 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMarketplaceMetadataResponse])
                 res.get_marketplace_metadata_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def get_organization(self, request: operations.GetOrganizationRequest, security: operations.GetOrganizationSecurity) -> operations.GetOrganizationResponse:
+    def get_organization(self, request: operations.GetOrganizationRequest) -> operations.GetOrganizationResponse:
         r"""Get the metadata about an organization.
         Returns various metadata about an organization
         """
@@ -100,9 +106,9 @@ class Organizations:
         url = utils.generate_url(operations.GetOrganizationRequest, base_url, '/v0/organizations/{org_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -113,11 +119,13 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationMetadata])
                 res.organization_metadata = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def list_organizations(self, security: operations.ListOrganizationsSecurity) -> operations.ListOrganizationsResponse:
+    def list_organizations(self) -> operations.ListOrganizationsResponse:
         r"""Get a list of all of the organization ids.
         Get a list of all of the organization ids.
         """
@@ -126,9 +134,9 @@ class Organizations:
         url = base_url + '/v0/organizations'
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -139,30 +147,32 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListOrganizationsResponse])
                 res.list_organizations_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def partially_update_org(self, request: operations.PartiallyUpdateOrgRequest, security: operations.PartiallyUpdateOrgSecurity) -> operations.PartiallyUpdateOrgResponse:
+    def partially_update_org(self, request: operations.PartiallyUpdateOrgRequest) -> operations.PartiallyUpdateOrgResponse:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same
-        
-        Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v0/organizations/partial/'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.PartiallyUpdateOrgRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -173,11 +183,13 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def partially_update_organization(self, request: operations.PartiallyUpdateOrganizationRequest, security: operations.PartiallyUpdateOrganizationSecurity) -> operations.PartiallyUpdateOrganizationResponse:
+    def partially_update_organization(self, request: operations.PartiallyUpdateOrganizationRequest) -> operations.PartiallyUpdateOrganizationResponse:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same
         """
@@ -187,9 +199,9 @@ class Organizations:
         headers = {}
         query_params = utils.get_query_params(operations.PartiallyUpdateOrganizationRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -200,30 +212,32 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def update_org(self, request: operations.UpdateOrgRequest, security: operations.UpdateOrgSecurity) -> operations.UpdateOrgResponse:
+    def update_org(self, request: operations.UpdateOrgRequest) -> operations.UpdateOrgResponse:
         r"""Update an existing organization
         Update all fields of an existing organization
-        
-        Deprecated: this method will be removed in a future release, please migrate away from it as soon as possible
+
+        Deprecated method: This will be removed in a future release, please migrate away from it as soon as possible.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/v0/organizations'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         query_params = utils.get_query_params(operations.UpdateOrgRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -234,11 +248,13 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def update_organization(self, request: operations.UpdateOrganizationRequest, security: operations.UpdateOrganizationSecurity) -> operations.UpdateOrganizationResponse:
+    def update_organization(self, request: operations.UpdateOrganizationRequest) -> operations.UpdateOrganizationResponse:
         r"""Update an existing organization
         Update all fields of an existing organization
         """
@@ -248,9 +264,9 @@ class Organizations:
         headers = {}
         query_params = utils.get_query_params(operations.UpdateOrganizationRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -261,6 +277,8 @@ class Organizations:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

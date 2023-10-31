@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class Log:
@@ -12,7 +12,40 @@ class Log:
         self.sdk_configuration = sdk_config
         
     
-    def log_async(self, request: operations.LogAsyncRequest, security: operations.LogAsyncSecurity) -> operations.LogAsyncResponse:
+    def get_profile_observatory_link(self, request: operations.GetProfileObservatoryLinkRequest) -> operations.GetProfileObservatoryLinkResponse:
+        r"""Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
+        Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.GetProfileObservatoryLinkRequest, base_url, '/v0/organizations/{org_id}/log/observatory-link/{dataset_id}', request)
+        headers = {}
+        req_content_type, data, form = utils.serialize_request_body(request, "get_profile_observatory_link_request", False, False, 'json')
+        if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
+            headers['content-type'] = req_content_type
+        if data is None and form is None:
+            raise Exception('request body is required')
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        client = self.sdk_configuration.security_client
+        
+        http_res = client.request('POST', url, data=data, files=form, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+
+        res = operations.GetProfileObservatoryLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if True:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[shared.GetProfileObservatoryLinkResponse])
+                res.get_profile_observatory_link_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    def log_async(self, request: operations.LogAsyncRequest) -> operations.LogAsyncResponse:
         r"""Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
         Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
         """
@@ -20,15 +53,15 @@ class Log:
         
         url = utils.generate_url(operations.LogAsyncRequest, base_url, '/v0/organizations/{org_id}/log/async/{dataset_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "log_async_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "log_async_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -39,11 +72,13 @@ class Log:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.AsyncLogResponse])
                 res.async_log_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def log_reference(self, request: operations.LogReferenceRequest, security: operations.LogReferenceSecurity) -> operations.LogReferenceResponse:
+    def log_reference(self, request: operations.LogReferenceRequest) -> operations.LogReferenceResponse:
         r"""Returns a presigned URL for uploading the reference profile to.
         Reference profiles can be used for.
         """
@@ -51,15 +86,15 @@ class Log:
         
         url = utils.generate_url(operations.LogReferenceRequest, base_url, '/v0/organizations/{org_id}/log/reference/{model_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "log_reference_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "log_reference_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -70,6 +105,8 @@ class Log:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.LogReferenceResponse])
                 res.log_reference_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

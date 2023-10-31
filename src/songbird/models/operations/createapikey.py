@@ -4,18 +4,11 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ..shared import userapikey as shared_userapikey
-from typing import Optional
+from typing import List, Optional
 
-
-@dataclasses.dataclass
-class CreateAPIKeySecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclasses.dataclass
 class CreateAPIKeyRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     user_id: str = dataclasses.field(metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
@@ -26,16 +19,21 @@ class CreateAPIKeyRequest:
     """
     expiration_time: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'expiration_time', 'style': 'form', 'explode': True }})
     r"""Expiration time in epoch milliseconds"""
-    scopes: Optional[list[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'scopes', 'style': 'form', 'explode': True }})
+    scopes: Optional[List[str]] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'scopes', 'style': 'form', 'explode': True }})
     r"""Scopes of the token"""
     
 
+
+
 @dataclasses.dataclass
 class CreateAPIKeyResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     user_api_key: Optional[shared_userapikey.UserAPIKey] = dataclasses.field(default=None)
     r"""A object with key ID and other metadata about the key"""
     
+

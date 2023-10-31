@@ -3,28 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ..shared import void as shared_void
+from typing import Optional
 
-
-@dataclasses.dataclass
-class RemoveOrganizationMembershipSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclasses.dataclass
 class RemoveOrganizationMembershipRequest:
-    
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class RemoveOrganizationMembershipResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    void: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    void: Optional[shared_void.Void] = dataclasses.field(default=None)
     r"""RemoveOrganizationMembership default response"""
     
+

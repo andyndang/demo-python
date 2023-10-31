@@ -9,14 +9,7 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateOrganizationSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class CreateOrganizationRequest:
-    
     name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'name', 'style': 'form', 'explode': True }})
     r"""The name of the organization"""
     domain: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})
@@ -30,18 +23,24 @@ class CreateOrganizationRequest:
     override_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'override_id', 'style': 'form', 'explode': True }})
     r"""Custom ID. If this ID is invalid this method will throw an exception"""
     pager_duty_key: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'pager_duty_key', 'style': 'form', 'explode': True }})
+    parent_org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'parent_org_id', 'style': 'form', 'explode': True }})
     slack_webhook: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slack_webhook', 'style': 'form', 'explode': True }})
     r"""Slack Webhook that should be used for notifications for this organization"""
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'subscription_tier', 'style': 'form', 'explode': True }})
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
 
+
+
 @dataclasses.dataclass
 class CreateOrganizationResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     organization_summary: Optional[shared_organizationsummary.OrganizationSummary] = dataclasses.field(default=None)
     r"""A summary of the organization object if succeeds"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

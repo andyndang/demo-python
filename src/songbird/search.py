@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class Search:
@@ -12,7 +12,7 @@ class Search:
         self.sdk_configuration = sdk_config
         
     
-    def why_labs_search(self, request: operations.WhyLabsSearchRequest, security: operations.WhyLabsSearchSecurity) -> operations.WhyLabsSearchResponse:
+    def why_labs_search(self, request: operations.WhyLabsSearchRequest) -> operations.WhyLabsSearchResponse:
         r"""WhyLabs Search
         WhyLabs Search
         """
@@ -22,9 +22,9 @@ class Search:
         headers = {}
         query_params = utils.get_query_params(operations.WhyLabsSearchRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -35,11 +35,13 @@ class Search:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.SearchResponse])
                 res.search_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def why_labs_search_indexing(self, request: shared.SearchIndexRequest, security: operations.WhyLabsSearchIndexingSecurity) -> operations.WhyLabsSearchIndexingResponse:
+    def why_labs_search_indexing(self, request: shared.SearchIndexRequest) -> operations.WhyLabsSearchIndexingResponse:
         r"""WhyLabs Search Indexing
         WhyLabs Search Indexing
         """
@@ -47,15 +49,15 @@ class Search:
         
         url = base_url + '/v0/search/index'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -66,6 +68,8 @@ class Search:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

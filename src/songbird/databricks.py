@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class Databricks:
@@ -12,7 +12,7 @@ class Databricks:
         self.sdk_configuration = sdk_config
         
     
-    def get_connection(self, request: shared.GetConnectionRequest, security: operations.GetConnectionSecurity) -> operations.GetConnectionResponse:
+    def get_connection(self, request: shared.GetConnectionRequest) -> operations.GetConnectionResponse:
         r"""Get the connection metadata for a given org
         Get the connection metadata for a given org
         """
@@ -20,15 +20,15 @@ class Databricks:
         
         url = base_url + '/v0/databricks/get-connection'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -39,11 +39,13 @@ class Databricks:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetConnectionResponse])
                 res.get_connection_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def list_jobs(self, request: shared.ListJobsRequest, security: operations.ListJobsSecurity) -> operations.ListJobsResponse:
+    def list_jobs(self, request: shared.ListJobsRequest) -> operations.ListJobsResponse:
         r"""List all of the jobs in a workspace.
         List all of the jobs in a workspace.
         """
@@ -51,15 +53,15 @@ class Databricks:
         
         url = base_url + '/v0/databricks/list-jobs'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -70,11 +72,13 @@ class Databricks:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListJobsResponse])
                 res.list_jobs_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def refresh_connection(self, request: shared.RefreshConnectionRequest, security: operations.RefreshConnectionSecurity) -> operations.RefreshConnectionResponse:
+    def refresh_connection(self, request: shared.RefreshConnectionRequest) -> operations.RefreshConnectionResponse:
         r"""Refresh metadata for a workspace connection.
         Refresh metadata for a workspace connection.
         """
@@ -82,15 +86,15 @@ class Databricks:
         
         url = base_url + '/v0/databricks/refresh-connection'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -101,11 +105,13 @@ class Databricks:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.RefreshConnectionByOrgIDResponse])
                 res.refresh_connection_by_org_id_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def run_job(self, request: shared.RunJobRequest, security: operations.RunJobSecurity) -> operations.RunJobResponse:
+    def run_job(self, request: shared.RunJobRequest) -> operations.RunJobResponse:
         r"""Run an existing job in a given databricks workspace.
         Run an existing job in a given databricks workspace.
         """
@@ -113,15 +119,15 @@ class Databricks:
         
         url = base_url + '/v0/databricks/run-job'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -132,11 +138,13 @@ class Databricks:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.RunJobResponse])
                 res.run_job_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def update_connection(self, request: shared.UpdateConnectionRequest, security: operations.UpdateConnectionSecurity) -> operations.UpdateConnectionResponse:
+    def update_connection(self, request: shared.UpdateConnectionRequest) -> operations.UpdateConnectionResponse:
         r"""Update the connection metadata for a given org
         Update the connection metadata for a given org
         """
@@ -144,15 +152,15 @@ class Databricks:
         
         url = base_url + '/v0/databricks/update-connection'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -163,6 +171,8 @@ class Databricks:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

@@ -8,23 +8,21 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class WhyLabsSearchSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class WhyLabsSearchRequest:
-    
     query: str = dataclasses.field(metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     
 
+
+
 @dataclasses.dataclass
 class WhyLabsSearchResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     search_response: Optional[shared_searchresponse.SearchResponse] = dataclasses.field(default=None)
     r"""WhyLabs Search default response"""
     
+

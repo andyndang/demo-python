@@ -1,0 +1,12 @@
+# CreateModelRequest
+
+
+## Fields
+
+| Field                                                          | Type                                                           | Required                                                       | Description                                                    | Example                                                        |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `model_id`                                                     | *Optional[str]*                                                | :heavy_minus_sign:                                             | N/A                                                            | model-123                                                      |
+| `model_name`                                                   | *str*                                                          | :heavy_check_mark:                                             | The name of a model                                            | Credit-Score-1                                                 |
+| `model_type`                                                   | [Optional[shared.ModelType]](../../models/shared/modeltype.md) | :heavy_minus_sign:                                             | The [ModelType] of the dataset                                 | CLASSIFICATION                                                 |
+| `org_id`                                                       | *str*                                                          | :heavy_check_mark:                                             | The organization ID                                            | org-123                                                        |
+| `time_period`                                                  | [shared.TimePeriod](../../models/shared/timeperiod.md)         | :heavy_check_mark:                                             | The [TimePeriod] for data aggregation/alerting for a model     | P1D                                                            |

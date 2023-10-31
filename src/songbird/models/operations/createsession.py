@@ -9,10 +9,13 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CreateSessionResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_session_response: Optional[shared_createsessionresponse.CreateSessionResponse] = dataclasses.field(default=None)
     r"""A new session id that can be used to upload dataset profiles."""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

@@ -5,39 +5,38 @@ import dataclasses
 import requests as requests_http
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
-
-@dataclasses.dataclass
-class PutRequestMonitorRunConfigSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PutRequestMonitorRunConfigRequestBody:
-    
-    analyzer_ids: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analyzer_ids'), 'exclude': lambda f: f is None }})
+    analyzer_ids: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('analyzer_ids'), 'exclude': lambda f: f is None }})
     end_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('end_timestamp'), 'exclude': lambda f: f is None }})
     overwrite: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('overwrite'), 'exclude': lambda f: f is None }})
     start_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('start_timestamp'), 'exclude': lambda f: f is None }})
     
 
+
+
 @dataclasses.dataclass
 class PutRequestMonitorRunConfigRequest:
-    
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     request_body: PutRequestMonitorRunConfigRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     
 
+
+
 @dataclasses.dataclass
 class PutRequestMonitorRunConfigResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     put_request_monitor_run_config_default_application_json_string: Optional[str] = dataclasses.field(default=None)
     r"""PutRequestMonitorRunConfig default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

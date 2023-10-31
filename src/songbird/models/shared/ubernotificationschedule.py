@@ -14,21 +14,21 @@ from typing import Optional
 class UberNotificationSchedule:
     r"""Combination of all possible schedule types, a hacky workaround for bugs in generated clients that use polymorphic types.
     There are three types of schedules. Weekly, Daily, and Individual. You need to set the right fields for each one.
-    
+
     Weekly:
         enabled, cadence=WEEKLY, dayOfWeek, local24HourOfDay, localMinuteOfHour, localTimezone
-        
+
     Daily:
         enabled, cadence=DAILY, local24HourOfDay, localMinuteOfHour, localTimezone
-        
+
     Individual:
         enabled, cadence=INDIVIDUAL
     """
-    
     cadence: shared_notificationsqsmessagecadence.NotificationSqsMessageCadence = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cadence') }})
     enabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled') }})
     day_of_week: Optional[shared_notificationsettingsday.NotificationSettingsDay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dayOfWeek'), 'exclude': lambda f: f is None }})
-    local24_hour_of_day: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local24HourOfDay'), 'exclude': lambda f: f is None }})
-    local_minute_of_hour: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localMinuteOfHour'), 'exclude': lambda f: f is None }})
-    local_timezone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localTimezone'), 'exclude': lambda f: f is None }})
+    local24_hour_of_day: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local24HourOfDay') }})
+    local_minute_of_hour: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localMinuteOfHour') }})
+    local_timezone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localTimezone') }})
     
+

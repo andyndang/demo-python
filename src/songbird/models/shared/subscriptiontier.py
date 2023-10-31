@@ -4,7 +4,6 @@ from __future__ import annotations
 from enum import Enum
 
 class SubscriptionTier(str, Enum):
-    r"""Organization's subscription tier. Should be PAID for real customers"""
     FREE = 'FREE'
     PAID = 'PAID'
     AWS_MARKETPLACE = 'AWS_MARKETPLACE'
