@@ -20,9 +20,9 @@ class SDKConfiguration:
     server_idx: int = 0
     language: str = 'python'
     openapi_doc_version: str = '0.1'
-    sdk_version: str = '2.1.1'
+    sdk_version: str = '2.1.2'
     gen_version: str = '2.173.0'
-    user_agent: str = 'speakeasy-sdk/python 2.1.1 2.173.0 0.1 Songbird'
+    user_agent: str = 'speakeasy-sdk/python 2.1.2 2.173.0 0.1 Songbird'
     retry_config: RetryConfig = None
 
     def get_server_details(self) -> Tuple[str, Dict[str, str]]:

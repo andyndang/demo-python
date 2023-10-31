@@ -224,8 +224,8 @@ class DatasetProfile:
 
     
     def list_reference_profiles(self, request: operations.ListReferenceProfilesRequest) -> operations.ListReferenceProfilesResponse:
-        r"""Returns a list for reference profiles
-        Returns a list of Reference Profiles.
+        r"""Returns a list for reference profiles between the given time range filtered on the upload timestamp
+        Returns a list of Reference Profiles between a given time range filtered on the upload timestamp.
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         

@@ -87,7 +87,7 @@ if res.status_code == 200:
 * [get_profile_traces](docs/sdks/datasetprofile/README.md#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](docs/sdks/datasetprofile/README.md#get_reference_profile) - Returns a single reference profile
 * [hide_segments](docs/sdks/datasetprofile/README.md#hide_segments) - Hides a list of segments
-* [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles
+* [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles between the given time range filtered on the upload timestamp
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 
 ### [debug_events](docs/sdks/debugevents/README.md)
@@ -310,8 +310,6 @@ Here's an example of one such pagination call:
 # Error Handling
 
 Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
-
-
 <!-- End Error Handling -->
 
 
@@ -405,8 +403,6 @@ http_client = requests.Session()
 http_client.headers.update({'x-custom-header': 'someValue'})
 s = songbird.Songbird(client: http_client)
 ```
-
-
 <!-- End Custom HTTP Client -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->

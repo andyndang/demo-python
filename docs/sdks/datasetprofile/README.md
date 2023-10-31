@@ -10,7 +10,7 @@
 * [get_profile_traces](#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](#get_reference_profile) - Returns a single reference profile
 * [hide_segments](#hide_segments) - Hides a list of segments
-* [list_reference_profiles](#list_reference_profiles) - Returns a list for reference profiles
+* [list_reference_profiles](#list_reference_profiles) - Returns a list for reference profiles between the given time range filtered on the upload timestamp
 * [list_segments](#list_segments) - Returns a list of segments
 
 ## create_reference_profile
@@ -337,7 +337,7 @@ if res.status_code == 200:
 
 ## list_reference_profiles
 
-Returns a list of Reference Profiles.
+Returns a list of Reference Profiles between a given time range filtered on the upload timestamp.
 
         
 

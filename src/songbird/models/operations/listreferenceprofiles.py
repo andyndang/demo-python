@@ -14,9 +14,9 @@ class ListReferenceProfilesRequest:
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     from_epoch: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'from_epoch', 'style': 'form', 'explode': True }})
-    r"""Milli epoch time that represents the end of the time range to query."""
+    r"""Milli epoch time that represents the end of the time range to query based on the upload timestamp."""
     to_epoch: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'to_epoch', 'style': 'form', 'explode': True }})
-    r"""Milli epoch time that represents the end of the time range to query."""
+    r"""Milli epoch time that represents the end of the time range to query based on the upload timestamp."""
     
 
 
