@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class FeatureFlags:
@@ -12,7 +12,7 @@ class FeatureFlags:
         self.sdk_configuration = sdk_config
         
     
-    def get_feature_flags(self, request: operations.GetFeatureFlagsRequest, security: operations.GetFeatureFlagsSecurity) -> operations.GetFeatureFlagsResponse:
+    def get_feature_flags(self, request: operations.GetFeatureFlagsRequest) -> operations.GetFeatureFlagsResponse:
         r"""Get feature flags for the specified user/org
         Get feature flags for the specified user/org
         """
@@ -22,9 +22,9 @@ class FeatureFlags:
         headers = {}
         query_params = utils.get_query_params(operations.GetFeatureFlagsRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        client = self.sdk_configuration.security_client
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -35,6 +35,8 @@ class FeatureFlags:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.FeatureFlags])
                 res.feature_flags = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

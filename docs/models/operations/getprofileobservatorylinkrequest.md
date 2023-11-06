@@ -1,0 +1,10 @@
+# GetProfileObservatoryLinkRequest
+
+
+## Fields
+
+| Field                                                                                              | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `get_profile_observatory_link_request`                                                             | [shared.GetProfileObservatoryLinkRequest](../../models/shared/getprofileobservatorylinkrequest.md) | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `dataset_id`                                                                                       | *str*                                                                                              | :heavy_check_mark:                                                                                 | N/A                                                                                                |
+| `org_id`                                                                                           | *str*                                                                                              | :heavy_check_mark:                                                                                 | N/A                                                                                                |

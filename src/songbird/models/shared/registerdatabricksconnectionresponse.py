@@ -9,7 +9,6 @@ from songbird import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class RegisterDatabricksConnectionResponse:
-    r"""RegisterDatabricksConnection default response"""
-    
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
+

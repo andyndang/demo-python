@@ -10,17 +10,21 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CreateReferenceProfileUploadRequest:
-    
     log_reference_request: shared_logreferencerequest.LogReferenceRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class CreateReferenceProfileUploadResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     log_session_reference_response: Optional[shared_logsessionreferenceresponse.LogSessionReferenceResponse] = dataclasses.field(default=None)
     r"""CreateReferenceProfileUpload default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

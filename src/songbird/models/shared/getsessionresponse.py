@@ -11,7 +11,7 @@ from songbird import utils
 @dataclasses.dataclass
 class GetSessionResponse:
     r"""Response for getting sessions."""
-    
     session: shared_sessionmetadata.SessionMetadata = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('session') }})
     r"""Response for getting sessions."""
     
+

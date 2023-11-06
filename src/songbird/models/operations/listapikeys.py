@@ -8,14 +8,7 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class ListAPIKeysSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class ListAPIKeysRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     r"""Your company's unique organization ID"""
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'user_id', 'style': 'form', 'explode': True }})
@@ -24,12 +17,17 @@ class ListAPIKeysRequest:
     """
     
 
+
+
 @dataclasses.dataclass
 class ListAPIKeysResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     list_user_api_keys: Optional[shared_listuserapikeys.ListUserAPIKeys] = dataclasses.field(default=None)
     r"""A list of objects with key ID and other metadata about the keys, but no secret values"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+

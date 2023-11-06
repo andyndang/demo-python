@@ -11,6 +11,6 @@ from songbird import utils
 @dataclasses.dataclass
 class GetMarketplaceMetadataResponse:
     r"""Response for listing organization"""
-    
     metadata: shared_awsmarketplacemetadata.AWSMarketplaceMetadata = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
     
+

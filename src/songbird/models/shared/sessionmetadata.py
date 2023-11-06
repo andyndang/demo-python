@@ -11,7 +11,6 @@ from typing import Optional
 @dataclasses.dataclass
 class SessionMetadata:
     r"""Response for getting sessions."""
-    
     model_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelId'), 'exclude': lambda f: f is None }})
     r"""The model id of the session. There should only be a single model."""
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId'), 'exclude': lambda f: f is None }})
@@ -21,3 +20,4 @@ class SessionMetadata:
     user_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('userId'), 'exclude': lambda f: f is None }})
     r"""The generated user id for the session."""
     
+

@@ -1,0 +1,10 @@
+# HideSegmentsRequest
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              | Example                                                                  |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `segments_list_request`                                                  | [shared.SegmentsListRequest](../../models/shared/segmentslistrequest.md) | :heavy_check_mark:                                                       | N/A                                                                      |                                                                          |
+| `dataset_id`                                                             | *str*                                                                    | :heavy_check_mark:                                                       | The unique dataset ID in your company.                                   | model-123                                                                |
+| `org_id`                                                                 | *str*                                                                    | :heavy_check_mark:                                                       | Your company's unique organization ID                                    | org-123                                                                  |

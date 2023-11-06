@@ -10,7 +10,7 @@ from songbird import utils
 @dataclasses.dataclass
 class GetDatasetMetadataResponse:
     r"""Response for getting dataset metadata"""
-    
     metadata: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
     r"""Metadata information for the dataset"""
     
+

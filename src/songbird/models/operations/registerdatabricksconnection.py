@@ -8,17 +8,14 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class RegisterDatabricksConnectionSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class RegisterDatabricksConnectionResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     register_databricks_connection_response: Optional[shared_registerdatabricksconnectionresponse.RegisterDatabricksConnectionResponse] = dataclasses.field(default=None)
     r"""RegisterDatabricksConnection default response"""
     
+

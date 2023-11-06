@@ -7,14 +7,7 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class DeleteReferenceProfileSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class DeleteReferenceProfileRequest:
-    
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
     r"""The unique model ID in your company."""
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
@@ -23,12 +16,17 @@ class DeleteReferenceProfileRequest:
     r"""Unique reference Id."""
     
 
+
+
 @dataclasses.dataclass
 class DeleteReferenceProfileResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     delete_reference_profile_default_application_json_boolean: Optional[bool] = dataclasses.field(default=None)
     r"""true if successful, false if we encounter failures"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
+
