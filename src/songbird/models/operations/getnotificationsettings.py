@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getnotificationsettingsresponse as shared_getnotificationsettingsresponse
+from ...models.shared import getnotificationsettingsresponse as shared_getnotificationsettingsresponse
 from typing import Optional
 
 

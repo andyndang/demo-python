@@ -35,7 +35,9 @@ class Sessions:
 
         res = operations.BatchCreateReferenceProfileUploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.BatchLogSessionReferenceResponse])
                 res.batch_log_session_reference_response = out
@@ -64,7 +66,9 @@ class Sessions:
 
         res = operations.ClaimGuestSessionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -97,7 +101,9 @@ class Sessions:
 
         res = operations.CreateDatasetProfileUploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.CreateDatasetProfileUploadResponse])
                 res.create_dataset_profile_upload_response = out
@@ -130,7 +136,9 @@ class Sessions:
 
         res = operations.CreateReferenceProfileUploadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.LogSessionReferenceResponse])
                 res.log_session_reference_response = out
@@ -163,7 +171,9 @@ class Sessions:
 
         res = operations.CreateSessionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.CreateSessionResponse])
                 res.create_session_response = out
@@ -191,7 +201,9 @@ class Sessions:
 
         res = operations.GetSessionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetSessionResponse])
                 res.get_session_response = out
@@ -224,7 +236,9 @@ class Sessions:
 
         res = operations.GetSessionProfileObservatoryLinkResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetProfileObservatoryLinkResponse])
                 res.get_profile_observatory_link_response = out

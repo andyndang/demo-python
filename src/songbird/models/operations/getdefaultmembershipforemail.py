@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getdefaultmembershipresponse as shared_getdefaultmembershipresponse
+from ...models.shared import getdefaultmembershipresponse as shared_getdefaultmembershipresponse
 from typing import Optional
 
 

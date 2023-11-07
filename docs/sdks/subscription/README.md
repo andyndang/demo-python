@@ -1,5 +1,5 @@
 # Subscription
-(*subscription*)
+(*.subscription*)
 
 ### Available Operations
 
@@ -13,7 +13,7 @@ Get organization subscription details
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

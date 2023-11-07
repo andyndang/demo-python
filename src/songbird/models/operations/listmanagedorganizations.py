@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import accountorganization as shared_accountorganization
+from ...models.shared import accountorganization as shared_accountorganization
 from typing import List, Optional
 
 
@@ -20,7 +20,7 @@ class ListManagedOrganizationsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    account_organizations: Optional[List[shared_accountorganization.AccountOrganization]] = dataclasses.field(default=None)
+    classes: Optional[List[shared_accountorganization.AccountOrganization]] = dataclasses.field(default=None)
     r"""ListManagedOrganizations default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

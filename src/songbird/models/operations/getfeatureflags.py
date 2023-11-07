@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import featureflags as shared_featureflags
+from ...models.shared import featureflags as shared_featureflags
 from typing import Optional
 
 

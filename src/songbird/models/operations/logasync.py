@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import asynclogresponse as shared_asynclogresponse
-from ..shared import logasyncrequest as shared_logasyncrequest
+from ...models.shared import asynclogresponse as shared_asynclogresponse
+from ...models.shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
 

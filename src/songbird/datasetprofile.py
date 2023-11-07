@@ -37,7 +37,9 @@ class DatasetProfile:
 
         res = operations.CreateReferenceProfileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.CreateReferenceProfileResponse])
                 res.create_reference_profile_response = out
@@ -66,7 +68,9 @@ class DatasetProfile:
 
         res = operations.DeleteAnalyzerResultsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteAnalyzerResultsResponse])
                 res.delete_analyzer_results_response = out
@@ -95,7 +99,9 @@ class DatasetProfile:
 
         res = operations.DeleteDatasetProfilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.DeleteDatasetProfilesResponse])
                 res.delete_dataset_profiles_response = out
@@ -123,10 +129,12 @@ class DatasetProfile:
 
         res = operations.DeleteReferenceProfileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[bool])
-                res.delete_reference_profile_default_application_json_boolean = out
+                res.boolean = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -152,7 +160,9 @@ class DatasetProfile:
 
         res = operations.GetProfileTracesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ProfileTracesResponse])
                 res.profile_traces_response = out
@@ -180,7 +190,9 @@ class DatasetProfile:
 
         res = operations.GetReferenceProfileResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ReferenceProfileItemResponse])
                 res.reference_profile_item_response = out
@@ -213,7 +225,9 @@ class DatasetProfile:
 
         res = operations.HideSegmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -242,10 +256,12 @@ class DatasetProfile:
 
         res = operations.ListReferenceProfilesResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.ReferenceProfileItemResponse]])
-                res.reference_profile_item_responses = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -270,7 +286,9 @@ class DatasetProfile:
 
         res = operations.ListSegmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.SegmentListResponse])
                 res.segment_list_response = out

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import provisionnewawsmarketplaceuserresponse as shared_provisionnewawsmarketplaceuserresponse
+from ...models.shared import provisionnewawsmarketplaceuserresponse as shared_provisionnewawsmarketplaceuserresponse
 from typing import Optional
 
 

@@ -35,7 +35,9 @@ class Internal:
 
         res = operations.CreateAccountUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.AccountUser])
                 res.account_user = out
@@ -68,7 +70,9 @@ class Internal:
 
         res = operations.CreateMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MembershipMetadata])
                 res.membership_metadata = out
@@ -97,7 +101,9 @@ class Internal:
 
         res = operations.CreateOrganizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
@@ -130,7 +136,9 @@ class Internal:
 
         res = operations.CreateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.User])
                 res.user = out
@@ -158,7 +166,9 @@ class Internal:
 
         res = operations.DeleteAccountUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -186,7 +196,9 @@ class Internal:
 
         res = operations.DeleteOrganizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -215,7 +227,9 @@ class Internal:
 
         res = operations.GenerateReportResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.AdminReportResponse])
                 res.admin_report_response = out
@@ -243,7 +257,9 @@ class Internal:
 
         res = operations.GetAWSMarketplaceMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMarketplaceMetadataResponse])
                 res.get_marketplace_metadata_response = out
@@ -272,7 +288,9 @@ class Internal:
 
         res = operations.GetAccountMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetAccountMembershipsResponse])
                 res.get_account_memberships_response = out
@@ -301,7 +319,9 @@ class Internal:
 
         res = operations.GetAccountUserByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.AccountUser])
                 res.account_user = out
@@ -330,7 +350,9 @@ class Internal:
 
         res = operations.GetAccountUserByIDResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.AccountUser])
                 res.account_user = out
@@ -358,7 +380,9 @@ class Internal:
 
         res = operations.GetAPIKeyResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.UserAPIKeyResponse])
                 res.user_api_key_response = out
@@ -391,7 +415,9 @@ class Internal:
 
         res = operations.GetConnectionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetConnectionResponse])
                 res.get_connection_response = out
@@ -420,7 +446,9 @@ class Internal:
 
         res = operations.GetDefaultMembershipForEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetDefaultMembershipResponse])
                 res.get_default_membership_response = out
@@ -449,7 +477,9 @@ class Internal:
 
         res = operations.GetFeatureFlagsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.FeatureFlags])
                 res.feature_flags = out
@@ -477,7 +507,9 @@ class Internal:
 
         res = operations.GetMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMembershipsResponse])
                 res.get_memberships_response = out
@@ -506,7 +538,9 @@ class Internal:
 
         res = operations.GetMembershipsByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMembershipsResponse])
                 res.get_memberships_response = out
@@ -534,7 +568,9 @@ class Internal:
 
         res = operations.GetMembershipsByOrgResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMembershipsResponse])
                 res.get_memberships_response = out
@@ -562,9 +598,11 @@ class Internal:
 
         res = operations.GetMonitorConfigV3VersionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
-                res.get_monitor_config_v3_version_default_application_json_string = http_res.content
+                res.res = http_res.content
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -589,7 +627,9 @@ class Internal:
 
         res = operations.GetNotificationSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetNotificationSettingsResponse])
                 res.get_notification_settings_response = out
@@ -617,7 +657,9 @@ class Internal:
 
         res = operations.GetOrganizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationMetadata])
                 res.organization_metadata = out
@@ -645,10 +687,12 @@ class Internal:
 
         res = operations.GetOrganizationSubscriptionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.SubscriptionSummary]])
-                res.subscription_summaries = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -673,7 +717,9 @@ class Internal:
 
         res = operations.GetUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.User])
                 res.user = out
@@ -702,7 +748,9 @@ class Internal:
 
         res = operations.GetUserByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.User])
                 res.user = out
@@ -735,7 +783,9 @@ class Internal:
 
         res = operations.HideSegmentsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -763,10 +813,12 @@ class Internal:
 
         res = operations.ListAccountUsersResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.AccountUser]])
-                res.account_users = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -792,7 +844,9 @@ class Internal:
 
         res = operations.ListAPIKeysResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListUserAPIKeys])
                 res.list_user_api_keys = out
@@ -825,7 +879,9 @@ class Internal:
 
         res = operations.ListJobsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListJobsResponse])
                 res.list_jobs_response = out
@@ -853,10 +909,12 @@ class Internal:
 
         res = operations.ListManagedOrganizationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.AccountOrganization]])
-                res.account_organizations = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -881,10 +939,12 @@ class Internal:
 
         res = operations.ListMonitorConfigV3VersionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.MonitorConfigVersion]])
-                res.monitor_config_versions = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -909,7 +969,9 @@ class Internal:
 
         res = operations.ListOrganizationsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListOrganizationsResponse])
                 res.list_organizations_response = out
@@ -945,7 +1007,9 @@ class Internal:
 
         res = operations.PartiallyUpdateOrgResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
@@ -974,7 +1038,9 @@ class Internal:
 
         res = operations.PartiallyUpdateOrganizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
@@ -1008,7 +1074,9 @@ class Internal:
 
         res = operations.PatchOrganizationMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.StatusResponse])
                 res.status_response = out
@@ -1036,7 +1104,9 @@ class Internal:
 
         res = operations.PostMonitorConfigValidationJobResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -1069,7 +1139,9 @@ class Internal:
 
         res = operations.ProvisionAWSMarketplaceNewUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ProvisionNewAWSMarketplaceUserResponse])
                 res.provision_new_aws_marketplace_user_response = out
@@ -1102,7 +1174,9 @@ class Internal:
 
         res = operations.ProvisionDatabricksConnectionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ProvisionDatabricksConnectionResponse])
                 res.provision_databricks_connection_response = out
@@ -1135,7 +1209,9 @@ class Internal:
 
         res = operations.ProvisionNewUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ProvisionNewUserResponse])
                 res.provision_new_user_response = out
@@ -1169,7 +1245,9 @@ class Internal:
 
         res = operations.PutOrganizationMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.StatusResponse])
                 res.status_response = out
@@ -1202,9 +1280,11 @@ class Internal:
 
         res = operations.PutRequestMonitorRunConfigResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
-                res.put_request_monitor_run_config_default_application_json_string = http_res.content
+                res.res = http_res.content
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -1234,7 +1314,9 @@ class Internal:
 
         res = operations.RefreshConnectionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.RefreshConnectionByOrgIDResponse])
                 res.refresh_connection_by_org_id_response = out
@@ -1267,7 +1349,9 @@ class Internal:
 
         res = operations.RegisterDatabricksConnectionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.RegisterDatabricksConnectionResponse])
                 res.register_databricks_connection_response = out
@@ -1300,7 +1384,9 @@ class Internal:
 
         res = operations.RemoveMembershipByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -1333,7 +1419,9 @@ class Internal:
 
         res = operations.RunJobResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.RunJobResponse])
                 res.run_job_response = out
@@ -1366,7 +1454,9 @@ class Internal:
 
         res = operations.SetDefaultMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -1399,7 +1489,9 @@ class Internal:
 
         res = operations.StripePaymentEndpointResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -1433,7 +1525,9 @@ class Internal:
 
         res = operations.UpdateAccountUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.AccountUser])
                 res.account_user = out
@@ -1466,7 +1560,9 @@ class Internal:
 
         res = operations.UpdateConnectionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -1499,7 +1595,9 @@ class Internal:
 
         res = operations.UpdateMembershipByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MembershipMetadata])
                 res.membership_metadata = out
@@ -1532,7 +1630,9 @@ class Internal:
 
         res = operations.UpdateNotificationSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationSettings])
                 res.notification_settings = out
@@ -1568,7 +1668,9 @@ class Internal:
 
         res = operations.UpdateOrgResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
@@ -1597,7 +1699,9 @@ class Internal:
 
         res = operations.UpdateOrganizationResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.OrganizationSummary])
                 res.organization_summary = out
@@ -1630,7 +1734,9 @@ class Internal:
 
         res = operations.UpdateUserResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.User])
                 res.user = out
@@ -1659,7 +1765,9 @@ class Internal:
 
         res = operations.WhyLabsSearchResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.SearchResponse])
                 res.search_response = out
@@ -1692,7 +1800,9 @@ class Internal:
 
         res = operations.WhyLabsSearchIndexingResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out

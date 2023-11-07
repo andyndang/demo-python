@@ -8,7 +8,7 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class DTOJobsSparkJarTaskDTOParameters:
+class Parameters:
     pass
 
 
@@ -17,6 +17,6 @@ class DTOJobsSparkJarTaskDTOParameters:
 class DTOJobsSparkJarTaskDTO:
     jar_uri: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jarUri'), 'exclude': lambda f: f is None }})
     main_class_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mainClassName'), 'exclude': lambda f: f is None }})
-    parameters: Optional[List[DTOJobsSparkJarTaskDTOParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
+    parameters: Optional[List[Parameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
     
 

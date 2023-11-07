@@ -1,5 +1,5 @@
 # Provision
-(*provision*)
+(*.provision*)
 
 ### Available Operations
 

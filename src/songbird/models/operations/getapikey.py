@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import userapikeyresponse as shared_userapikeyresponse
+from ...models.shared import userapikeyresponse as shared_userapikeyresponse
 from typing import Optional
 
 

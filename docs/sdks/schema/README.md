@@ -1,5 +1,5 @@
 # Schema
-(*schema*)
+(*.schema*)
 
 ### Available Operations
 
@@ -13,7 +13,7 @@ Get the current supported schema of the  monitor configuration
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

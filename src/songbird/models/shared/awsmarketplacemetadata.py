@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import marketplacedimensions as shared_marketplacedimensions
+from .marketplacedimensions import MarketplaceDimensions
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from songbird import utils
@@ -15,7 +15,7 @@ from typing import Optional
 class AWSMarketplaceMetadata:
     aws_marketplace_customer_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsMarketplaceCustomerId') }})
     aws_marketplace_product_code: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsMarketplaceProductCode') }})
-    dimension: shared_marketplacedimensions.MarketplaceDimensions = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dimension') }})
+    dimension: MarketplaceDimensions = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dimension') }})
     expiration_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expirationTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     expiration_update_time: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expirationUpdateTime'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})

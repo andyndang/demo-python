@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import batchlogreferencerequest as shared_batchlogreferencerequest
-from ..shared import batchlogsessionreferenceresponse as shared_batchlogsessionreferenceresponse
+from ...models.shared import batchlogreferencerequest as shared_batchlogreferencerequest
+from ...models.shared import batchlogsessionreferenceresponse as shared_batchlogsessionreferenceresponse
 from typing import Optional
 
 

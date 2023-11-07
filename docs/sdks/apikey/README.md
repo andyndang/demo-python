@@ -1,5 +1,5 @@
 # APIKey
-(*api_key*)
+(*.api_key*)
 
 ### Available Operations
 
@@ -16,7 +16,7 @@ Generates an API key for a given user. Must be called either by system administr
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -63,7 +63,7 @@ Get an api key by its id
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -101,7 +101,7 @@ Returns the API key metadata for a given organization and user
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -139,7 +139,7 @@ Revokes the given API Key
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

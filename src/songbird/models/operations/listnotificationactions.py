@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import notificationaction as shared_notificationaction
+from ...models.shared import notificationaction as shared_notificationaction
 from typing import List, Optional
 
 
@@ -20,7 +20,7 @@ class ListNotificationActionsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    notification_actions: Optional[List[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
+    classes: Optional[List[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
     r"""ListNotificationActions default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

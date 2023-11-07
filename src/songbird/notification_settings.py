@@ -35,7 +35,9 @@ class NotificationSettings:
 
         res = operations.AddNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -63,7 +65,9 @@ class NotificationSettings:
 
         res = operations.DeleteNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -91,7 +95,9 @@ class NotificationSettings:
 
         res = operations.DisableNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -119,7 +125,9 @@ class NotificationSettings:
 
         res = operations.EnableNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -147,7 +155,9 @@ class NotificationSettings:
 
         res = operations.GetNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationAction])
                 res.notification_action = out
@@ -175,7 +185,9 @@ class NotificationSettings:
 
         res = operations.GetNotificationSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetNotificationSettingsResponse])
                 res.get_notification_settings_response = out
@@ -203,10 +215,12 @@ class NotificationSettings:
 
         res = operations.ListNotificationActionsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[List[shared.NotificationAction]])
-                res.notification_actions = out
+                res.classes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
@@ -236,7 +250,9 @@ class NotificationSettings:
 
         res = operations.PutNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -264,7 +280,9 @@ class NotificationSettings:
 
         res = operations.TestNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -297,7 +315,9 @@ class NotificationSettings:
 
         res = operations.UpdateNotificationActionResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -330,7 +350,9 @@ class NotificationSettings:
 
         res = operations.UpdateNotificationSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationSettings])
                 res.notification_settings = out
@@ -358,7 +380,9 @@ class NotificationSettings:
 
         res = operations.GetEmailNotificationActionPayloadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.EmailNotificationAction])
                 res.email_notification_action = out
@@ -386,7 +410,9 @@ class NotificationSettings:
 
         res = operations.GetPagerDutyNotificationActionPayloadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.PagerDutyNotificationAction])
                 res.pager_duty_notification_action = out
@@ -414,7 +440,9 @@ class NotificationSettings:
 
         res = operations.GetSlackNotificationActionPayloadResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.SlackNotificationAction])
                 res.slack_notification_action = out

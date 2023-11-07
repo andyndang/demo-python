@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createsessionresponse as shared_createsessionresponse
+from ...models.shared import createsessionresponse as shared_createsessionresponse
 from typing import Optional
 
 

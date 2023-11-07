@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import membershipmetadata as shared_membershipmetadata
+from ...models.shared import membershipmetadata as shared_membershipmetadata
 from typing import Optional
 
 

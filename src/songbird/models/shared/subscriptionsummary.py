@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import subscriptionproductsummary as shared_subscriptionproductsummary
+from .subscriptionproductsummary import SubscriptionProductSummary
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -18,7 +18,7 @@ class SubscriptionSummary:
     created: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
     current_period_end: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('currentPeriodEnd'), 'exclude': lambda f: f is None }})
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId'), 'exclude': lambda f: f is None }})
-    product: Optional[shared_subscriptionproductsummary.SubscriptionProductSummary] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product'), 'exclude': lambda f: f is None }})
+    product: Optional[SubscriptionProductSummary] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('product'), 'exclude': lambda f: f is None }})
     r"""Summary of a subscription product"""
     status: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status'), 'exclude': lambda f: f is None }})
     subscription_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionId'), 'exclude': lambda f: f is None }})

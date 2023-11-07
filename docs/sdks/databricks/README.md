@@ -1,5 +1,5 @@
 # Databricks
-(*databricks*)
+(*.databricks*)
 
 ### Available Operations
 

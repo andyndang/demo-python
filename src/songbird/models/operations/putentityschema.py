@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import entityschema as shared_entityschema
-from ..shared import response as shared_response
+from ...models.shared import entityschema as shared_entityschema
+from ...models.shared import response as shared_response
 from typing import Optional
 
 

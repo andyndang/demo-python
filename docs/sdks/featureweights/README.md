@@ -1,5 +1,5 @@
 # FeatureWeights
-(*feature_weights*)
+(*.feature_weights*)
 
 ### Available Operations
 
@@ -14,7 +14,7 @@ Get column weights for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -52,7 +52,7 @@ Put column weights for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

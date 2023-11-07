@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import accountuser as shared_accountuser
+from ...models.shared import accountuser as shared_accountuser
 from typing import Optional
 
 

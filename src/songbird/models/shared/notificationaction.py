@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import dateutil.parser
-from ..shared import actiontype as shared_actiontype
-from ..shared import notificationactionpayload as shared_notificationactionpayload
-from ..shared import notificationrelationshipitem as shared_notificationrelationshipitem
+from .actiontype import ActionType
+from .notificationactionpayload import NotificationActionPayload
+from .notificationrelationshipitem import NotificationRelationshipItem
 from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from songbird import utils
@@ -19,8 +19,8 @@ class NotificationAction:
     enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled') }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     last_update: Optional[datetime] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lastUpdate'), 'encoder': utils.datetimeisoformat(True), 'decoder': dateutil.parser.isoparse, 'exclude': lambda f: f is None }})
-    payload: Optional[shared_notificationactionpayload.NotificationActionPayload] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
-    references: Optional[List[shared_notificationrelationshipitem.NotificationRelationshipItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('references') }})
-    type: Optional[shared_actiontype.ActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    payload: Optional[NotificationActionPayload] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
+    references: Optional[List[NotificationRelationshipItem]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('references') }})
+    type: Optional[ActionType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

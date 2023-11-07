@@ -1,5 +1,5 @@
 # Monitor
-(*monitor*)
+(*.monitor*)
 
 ### Available Operations
 
@@ -26,7 +26,7 @@ Delete the analyzer config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -65,7 +65,7 @@ Delete the monitor for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -104,7 +104,7 @@ Get the analyzer config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -143,7 +143,7 @@ Get the monitor config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -182,7 +182,7 @@ Get the monitor config document for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -220,7 +220,7 @@ Get the monitor config document version for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -259,7 +259,7 @@ List the constraints for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -297,7 +297,7 @@ List the monitor config document versions for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -335,7 +335,7 @@ Save an updated monitor config document for a given dataset.  Monitors and analy
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -374,7 +374,7 @@ Save the analyzer config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -414,7 +414,7 @@ Save the monitor for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -454,7 +454,7 @@ Save the monitor config document for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -493,7 +493,7 @@ Put the RequestMonitorRun config into S3.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -551,7 +551,7 @@ Validate the monitor config document for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

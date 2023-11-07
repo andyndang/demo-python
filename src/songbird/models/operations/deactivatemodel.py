@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import modelmetadataresponse as shared_modelmetadataresponse
+from ...models.shared import modelmetadataresponse as shared_modelmetadataresponse
 from typing import Optional
 
 

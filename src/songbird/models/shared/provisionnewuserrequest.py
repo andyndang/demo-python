@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import subscriptiontier as shared_subscriptiontier
+from .subscriptiontier import SubscriptionTier
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -14,7 +14,7 @@ class ProvisionNewUserRequest:
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     model_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modelName') }})
     org_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgName') }})
-    subscription_tier: shared_subscriptiontier.SubscriptionTier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTier') }})
+    subscription_tier: SubscriptionTier = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTier') }})
     expect_existing: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expectExisting') }})
     
 

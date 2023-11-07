@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import searchindextype as shared_searchindextype
+from .searchindextype import SearchIndexType
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -12,6 +12,6 @@ from typing import Optional
 @dataclasses.dataclass
 class SearchIndexRequest:
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId'), 'exclude': lambda f: f is None }})
-    type: Optional[shared_searchindextype.SearchIndexType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    type: Optional[SearchIndexType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 

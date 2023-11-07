@@ -32,24 +32,24 @@ from typing import Dict
 class Songbird:
     r"""WhyLabs Songbird: WhyLabs API that enables end-to-end AI observability"""
     account: Account
-    admin: Admin
-    api_key: APIKey
-    databricks: Databricks
-    dataset_metadata: DatasetMetadata
-    dataset_profile: DatasetProfile
-    debug_events: DebugEvents
-    feature_weights: FeatureWeights
-    feature_flags: FeatureFlags
     internal: Internal
-    log: Log
+    admin: Admin
+    databricks: Databricks
+    feature_flags: FeatureFlags
     membership: Membership
-    models: Models
-    monitor: Monitor
     notification_settings: NotificationSettings
     organizations: Organizations
+    api_key: APIKey
+    dataset_profile: DatasetProfile
+    dataset_metadata: DatasetMetadata
+    feature_weights: FeatureWeights
+    debug_events: DebugEvents
+    log: Log
+    models: Models
+    monitor: Monitor
+    schema: Schema
     payment: Payment
     provision: Provision
-    schema: Schema
     search: Search
     sessions: Sessions
     subscription: Subscription
@@ -97,24 +97,24 @@ class Songbird:
     
     def _init_sdks(self):
         self.account = Account(self.sdk_configuration)
-        self.admin = Admin(self.sdk_configuration)
-        self.api_key = APIKey(self.sdk_configuration)
-        self.databricks = Databricks(self.sdk_configuration)
-        self.dataset_metadata = DatasetMetadata(self.sdk_configuration)
-        self.dataset_profile = DatasetProfile(self.sdk_configuration)
-        self.debug_events = DebugEvents(self.sdk_configuration)
-        self.feature_weights = FeatureWeights(self.sdk_configuration)
-        self.feature_flags = FeatureFlags(self.sdk_configuration)
         self.internal = Internal(self.sdk_configuration)
-        self.log = Log(self.sdk_configuration)
+        self.admin = Admin(self.sdk_configuration)
+        self.databricks = Databricks(self.sdk_configuration)
+        self.feature_flags = FeatureFlags(self.sdk_configuration)
         self.membership = Membership(self.sdk_configuration)
-        self.models = Models(self.sdk_configuration)
-        self.monitor = Monitor(self.sdk_configuration)
         self.notification_settings = NotificationSettings(self.sdk_configuration)
         self.organizations = Organizations(self.sdk_configuration)
+        self.api_key = APIKey(self.sdk_configuration)
+        self.dataset_profile = DatasetProfile(self.sdk_configuration)
+        self.dataset_metadata = DatasetMetadata(self.sdk_configuration)
+        self.feature_weights = FeatureWeights(self.sdk_configuration)
+        self.debug_events = DebugEvents(self.sdk_configuration)
+        self.log = Log(self.sdk_configuration)
+        self.models = Models(self.sdk_configuration)
+        self.monitor = Monitor(self.sdk_configuration)
+        self.schema = Schema(self.sdk_configuration)
         self.payment = Payment(self.sdk_configuration)
         self.provision = Provision(self.sdk_configuration)
-        self.schema = Schema(self.sdk_configuration)
         self.search = Search(self.sdk_configuration)
         self.sessions = Sessions(self.sdk_configuration)
         self.subscription = Subscription(self.sdk_configuration)

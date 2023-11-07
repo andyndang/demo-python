@@ -5,10 +5,10 @@ Request payload for CreateReferenceProfile.
 
 ## Fields
 
-| Field                                           | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `alias`                                         | *Optional[str]*                                 | :heavy_minus_sign:                              | N/A                                             |
-| `dataset_timestamp`                             | *Optional[int]*                                 | :heavy_minus_sign:                              | N/A                                             |
-| `segments`                                      | List[[Segment](../../models/shared/segment.md)] | :heavy_minus_sign:                              | N/A                                             |
-| `tags`                                          | List[*str*]                                     | :heavy_minus_sign:                              | N/A                                             |
-| `version`                                       | *Optional[str]*                                 | :heavy_minus_sign:                              | N/A                                             |
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `alias`                                                | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |
+| `dataset_timestamp`                                    | *Optional[int]*                                        | :heavy_minus_sign:                                     | N/A                                                    |
+| `segments`                                             | List[[shared.Segment](../../models/shared/segment.md)] | :heavy_minus_sign:                                     | N/A                                                    |
+| `tags`                                                 | List[*str*]                                            | :heavy_minus_sign:                                     | N/A                                                    |
+| `version`                                              | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |

@@ -1,5 +1,5 @@
 # Organizations
-(*organizations*)
+(*.organizations*)
 
 ### Available Operations
 
@@ -66,7 +66,7 @@ Delete an org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -103,7 +103,7 @@ Get marketplace metadata for an org if any exists.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -140,7 +140,7 @@ Returns various metadata about an organization
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -177,7 +177,6 @@ Get a list of all of the organization ids.
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",

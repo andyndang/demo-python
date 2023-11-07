@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import organizationsummary as shared_organizationsummary
-from ..shared import subscriptiontier as shared_subscriptiontier
+from ...models.shared import organizationsummary as shared_organizationsummary
+from ...models.shared import subscriptiontier as shared_subscriptiontier
 from typing import Optional
 
 

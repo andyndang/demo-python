@@ -35,7 +35,9 @@ class Membership:
 
         res = operations.CreateMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MembershipMetadata])
                 res.membership_metadata = out
@@ -64,7 +66,9 @@ class Membership:
 
         res = operations.CreateOrganizationMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MembershipMetadata])
                 res.membership_metadata = out
@@ -93,7 +97,9 @@ class Membership:
 
         res = operations.GetDefaultMembershipForEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetDefaultMembershipResponse])
                 res.get_default_membership_response = out
@@ -121,7 +127,9 @@ class Membership:
 
         res = operations.GetMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMembershipsResponse])
                 res.get_memberships_response = out
@@ -150,7 +158,9 @@ class Membership:
 
         res = operations.GetMembershipsByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMembershipsResponse])
                 res.get_memberships_response = out
@@ -178,7 +188,9 @@ class Membership:
 
         res = operations.GetMembershipsByOrgResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetMembershipsResponse])
                 res.get_memberships_response = out
@@ -206,7 +218,9 @@ class Membership:
 
         res = operations.ListOrganizationMembershipsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListOrganizationMembershipsResponse])
                 res.list_organization_memberships_response = out
@@ -239,7 +253,9 @@ class Membership:
 
         res = operations.RemoveMembershipByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -268,7 +284,9 @@ class Membership:
 
         res = operations.RemoveOrganizationMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Void])
                 res.void = out
@@ -301,7 +319,9 @@ class Membership:
 
         res = operations.SetDefaultMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
@@ -334,7 +354,9 @@ class Membership:
 
         res = operations.UpdateMembershipByEmailResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MembershipMetadata])
                 res.membership_metadata = out
@@ -363,7 +385,9 @@ class Membership:
 
         res = operations.UpdateOrganizationMembershipResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.MembershipMetadata])
                 res.membership_metadata = out

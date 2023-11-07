@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import segmentlistresponse as shared_segmentlistresponse
+from ...models.shared import segmentlistresponse as shared_segmentlistresponse
 from typing import Optional
 
 

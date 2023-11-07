@@ -1,5 +1,5 @@
 # FeatureFlags
-(*feature_flags*)
+(*.feature_flags*)
 
 ### Available Operations
 
@@ -13,7 +13,7 @@ Get feature flags for the specified user/org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

@@ -1,4 +1,4 @@
-# DTOJobsJobEmailNotificationsDTOOnSuccess
+# SSHPublicKeys
 
 
 ## Fields

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import listuserapikeys as shared_listuserapikeys
+from ...models.shared import listuserapikeys as shared_listuserapikeys
 from typing import Optional
 
 

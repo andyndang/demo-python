@@ -19,9 +19,9 @@ class GetMonitorConfigSchemaResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    get_monitor_config_schema_default_application_json_string: Optional[str] = dataclasses.field(default=None)
-    r"""GetMonitorConfigSchema default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
+    res: Optional[str] = dataclasses.field(default=None)
+    r"""GetMonitorConfigSchema default response"""
     
 

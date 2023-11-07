@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getaccountmembershipsresponse as shared_getaccountmembershipsresponse
-from ..shared import role as shared_role
+from ...models.shared import getaccountmembershipsresponse as shared_getaccountmembershipsresponse
+from ...models.shared import role as shared_role
 from typing import Optional
 
 

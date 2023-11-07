@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import notificationsettings as shared_notificationsettings
-from ..shared import subscriptiontier as shared_subscriptiontier
+from .notificationsettings import NotificationSettings
+from .subscriptiontier import SubscriptionTier
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -20,14 +20,14 @@ class OrganizationMetadata:
     email_domains: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emailDomains') }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     notification_email_address: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationEmailAddress') }})
-    notification_settings: Optional[shared_notificationsettings.NotificationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationSettings'), 'exclude': lambda f: f is None }})
+    notification_settings: Optional[NotificationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationSettings'), 'exclude': lambda f: f is None }})
     r"""Settings that control how and when notifications are delivered."""
     observatory_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('observatoryUrl') }})
     pager_duty_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pagerDutyKey') }})
     parent_org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parentOrgId') }})
     slack_webhook: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slackWebhook') }})
     subscription_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionId') }})
-    subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTier'), 'exclude': lambda f: f is None }})
+    subscription_tier: Optional[SubscriptionTier] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('subscriptionTier'), 'exclude': lambda f: f is None }})
     use_cloud_front: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('useCloudFront') }})
     
 

@@ -1,5 +1,5 @@
 # Account
-(*account*)
+(*.account*)
 
 ### Available Operations
 
@@ -62,7 +62,7 @@ Delete an account user's details
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -139,7 +139,7 @@ Get account user by email
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -177,7 +177,7 @@ Get account user by user_id
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -215,7 +215,7 @@ List users in the account organization and any managed organizations
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -252,7 +252,7 @@ List managed organizations for a parent organization
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

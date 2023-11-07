@@ -1,5 +1,5 @@
 # Log
-(*log*)
+(*.log*)
 
 ### Available Operations
 

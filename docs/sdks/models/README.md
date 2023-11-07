@@ -1,5 +1,5 @@
 # Models
-(*models*)
+(*.models*)
 
 ### Available Operations
 
@@ -66,7 +66,7 @@ Mark a model as inactive
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -104,7 +104,7 @@ Delete the entity schema config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -142,7 +142,7 @@ Delete the entity schema of a single column for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -181,7 +181,7 @@ Delete the schema of a single metric for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -220,7 +220,7 @@ Get the entity schema config for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -258,7 +258,7 @@ Get the entity schema of a single column for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -297,7 +297,7 @@ Returns various metadata about a model
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -335,7 +335,7 @@ Get a list of all of the model ids for an organization.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

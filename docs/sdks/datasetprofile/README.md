@@ -1,5 +1,5 @@
 # DatasetProfile
-(*dataset_profile*)
+(*.dataset_profile*)
 
 ### Available Operations
 
@@ -76,7 +76,7 @@ Deletes a set of analyzer results. Returns false if scheduling deletion encounte
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -118,7 +118,7 @@ Deletes a set of dataset profiles. Returns false if scheduling deletion encounte
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -161,7 +161,7 @@ Delete a a Reference Profile. Returns false if the deletion encountered some err
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -202,7 +202,7 @@ Returns a list of profile traces matching a trace id
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -245,7 +245,7 @@ Returns a Reference Profile.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -331,7 +331,7 @@ Returns a list of Reference Profiles between a given time range filtered on the 
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -373,7 +373,7 @@ Returns a list of segments for the dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

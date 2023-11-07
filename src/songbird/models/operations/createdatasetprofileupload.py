@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createdatasetprofileuploadresponse as shared_createdatasetprofileuploadresponse
-from ..shared import logasyncrequest as shared_logasyncrequest
+from ...models.shared import createdatasetprofileuploadresponse as shared_createdatasetprofileuploadresponse
+from ...models.shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
 

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import pagerdutynotificationaction as shared_pagerdutynotificationaction
+from ...models.shared import pagerdutynotificationaction as shared_pagerdutynotificationaction
 from typing import Optional
 
 

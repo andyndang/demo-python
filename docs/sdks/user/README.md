@@ -1,5 +1,5 @@
 # User
-(*user*)
+(*.user*)
 
 ### Available Operations
 
@@ -53,7 +53,7 @@ Get a user by their id.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -90,7 +90,7 @@ Get a user by their email.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

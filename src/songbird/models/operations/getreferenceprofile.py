@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import referenceprofileitemresponse as shared_referenceprofileitemresponse
+from ...models.shared import referenceprofileitemresponse as shared_referenceprofileitemresponse
 from typing import Optional
 
 

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import slacknotificationaction as shared_slacknotificationaction
+from ...models.shared import slacknotificationaction as shared_slacknotificationaction
 from typing import Optional
 
 

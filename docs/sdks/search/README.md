@@ -1,5 +1,5 @@
 # Search
-(*search*)
+(*.search*)
 
 ### Available Operations
 
@@ -14,7 +14,7 @@ WhyLabs Search
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

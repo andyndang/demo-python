@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import updateconnectionchanges as shared_updateconnectionchanges
+from .updateconnectionchanges import UpdateConnectionChanges
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -11,7 +11,7 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class UpdateConnectionRequest:
-    changes: Optional[shared_updateconnectionchanges.UpdateConnectionChanges] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changes'), 'exclude': lambda f: f is None }})
+    changes: Optional[UpdateConnectionChanges] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changes'), 'exclude': lambda f: f is None }})
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})
     workspace_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workspaceId') }})
     

@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import subscriptionsummary as shared_subscriptionsummary
+from ...models.shared import subscriptionsummary as shared_subscriptionsummary
 from typing import List, Optional
 
 
@@ -20,9 +20,9 @@ class GetOrganizationSubscriptionsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
+    classes: Optional[List[shared_subscriptionsummary.SubscriptionSummary]] = dataclasses.field(default=None)
+    r"""GetOrganizationSubscriptions default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
-    subscription_summaries: Optional[List[shared_subscriptionsummary.SubscriptionSummary]] = dataclasses.field(default=None)
-    r"""GetOrganizationSubscriptions default response"""
     
 

@@ -1,5 +1,5 @@
 # Sessions
-(*sessions*)
+(*.sessions*)
 
 ### Available Operations
 
@@ -61,7 +61,7 @@ Claim a guest session, copying its model data into another org and expiring the 
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -216,7 +216,7 @@ Get information about a session.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

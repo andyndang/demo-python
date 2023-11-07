@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import entitysearchresult as shared_entitysearchresult
+from .entitysearchresult import EntitySearchResult
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import List, Optional
@@ -12,6 +12,6 @@ from typing import List, Optional
 @dataclasses.dataclass
 class SearchResponse:
     request_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestId') }})
-    results: Optional[List[shared_entitysearchresult.EntitySearchResult]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
+    results: Optional[List[EntitySearchResult]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('results'), 'exclude': lambda f: f is None }})
     
 

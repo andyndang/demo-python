@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import modelmetadataresponse as shared_modelmetadataresponse
+from .modelmetadataresponse import ModelMetadataResponse
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import List
@@ -12,7 +12,7 @@ from typing import List
 @dataclasses.dataclass
 class ListModelsResponse:
     r"""Response for the ListModels API"""
-    items: List[shared_modelmetadataresponse.ModelMetadataResponse] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
+    items: List[ModelMetadataResponse] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""A list of all known model ids for an organization."""
     
 

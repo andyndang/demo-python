@@ -8,17 +8,17 @@ from typing import List, Optional
 
 
 @dataclasses.dataclass
-class DTOJobsJobEmailNotificationsDTOOnFailure:
+class OnFailure:
     pass
 
 
 @dataclasses.dataclass
-class DTOJobsJobEmailNotificationsDTOOnStart:
+class OnStart:
     pass
 
 
 @dataclasses.dataclass
-class DTOJobsJobEmailNotificationsDTOOnSuccess:
+class OnSuccess:
     pass
 
 
@@ -26,8 +26,8 @@ class DTOJobsJobEmailNotificationsDTOOnSuccess:
 @dataclasses.dataclass
 class DTOJobsJobEmailNotificationsDTO:
     no_alert_for_skipped_runs: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('noAlertForSkippedRuns'), 'exclude': lambda f: f is None }})
-    on_failure: Optional[List[DTOJobsJobEmailNotificationsDTOOnFailure]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onFailure'), 'exclude': lambda f: f is None }})
-    on_start: Optional[List[DTOJobsJobEmailNotificationsDTOOnStart]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onStart'), 'exclude': lambda f: f is None }})
-    on_success: Optional[List[DTOJobsJobEmailNotificationsDTOOnSuccess]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onSuccess'), 'exclude': lambda f: f is None }})
+    on_failure: Optional[List[OnFailure]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onFailure'), 'exclude': lambda f: f is None }})
+    on_start: Optional[List[OnStart]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onStart'), 'exclude': lambda f: f is None }})
+    on_success: Optional[List[OnSuccess]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onSuccess'), 'exclude': lambda f: f is None }})
     
 

@@ -1,5 +1,5 @@
 # Payment
-(*payment*)
+(*.payment*)
 
 ### Available Operations
 
@@ -13,7 +13,6 @@ Endpoint for Stripe payment webhooks
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",

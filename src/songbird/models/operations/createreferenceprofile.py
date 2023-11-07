@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createreferenceprofilerequest as shared_createreferenceprofilerequest
-from ..shared import createreferenceprofileresponse as shared_createreferenceprofileresponse
+from ...models.shared import createreferenceprofilerequest as shared_createreferenceprofilerequest
+from ...models.shared import createreferenceprofileresponse as shared_createreferenceprofileresponse
 from typing import Optional
 
 

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import sessionmetadata as shared_sessionmetadata
+from .sessionmetadata import SessionMetadata
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 
@@ -11,7 +11,7 @@ from songbird import utils
 @dataclasses.dataclass
 class GetSessionResponse:
     r"""Response for getting sessions."""
-    session: shared_sessionmetadata.SessionMetadata = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('session') }})
+    session: SessionMetadata = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('session') }})
     r"""Response for getting sessions."""
     
 

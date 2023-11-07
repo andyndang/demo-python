@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import profiletrace as shared_profiletrace
+from .profiletrace import ProfileTrace
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import List, Optional
@@ -13,7 +13,7 @@ from typing import List, Optional
 class ProfileTracesResponse:
     r"""Response for listing profile traces"""
     next_offset: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('nextOffset') }})
-    traces: Optional[List[shared_profiletrace.ProfileTrace]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('traces'), 'exclude': lambda f: f is None }})
+    traces: Optional[List[ProfileTrace]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('traces'), 'exclude': lambda f: f is None }})
     truncated: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('truncated') }})
     
 

@@ -1,5 +1,5 @@
 # Admin
-(*admin*)
+(*.admin*)
 
 ### Available Operations
 
@@ -51,7 +51,6 @@ Create a monitor config validation job for all configs
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",

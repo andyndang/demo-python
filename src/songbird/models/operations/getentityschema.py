@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import entityschema as shared_entityschema
+from ...models.shared import entityschema as shared_entityschema
 from typing import Optional
 
 

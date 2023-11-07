@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import patchaccountmembershipsrequest as shared_patchaccountmembershipsrequest
-from ..shared import role as shared_role
-from ..shared import statusresponse as shared_statusresponse
+from ...models.shared import patchaccountmembershipsrequest as shared_patchaccountmembershipsrequest
+from ...models.shared import role as shared_role
+from ...models.shared import statusresponse as shared_statusresponse
 from typing import Optional
 
 

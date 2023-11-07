@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import notificationsettings as shared_notificationsettings
+from .notificationsettings import NotificationSettings
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclasses.dataclass
 class GetNotificationSettingsResponse:
     r"""Response for getting notification settings"""
-    notification_settings: Optional[shared_notificationsettings.NotificationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationSettings'), 'exclude': lambda f: f is None }})
+    notification_settings: Optional[NotificationSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('notificationSettings'), 'exclude': lambda f: f is None }})
     r"""Settings that control how and when notifications are delivered."""
     
 

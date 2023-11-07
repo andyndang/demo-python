@@ -20,9 +20,9 @@ class ListConstraintsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    list_constraints_default_application_json_strings: Optional[List[str]] = dataclasses.field(default=None)
-    r"""ListConstraints default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""
+    strings: Optional[List[str]] = dataclasses.field(default=None)
+    r"""ListConstraints default response"""
     
 

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import columnschema as shared_columnschema
-from ..shared import metricschema as shared_metricschema
-from ..shared import schemametadata as shared_schemametadata
+from .columnschema import ColumnSchema
+from .metricschema import MetricSchema
+from .schemametadata import SchemaMetadata
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Dict, Optional
@@ -14,10 +14,10 @@ from typing import Dict, Optional
 @dataclasses.dataclass
 class EntitySchema:
     r"""Entity schema for a dataset"""
-    columns: Dict[str, shared_columnschema.ColumnSchema] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('columns') }})
+    columns: Dict[str, ColumnSchema] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('columns') }})
     r"""Column schema for a given column"""
-    metadata: Optional[shared_schemametadata.SchemaMetadata] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
-    metrics: Optional[Dict[str, shared_metricschema.MetricSchema]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
+    metadata: Optional[SchemaMetadata] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata'), 'exclude': lambda f: f is None }})
+    metrics: Optional[Dict[str, MetricSchema]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics') }})
     r"""Schema for user-defined metrics (map of unique custom metric labels to their definitions)"""
     
 

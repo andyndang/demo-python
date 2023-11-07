@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import adminreportresponse as shared_adminreportresponse
-from ..shared import adminreporttype as shared_adminreporttype
+from ...models.shared import adminreportresponse as shared_adminreportresponse
+from ...models.shared import adminreporttype as shared_adminreporttype
 from typing import Optional
 
 

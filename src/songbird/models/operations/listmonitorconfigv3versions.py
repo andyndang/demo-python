@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import monitorconfigversion as shared_monitorconfigversion
+from ...models.shared import monitorconfigversion as shared_monitorconfigversion
 from typing import List, Optional
 
 
@@ -21,7 +21,7 @@ class ListMonitorConfigV3VersionsResponse:
     r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    monitor_config_versions: Optional[List[shared_monitorconfigversion.MonitorConfigVersion]] = dataclasses.field(default=None)
+    classes: Optional[List[shared_monitorconfigversion.MonitorConfigVersion]] = dataclasses.field(default=None)
     r"""ListMonitorConfigV3Versions default response"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Raw HTTP response; suitable for custom response parsing"""

@@ -3,9 +3,9 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import modelmetadataresponse as shared_modelmetadataresponse
-from ..shared import modeltype as shared_modeltype
-from ..shared import timeperiod as shared_timeperiod
+from ...models.shared import modelmetadataresponse as shared_modelmetadataresponse
+from ...models.shared import modeltype as shared_modeltype
+from ...models.shared import timeperiod as shared_timeperiod
 from typing import Optional
 
 

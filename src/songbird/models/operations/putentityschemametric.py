@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import metricschema as shared_metricschema
-from ..shared import response as shared_response
+from ...models.shared import metricschema as shared_metricschema
+from ...models.shared import response as shared_response
 from typing import Optional
 
 

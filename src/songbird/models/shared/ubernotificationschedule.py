@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import notificationsettingsday as shared_notificationsettingsday
-from ..shared import notificationsqsmessagecadence as shared_notificationsqsmessagecadence
+from .notificationsettingsday import NotificationSettingsDay
+from .notificationsqsmessagecadence import NotificationSqsMessageCadence
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -24,9 +24,9 @@ class UberNotificationSchedule:
     Individual:
         enabled, cadence=INDIVIDUAL
     """
-    cadence: shared_notificationsqsmessagecadence.NotificationSqsMessageCadence = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cadence') }})
+    cadence: NotificationSqsMessageCadence = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cadence') }})
     enabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled') }})
-    day_of_week: Optional[shared_notificationsettingsday.NotificationSettingsDay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dayOfWeek'), 'exclude': lambda f: f is None }})
+    day_of_week: Optional[NotificationSettingsDay] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dayOfWeek'), 'exclude': lambda f: f is None }})
     local24_hour_of_day: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('local24HourOfDay') }})
     local_minute_of_hour: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localMinuteOfHour') }})
     local_timezone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localTimezone') }})

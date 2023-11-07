@@ -1,5 +1,5 @@
 # DatasetMetadata
-(*dataset_metadata*)
+(*.dataset_metadata*)
 
 ### Available Operations
 
@@ -15,7 +15,7 @@ Delete dataset metadata for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -53,7 +53,7 @@ Get dataset metadata for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -91,7 +91,7 @@ Put dataset metadata for the specified dataset
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

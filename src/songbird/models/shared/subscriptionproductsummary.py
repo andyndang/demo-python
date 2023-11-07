@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import subscriptionproductfeature as shared_subscriptionproductfeature
+from .subscriptionproductfeature import SubscriptionProductFeature
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import List, Optional
@@ -13,7 +13,7 @@ from typing import List, Optional
 class SubscriptionProductSummary:
     r"""Summary of a subscription product"""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
-    features: Optional[List[shared_subscriptionproductfeature.SubscriptionProductFeature]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
+    features: Optional[List[SubscriptionProductFeature]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('features') }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
     
 

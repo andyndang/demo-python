@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import entityweightrecord as shared_entityweightrecord
+from ...models.shared import entityweightrecord as shared_entityweightrecord
 from typing import Optional
 
 

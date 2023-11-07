@@ -1,5 +1,5 @@
 # Internal
-(*internal*)
+(*.internal*)
 
 ### Available Operations
 
@@ -228,7 +228,7 @@ Delete an account user's details
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -266,7 +266,7 @@ Delete an org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -340,7 +340,7 @@ Get marketplace metadata for an org if any exists.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -416,7 +416,7 @@ Get account user by email
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -454,7 +454,7 @@ Get account user by user_id
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -492,7 +492,7 @@ Get an api key by its id
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -565,7 +565,7 @@ Get the default membership for a user.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -602,7 +602,7 @@ Get feature flags for the specified user/org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -640,7 +640,7 @@ Get memberships for a user.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -677,7 +677,7 @@ Get memberships for a user given that user's email address.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -714,7 +714,7 @@ Get memberships for an org.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -751,7 +751,7 @@ Get the monitor config document version for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -790,7 +790,7 @@ Get notification settings for an org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -827,7 +827,7 @@ Returns various metadata about an organization
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -864,7 +864,7 @@ Get organization subscription details
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -901,7 +901,7 @@ Get a user by their id.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -938,7 +938,7 @@ Get a user by their email.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1020,7 +1020,7 @@ List users in the account organization and any managed organizations
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1057,7 +1057,7 @@ Returns the API key metadata for a given organization and user
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1130,7 +1130,7 @@ List managed organizations for a parent organization
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1167,7 +1167,7 @@ List the monitor config document versions for a given dataset.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1205,7 +1205,6 @@ Get a list of all of the organization ids.
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1369,7 +1368,6 @@ Create a monitor config validation job for all configs
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1560,7 +1558,7 @@ Put the RequestMonitorRun config into S3.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -1811,7 +1809,6 @@ Endpoint for Stripe payment webhooks
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -2142,7 +2139,7 @@ WhyLabs Search
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

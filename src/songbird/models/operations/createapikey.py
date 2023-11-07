@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import userapikey as shared_userapikey
+from ...models.shared import userapikey as shared_userapikey
 from typing import List, Optional
 
 

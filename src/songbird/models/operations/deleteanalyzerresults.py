@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import deleteanalyzerresultsresponse as shared_deleteanalyzerresultsresponse
+from ...models.shared import deleteanalyzerresultsresponse as shared_deleteanalyzerresultsresponse
 from typing import Optional
 
 

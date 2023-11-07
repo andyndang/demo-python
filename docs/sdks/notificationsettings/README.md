@@ -1,5 +1,5 @@
 # NotificationSettings
-(*notification_settings*)
+(*.notification_settings*)
 
 ### Available Operations
 
@@ -66,7 +66,7 @@ Delete notification action
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -104,7 +104,7 @@ Disable notification action
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -142,7 +142,7 @@ Enable notification action
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -180,7 +180,7 @@ Get notification action for id
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -218,7 +218,7 @@ Get notification settings for an org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -255,7 +255,7 @@ Get notification actions for an org
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -332,7 +332,7 @@ Test a notification action
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -461,7 +461,6 @@ Get dummy notification action payload
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -489,7 +488,6 @@ Get dummy notification action payload
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -517,7 +515,6 @@ Get dummy notification action payload
 
 ```python
 import songbird
-from songbird.models import shared
 
 s = songbird.Songbird(
     api_key_auth="",

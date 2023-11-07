@@ -1,5 +1,5 @@
 # Membership
-(*membership*)
+(*.membership*)
 
 ### Available Operations
 
@@ -102,7 +102,7 @@ Get the default membership for a user.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -139,7 +139,7 @@ Get memberships for a user.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -176,7 +176,7 @@ Get memberships for a user given that user's email address.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -213,7 +213,7 @@ Get memberships for an org.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -250,7 +250,7 @@ list memberships for an organization
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",
@@ -325,7 +325,7 @@ Removes membership in a given org from a user, using the user's email address.
 
 ```python
 import songbird
-from songbird.models import operations, shared
+from songbird.models import operations
 
 s = songbird.Songbird(
     api_key_auth="",

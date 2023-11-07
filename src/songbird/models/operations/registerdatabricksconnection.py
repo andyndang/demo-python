@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import registerdatabricksconnectionresponse as shared_registerdatabricksconnectionresponse
+from ...models.shared import registerdatabricksconnectionresponse as shared_registerdatabricksconnectionresponse
 from typing import Optional
 
 

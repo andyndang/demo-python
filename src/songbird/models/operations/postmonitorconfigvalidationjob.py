@@ -3,7 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import void as shared_void
+from ...models.shared import void as shared_void
 from typing import Optional
 
 

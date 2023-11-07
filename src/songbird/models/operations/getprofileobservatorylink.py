@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import getprofileobservatorylinkrequest as shared_getprofileobservatorylinkrequest
-from ..shared import getprofileobservatorylinkresponse as shared_getprofileobservatorylinkresponse
+from ...models.shared import getprofileobservatorylinkrequest as shared_getprofileobservatorylinkrequest
+from ...models.shared import getprofileobservatorylinkresponse as shared_getprofileobservatorylinkresponse
 from typing import Optional
 
 

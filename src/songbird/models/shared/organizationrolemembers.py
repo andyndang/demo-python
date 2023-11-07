@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import member as shared_member
-from ..shared import role as shared_role
+from .member import Member
+from .role import Role
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import List
@@ -13,8 +13,8 @@ from typing import List
 @dataclasses.dataclass
 class OrganizationRoleMembers:
     r"""Memberships by organization and role"""
-    members: List[shared_member.Member] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('members') }})
+    members: List[Member] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('members') }})
     org_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orgId') }})
-    role: shared_role.Role = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
+    role: Role = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('role') }})
     
 
