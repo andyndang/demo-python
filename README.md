@@ -37,7 +37,7 @@ if res.status_code == 200:
 ## Available Resources and Operations
 
 
-### [.account](docs/sdks/account/README.md)
+### [account](docs/sdks/account/README.md)
 
 * [create_account_user](docs/sdks/account/README.md#create_account_user) - Create an account user
 * [delete_account_user](docs/sdks/account/README.md#delete_account_user) - Delete account user
@@ -50,7 +50,7 @@ if res.status_code == 200:
 * [put_organization_memberships](docs/sdks/account/README.md#put_organization_memberships) - Replace the memberships in a specific role and managed organization
 * [update_account_user](docs/sdks/account/README.md#update_account_user) - Update account user
 
-### [.internal](docs/sdks/internal/README.md)
+### [internal](docs/sdks/internal/README.md)
 
 * [create_account_user](docs/sdks/internal/README.md#create_account_user) - Create an account user
 * [create_membership](docs/sdks/internal/README.md#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -108,12 +108,12 @@ if res.status_code == 200:
 * [why_labs_search](docs/sdks/internal/README.md#why_labs_search) - WhyLabs Search
 * [why_labs_search_indexing](docs/sdks/internal/README.md#why_labs_search_indexing) - WhyLabs Search Indexing
 
-### [.admin](docs/sdks/admin/README.md)
+### [admin](docs/sdks/admin/README.md)
 
 * [generate_report](docs/sdks/admin/README.md#generate_report) - Generate an admin report
 * [post_monitor_config_validation_job](docs/sdks/admin/README.md#post_monitor_config_validation_job) - Create a monitor config validation job for all configs
 
-### [.databricks](docs/sdks/databricks/README.md)
+### [databricks](docs/sdks/databricks/README.md)
 
 * [get_connection](docs/sdks/databricks/README.md#get_connection) - Get the connection metadata for a given org
 * [list_jobs](docs/sdks/databricks/README.md#list_jobs) - List all of the jobs in a workspace.
@@ -121,11 +121,11 @@ if res.status_code == 200:
 * [run_job](docs/sdks/databricks/README.md#run_job) - Run an existing job in a given databricks workspace.
 * [update_connection](docs/sdks/databricks/README.md#update_connection) - Update the connection metadata for a given org
 
-### [.feature_flags](docs/sdks/featureflags/README.md)
+### [feature_flags](docs/sdks/featureflags/README.md)
 
 * [get_feature_flags](docs/sdks/featureflags/README.md#get_feature_flags) - Get feature flags for the specified user/org
 
-### [.membership](docs/sdks/membership/README.md)
+### [membership](docs/sdks/membership/README.md)
 
 * [create_membership](docs/sdks/membership/README.md#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
 * [create_organization_membership](docs/sdks/membership/README.md#create_organization_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -140,7 +140,7 @@ if res.status_code == 200:
 * [update_membership_by_email](docs/sdks/membership/README.md#update_membership_by_email) - Updates the role in an membership
 * [update_organization_membership](docs/sdks/membership/README.md#update_organization_membership) - Updates the role in an membership
 
-### [.notification_settings](docs/sdks/notificationsettings/README.md)
+### [notification_settings](docs/sdks/notificationsettings/README.md)
 
 * [add_notification_action](docs/sdks/notificationsettings/README.md#add_notification_action) - Add new notification action
 * [delete_notification_action](docs/sdks/notificationsettings/README.md#delete_notification_action) - Delete notification action
@@ -157,7 +157,7 @@ if res.status_code == 200:
 * [get_pager_duty_notification_action_payload](docs/sdks/notificationsettings/README.md#get_pager_duty_notification_action_payload) - Get dummy notification action payload
 * [get_slack_notification_action_payload](docs/sdks/notificationsettings/README.md#get_slack_notification_action_payload) - Get dummy notification action payload
 
-### [.organizations](docs/sdks/organizations/README.md)
+### [organizations](docs/sdks/organizations/README.md)
 
 * [create_organization](docs/sdks/organizations/README.md#create_organization) - Create an organization
 * [delete_organization](docs/sdks/organizations/README.md#delete_organization) - Delete an org
@@ -169,14 +169,14 @@ if res.status_code == 200:
 * [~~update_org~~](docs/sdks/organizations/README.md#update_org) - Update an existing organization :warning: **Deprecated**
 * [update_organization](docs/sdks/organizations/README.md#update_organization) - Update an existing organization
 
-### [.api_key](docs/sdks/apikey/README.md)
+### [api_key](docs/sdks/apikey/README.md)
 
 * [create_api_key](docs/sdks/apikey/README.md#create_api_key) - Generate an API key for a user.
 * [get_api_key](docs/sdks/apikey/README.md#get_api_key) - Get an api key by its id
 * [list_api_keys](docs/sdks/apikey/README.md#list_api_keys) - List API key metadata for a given organization and user
 * [revoke_api_key](docs/sdks/apikey/README.md#revoke_api_key) - Revoke the given API Key, removing its ability to access WhyLabs systems
 
-### [.dataset_profile](docs/sdks/datasetprofile/README.md)
+### [dataset_profile](docs/sdks/datasetprofile/README.md)
 
 * [create_reference_profile](docs/sdks/datasetprofile/README.md#create_reference_profile) - Returns data needed to uploading the reference profile
 * [delete_analyzer_results](docs/sdks/datasetprofile/README.md#delete_analyzer_results) - Deletes a set of analyzer results
@@ -188,28 +188,28 @@ if res.status_code == 200:
 * [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles between the given time range filtered on the upload timestamp
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 
-### [.dataset_metadata](docs/sdks/datasetmetadata/README.md)
+### [dataset_metadata](docs/sdks/datasetmetadata/README.md)
 
 * [delete_dataset_metadata](docs/sdks/datasetmetadata/README.md#delete_dataset_metadata) - Delete dataset metadata for the specified dataset
 * [get_dataset_metadata](docs/sdks/datasetmetadata/README.md#get_dataset_metadata) - Get dataset metadata for the specified dataset
 * [put_dataset_metadata](docs/sdks/datasetmetadata/README.md#put_dataset_metadata) - Put dataset metadata for the specified dataset
 
-### [.feature_weights](docs/sdks/featureweights/README.md)
+### [feature_weights](docs/sdks/featureweights/README.md)
 
 * [get_column_weights](docs/sdks/featureweights/README.md#get_column_weights) - Get column weights for the specified dataset
 * [put_column_weights](docs/sdks/featureweights/README.md#put_column_weights) - Put column weights for the specified dataset
 
-### [.debug_events](docs/sdks/debugevents/README.md)
+### [debug_events](docs/sdks/debugevents/README.md)
 
 * [log_debug_event](docs/sdks/debugevents/README.md#log_debug_event) - Log a debug event
 
-### [.log](docs/sdks/log/README.md)
+### [log](docs/sdks/log/README.md)
 
 * [get_profile_observatory_link](docs/sdks/log/README.md#get_profile_observatory_link) - Get observatory links for profiles in a given org/model. A max of 3 profiles can be viewed a a time.
 * [log_async](docs/sdks/log/README.md#log_async) - Like /log, except this api doesn't take the actual profile content. It returns an upload link that can be used to upload the profile to.
 * [log_reference](docs/sdks/log/README.md#log_reference) - Returns a presigned URL for uploading the reference profile to.
 
-### [.models](docs/sdks/models/README.md)
+### [models](docs/sdks/models/README.md)
 
 * [create_model](docs/sdks/models/README.md#create_model) - Create a model with a given name and a time period
 * [deactivate_model](docs/sdks/models/README.md#deactivate_model) - Mark a model as inactive
@@ -225,7 +225,7 @@ if res.status_code == 200:
 * [put_entity_schema_metric](docs/sdks/models/README.md#put_entity_schema_metric) - Save the schema of a single metric for a given dataset.
 * [update_model](docs/sdks/models/README.md#update_model) - Update a model's metadata
 
-### [.monitor](docs/sdks/monitor/README.md)
+### [monitor](docs/sdks/monitor/README.md)
 
 * [delete_analyzer](docs/sdks/monitor/README.md#delete_analyzer) - Delete the analyzer config for a given dataset.
 * [delete_monitor](docs/sdks/monitor/README.md#delete_monitor) - Delete the monitor for a given dataset.
@@ -242,27 +242,27 @@ if res.status_code == 200:
 * [put_request_monitor_run_config](docs/sdks/monitor/README.md#put_request_monitor_run_config) - Put the RequestMonitorRun config into S3.
 * [validate_monitor_config_v3](docs/sdks/monitor/README.md#validate_monitor_config_v3) - Validate the monitor config document for a given dataset.
 
-### [.schema](docs/sdks/schema/README.md)
+### [schema](docs/sdks/schema/README.md)
 
 * [get_monitor_config_schema](docs/sdks/schema/README.md#get_monitor_config_schema) - Get the current supported schema of the monitor configuration
 
-### [.payment](docs/sdks/payment/README.md)
+### [payment](docs/sdks/payment/README.md)
 
 * [stripe_payment_endpoint](docs/sdks/payment/README.md#stripe_payment_endpoint) - Endpoint for Stripe payment webhooks
 
-### [.provision](docs/sdks/provision/README.md)
+### [provision](docs/sdks/provision/README.md)
 
 * [provision_aws_marketplace_new_user](docs/sdks/provision/README.md#provision_aws_marketplace_new_user) - Create resources for a new user coming from AWS Marketplace
 * [provision_databricks_connection](docs/sdks/provision/README.md#provision_databricks_connection) - Create resources for a new user coming from Databricks
 * [provision_new_user](docs/sdks/provision/README.md#provision_new_user) - Create the resources that a new user needs to use WhyLabs via the website.
 * [register_databricks_connection](docs/sdks/provision/README.md#register_databricks_connection) - Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
 
-### [.search](docs/sdks/search/README.md)
+### [search](docs/sdks/search/README.md)
 
 * [why_labs_search](docs/sdks/search/README.md#why_labs_search) - WhyLabs Search
 * [why_labs_search_indexing](docs/sdks/search/README.md#why_labs_search_indexing) - WhyLabs Search Indexing
 
-### [.sessions](docs/sdks/sessions/README.md)
+### [sessions](docs/sdks/sessions/README.md)
 
 * [batch_create_reference_profile_upload](docs/sdks/sessions/README.md#batch_create_reference_profile_upload) - Create multiple reference profile uploads for a given session.
 * [claim_guest_session](docs/sdks/sessions/README.md#claim_guest_session) - Claim a guest session, copying its model data into another org and expiring the session.
@@ -272,11 +272,11 @@ if res.status_code == 200:
 * [get_session](docs/sdks/sessions/README.md#get_session) - Get information about a session.
 * [get_session_profile_observatory_link](docs/sdks/sessions/README.md#get_session_profile_observatory_link) - Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
 
-### [.subscription](docs/sdks/subscription/README.md)
+### [subscription](docs/sdks/subscription/README.md)
 
 * [get_organization_subscriptions](docs/sdks/subscription/README.md#get_organization_subscriptions) - Get organization subscription details
 
-### [.user](docs/sdks/user/README.md)
+### [user](docs/sdks/user/README.md)
 
 * [create_user](docs/sdks/user/README.md#create_user) - Create a user.
 * [get_user](docs/sdks/user/README.md#get_user) - Get a user by their id.
@@ -295,7 +295,42 @@ if res.status_code == 200:
 <!-- Start Error Handling -->
 # Error Handling
 
-Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+Handling errors in this SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+
+## Example
+
+```python
+import songbird
+from songbird.models import operations, shared
+
+s = songbird.Songbird(
+    api_key_auth="",
+)
+
+req = operations.CreateAccountUserRequest(
+    create_account_user_request=shared.CreateAccountUserRequest(
+        email='Jason_Skiles63@yahoo.com',
+    ),
+    org_id='org-123',
+)
+
+res = None
+try:
+    res = s.account.create_account_user(req)
+
+except (errors.SDKError) as e:
+    print(e) # handle exception
+
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
 <!-- End Error Handling -->
 
 
@@ -373,7 +408,7 @@ if res.status_code == 200:
 The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
 
 
-For example, you could specify a header for every request that your sdk makes as follows:
+For example, you could specify a header for every request that this sdk makes as follows:
 
 ```python
 import songbird
@@ -388,12 +423,11 @@ s = songbird.Songbird(client: http_client)
 
 
 <!-- Start Authentication -->
-
 # Authentication
 
 ## Per-Client Security Schemes
 
-Your SDK supports the following security scheme globally:
+This SDK supports the following security scheme globally:
 
 | Name           | Type           | Scheme         |
 | -------------- | -------------- | -------------- |

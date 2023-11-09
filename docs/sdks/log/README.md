@@ -1,5 +1,5 @@
 # Log
-(*.log*)
+(*log*)
 
 ### Available Operations
 
@@ -51,7 +51,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetProfileObservatoryLinkResponse](../../models/operations/getprofileobservatorylinkresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## log_async
 
@@ -94,7 +98,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.LogAsyncResponse](../../models/operations/logasyncresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## log_reference
 
@@ -133,4 +141,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.LogReferenceResponse](../../models/operations/logreferenceresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

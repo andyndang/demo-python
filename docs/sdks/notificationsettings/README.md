@@ -1,5 +1,5 @@
 # NotificationSettings
-(*.notification_settings*)
+(*notification_settings*)
 
 ### Available Operations
 
@@ -56,7 +56,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.AddNotificationActionResponse](../../models/operations/addnotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_notification_action
 
@@ -94,7 +98,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteNotificationActionResponse](../../models/operations/deletenotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## disable_notification_action
 
@@ -132,7 +140,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DisableNotificationActionResponse](../../models/operations/disablenotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## enable_notification_action
 
@@ -170,7 +182,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.EnableNotificationActionResponse](../../models/operations/enablenotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_notification_action
 
@@ -208,7 +224,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetNotificationActionResponse](../../models/operations/getnotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_notification_settings
 
@@ -245,7 +265,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetNotificationSettingsResponse](../../models/operations/getnotificationsettingsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_notification_actions
 
@@ -282,7 +306,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListNotificationActionsResponse](../../models/operations/listnotificationactionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_notification_action
 
@@ -322,7 +350,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutNotificationActionResponse](../../models/operations/putnotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## test_notification_action
 
@@ -360,7 +392,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.TestNotificationActionResponse](../../models/operations/testnotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_notification_action
 
@@ -400,7 +436,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateNotificationActionResponse](../../models/operations/updatenotificationactionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_notification_settings
 
@@ -451,7 +491,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateNotificationSettingsResponse](../../models/operations/updatenotificationsettingsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_email_notification_action_payload
 
@@ -478,7 +522,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetEmailNotificationActionPayloadResponse](../../models/operations/getemailnotificationactionpayloadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_pager_duty_notification_action_payload
 
@@ -505,7 +553,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetPagerDutyNotificationActionPayloadResponse](../../models/operations/getpagerdutynotificationactionpayloadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_slack_notification_action_payload
 
@@ -532,4 +584,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetSlackNotificationActionPayloadResponse](../../models/operations/getslacknotificationactionpayloadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

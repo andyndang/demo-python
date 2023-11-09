@@ -12,6 +12,7 @@ class Organizations:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_organization(self, request: operations.CreateOrganizationRequest) -> operations.CreateOrganizationResponse:
         r"""Create an organization
         Create an organization
@@ -24,7 +25,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -43,6 +47,7 @@ class Organizations:
         return res
 
     
+    
     def delete_organization(self, request: operations.DeleteOrganizationRequest) -> operations.DeleteOrganizationResponse:
         r"""Delete an org
         Delete an org
@@ -54,7 +59,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -73,6 +81,7 @@ class Organizations:
         return res
 
     
+    
     def get_aws_marketplace_metadata(self, request: operations.GetAWSMarketplaceMetadataRequest) -> operations.GetAWSMarketplaceMetadataResponse:
         r"""Get marketplace metadata for an org if any exists.
         Get marketplace metadata for an org if any exists.
@@ -84,7 +93,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -103,6 +115,7 @@ class Organizations:
         return res
 
     
+    
     def get_organization(self, request: operations.GetOrganizationRequest) -> operations.GetOrganizationResponse:
         r"""Get the metadata about an organization.
         Returns various metadata about an organization
@@ -114,7 +127,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -133,6 +149,7 @@ class Organizations:
         return res
 
     
+    
     def list_organizations(self) -> operations.ListOrganizationsResponse:
         r"""Get a list of all of the organization ids.
         Get a list of all of the organization ids.
@@ -144,7 +161,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -162,6 +182,7 @@ class Organizations:
 
         return res
 
+    
     
     def partially_update_org(self, request: operations.PartiallyUpdateOrgRequest) -> operations.PartiallyUpdateOrgResponse:
         r"""Update some fields of an organization to non-null values
@@ -182,7 +203,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -201,6 +225,7 @@ class Organizations:
         return res
 
     
+    
     def partially_update_organization(self, request: operations.PartiallyUpdateOrganizationRequest) -> operations.PartiallyUpdateOrganizationResponse:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same
@@ -213,7 +238,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -231,6 +259,7 @@ class Organizations:
 
         return res
 
+    
     
     def update_org(self, request: operations.UpdateOrgRequest) -> operations.UpdateOrgResponse:
         r"""Update an existing organization
@@ -251,7 +280,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -270,6 +302,7 @@ class Organizations:
         return res
 
     
+    
     def update_organization(self, request: operations.UpdateOrganizationRequest) -> operations.UpdateOrganizationResponse:
         r"""Update an existing organization
         Update all fields of an existing organization
@@ -282,7 +315,10 @@ class Organizations:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

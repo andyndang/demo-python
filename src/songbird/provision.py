@@ -12,6 +12,7 @@ class Provision:
         self.sdk_configuration = sdk_config
         
     
+    
     def provision_aws_marketplace_new_user(self, request: shared.ProvisionNewMarketplaceUserRequest) -> operations.ProvisionAWSMarketplaceNewUserResponse:
         r"""Create resources for a new user coming from AWS Marketplace
         Create resources for a new user coming from AWS Marketplace
@@ -28,7 +29,10 @@ class Provision:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Provision:
         return res
 
     
+    
     def provision_databricks_connection(self, request: shared.ProvisionDatabricksConnectionRequest) -> operations.ProvisionDatabricksConnectionResponse:
         r"""Create resources for a new user coming from Databricks
         Create resources for a new user coming from Databricks
@@ -63,7 +68,10 @@ class Provision:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -82,6 +90,7 @@ class Provision:
         return res
 
     
+    
     def provision_new_user(self, request: shared.ProvisionNewUserRequest) -> operations.ProvisionNewUserResponse:
         r"""Create the resources that a new user needs to use WhyLabs via the website.
         Create the resources that a new user needs to use WhyLabs via the website.
@@ -98,7 +107,10 @@ class Provision:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -117,6 +129,7 @@ class Provision:
         return res
 
     
+    
     def register_databricks_connection(self, request: shared.RegisterDatabricksConnectionRequest) -> operations.RegisterDatabricksConnectionResponse:
         r"""Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
         Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
@@ -133,7 +146,10 @@ class Provision:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

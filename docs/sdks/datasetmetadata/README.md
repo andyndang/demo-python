@@ -1,5 +1,5 @@
 # DatasetMetadata
-(*.dataset_metadata*)
+(*dataset_metadata*)
 
 ### Available Operations
 
@@ -43,7 +43,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteDatasetMetadataResponse](../../models/operations/deletedatasetmetadataresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_dataset_metadata
 
@@ -81,7 +85,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetDatasetMetadataResponse](../../models/operations/getdatasetmetadataresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_dataset_metadata
 
@@ -120,4 +128,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutDatasetMetadataResponse](../../models/operations/putdatasetmetadataresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

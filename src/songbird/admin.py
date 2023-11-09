@@ -12,6 +12,7 @@ class Admin:
         self.sdk_configuration = sdk_config
         
     
+    
     def generate_report(self, request: operations.GenerateReportRequest) -> operations.GenerateReportResponse:
         r"""Generate an admin report
         Generate an admin report
@@ -24,7 +25,10 @@ class Admin:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -43,6 +47,7 @@ class Admin:
         return res
 
     
+    
     def post_monitor_config_validation_job(self) -> operations.PostMonitorConfigValidationJobResponse:
         r"""Create a monitor config validation job for all configs
         Create a monitor config validation job for all configs
@@ -54,7 +59,10 @@ class Admin:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -1,5 +1,5 @@
 # Payment
-(*.payment*)
+(*payment*)
 
 ### Available Operations
 
@@ -31,10 +31,14 @@ if res.status_code == 200:
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [str](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [str](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.StripePaymentEndpointResponse](../../models/operations/stripepaymentendpointresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

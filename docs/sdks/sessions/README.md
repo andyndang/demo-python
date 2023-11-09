@@ -1,5 +1,5 @@
 # Sessions
-(*.sessions*)
+(*sessions*)
 
 ### Available Operations
 
@@ -51,7 +51,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.BatchCreateReferenceProfileUploadResponse](../../models/operations/batchcreatereferenceprofileuploadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## claim_guest_session
 
@@ -89,7 +93,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ClaimGuestSessionResponse](../../models/operations/claimguestsessionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_dataset_profile_upload
 
@@ -131,7 +139,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateDatasetProfileUploadResponse](../../models/operations/createdatasetprofileuploadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_reference_profile_upload
 
@@ -169,7 +181,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateReferenceProfileUploadResponse](../../models/operations/createreferenceprofileuploadresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_session
 
@@ -206,7 +222,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateSessionResponse](../../models/operations/createsessionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_session
 
@@ -243,7 +263,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetSessionResponse](../../models/operations/getsessionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_session_profile_observatory_link
 
@@ -288,4 +312,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetSessionProfileObservatoryLinkResponse](../../models/operations/getsessionprofileobservatorylinkresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

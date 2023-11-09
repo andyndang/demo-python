@@ -12,6 +12,7 @@ class Search:
         self.sdk_configuration = sdk_config
         
     
+    
     def why_labs_search(self, request: operations.WhyLabsSearchRequest) -> operations.WhyLabsSearchResponse:
         r"""WhyLabs Search
         WhyLabs Search
@@ -24,7 +25,10 @@ class Search:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -43,6 +47,7 @@ class Search:
         return res
 
     
+    
     def why_labs_search_indexing(self, request: shared.SearchIndexRequest) -> operations.WhyLabsSearchIndexingResponse:
         r"""WhyLabs Search Indexing
         WhyLabs Search Indexing
@@ -59,7 +64,10 @@ class Search:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

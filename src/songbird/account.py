@@ -12,6 +12,7 @@ class Account:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_account_user(self, request: operations.CreateAccountUserRequest) -> operations.CreateAccountUserResponse:
         r"""Create an account user
         Create an account user
@@ -28,7 +29,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Account:
         return res
 
     
+    
     def delete_account_user(self, request: operations.DeleteAccountUserRequest) -> operations.DeleteAccountUserResponse:
         r"""Delete account user
         Delete an account user's details
@@ -58,7 +63,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -77,6 +85,7 @@ class Account:
         return res
 
     
+    
     def get_account_memberships(self, request: operations.GetAccountMembershipsRequest) -> operations.GetAccountMembershipsResponse:
         r"""Get memberships in an account
         Get memberships in the account organization and any managed organizations
@@ -89,7 +98,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -108,6 +120,7 @@ class Account:
         return res
 
     
+    
     def get_account_user_by_email(self, request: operations.GetAccountUserByEmailRequest) -> operations.GetAccountUserByEmailResponse:
         r"""Get account user by email
         Get account user by email
@@ -120,7 +133,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -139,6 +155,7 @@ class Account:
         return res
 
     
+    
     def get_account_user_by_id(self, request: operations.GetAccountUserByIDRequest) -> operations.GetAccountUserByIDResponse:
         r"""Get account user by user_id
         Get account user by user_id
@@ -151,7 +168,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -170,6 +190,7 @@ class Account:
         return res
 
     
+    
     def list_account_users(self, request: operations.ListAccountUsersRequest) -> operations.ListAccountUsersResponse:
         r"""List users in an account
         List users in the account organization and any managed organizations
@@ -181,7 +202,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -200,6 +224,7 @@ class Account:
         return res
 
     
+    
     def list_managed_organizations(self, request: operations.ListManagedOrganizationsRequest) -> operations.ListManagedOrganizationsResponse:
         r"""List managed organizations for a parent organization
         List managed organizations for a parent organization
@@ -211,7 +236,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -230,6 +258,7 @@ class Account:
         return res
 
     
+    
     def patch_organization_memberships(self, request: operations.PatchOrganizationMembershipsRequest) -> operations.PatchOrganizationMembershipsResponse:
         r"""Add or delete memberships in a specific role and managed organization
         Add or delete all of the memberships in a specific role and managed organization
@@ -247,7 +276,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -266,6 +298,7 @@ class Account:
         return res
 
     
+    
     def put_organization_memberships(self, request: operations.PutOrganizationMembershipsRequest) -> operations.PutOrganizationMembershipsResponse:
         r"""Replace the memberships in a specific role and managed organization
         Replace all of the memberships in a specific role and managed organization
@@ -283,7 +316,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -302,6 +338,7 @@ class Account:
         return res
 
     
+    
     def update_account_user(self, request: operations.UpdateAccountUserRequest) -> operations.UpdateAccountUserResponse:
         r"""Update account user
         Update an account user's details
@@ -319,7 +356,10 @@ class Account:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

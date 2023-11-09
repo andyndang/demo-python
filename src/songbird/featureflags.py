@@ -12,6 +12,7 @@ class FeatureFlags:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_feature_flags(self, request: operations.GetFeatureFlagsRequest) -> operations.GetFeatureFlagsResponse:
         r"""Get feature flags for the specified user/org
         Get feature flags for the specified user/org
@@ -24,7 +25,10 @@ class FeatureFlags:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')

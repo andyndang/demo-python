@@ -1,5 +1,5 @@
 # Membership
-(*.membership*)
+(*membership*)
 
 ### Available Operations
 
@@ -53,7 +53,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateMembershipResponse](../../models/operations/createmembershipresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## create_organization_membership
 
@@ -92,7 +96,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateOrganizationMembershipResponse](../../models/operations/createorganizationmembershipresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_default_membership_for_email
 
@@ -129,7 +137,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetDefaultMembershipForEmailResponse](../../models/operations/getdefaultmembershipforemailresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_memberships
 
@@ -166,7 +178,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetMembershipsResponse](../../models/operations/getmembershipsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_memberships_by_email
 
@@ -203,7 +219,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetMembershipsByEmailResponse](../../models/operations/getmembershipsbyemailresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_memberships_by_org
 
@@ -240,7 +260,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetMembershipsByOrgResponse](../../models/operations/getmembershipsbyorgresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_organization_memberships
 
@@ -277,7 +301,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListOrganizationMembershipsResponse](../../models/operations/listorganizationmembershipsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove_membership_by_email
 
@@ -315,7 +343,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RemoveMembershipByEmailResponse](../../models/operations/removemembershipbyemailresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## remove_organization_membership
 
@@ -353,7 +385,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RemoveOrganizationMembershipResponse](../../models/operations/removeorganizationmembershipresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## set_default_membership
 
@@ -391,7 +427,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.SetDefaultMembershipResponse](../../models/operations/setdefaultmembershipresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_membership_by_email
 
@@ -430,7 +470,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateMembershipByEmailResponse](../../models/operations/updatemembershipbyemailresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_organization_membership
 
@@ -469,4 +513,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateOrganizationMembershipResponse](../../models/operations/updateorganizationmembershipresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

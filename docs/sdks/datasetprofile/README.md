@@ -1,5 +1,5 @@
 # DatasetProfile
-(*.dataset_profile*)
+(*dataset_profile*)
 
 ### Available Operations
 
@@ -64,7 +64,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateReferenceProfileResponse](../../models/operations/createreferenceprofileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_analyzer_results
 
@@ -106,7 +110,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteAnalyzerResultsResponse](../../models/operations/deleteanalyzerresultsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_dataset_profiles
 
@@ -149,7 +157,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteDatasetProfilesResponse](../../models/operations/deletedatasetprofilesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_reference_profile
 
@@ -190,7 +202,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteReferenceProfileResponse](../../models/operations/deletereferenceprofileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_profile_traces
 
@@ -233,7 +249,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetProfileTracesResponse](../../models/operations/getprofiletracesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_reference_profile
 
@@ -274,7 +294,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetReferenceProfileResponse](../../models/operations/getreferenceprofileresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## hide_segments
 
@@ -319,7 +343,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.HideSegmentsResponse](../../models/operations/hidesegmentsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_reference_profiles
 
@@ -361,7 +389,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListReferenceProfilesResponse](../../models/operations/listreferenceprofilesresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_segments
 
@@ -401,4 +433,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListSegmentsResponse](../../models/operations/listsegmentsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

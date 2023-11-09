@@ -1,5 +1,5 @@
 # Account
-(*.account*)
+(*account*)
 
 ### Available Operations
 
@@ -52,7 +52,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateAccountUserResponse](../../models/operations/createaccountuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_account_user
 
@@ -90,7 +94,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteAccountUserResponse](../../models/operations/deleteaccountuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_account_memberships
 
@@ -129,7 +137,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetAccountMembershipsResponse](../../models/operations/getaccountmembershipsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_account_user_by_email
 
@@ -167,7 +179,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetAccountUserByEmailResponse](../../models/operations/getaccountuserbyemailresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_account_user_by_id
 
@@ -205,7 +221,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetAccountUserByIDResponse](../../models/operations/getaccountuserbyidresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_account_users
 
@@ -242,7 +262,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListAccountUsersResponse](../../models/operations/listaccountusersresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_managed_organizations
 
@@ -279,7 +303,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListManagedOrganizationsResponse](../../models/operations/listmanagedorganizationsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## patch_organization_memberships
 
@@ -326,7 +354,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PatchOrganizationMembershipsResponse](../../models/operations/patchorganizationmembershipsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_organization_memberships
 
@@ -370,7 +402,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutOrganizationMembershipsResponse](../../models/operations/putorganizationmembershipsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_account_user
 
@@ -409,4 +445,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateAccountUserResponse](../../models/operations/updateaccountuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

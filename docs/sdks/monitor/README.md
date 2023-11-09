@@ -1,5 +1,5 @@
 # Monitor
-(*.monitor*)
+(*monitor*)
 
 ### Available Operations
 
@@ -55,7 +55,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteAnalyzerResponse](../../models/operations/deleteanalyzerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_monitor
 
@@ -94,7 +98,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteMonitorResponse](../../models/operations/deletemonitorresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_analyzer
 
@@ -133,7 +141,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetAnalyzerResponse](../../models/operations/getanalyzerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_monitor
 
@@ -172,7 +184,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetMonitorResponse](../../models/operations/getmonitorresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_monitor_config_v3
 
@@ -210,7 +226,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetMonitorConfigV3Response](../../models/operations/getmonitorconfigv3response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_monitor_config_v3_version
 
@@ -249,7 +269,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetMonitorConfigV3VersionResponse](../../models/operations/getmonitorconfigv3versionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_constraints
 
@@ -287,7 +311,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListConstraintsResponse](../../models/operations/listconstraintsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_monitor_config_v3_versions
 
@@ -325,7 +353,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListMonitorConfigV3VersionsResponse](../../models/operations/listmonitorconfigv3versionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## patch_monitor_config_v3
 
@@ -364,7 +396,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PatchMonitorConfigV3Response](../../models/operations/patchmonitorconfigv3response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_analyzer
 
@@ -404,7 +440,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutAnalyzerResponse](../../models/operations/putanalyzerresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_monitor
 
@@ -444,7 +484,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutMonitorResponse](../../models/operations/putmonitorresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_monitor_config_v3
 
@@ -483,7 +527,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutMonitorConfigV3Response](../../models/operations/putmonitorconfigv3response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_request_monitor_run_config
 
@@ -541,7 +589,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutRequestMonitorRunConfigResponse](../../models/operations/putrequestmonitorrunconfigresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## validate_monitor_config_v3
 
@@ -580,4 +632,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ValidateMonitorConfigV3Response](../../models/operations/validatemonitorconfigv3response.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

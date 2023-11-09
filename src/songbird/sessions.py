@@ -12,6 +12,7 @@ class Sessions:
         self.sdk_configuration = sdk_config
         
     
+    
     def batch_create_reference_profile_upload(self, request: operations.BatchCreateReferenceProfileUploadRequest) -> operations.BatchCreateReferenceProfileUploadResponse:
         r"""Create multiple reference profile uploads for a given session.
         Create multiple reference profile uploads for a given session.
@@ -28,7 +29,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Sessions:
         return res
 
     
+    
     def claim_guest_session(self, request: operations.ClaimGuestSessionRequest) -> operations.ClaimGuestSessionResponse:
         r"""Claim a guest session, copying its model data into another org and expiring the session.
         Claim a guest session, copying its model data into another org and expiring the session.
@@ -59,7 +64,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -78,6 +86,7 @@ class Sessions:
         return res
 
     
+    
     def create_dataset_profile_upload(self, request: operations.CreateDatasetProfileUploadRequest) -> operations.CreateDatasetProfileUploadResponse:
         r"""Create an upload for a given session.
         Create an upload for a given session.
@@ -94,7 +103,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -113,6 +125,7 @@ class Sessions:
         return res
 
     
+    
     def create_reference_profile_upload(self, request: operations.CreateReferenceProfileUploadRequest) -> operations.CreateReferenceProfileUploadResponse:
         r"""Create a reference profile upload for a given session.
         Create a reference profile upload for a given session.
@@ -129,7 +142,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -148,6 +164,7 @@ class Sessions:
         return res
 
     
+    
     def create_session(self, request: shared.CreateSessionRequest) -> operations.CreateSessionResponse:
         r"""Create a new session that can be used to upload dataset profiles from whylogs for display in whylabs.
         Create a new session that can be used to upload dataset profiles from whylogs for display in whylabs.
@@ -164,7 +181,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -183,6 +203,7 @@ class Sessions:
         return res
 
     
+    
     def get_session(self, request: operations.GetSessionRequest) -> operations.GetSessionResponse:
         r"""Get information about a session.
         Get information about a session.
@@ -194,7 +215,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -213,6 +237,7 @@ class Sessions:
         return res
 
     
+    
     def get_session_profile_observatory_link(self, request: operations.GetSessionProfileObservatoryLinkRequest) -> operations.GetSessionProfileObservatoryLinkResponse:
         r"""Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
         Get observatory links for profiles in a given session. A max of 3 profiles can be viewed a a time.
@@ -229,7 +254,10 @@ class Sessions:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

@@ -1,5 +1,5 @@
 # FeatureFlags
-(*.feature_flags*)
+(*feature_flags*)
 
 ### Available Operations
 
@@ -41,4 +41,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetFeatureFlagsResponse](../../models/operations/getfeatureflagsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

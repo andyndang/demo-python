@@ -12,6 +12,7 @@ class NotificationSettings:
         self.sdk_configuration = sdk_config
         
     
+    
     def add_notification_action(self, request: operations.AddNotificationActionRequest) -> operations.AddNotificationActionResponse:
         r"""Add new notification action
         Add new notification action
@@ -28,7 +29,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class NotificationSettings:
         return res
 
     
+    
     def delete_notification_action(self, request: operations.DeleteNotificationActionRequest) -> operations.DeleteNotificationActionResponse:
         r"""Delete notification action
         Delete notification action
@@ -58,7 +63,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -77,6 +85,7 @@ class NotificationSettings:
         return res
 
     
+    
     def disable_notification_action(self, request: operations.DisableNotificationActionRequest) -> operations.DisableNotificationActionResponse:
         r"""Disable notification action
         Disable notification action
@@ -88,7 +97,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -107,6 +119,7 @@ class NotificationSettings:
         return res
 
     
+    
     def enable_notification_action(self, request: operations.EnableNotificationActionRequest) -> operations.EnableNotificationActionResponse:
         r"""Enable notification action
         Enable notification action
@@ -118,7 +131,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -137,6 +153,7 @@ class NotificationSettings:
         return res
 
     
+    
     def get_notification_action(self, request: operations.GetNotificationActionRequest) -> operations.GetNotificationActionResponse:
         r"""Get notification action for id
         Get notification action for id
@@ -148,7 +165,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -167,6 +187,7 @@ class NotificationSettings:
         return res
 
     
+    
     def get_notification_settings(self, request: operations.GetNotificationSettingsRequest) -> operations.GetNotificationSettingsResponse:
         r"""Get notification settings for an org
         Get notification settings for an org
@@ -178,7 +199,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -197,6 +221,7 @@ class NotificationSettings:
         return res
 
     
+    
     def list_notification_actions(self, request: operations.ListNotificationActionsRequest) -> operations.ListNotificationActionsResponse:
         r"""List notification actions for an org
         Get notification actions for an org
@@ -208,7 +233,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -227,6 +255,7 @@ class NotificationSettings:
         return res
 
     
+    
     def put_notification_action(self, request: operations.PutNotificationActionRequest) -> operations.PutNotificationActionResponse:
         r"""Add new notification action
         Add new notification action
@@ -243,7 +272,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -262,6 +294,7 @@ class NotificationSettings:
         return res
 
     
+    
     def test_notification_action(self, request: operations.TestNotificationActionRequest) -> operations.TestNotificationActionResponse:
         r"""Test a notification action
         Test a notification action
@@ -273,7 +306,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -292,6 +328,7 @@ class NotificationSettings:
         return res
 
     
+    
     def update_notification_action(self, request: operations.UpdateNotificationActionRequest) -> operations.UpdateNotificationActionResponse:
         r"""Update notification action
         Update notification action
@@ -308,7 +345,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -327,6 +367,7 @@ class NotificationSettings:
         return res
 
     
+    
     def update_notification_settings(self, request: operations.UpdateNotificationSettingsRequest) -> operations.UpdateNotificationSettingsResponse:
         r"""Update notification settings for an org
         Update notification settings for an org
@@ -343,7 +384,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -362,6 +406,7 @@ class NotificationSettings:
         return res
 
     
+    
     def get_email_notification_action_payload(self) -> operations.GetEmailNotificationActionPayloadResponse:
         r"""Get dummy notification action payload
         Get dummy notification action payload
@@ -373,7 +418,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -392,6 +440,7 @@ class NotificationSettings:
         return res
 
     
+    
     def get_pager_duty_notification_action_payload(self) -> operations.GetPagerDutyNotificationActionPayloadResponse:
         r"""Get dummy notification action payload
         Get dummy notification action payload
@@ -403,7 +452,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -422,6 +474,7 @@ class NotificationSettings:
         return res
 
     
+    
     def get_slack_notification_action_payload(self) -> operations.GetSlackNotificationActionPayloadResponse:
         r"""Get dummy notification action payload
         Get dummy notification action payload
@@ -433,7 +486,10 @@ class NotificationSettings:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')

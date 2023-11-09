@@ -12,6 +12,7 @@ class User:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_user(self, request: shared.CreateUserRequest) -> operations.CreateUserResponse:
         r"""Create a user.
         Create a user.
@@ -28,7 +29,10 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class User:
         return res
 
     
+    
     def get_user(self, request: operations.GetUserRequest) -> operations.GetUserResponse:
         r"""Get a user by their id.
         Get a user by their id.
@@ -58,7 +63,10 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -77,6 +85,7 @@ class User:
         return res
 
     
+    
     def get_user_by_email(self, request: operations.GetUserByEmailRequest) -> operations.GetUserByEmailResponse:
         r"""Get a user by their email.
         Get a user by their email.
@@ -89,7 +98,10 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -108,6 +120,7 @@ class User:
         return res
 
     
+    
     def update_user(self, request: shared.User) -> operations.UpdateUserResponse:
         r"""Update a user.
         Update a user.
@@ -124,7 +137,10 @@ class User:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

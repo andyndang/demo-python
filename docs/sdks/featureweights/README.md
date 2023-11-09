@@ -1,5 +1,5 @@
 # FeatureWeights
-(*.feature_weights*)
+(*feature_weights*)
 
 ### Available Operations
 
@@ -42,7 +42,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetColumnWeightsResponse](../../models/operations/getcolumnweightsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_column_weights
 
@@ -81,4 +85,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutColumnWeightsResponse](../../models/operations/putcolumnweightsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

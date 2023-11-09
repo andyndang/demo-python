@@ -1,5 +1,5 @@
 # APIKey
-(*.api_key*)
+(*api_key*)
 
 ### Available Operations
 
@@ -53,7 +53,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateAPIKeyResponse](../../models/operations/createapikeyresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_api_key
 
@@ -91,7 +95,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetAPIKeyResponse](../../models/operations/getapikeyresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_api_keys
 
@@ -129,7 +137,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListAPIKeysResponse](../../models/operations/listapikeysresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## revoke_api_key
 
@@ -168,4 +180,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RevokeAPIKeyResponse](../../models/operations/revokeapikeyresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

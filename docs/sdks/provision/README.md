@@ -1,5 +1,5 @@
 # Provision
-(*.provision*)
+(*provision*)
 
 ### Available Operations
 
@@ -46,7 +46,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ProvisionAWSMarketplaceNewUserResponse](../../models/operations/provisionawsmarketplacenewuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## provision_databricks_connection
 
@@ -85,7 +89,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ProvisionDatabricksConnectionResponse](../../models/operations/provisiondatabricksconnectionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## provision_new_user
 
@@ -125,7 +133,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ProvisionNewUserResponse](../../models/operations/provisionnewuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## register_databricks_connection
 
@@ -170,4 +182,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RegisterDatabricksConnectionResponse](../../models/operations/registerdatabricksconnectionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

@@ -1,5 +1,5 @@
 # Search
-(*.search*)
+(*search*)
 
 ### Available Operations
 
@@ -41,7 +41,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.WhyLabsSearchResponse](../../models/operations/whylabssearchresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## why_labs_search_indexing
 
@@ -76,4 +80,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.WhyLabsSearchIndexingResponse](../../models/operations/whylabssearchindexingresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

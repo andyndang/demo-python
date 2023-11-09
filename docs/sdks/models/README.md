@@ -1,5 +1,5 @@
 # Models
-(*.models*)
+(*models*)
 
 ### Available Operations
 
@@ -56,7 +56,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateModelResponse](../../models/operations/createmodelresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## deactivate_model
 
@@ -94,7 +98,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeactivateModelResponse](../../models/operations/deactivatemodelresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_entity_schema
 
@@ -132,7 +140,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteEntitySchemaResponse](../../models/operations/deleteentityschemaresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_entity_schema_column
 
@@ -171,7 +183,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteEntitySchemaColumnResponse](../../models/operations/deleteentityschemacolumnresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_entity_schema_metric
 
@@ -210,7 +226,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteEntitySchemaMetricResponse](../../models/operations/deleteentityschemametricresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_entity_schema
 
@@ -248,7 +268,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetEntitySchemaResponse](../../models/operations/getentityschemaresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_entity_schema_column
 
@@ -287,7 +311,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetEntitySchemaColumnResponse](../../models/operations/getentityschemacolumnresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_model
 
@@ -325,7 +353,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetModelResponse](../../models/operations/getmodelresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_models
 
@@ -362,7 +394,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListModelsResponse](../../models/operations/listmodelsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_entity_schema
 
@@ -420,7 +456,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutEntitySchemaResponse](../../models/operations/putentityschemaresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_entity_schema_column
 
@@ -467,7 +507,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutEntitySchemaColumnResponse](../../models/operations/putentityschemacolumnresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## put_entity_schema_metric
 
@@ -510,7 +554,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PutEntitySchemaMetricResponse](../../models/operations/putentityschemametricresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_model
 
@@ -551,4 +599,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateModelResponse](../../models/operations/updatemodelresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

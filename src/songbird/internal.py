@@ -12,6 +12,7 @@ class Internal:
         self.sdk_configuration = sdk_config
         
     
+    
     def create_account_user(self, request: operations.CreateAccountUserRequest) -> operations.CreateAccountUserResponse:
         r"""Create an account user
         Create an account user
@@ -28,7 +29,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -47,6 +51,7 @@ class Internal:
         return res
 
     
+    
     def create_membership(self, request: shared.AddMembershipRequest) -> operations.CreateMembershipResponse:
         r"""Create a membership for a user, making them apart of an organization. Uses the user's current email address.
         Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -63,7 +68,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -82,6 +90,7 @@ class Internal:
         return res
 
     
+    
     def create_organization(self, request: operations.CreateOrganizationRequest) -> operations.CreateOrganizationResponse:
         r"""Create an organization
         Create an organization
@@ -94,7 +103,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -113,6 +125,7 @@ class Internal:
         return res
 
     
+    
     def create_user(self, request: shared.CreateUserRequest) -> operations.CreateUserResponse:
         r"""Create a user.
         Create a user.
@@ -129,7 +142,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -148,6 +164,7 @@ class Internal:
         return res
 
     
+    
     def delete_account_user(self, request: operations.DeleteAccountUserRequest) -> operations.DeleteAccountUserResponse:
         r"""Delete account user
         Delete an account user's details
@@ -159,7 +176,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -178,6 +198,7 @@ class Internal:
         return res
 
     
+    
     def delete_organization(self, request: operations.DeleteOrganizationRequest) -> operations.DeleteOrganizationResponse:
         r"""Delete an org
         Delete an org
@@ -189,7 +210,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -208,6 +232,7 @@ class Internal:
         return res
 
     
+    
     def generate_report(self, request: operations.GenerateReportRequest) -> operations.GenerateReportResponse:
         r"""Generate an admin report
         Generate an admin report
@@ -220,7 +245,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -239,6 +267,7 @@ class Internal:
         return res
 
     
+    
     def get_aws_marketplace_metadata(self, request: operations.GetAWSMarketplaceMetadataRequest) -> operations.GetAWSMarketplaceMetadataResponse:
         r"""Get marketplace metadata for an org if any exists.
         Get marketplace metadata for an org if any exists.
@@ -250,7 +279,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -269,6 +301,7 @@ class Internal:
         return res
 
     
+    
     def get_account_memberships(self, request: operations.GetAccountMembershipsRequest) -> operations.GetAccountMembershipsResponse:
         r"""Get memberships in an account
         Get memberships in the account organization and any managed organizations
@@ -281,7 +314,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -300,6 +336,7 @@ class Internal:
         return res
 
     
+    
     def get_account_user_by_email(self, request: operations.GetAccountUserByEmailRequest) -> operations.GetAccountUserByEmailResponse:
         r"""Get account user by email
         Get account user by email
@@ -312,7 +349,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -331,6 +371,7 @@ class Internal:
         return res
 
     
+    
     def get_account_user_by_id(self, request: operations.GetAccountUserByIDRequest) -> operations.GetAccountUserByIDResponse:
         r"""Get account user by user_id
         Get account user by user_id
@@ -343,7 +384,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -362,6 +406,7 @@ class Internal:
         return res
 
     
+    
     def get_api_key(self, request: operations.GetAPIKeyRequest) -> operations.GetAPIKeyResponse:
         r"""Get an api key by its id
         Get an api key by its id
@@ -373,7 +418,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -392,6 +440,7 @@ class Internal:
         return res
 
     
+    
     def get_connection(self, request: shared.GetConnectionRequest) -> operations.GetConnectionResponse:
         r"""Get the connection metadata for a given org
         Get the connection metadata for a given org
@@ -408,7 +457,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -427,6 +479,7 @@ class Internal:
         return res
 
     
+    
     def get_default_membership_for_email(self, request: operations.GetDefaultMembershipForEmailRequest) -> operations.GetDefaultMembershipForEmailResponse:
         r"""Get the default membership for a user.
         Get the default membership for a user.
@@ -439,7 +492,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -458,6 +514,7 @@ class Internal:
         return res
 
     
+    
     def get_feature_flags(self, request: operations.GetFeatureFlagsRequest) -> operations.GetFeatureFlagsResponse:
         r"""Get feature flags for the specified user/org
         Get feature flags for the specified user/org
@@ -470,7 +527,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -489,6 +549,7 @@ class Internal:
         return res
 
     
+    
     def get_memberships(self, request: operations.GetMembershipsRequest) -> operations.GetMembershipsResponse:
         r"""Get memberships for a user.
         Get memberships for a user.
@@ -500,7 +561,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -519,6 +583,7 @@ class Internal:
         return res
 
     
+    
     def get_memberships_by_email(self, request: operations.GetMembershipsByEmailRequest) -> operations.GetMembershipsByEmailResponse:
         r"""Get memberships for a user given that user's email address.
         Get memberships for a user given that user's email address.
@@ -531,7 +596,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -550,6 +618,7 @@ class Internal:
         return res
 
     
+    
     def get_memberships_by_org(self, request: operations.GetMembershipsByOrgRequest) -> operations.GetMembershipsByOrgResponse:
         r"""Get memberships for an org.
         Get memberships for an org.
@@ -561,7 +630,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -580,6 +652,7 @@ class Internal:
         return res
 
     
+    
     def get_monitor_config_v3_version(self, request: operations.GetMonitorConfigV3VersionRequest) -> operations.GetMonitorConfigV3VersionResponse:
         r"""Get the monitor config document version for a given dataset.
         Get the monitor config document version for a given dataset.
@@ -591,7 +664,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -609,6 +685,7 @@ class Internal:
         return res
 
     
+    
     def get_notification_settings(self, request: operations.GetNotificationSettingsRequest) -> operations.GetNotificationSettingsResponse:
         r"""Get notification settings for an org
         Get notification settings for an org
@@ -620,7 +697,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -639,6 +719,7 @@ class Internal:
         return res
 
     
+    
     def get_organization(self, request: operations.GetOrganizationRequest) -> operations.GetOrganizationResponse:
         r"""Get the metadata about an organization.
         Returns various metadata about an organization
@@ -650,7 +731,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -669,6 +753,7 @@ class Internal:
         return res
 
     
+    
     def get_organization_subscriptions(self, request: operations.GetOrganizationSubscriptionsRequest) -> operations.GetOrganizationSubscriptionsResponse:
         r"""Get organization subscription details
         Get organization subscription details
@@ -680,7 +765,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -699,6 +787,7 @@ class Internal:
         return res
 
     
+    
     def get_user(self, request: operations.GetUserRequest) -> operations.GetUserResponse:
         r"""Get a user by their id.
         Get a user by their id.
@@ -710,7 +799,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -729,6 +821,7 @@ class Internal:
         return res
 
     
+    
     def get_user_by_email(self, request: operations.GetUserByEmailRequest) -> operations.GetUserByEmailResponse:
         r"""Get a user by their email.
         Get a user by their email.
@@ -741,7 +834,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -760,6 +856,7 @@ class Internal:
         return res
 
     
+    
     def hide_segments(self, request: operations.HideSegmentsRequest) -> operations.HideSegmentsResponse:
         r"""Hides a list of segments
         Returns a list of segments that were hidden for a dataset.
@@ -776,7 +873,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -795,6 +895,7 @@ class Internal:
         return res
 
     
+    
     def list_account_users(self, request: operations.ListAccountUsersRequest) -> operations.ListAccountUsersResponse:
         r"""List users in an account
         List users in the account organization and any managed organizations
@@ -806,7 +907,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -825,6 +929,7 @@ class Internal:
         return res
 
     
+    
     def list_api_keys(self, request: operations.ListAPIKeysRequest) -> operations.ListAPIKeysResponse:
         r"""List API key metadata for a given organization and user
         Returns the API key metadata for a given organization and user
@@ -837,7 +942,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -856,6 +964,7 @@ class Internal:
         return res
 
     
+    
     def list_jobs(self, request: shared.ListJobsRequest) -> operations.ListJobsResponse:
         r"""List all of the jobs in a workspace.
         List all of the jobs in a workspace.
@@ -872,7 +981,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -891,6 +1003,7 @@ class Internal:
         return res
 
     
+    
     def list_managed_organizations(self, request: operations.ListManagedOrganizationsRequest) -> operations.ListManagedOrganizationsResponse:
         r"""List managed organizations for a parent organization
         List managed organizations for a parent organization
@@ -902,7 +1015,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -921,6 +1037,7 @@ class Internal:
         return res
 
     
+    
     def list_monitor_config_v3_versions(self, request: operations.ListMonitorConfigV3VersionsRequest) -> operations.ListMonitorConfigV3VersionsResponse:
         r"""List the monitor config document versions for a given dataset.
         List the monitor config document versions for a given dataset.
@@ -932,7 +1049,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -951,6 +1071,7 @@ class Internal:
         return res
 
     
+    
     def list_organizations(self) -> operations.ListOrganizationsResponse:
         r"""Get a list of all of the organization ids.
         Get a list of all of the organization ids.
@@ -962,7 +1083,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -980,6 +1104,7 @@ class Internal:
 
         return res
 
+    
     
     def partially_update_org(self, request: operations.PartiallyUpdateOrgRequest) -> operations.PartiallyUpdateOrgResponse:
         r"""Update some fields of an organization to non-null values
@@ -1000,7 +1125,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1019,6 +1147,7 @@ class Internal:
         return res
 
     
+    
     def partially_update_organization(self, request: operations.PartiallyUpdateOrganizationRequest) -> operations.PartiallyUpdateOrganizationResponse:
         r"""Update some fields of an organization to non-null values
         Update some fields of an organization to non-null values, leaving all other existing values the same
@@ -1031,7 +1160,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1050,6 +1182,7 @@ class Internal:
         return res
 
     
+    
     def patch_organization_memberships(self, request: operations.PatchOrganizationMembershipsRequest) -> operations.PatchOrganizationMembershipsResponse:
         r"""Add or delete memberships in a specific role and managed organization
         Add or delete all of the memberships in a specific role and managed organization
@@ -1067,7 +1200,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1086,6 +1222,7 @@ class Internal:
         return res
 
     
+    
     def post_monitor_config_validation_job(self) -> operations.PostMonitorConfigValidationJobResponse:
         r"""Create a monitor config validation job for all configs
         Create a monitor config validation job for all configs
@@ -1097,7 +1234,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1116,6 +1256,7 @@ class Internal:
         return res
 
     
+    
     def provision_aws_marketplace_new_user(self, request: shared.ProvisionNewMarketplaceUserRequest) -> operations.ProvisionAWSMarketplaceNewUserResponse:
         r"""Create resources for a new user coming from AWS Marketplace
         Create resources for a new user coming from AWS Marketplace
@@ -1132,7 +1273,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1151,6 +1295,7 @@ class Internal:
         return res
 
     
+    
     def provision_databricks_connection(self, request: shared.ProvisionDatabricksConnectionRequest) -> operations.ProvisionDatabricksConnectionResponse:
         r"""Create resources for a new user coming from Databricks
         Create resources for a new user coming from Databricks
@@ -1167,7 +1312,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1186,6 +1334,7 @@ class Internal:
         return res
 
     
+    
     def provision_new_user(self, request: shared.ProvisionNewUserRequest) -> operations.ProvisionNewUserResponse:
         r"""Create the resources that a new user needs to use WhyLabs via the website.
         Create the resources that a new user needs to use WhyLabs via the website.
@@ -1202,7 +1351,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1221,6 +1373,7 @@ class Internal:
         return res
 
     
+    
     def put_organization_memberships(self, request: operations.PutOrganizationMembershipsRequest) -> operations.PutOrganizationMembershipsResponse:
         r"""Replace the memberships in a specific role and managed organization
         Replace all of the memberships in a specific role and managed organization
@@ -1238,7 +1391,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1257,6 +1413,7 @@ class Internal:
         return res
 
     
+    
     def put_request_monitor_run_config(self, request: operations.PutRequestMonitorRunConfigRequest) -> operations.PutRequestMonitorRunConfigResponse:
         r"""Put the RequestMonitorRun config into S3.
         Put the RequestMonitorRun config into S3.
@@ -1273,7 +1430,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1291,6 +1451,7 @@ class Internal:
         return res
 
     
+    
     def refresh_connection(self, request: shared.RefreshConnectionRequest) -> operations.RefreshConnectionResponse:
         r"""Refresh metadata for a workspace connection.
         Refresh metadata for a workspace connection.
@@ -1307,7 +1468,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1326,6 +1490,7 @@ class Internal:
         return res
 
     
+    
     def register_databricks_connection(self, request: shared.RegisterDatabricksConnectionRequest) -> operations.RegisterDatabricksConnectionResponse:
         r"""Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
         Register databricks metadata, temporarily storing it against a UUID so that it can be used to provision a databricks connection after email authentication
@@ -1342,7 +1507,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1361,6 +1529,7 @@ class Internal:
         return res
 
     
+    
     def remove_membership_by_email(self, request: shared.RemoveMembershipRequest) -> operations.RemoveMembershipByEmailResponse:
         r"""Removes membership in a given org from a user, using the user's email address.
         Removes membership in a given org from a user, using the user's email address.
@@ -1377,7 +1546,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1396,6 +1568,7 @@ class Internal:
         return res
 
     
+    
     def run_job(self, request: shared.RunJobRequest) -> operations.RunJobResponse:
         r"""Run an existing job in a given databricks workspace.
         Run an existing job in a given databricks workspace.
@@ -1412,7 +1585,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1431,6 +1607,7 @@ class Internal:
         return res
 
     
+    
     def set_default_membership(self, request: shared.SetDefaultMembershipRequest) -> operations.SetDefaultMembershipResponse:
         r"""Sets the organization that should be used when logging a user in
         Sets the organization that should be used when logging a user in
@@ -1447,7 +1624,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1466,6 +1646,7 @@ class Internal:
         return res
 
     
+    
     def stripe_payment_endpoint(self, request: str) -> operations.StripePaymentEndpointResponse:
         r"""Endpoint for Stripe payment webhooks
         Endpoint for Stripe payment webhooks
@@ -1482,7 +1663,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1501,6 +1685,7 @@ class Internal:
         return res
 
     
+    
     def update_account_user(self, request: operations.UpdateAccountUserRequest) -> operations.UpdateAccountUserResponse:
         r"""Update account user
         Update an account user's details
@@ -1518,7 +1703,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1537,6 +1725,7 @@ class Internal:
         return res
 
     
+    
     def update_connection(self, request: shared.UpdateConnectionRequest) -> operations.UpdateConnectionResponse:
         r"""Update the connection metadata for a given org
         Update the connection metadata for a given org
@@ -1553,7 +1742,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1572,6 +1764,7 @@ class Internal:
         return res
 
     
+    
     def update_membership_by_email(self, request: shared.UpdateMembershipRequest) -> operations.UpdateMembershipByEmailResponse:
         r"""Updates the role in an membership
         Updates the role in an membership, given the organization and the user's email address.
@@ -1588,7 +1781,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1607,6 +1803,7 @@ class Internal:
         return res
 
     
+    
     def update_notification_settings(self, request: operations.UpdateNotificationSettingsRequest) -> operations.UpdateNotificationSettingsResponse:
         r"""Update notification settings for an org
         Update notification settings for an org
@@ -1623,7 +1820,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1641,6 +1841,7 @@ class Internal:
 
         return res
 
+    
     
     def update_org(self, request: operations.UpdateOrgRequest) -> operations.UpdateOrgResponse:
         r"""Update an existing organization
@@ -1661,7 +1862,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1680,6 +1884,7 @@ class Internal:
         return res
 
     
+    
     def update_organization(self, request: operations.UpdateOrganizationRequest) -> operations.UpdateOrganizationResponse:
         r"""Update an existing organization
         Update all fields of an existing organization
@@ -1692,7 +1897,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1711,6 +1919,7 @@ class Internal:
         return res
 
     
+    
     def update_user(self, request: shared.User) -> operations.UpdateUserResponse:
         r"""Update a user.
         Update a user.
@@ -1727,7 +1936,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1746,6 +1958,7 @@ class Internal:
         return res
 
     
+    
     def why_labs_search(self, request: operations.WhyLabsSearchRequest) -> operations.WhyLabsSearchResponse:
         r"""WhyLabs Search
         WhyLabs Search
@@ -1758,7 +1971,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -1777,6 +1993,7 @@ class Internal:
         return res
 
     
+    
     def why_labs_search_indexing(self, request: shared.SearchIndexRequest) -> operations.WhyLabsSearchIndexingResponse:
         r"""WhyLabs Search Indexing
         WhyLabs Search Indexing
@@ -1793,7 +2010,10 @@ class Internal:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

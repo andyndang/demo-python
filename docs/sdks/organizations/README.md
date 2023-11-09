@@ -1,5 +1,5 @@
 # Organizations
-(*.organizations*)
+(*organizations*)
 
 ### Available Operations
 
@@ -56,7 +56,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateOrganizationResponse](../../models/operations/createorganizationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## delete_organization
 
@@ -93,7 +97,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.DeleteOrganizationResponse](../../models/operations/deleteorganizationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_aws_marketplace_metadata
 
@@ -130,7 +138,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetAWSMarketplaceMetadataResponse](../../models/operations/getawsmarketplacemetadataresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_organization
 
@@ -167,7 +179,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetOrganizationResponse](../../models/operations/getorganizationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_organizations
 
@@ -194,7 +210,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListOrganizationsResponse](../../models/operations/listorganizationsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## ~~partially_update_org~~
 
@@ -238,7 +258,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PartiallyUpdateOrgResponse](../../models/operations/partiallyupdateorgresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## partially_update_organization
 
@@ -283,7 +307,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.PartiallyUpdateOrganizationResponse](../../models/operations/partiallyupdateorganizationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## ~~update_org~~
 
@@ -330,7 +358,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateOrgResponse](../../models/operations/updateorgresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_organization
 
@@ -375,4 +407,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateOrganizationResponse](../../models/operations/updateorganizationresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

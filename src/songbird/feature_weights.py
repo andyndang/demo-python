@@ -12,6 +12,7 @@ class FeatureWeights:
         self.sdk_configuration = sdk_config
         
     
+    
     def get_column_weights(self, request: operations.GetColumnWeightsRequest) -> operations.GetColumnWeightsResponse:
         r"""Get column weights for the specified dataset
         Get column weights for the specified dataset
@@ -23,7 +24,10 @@ class FeatureWeights:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -42,6 +46,7 @@ class FeatureWeights:
         return res
 
     
+    
     def put_column_weights(self, request: operations.PutColumnWeightsRequest) -> operations.PutColumnWeightsResponse:
         r"""Put column weights for the specified dataset
         Put column weights for the specified dataset
@@ -58,7 +63,10 @@ class FeatureWeights:
         headers['Accept'] = 'application/json'
         headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')

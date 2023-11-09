@@ -1,5 +1,5 @@
 # Databricks
-(*.databricks*)
+(*databricks*)
 
 ### Available Operations
 
@@ -42,7 +42,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetConnectionResponse](../../models/operations/getconnectionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## list_jobs
 
@@ -77,7 +81,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListJobsResponse](../../models/operations/listjobsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## refresh_connection
 
@@ -112,7 +120,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RefreshConnectionResponse](../../models/operations/refreshconnectionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## run_job
 
@@ -149,7 +161,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.RunJobResponse](../../models/operations/runjobresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_connection
 
@@ -186,4 +202,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateConnectionResponse](../../models/operations/updateconnectionresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

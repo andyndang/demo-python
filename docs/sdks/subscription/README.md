@@ -1,5 +1,5 @@
 # Subscription
-(*.subscription*)
+(*subscription*)
 
 ### Available Operations
 
@@ -40,4 +40,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetOrganizationSubscriptionsResponse](../../models/operations/getorganizationsubscriptionsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |

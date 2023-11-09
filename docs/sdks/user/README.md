@@ -1,5 +1,5 @@
 # User
-(*.user*)
+(*user*)
 
 ### Available Operations
 
@@ -43,7 +43,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.CreateUserResponse](../../models/operations/createuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user
 
@@ -80,7 +84,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetUserResponse](../../models/operations/getuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## get_user_by_email
 
@@ -117,7 +125,11 @@ if res.status_code == 200:
 ### Response
 
 **[operations.GetUserByEmailResponse](../../models/operations/getuserbyemailresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
 
 ## update_user
 
@@ -155,4 +167,8 @@ if res.status_code == 200:
 ### Response
 
 **[operations.UpdateUserResponse](../../models/operations/updateuserresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
