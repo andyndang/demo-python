@@ -37,6 +37,7 @@ req = operations.CreateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
+    storage_bucket_override='https://s3.us-west-2.amazonaws.com/whylabs-public/',
 )
 
 res = s.organizations.create_organization(req)
@@ -288,6 +289,7 @@ req = operations.PartiallyUpdateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='abc-def-ghi-jkl',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
+    storage_bucket_override='https://s3.us-west-2.amazonaws.com/whylabs-public/',
 )
 
 res = s.organizations.partially_update_organization(req)
@@ -388,6 +390,7 @@ req = operations.UpdateOrganizationRequest(
     pager_duty_key='abc-def-ghi-jkl',
     parent_org_id='org-123',
     slack_webhook='https://hooks.slack.com/services/foo/bar',
+    storage_bucket_override='https://s3.us-west-2.amazonaws.com/whylabs-public/',
 )
 
 res = s.organizations.update_organization(req)

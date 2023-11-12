@@ -26,6 +26,7 @@ class PartiallyUpdateOrganizationRequest:
     parent_org_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'parent_org_id', 'style': 'form', 'explode': True }})
     slack_webhook: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'slack_webhook', 'style': 'form', 'explode': True }})
     r"""Slack Webhook that should be used for notifications for this organization"""
+    storage_bucket_override: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'storage_bucket_override', 'style': 'form', 'explode': True }})
     subscription_tier: Optional[shared_subscriptiontier.SubscriptionTier] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'subscription_tier', 'style': 'form', 'explode': True }})
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
