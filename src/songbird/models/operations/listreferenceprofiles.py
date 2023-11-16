@@ -25,11 +25,11 @@ class ListReferenceProfilesRequest:
 class ListReferenceProfilesResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     classes: Optional[List[shared_referenceprofileitemresponse.ReferenceProfileItemResponse]] = dataclasses.field(default=None)
     r"""The metadata for the summarized dataset profile including paths to JSON and protobuf data"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
