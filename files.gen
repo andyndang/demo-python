@@ -22,6 +22,7 @@ src/songbird/search.py
 src/songbird/sessions.py
 src/songbird/subscription.py
 src/songbird/user.py
+src/songbird/tracing.py
 src/songbird/sdk.py
 pylintrc
 setup.py
@@ -152,6 +153,8 @@ src/songbird/models/operations/createreferenceprofileupload.py
 src/songbird/models/operations/createsession.py
 src/songbird/models/operations/getsession.py
 src/songbird/models/operations/getsessionprofileobservatorylink.py
+src/songbird/models/operations/postspans_json.py
+src/songbird/models/operations/postspans_raw.py
 src/songbird/models/shared/accountuser.py
 src/songbird/models/shared/createaccountuserrequest.py
 src/songbird/models/shared/response.py
@@ -515,6 +518,10 @@ docs/models/operations/getsessionrequest.md
 docs/models/operations/getsessionresponse.md
 docs/models/operations/getsessionprofileobservatorylinkrequest.md
 docs/models/operations/getsessionprofileobservatorylinkresponse.md
+docs/models/operations/postspansjsonrequest.md
+docs/models/operations/postspansjsonresponse.md
+docs/models/operations/postspansrawrequest.md
+docs/models/operations/postspansrawresponse.md
 docs/models/shared/accountuser.md
 docs/models/shared/createaccountuserrequest.md
 docs/models/shared/response.md
@@ -682,4 +689,5 @@ docs/sdks/search/README.md
 docs/sdks/sessions/README.md
 docs/sdks/subscription/README.md
 docs/sdks/user/README.md
+docs/sdks/tracing/README.md
 .gitattributes

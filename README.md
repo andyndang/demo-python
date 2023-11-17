@@ -284,6 +284,11 @@ if res.status_code == 200:
 * [get_user](docs/sdks/user/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/user/README.md#get_user_by_email) - Get a user by their email.
 * [update_user](docs/sdks/user/README.md#update_user) - Update a user.
+
+### [tracing](docs/sdks/tracing/README.md)
+
+* [post_spans_json](docs/sdks/tracing/README.md#post_spans_json) - Publish Spans into WhyLabs
+* [post_spans_raw](docs/sdks/tracing/README.md#post_spans_raw) - Publish Spans into WhyLabs
 <!-- End SDK Available Operations -->
 
 
