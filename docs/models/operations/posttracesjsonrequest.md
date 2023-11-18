@@ -1,4 +1,4 @@
-# PostSpansJSONRequest
+# PostTracesJSONRequest
 
 
 ## Fields

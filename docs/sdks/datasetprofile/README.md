@@ -10,6 +10,8 @@
 * [get_profile_traces](#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](#get_reference_profile) - Returns a single reference profile
 * [hide_segments](#hide_segments) - Hides a list of segments
+* [list_delete_analyzer_results_requests](#list_delete_analyzer_results_requests) - List requests to delete analyzer results
+* [list_delete_dataset_profiles_requests](#list_delete_dataset_profiles_requests) - List requests to delete dataset profiles
 * [list_reference_profiles](#list_reference_profiles) - Returns a list for reference profiles between the given time range filtered on the upload timestamp
 * [list_segments](#list_segments) - Returns a list of segments
 
@@ -343,6 +345,92 @@ if res.status_code == 200:
 ### Response
 
 **[operations.HideSegmentsResponse](../../models/operations/hidesegmentsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## list_delete_analyzer_results_requests
+
+List the requests to delete analyzer results.
+
+        
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird(
+    api_key_auth="",
+)
+
+req = operations.ListDeleteAnalyzerResultsRequestsRequest(
+    org_id='org-123',
+)
+
+res = s.dataset_profile.list_delete_analyzer_results_requests(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [operations.ListDeleteAnalyzerResultsRequestsRequest](../../models/operations/listdeleteanalyzerresultsrequestsrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+
+
+### Response
+
+**[operations.ListDeleteAnalyzerResultsRequestsResponse](../../models/operations/listdeleteanalyzerresultsrequestsresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 400-600         | */*             |
+
+## list_delete_dataset_profiles_requests
+
+List the requests to delete dataset profiles.
+
+        
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird(
+    api_key_auth="",
+)
+
+req = operations.ListDeleteDatasetProfilesRequestsRequest(
+    org_id='org-123',
+)
+
+res = s.dataset_profile.list_delete_dataset_profiles_requests(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                  | Type                                                                                                                       | Required                                                                                                                   | Description                                                                                                                |
+| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                  | [operations.ListDeleteDatasetProfilesRequestsRequest](../../models/operations/listdeletedatasetprofilesrequestsrequest.md) | :heavy_check_mark:                                                                                                         | The request object to use for the request.                                                                                 |
+
+
+### Response
+
+**[operations.ListDeleteDatasetProfilesRequestsResponse](../../models/operations/listdeletedatasetprofilesrequestsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |

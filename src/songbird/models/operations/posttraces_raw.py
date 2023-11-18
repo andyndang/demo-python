@@ -4,19 +4,19 @@ from __future__ import annotations
 import dataclasses
 import requests as requests_http
 from ...models.shared import void as shared_void
-from typing import List, Optional
+from typing import Optional
 
 
 @dataclasses.dataclass
-class PostSpansJSONRequest:
-    request_body: List[str] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
+class PostTracesRawRequest:
+    request_body: bytes = dataclasses.field(metadata={'request': { 'media_type': 'application/x-protobuf' }})
     x_whylabs_resource: str = dataclasses.field(metadata={'header': { 'field_name': 'X-WHYLABS-RESOURCE', 'style': 'simple', 'explode': False }})
     
 
 
 
 @dataclasses.dataclass
-class PostSpansJSONResponse:
+class PostTracesRawResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
@@ -24,6 +24,6 @@ class PostSpansJSONResponse:
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
     void: Optional[shared_void.Void] = dataclasses.field(default=None)
-    r"""PostSpans default response"""
+    r"""PostTraces default response"""
     
 

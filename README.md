@@ -187,6 +187,8 @@ if res.status_code == 200:
 * [get_profile_traces](docs/sdks/datasetprofile/README.md#get_profile_traces) - Returns a list for profile traces matching a trace id
 * [get_reference_profile](docs/sdks/datasetprofile/README.md#get_reference_profile) - Returns a single reference profile
 * [hide_segments](docs/sdks/datasetprofile/README.md#hide_segments) - Hides a list of segments
+* [list_delete_analyzer_results_requests](docs/sdks/datasetprofile/README.md#list_delete_analyzer_results_requests) - List requests to delete analyzer results
+* [list_delete_dataset_profiles_requests](docs/sdks/datasetprofile/README.md#list_delete_dataset_profiles_requests) - List requests to delete dataset profiles
 * [list_reference_profiles](docs/sdks/datasetprofile/README.md#list_reference_profiles) - Returns a list for reference profiles between the given time range filtered on the upload timestamp
 * [list_segments](docs/sdks/datasetprofile/README.md#list_segments) - Returns a list of segments
 
@@ -287,8 +289,8 @@ if res.status_code == 200:
 
 ### [tracing](docs/sdks/tracing/README.md)
 
-* [post_spans_json](docs/sdks/tracing/README.md#post_spans_json) - Publish Spans into WhyLabs
-* [post_spans_raw](docs/sdks/tracing/README.md#post_spans_raw) - Publish Spans into WhyLabs
+* [post_traces_json](docs/sdks/tracing/README.md#post_traces_json) - Publish traces into WhyLabs
+* [post_traces_raw](docs/sdks/tracing/README.md#post_traces_raw) - Publish traces into WhyLabs
 <!-- End SDK Available Operations -->
 
 

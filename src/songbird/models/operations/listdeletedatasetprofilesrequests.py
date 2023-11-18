@@ -3,27 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ...models.shared import void as shared_void
-from typing import Optional
+from ...models.shared import deleteprofile as shared_deleteprofile
+from typing import List, Optional
 
 
 @dataclasses.dataclass
-class PostSpansRawRequest:
-    request_body: bytes = dataclasses.field(metadata={'request': { 'media_type': 'application/x-protobuf' }})
-    x_whylabs_resource: str = dataclasses.field(metadata={'header': { 'field_name': 'X-WHYLABS-RESOURCE', 'style': 'simple', 'explode': False }})
+class ListDeleteDatasetProfilesRequestsRequest:
+    org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
+    r"""Your company's unique organization ID"""
     
 
 
 
 @dataclasses.dataclass
-class PostSpansRawResponse:
+class ListDeleteDatasetProfilesRequestsResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    void: Optional[shared_void.Void] = dataclasses.field(default=None)
-    r"""PostSpans default response"""
+    classes: Optional[List[shared_deleteprofile.DeleteProfile]] = dataclasses.field(default=None)
+    r"""The list of [DeleteProfile] requests if operation succeeds"""
     
 

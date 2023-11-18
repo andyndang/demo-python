@@ -13,13 +13,13 @@ class Tracing:
         
     
     
-    def post_spans_json(self, request: operations.PostSpansJSONRequest) -> operations.PostSpansJSONResponse:
-        r"""Publish Spans into WhyLabs
-        API to publish Spans into WhyLabs
+    def post_traces_json(self, request: operations.PostTracesJSONRequest) -> operations.PostTracesJSONResponse:
+        r"""Publish traces into WhyLabs
+        API to publish traces into WhyLabs
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/v1/tracing/spans'
+        url = base_url + '/v1/traces'
         headers = utils.get_headers(request)
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -37,7 +37,7 @@ class Tracing:
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostSpansJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostTracesJSONResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
@@ -52,13 +52,13 @@ class Tracing:
 
     
     
-    def post_spans_raw(self, request: operations.PostSpansRawRequest) -> operations.PostSpansRawResponse:
-        r"""Publish Spans into WhyLabs
-        API to publish Spans into WhyLabs
+    def post_traces_raw(self, request: operations.PostTracesRawRequest) -> operations.PostTracesRawResponse:
+        r"""Publish traces into WhyLabs
+        API to publish traces into WhyLabs
         """
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
-        url = base_url + '/v1/tracing/spans'
+        url = base_url + '/v1/traces'
         headers = utils.get_headers(request)
         req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'raw')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
@@ -76,7 +76,7 @@ class Tracing:
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
         
-        res = operations.PostSpansRawResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        res = operations.PostTracesRawResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
             raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)

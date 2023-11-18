@@ -1,4 +1,4 @@
-# PostSpansRawRequest
+# PostTracesRawRequest
 
 
 ## Fields

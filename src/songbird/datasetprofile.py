@@ -266,6 +266,74 @@ class DatasetProfile:
 
     
     
+    def list_delete_analyzer_results_requests(self, request: operations.ListDeleteAnalyzerResultsRequestsRequest) -> operations.ListDeleteAnalyzerResultsRequestsResponse:
+        r"""List requests to delete analyzer results
+        List the requests to delete analyzer results.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.ListDeleteAnalyzerResultsRequestsRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/delete-requests/analyzer-results', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.ListDeleteAnalyzerResultsRequestsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.DeleteAnalyzerResult]])
+                res.classes = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
+    def list_delete_dataset_profiles_requests(self, request: operations.ListDeleteDatasetProfilesRequestsRequest) -> operations.ListDeleteDatasetProfilesRequestsResponse:
+        r"""List requests to delete dataset profiles
+        List the requests to delete dataset profiles.
+        """
+        base_url = utils.template_url(*self.sdk_configuration.get_server_details())
+        
+        url = utils.generate_url(operations.ListDeleteDatasetProfilesRequestsRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/delete-requests/dataset-profiles', request)
+        headers = {}
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
+        
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
+        
+        http_res = client.request('GET', url, headers=headers)
+        content_type = http_res.headers.get('Content-Type')
+        
+        res = operations.ListDeleteDatasetProfilesRequestsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
+        
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
+            if utils.match_content_type(content_type, 'application/json'):
+                out = utils.unmarshal_json(http_res.text, Optional[List[shared.DeleteProfile]])
+                res.classes = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
+
+        return res
+
+    
+    
     def list_reference_profiles(self, request: operations.ListReferenceProfilesRequest) -> operations.ListReferenceProfilesResponse:
         r"""Returns a list for reference profiles between the given time range filtered on the upload timestamp
         Returns a list of Reference Profiles between a given time range filtered on the upload timestamp.

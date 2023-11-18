@@ -31,6 +31,7 @@ src/songbird/utils/__init__.py
 src/songbird/utils/retries.py
 src/songbird/utils/utils.py
 src/songbird/models/errors/sdkerror.py
+tests/helpers.py
 src/songbird/models/operations/createaccountuser.py
 src/songbird/models/operations/deleteaccountuser.py
 src/songbird/models/operations/getaccountmemberships.py
@@ -110,6 +111,8 @@ src/songbird/models/operations/deletedatasetprofiles.py
 src/songbird/models/operations/deletereferenceprofile.py
 src/songbird/models/operations/getprofiletraces.py
 src/songbird/models/operations/getreferenceprofile.py
+src/songbird/models/operations/listdeleteanalyzerresultsrequests.py
+src/songbird/models/operations/listdeletedatasetprofilesrequests.py
 src/songbird/models/operations/listreferenceprofiles.py
 src/songbird/models/operations/listsegments.py
 src/songbird/models/operations/deletedatasetmetadata.py
@@ -153,8 +156,8 @@ src/songbird/models/operations/createreferenceprofileupload.py
 src/songbird/models/operations/createsession.py
 src/songbird/models/operations/getsession.py
 src/songbird/models/operations/getsessionprofileobservatorylink.py
-src/songbird/models/operations/postspans_json.py
-src/songbird/models/operations/postspans_raw.py
+src/songbird/models/operations/posttraces_json.py
+src/songbird/models/operations/posttraces_raw.py
 src/songbird/models/shared/accountuser.py
 src/songbird/models/shared/createaccountuserrequest.py
 src/songbird/models/shared/response.py
@@ -260,6 +263,9 @@ src/songbird/models/shared/deletedatasetprofilesresponse.py
 src/songbird/models/shared/profiletracesresponse.py
 src/songbird/models/shared/profiletrace.py
 src/songbird/models/shared/referenceprofileitemresponse.py
+src/songbird/models/shared/deleteanalyzerresult.py
+src/songbird/models/shared/deletionstatus.py
+src/songbird/models/shared/deleteprofile.py
 src/songbird/models/shared/segmentlistresponse.py
 src/songbird/models/shared/getdatasetmetadataresponse.py
 src/songbird/models/shared/entityweightrecord.py
@@ -433,6 +439,10 @@ docs/models/operations/getprofiletracesrequest.md
 docs/models/operations/getprofiletracesresponse.md
 docs/models/operations/getreferenceprofilerequest.md
 docs/models/operations/getreferenceprofileresponse.md
+docs/models/operations/listdeleteanalyzerresultsrequestsrequest.md
+docs/models/operations/listdeleteanalyzerresultsrequestsresponse.md
+docs/models/operations/listdeletedatasetprofilesrequestsrequest.md
+docs/models/operations/listdeletedatasetprofilesrequestsresponse.md
 docs/models/operations/listreferenceprofilesrequest.md
 docs/models/operations/listreferenceprofilesresponse.md
 docs/models/operations/listsegmentsrequest.md
@@ -518,10 +528,10 @@ docs/models/operations/getsessionrequest.md
 docs/models/operations/getsessionresponse.md
 docs/models/operations/getsessionprofileobservatorylinkrequest.md
 docs/models/operations/getsessionprofileobservatorylinkresponse.md
-docs/models/operations/postspansjsonrequest.md
-docs/models/operations/postspansjsonresponse.md
-docs/models/operations/postspansrawrequest.md
-docs/models/operations/postspansrawresponse.md
+docs/models/operations/posttracesjsonrequest.md
+docs/models/operations/posttracesjsonresponse.md
+docs/models/operations/posttracesrawrequest.md
+docs/models/operations/posttracesrawresponse.md
 docs/models/shared/accountuser.md
 docs/models/shared/createaccountuserrequest.md
 docs/models/shared/response.md
@@ -636,6 +646,9 @@ docs/models/shared/deletedatasetprofilesresponse.md
 docs/models/shared/profiletracesresponse.md
 docs/models/shared/profiletrace.md
 docs/models/shared/referenceprofileitemresponse.md
+docs/models/shared/deleteanalyzerresult.md
+docs/models/shared/deletionstatus.md
+docs/models/shared/deleteprofile.md
 docs/models/shared/segmentlistresponse.md
 docs/models/shared/getdatasetmetadataresponse.md
 docs/models/shared/entityweightrecord.md
