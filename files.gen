@@ -22,7 +22,7 @@ src/songbird/search.py
 src/songbird/sessions.py
 src/songbird/subscription.py
 src/songbird/user.py
-src/songbird/tracing.py
+src/songbird/traces.py
 src/songbird/sdk.py
 pylintrc
 setup.py
@@ -156,8 +156,8 @@ src/songbird/models/operations/createreferenceprofileupload.py
 src/songbird/models/operations/createsession.py
 src/songbird/models/operations/getsession.py
 src/songbird/models/operations/getsessionprofileobservatorylink.py
-src/songbird/models/operations/posttraces_json.py
-src/songbird/models/operations/posttraces_raw.py
+src/songbird/models/operations/exporttraces_json.py
+src/songbird/models/operations/exporttraces_raw.py
 src/songbird/models/shared/accountuser.py
 src/songbird/models/shared/createaccountuserrequest.py
 src/songbird/models/shared/response.py
@@ -294,6 +294,8 @@ src/songbird/models/shared/createsessionresponse.py
 src/songbird/models/shared/createsessionrequest.py
 src/songbird/models/shared/getsessionresponse.py
 src/songbird/models/shared/sessionmetadata.py
+src/songbird/models/shared/exporttraceserviceresponse.py
+src/songbird/models/shared/exporttracepartialsuccess.py
 src/songbird/models/shared/security.py
 src/songbird/models/__init__.py
 src/songbird/models/errors/__init__.py
@@ -528,10 +530,10 @@ docs/models/operations/getsessionrequest.md
 docs/models/operations/getsessionresponse.md
 docs/models/operations/getsessionprofileobservatorylinkrequest.md
 docs/models/operations/getsessionprofileobservatorylinkresponse.md
-docs/models/operations/posttracesjsonrequest.md
-docs/models/operations/posttracesjsonresponse.md
-docs/models/operations/posttracesrawrequest.md
-docs/models/operations/posttracesrawresponse.md
+docs/models/operations/exporttracesjsonrequest.md
+docs/models/operations/exporttracesjsonresponse.md
+docs/models/operations/exporttracesrawrequest.md
+docs/models/operations/exporttracesrawresponse.md
 docs/models/shared/accountuser.md
 docs/models/shared/createaccountuserrequest.md
 docs/models/shared/response.md
@@ -677,6 +679,8 @@ docs/models/shared/createsessionresponse.md
 docs/models/shared/createsessionrequest.md
 docs/models/shared/getsessionresponse.md
 docs/models/shared/sessionmetadata.md
+docs/models/shared/exporttraceserviceresponse.md
+docs/models/shared/exporttracepartialsuccess.md
 docs/models/shared/security.md
 docs/sdks/songbird/README.md
 docs/sdks/account/README.md
@@ -702,5 +706,5 @@ docs/sdks/search/README.md
 docs/sdks/sessions/README.md
 docs/sdks/subscription/README.md
 docs/sdks/user/README.md
-docs/sdks/tracing/README.md
+docs/sdks/traces/README.md
 .gitattributes

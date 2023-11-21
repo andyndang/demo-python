@@ -3,27 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ...models.shared import void as shared_void
+from ...models.shared import exporttraceserviceresponse as shared_exporttraceserviceresponse
 from typing import List, Optional
 
 
 @dataclasses.dataclass
-class PostTracesJSONRequest:
+class ExportTracesJSONRequest:
     request_body: List[str] = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
-    x_whylabs_resource: str = dataclasses.field(metadata={'header': { 'field_name': 'X-WHYLABS-RESOURCE', 'style': 'simple', 'explode': False }})
+    x_whylabs_resource: Optional[str] = dataclasses.field(default=None, metadata={'header': { 'field_name': 'X-WHYLABS-RESOURCE', 'style': 'simple', 'explode': False }})
     
 
 
 
 @dataclasses.dataclass
-class PostTracesJSONResponse:
+class ExportTracesJSONResponse:
     content_type: str = dataclasses.field()
     r"""HTTP response content type for this operation"""
     raw_response: requests_http.Response = dataclasses.field()
     r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
     r"""HTTP response status code for this operation"""
-    void: Optional[shared_void.Void] = dataclasses.field(default=None)
-    r"""PostTraces default response"""
+    export_trace_service_response: Optional[shared_exporttraceserviceresponse.ExportTraceServiceResponse] = dataclasses.field(default=None)
+    r"""ExportTraces default response"""
     
 

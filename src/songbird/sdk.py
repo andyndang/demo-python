@@ -24,7 +24,7 @@ from .sdkconfiguration import SDKConfiguration
 from .search import Search
 from .sessions import Sessions
 from .subscription import Subscription
-from .tracing import Tracing
+from .traces import Traces
 from .user import User
 from songbird import utils
 from songbird.models import shared
@@ -55,7 +55,7 @@ class Songbird:
     sessions: Sessions
     subscription: Subscription
     user: User
-    tracing: Tracing
+    traces: Traces
 
     sdk_configuration: SDKConfiguration
 
@@ -119,5 +119,5 @@ class Songbird:
         self.sessions = Sessions(self.sdk_configuration)
         self.subscription = Subscription(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
-        self.tracing = Tracing(self.sdk_configuration)
+        self.traces = Traces(self.sdk_configuration)
     

@@ -287,10 +287,10 @@ if res.status_code == 200:
 * [get_user_by_email](docs/sdks/user/README.md#get_user_by_email) - Get a user by their email.
 * [update_user](docs/sdks/user/README.md#update_user) - Update a user.
 
-### [tracing](docs/sdks/tracing/README.md)
+### [traces](docs/sdks/traces/README.md)
 
-* [post_traces_json](docs/sdks/tracing/README.md#post_traces_json) - Publish traces into WhyLabs
-* [post_traces_raw](docs/sdks/tracing/README.md#post_traces_raw) - Publish traces into WhyLabs
+* [export_traces_json](docs/sdks/traces/README.md#export_traces_json) - Export traces into WhyLabs
+* [export_traces_raw](docs/sdks/traces/README.md#export_traces_raw) - Export traces into WhyLabs
 <!-- End SDK Available Operations -->
 
 
