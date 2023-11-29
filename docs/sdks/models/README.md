@@ -417,7 +417,7 @@ s = songbird.Songbird(
 req = operations.PutEntitySchemaRequest(
     entity_schema=shared.EntitySchema(
         columns={
-            "key": shared.ColumnSchema(
+            'key': shared.ColumnSchema(
                 classifier='input',
                 data_type='fractional',
                 discreteness='discrete',
@@ -428,7 +428,7 @@ req = operations.PutEntitySchemaRequest(
         },
         metadata=shared.SchemaMetadata(),
         metrics={
-            "key": shared.MetricSchema(
+            'key': shared.MetricSchema(
                 column='estimated_prediction',
                 default_metric='median',
                 label='estimated_prediction.median',

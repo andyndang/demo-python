@@ -13,6 +13,7 @@ from typing import List, Optional
 class LogAsyncRequest:
     r"""Request payload for LogAsync."""
     dataset_timestamp: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datasetTimestamp'), 'exclude': lambda f: f is None }})
+    region: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
     segment_tags: Optional[List[SegmentTag]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segmentTags'), 'exclude': lambda f: f is None }})
     
 

@@ -301,7 +301,6 @@ src/songbird/models/__init__.py
 src/songbird/models/errors/__init__.py
 src/songbird/models/operations/__init__.py
 src/songbird/models/shared/__init__.py
-USAGE.md
 docs/models/operations/createaccountuserrequest.md
 docs/models/operations/createaccountuserresponse.md
 docs/models/operations/deleteaccountuserrequest.md
@@ -707,4 +706,5 @@ docs/sdks/sessions/README.md
 docs/sdks/subscription/README.md
 docs/sdks/user/README.md
 docs/sdks/traces/README.md
+USAGE.md
 .gitattributes
