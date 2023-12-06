@@ -291,6 +291,13 @@ if res.status_code == 200:
 
 * [export_traces_json](docs/sdks/traces/README.md#export_traces_json) - Export traces into WhyLabs
 * [export_traces_raw](docs/sdks/traces/README.md#export_traces_raw) - Export traces into WhyLabs
+
+### [transactions](docs/sdks/transactions/README.md)
+
+* [commit_transaction](docs/sdks/transactions/README.md#commit_transaction) - Commit a log transaction
+* [log_transaction](docs/sdks/transactions/README.md#log_transaction) - Add to a log transaction
+* [start_transaction](docs/sdks/transactions/README.md#start_transaction) - Start a log transaction
+* [transaction_status](docs/sdks/transactions/README.md#transaction_status) - Get the status of a log transaction
 <!-- End Available Resources and Operations [operations] -->
 
 
@@ -326,10 +333,9 @@ req = operations.CreateAccountUserRequest(
 res = None
 try:
     res = s.account.create_account_user(req)
-
-except (errors.SDKError) as e:
-    print(e) # handle exception
-
+except errors.SDKError as e:
+    print(e)  # handle exception
+    raise(e)
 
 if res.status_code == 200:
     # handle response

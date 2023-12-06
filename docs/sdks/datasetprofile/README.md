@@ -37,7 +37,10 @@ req = operations.CreateReferenceProfileRequest(
         segments=[
             shared.Segment(
                 tags=[
-                    shared.SegmentTag(),
+                    shared.SegmentTag(
+                        key='<key>',
+                        value='string',
+                    ),
                 ],
             ),
         ],

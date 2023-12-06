@@ -23,6 +23,7 @@ src/songbird/sessions.py
 src/songbird/subscription.py
 src/songbird/user.py
 src/songbird/traces.py
+src/songbird/transactions.py
 src/songbird/sdk.py
 pylintrc
 setup.py
@@ -158,6 +159,10 @@ src/songbird/models/operations/getsession.py
 src/songbird/models/operations/getsessionprofileobservatorylink.py
 src/songbird/models/operations/exporttraces_json.py
 src/songbird/models/operations/exporttraces_raw.py
+src/songbird/models/operations/committransaction.py
+src/songbird/models/operations/logtransaction.py
+src/songbird/models/operations/starttransaction.py
+src/songbird/models/operations/transactionstatus.py
 src/songbird/models/shared/accountuser.py
 src/songbird/models/shared/createaccountuserrequest.py
 src/songbird/models/shared/response.py
@@ -296,6 +301,11 @@ src/songbird/models/shared/getsessionresponse.py
 src/songbird/models/shared/sessionmetadata.py
 src/songbird/models/shared/exporttraceserviceresponse.py
 src/songbird/models/shared/exporttracepartialsuccess.py
+src/songbird/models/shared/transactioncommitrequest.py
+src/songbird/models/shared/transactionlogrequest.py
+src/songbird/models/shared/logtransactionmetadata.py
+src/songbird/models/shared/transactionstartrequest.py
+src/songbird/models/shared/transactionstatusresponse.py
 src/songbird/models/shared/security.py
 src/songbird/models/__init__.py
 src/songbird/models/errors/__init__.py
@@ -533,6 +543,13 @@ docs/models/operations/exporttracesjsonrequest.md
 docs/models/operations/exporttracesjsonresponse.md
 docs/models/operations/exporttracesrawrequest.md
 docs/models/operations/exporttracesrawresponse.md
+docs/models/operations/committransactionrequest.md
+docs/models/operations/committransactionresponse.md
+docs/models/operations/logtransactionrequest.md
+docs/models/operations/logtransactionresponse.md
+docs/models/operations/starttransactionresponse.md
+docs/models/operations/transactionstatusrequest.md
+docs/models/operations/transactionstatusresponse.md
 docs/models/shared/accountuser.md
 docs/models/shared/createaccountuserrequest.md
 docs/models/shared/response.md
@@ -680,6 +697,11 @@ docs/models/shared/getsessionresponse.md
 docs/models/shared/sessionmetadata.md
 docs/models/shared/exporttraceserviceresponse.md
 docs/models/shared/exporttracepartialsuccess.md
+docs/models/shared/transactioncommitrequest.md
+docs/models/shared/transactionlogrequest.md
+docs/models/shared/logtransactionmetadata.md
+docs/models/shared/transactionstartrequest.md
+docs/models/shared/transactionstatusresponse.md
 docs/models/shared/security.md
 docs/sdks/songbird/README.md
 docs/sdks/account/README.md
@@ -706,5 +728,6 @@ docs/sdks/sessions/README.md
 docs/sdks/subscription/README.md
 docs/sdks/user/README.md
 docs/sdks/traces/README.md
+docs/sdks/transactions/README.md
 USAGE.md
 .gitattributes

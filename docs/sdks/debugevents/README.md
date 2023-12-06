@@ -24,7 +24,10 @@ req = operations.LogDebugEventRequest(
     debug_event=shared.DebugEvent(
         segment=shared.Segment(
             tags=[
-                shared.SegmentTag(),
+                shared.SegmentTag(
+                    key='<key>',
+                    value='string',
+                ),
             ],
         ),
         tags=[

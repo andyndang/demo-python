@@ -116,7 +116,10 @@ s = songbird.Songbird(
 req = operations.CreateDatasetProfileUploadRequest(
     log_async_request=shared.LogAsyncRequest(
         segment_tags=[
-            shared.SegmentTag(),
+            shared.SegmentTag(
+                key='<key>',
+                value='string',
+            ),
         ],
     ),
     session_id='string',

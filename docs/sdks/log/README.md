@@ -74,7 +74,10 @@ s = songbird.Songbird(
 req = operations.LogAsyncRequest(
     log_async_request=shared.LogAsyncRequest(
         segment_tags=[
-            shared.SegmentTag(),
+            shared.SegmentTag(
+                key='<key>',
+                value='string',
+            ),
         ],
     ),
     dataset_id='model-123',
