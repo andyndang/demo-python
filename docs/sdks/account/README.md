@@ -25,7 +25,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
@@ -69,7 +69,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteAccountUserRequest(
@@ -111,7 +111,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAccountMembershipsRequest(
@@ -154,7 +154,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAccountUserByEmailRequest(
@@ -196,7 +196,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAccountUserByIDRequest(
@@ -238,7 +238,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListAccountUsersRequest(
@@ -279,7 +279,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListManagedOrganizationsRequest(
@@ -320,7 +320,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PatchOrganizationMembershipsRequest(
@@ -371,7 +371,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutOrganizationMembershipsRequest(
@@ -419,7 +419,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.UpdateAccountUserRequest(

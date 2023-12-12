@@ -21,7 +21,7 @@ class Traces:
         
         url = base_url + '/v1/traces'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ExportTracesJSONRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -60,7 +60,7 @@ class Traces:
         
         url = base_url + '/v1/traces'
         headers = utils.get_headers(request)
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'raw')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ExportTracesRawRequest, "request_body", False, False, 'raw')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

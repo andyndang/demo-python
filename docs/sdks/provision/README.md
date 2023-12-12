@@ -19,7 +19,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
@@ -63,7 +63,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ProvisionDatabricksConnectionRequest(
@@ -106,7 +106,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ProvisionNewUserRequest(
@@ -150,7 +150,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.RegisterDatabricksConnectionRequest(

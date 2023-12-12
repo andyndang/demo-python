@@ -21,7 +21,7 @@ class Sessions:
         
         url = utils.generate_url(operations.BatchCreateReferenceProfileUploadRequest, base_url, '/v0/sessions/{session_id}/references', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "batch_log_reference_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.BatchCreateReferenceProfileUploadRequest, "batch_log_reference_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -95,7 +95,7 @@ class Sessions:
         
         url = utils.generate_url(operations.CreateDatasetProfileUploadRequest, base_url, '/v0/sessions/{session_id}/upload', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "log_async_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateDatasetProfileUploadRequest, "log_async_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -134,7 +134,7 @@ class Sessions:
         
         url = utils.generate_url(operations.CreateReferenceProfileUploadRequest, base_url, '/v0/sessions/{session_id}/reference', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "log_reference_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateReferenceProfileUploadRequest, "log_reference_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -173,7 +173,7 @@ class Sessions:
         
         url = base_url + '/v0/sessions'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.CreateSessionRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -246,7 +246,7 @@ class Sessions:
         
         url = utils.generate_url(operations.GetSessionProfileObservatoryLinkRequest, base_url, '/v0/sessions/observatory-link/{session_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "get_profile_observatory_link_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetSessionProfileObservatoryLinkRequest, "get_profile_observatory_link_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

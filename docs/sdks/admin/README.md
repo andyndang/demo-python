@@ -17,7 +17,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GenerateReportRequest(
@@ -57,7 +57,7 @@ Create a monitor config validation job for all configs
 import songbird
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 

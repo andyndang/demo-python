@@ -290,7 +290,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PatchMonitorConfigV3Request, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/v3', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PatchMonitorConfigV3Request, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -329,7 +329,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutAnalyzerRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/analyzer/{analyzer_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutAnalyzerRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -368,7 +368,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutMonitorRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/monitor/{monitor_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutMonitorRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -407,7 +407,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutMonitorConfigV3Request, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/v3', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutMonitorConfigV3Request, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -446,7 +446,7 @@ class Monitor:
         
         url = utils.generate_url(operations.PutRequestMonitorRunConfigRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/request-monitor-run', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutRequestMonitorRunConfigRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -484,7 +484,7 @@ class Monitor:
         
         url = utils.generate_url(operations.ValidateMonitorConfigV3Request, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/monitor-config/v3/validate', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.ValidateMonitorConfigV3Request, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

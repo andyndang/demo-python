@@ -22,7 +22,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.BatchCreateReferenceProfileUploadRequest(
@@ -68,7 +68,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ClaimGuestSessionRequest(
@@ -110,7 +110,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateDatasetProfileUploadRequest(
@@ -159,7 +159,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateReferenceProfileUploadRequest(
@@ -201,7 +201,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.CreateSessionRequest(
@@ -242,7 +242,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetSessionRequest(
@@ -283,7 +283,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetSessionProfileObservatoryLinkRequest(

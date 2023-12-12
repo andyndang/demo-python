@@ -21,7 +21,7 @@ class Internal:
         
         url = utils.generate_url(operations.CreateAccountUserRequest, base_url, '/v0/accounts/org/{org_id}/user', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_account_user_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateAccountUserRequest, "create_account_user_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -60,7 +60,7 @@ class Internal:
         
         url = base_url + '/v0/membership'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.AddMembershipRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -134,7 +134,7 @@ class Internal:
         
         url = base_url + '/v0/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.CreateUserRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -449,7 +449,7 @@ class Internal:
         
         url = base_url + '/v0/databricks/get-connection'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.GetConnectionRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -865,7 +865,7 @@ class Internal:
         
         url = utils.generate_url(operations.HideSegmentsRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{dataset_id}/segments/hide', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "segments_list_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.HideSegmentsRequest, "segments_list_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -973,7 +973,7 @@ class Internal:
         
         url = base_url + '/v0/databricks/list-jobs'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.ListJobsRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1116,7 +1116,7 @@ class Internal:
         
         url = base_url + '/v0/organizations/partial/'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PartiallyUpdateOrgRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1191,7 +1191,7 @@ class Internal:
         
         url = utils.generate_url(operations.PatchOrganizationMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "patch_account_memberships_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PatchOrganizationMembershipsRequest, "patch_account_memberships_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1265,7 +1265,7 @@ class Internal:
         
         url = base_url + '/v0/provision/marketplace/aws/new-user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.ProvisionNewMarketplaceUserRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1304,7 +1304,7 @@ class Internal:
         
         url = base_url + '/v0/provision/connect/databricks'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.ProvisionDatabricksConnectionRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1343,7 +1343,7 @@ class Internal:
         
         url = base_url + '/v0/provision/new-user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.ProvisionNewUserRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1382,7 +1382,7 @@ class Internal:
         
         url = utils.generate_url(operations.PutOrganizationMembershipsRequest, base_url, '/v0/accounts/org/{org_id}/memberships', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "put_account_memberships_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutOrganizationMembershipsRequest, "put_account_memberships_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1422,7 +1422,7 @@ class Internal:
         
         url = utils.generate_url(operations.PutRequestMonitorRunConfigRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/request-monitor-run', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutRequestMonitorRunConfigRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1460,7 +1460,7 @@ class Internal:
         
         url = base_url + '/v0/databricks/refresh-connection'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.RefreshConnectionRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1499,7 +1499,7 @@ class Internal:
         
         url = base_url + '/v0/provision/connect/databricks/staged'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.RegisterDatabricksConnectionRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1538,7 +1538,7 @@ class Internal:
         
         url = base_url + '/v0/membership'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.RemoveMembershipRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1577,7 +1577,7 @@ class Internal:
         
         url = base_url + '/v0/databricks/run-job'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.RunJobRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1616,7 +1616,7 @@ class Internal:
         
         url = base_url + '/v0/membership/default'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.SetDefaultMembershipRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1655,7 +1655,7 @@ class Internal:
         
         url = base_url + '/v0/payment/stripe'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, str, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1694,7 +1694,7 @@ class Internal:
         
         url = utils.generate_url(operations.UpdateAccountUserRequest, base_url, '/v0/accounts/org/{org_id}/user', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "update_account_user_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateAccountUserRequest, "update_account_user_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1734,7 +1734,7 @@ class Internal:
         
         url = base_url + '/v0/databricks/update-connection'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.UpdateConnectionRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1773,7 +1773,7 @@ class Internal:
         
         url = base_url + '/v0/membership'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.UpdateMembershipRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1812,7 +1812,7 @@ class Internal:
         
         url = utils.generate_url(operations.UpdateNotificationSettingsRequest, base_url, '/v0/notification-settings/{org_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "notification_settings", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateNotificationSettingsRequest, "notification_settings", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1853,7 +1853,7 @@ class Internal:
         
         url = base_url + '/v0/organizations'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateOrgRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -1928,7 +1928,7 @@ class Internal:
         
         url = base_url + '/v0/user'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.User, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -2002,7 +2002,7 @@ class Internal:
         
         url = base_url + '/v0/search/index'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, shared.SearchIndexRequest, "request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

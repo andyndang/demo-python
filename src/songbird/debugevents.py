@@ -20,7 +20,7 @@ class DebugEvents:
         
         url = utils.generate_url(operations.LogDebugEventRequest, base_url, '/v0/organizations/{org_id}/debug-events/resources/{dataset_id}/debug-events/log', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "debug_event", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.LogDebugEventRequest, "debug_event", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

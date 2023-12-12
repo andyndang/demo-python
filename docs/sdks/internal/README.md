@@ -70,7 +70,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
@@ -114,7 +114,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.AddMembershipRequest(
@@ -157,7 +157,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateOrganizationRequest(
@@ -207,7 +207,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.CreateUserRequest(
@@ -248,7 +248,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteAccountUserRequest(
@@ -290,7 +290,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteOrganizationRequest(
@@ -331,7 +331,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GenerateReportRequest(
@@ -372,7 +372,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAWSMarketplaceMetadataRequest(
@@ -413,7 +413,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAccountMembershipsRequest(
@@ -456,7 +456,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAccountUserByEmailRequest(
@@ -498,7 +498,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAccountUserByIDRequest(
@@ -540,7 +540,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAPIKeyRequest(
@@ -582,7 +582,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.GetConnectionRequest()
@@ -621,7 +621,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetDefaultMembershipForEmailRequest(
@@ -662,7 +662,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetFeatureFlagsRequest(
@@ -704,7 +704,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMembershipsRequest(
@@ -745,7 +745,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMembershipsByEmailRequest(
@@ -786,7 +786,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMembershipsByOrgRequest(
@@ -827,7 +827,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMonitorConfigV3VersionRequest(
@@ -870,7 +870,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetNotificationSettingsRequest(
@@ -911,7 +911,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetOrganizationRequest(
@@ -952,7 +952,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetOrganizationSubscriptionsRequest(
@@ -993,7 +993,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetUserRequest(
@@ -1034,7 +1034,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetUserByEmailRequest(
@@ -1077,7 +1077,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.HideSegmentsRequest(
@@ -1124,7 +1124,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListAccountUsersRequest(
@@ -1165,7 +1165,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListAPIKeysRequest(
@@ -1207,7 +1207,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ListJobsRequest()
@@ -1246,7 +1246,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListManagedOrganizationsRequest(
@@ -1287,7 +1287,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListMonitorConfigV3VersionsRequest(
@@ -1328,7 +1328,7 @@ Get a list of all of the organization ids.
 import songbird
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -1362,7 +1362,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PartiallyUpdateOrgRequest(
@@ -1408,7 +1408,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PartiallyUpdateOrganizationRequest(
@@ -1458,7 +1458,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PatchOrganizationMembershipsRequest(
@@ -1508,7 +1508,7 @@ Create a monitor config validation job for all configs
 import songbird
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 
@@ -1540,7 +1540,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ProvisionNewMarketplaceUserRequest(
@@ -1584,7 +1584,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ProvisionDatabricksConnectionRequest(
@@ -1627,7 +1627,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.ProvisionNewUserRequest(
@@ -1671,7 +1671,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutOrganizationMembershipsRequest(
@@ -1719,7 +1719,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutRequestMonitorRunConfigRequest(
@@ -1781,7 +1781,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.RefreshConnectionRequest()
@@ -1820,7 +1820,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.RegisterDatabricksConnectionRequest(
@@ -1869,7 +1869,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.RemoveMembershipRequest(
@@ -1911,7 +1911,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.RunJobRequest(
@@ -1952,7 +1952,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.SetDefaultMembershipRequest(
@@ -1993,7 +1993,7 @@ Endpoint for Stripe payment webhooks
 import songbird
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = 'string'
@@ -2032,7 +2032,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.UpdateAccountUserRequest(
@@ -2075,7 +2075,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.UpdateConnectionRequest(
@@ -2116,7 +2116,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.UpdateMembershipRequest(
@@ -2159,7 +2159,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.UpdateNotificationSettingsRequest(
@@ -2216,7 +2216,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.UpdateOrgRequest(
@@ -2265,7 +2265,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.UpdateOrganizationRequest(
@@ -2315,7 +2315,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.User(
@@ -2357,7 +2357,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.WhyLabsSearchRequest(
@@ -2398,7 +2398,7 @@ import songbird
 from songbird.models import shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = shared.SearchIndexRequest()

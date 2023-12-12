@@ -29,7 +29,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteAnalyzerRequest(
@@ -72,7 +72,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteMonitorRequest(
@@ -115,7 +115,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAnalyzerRequest(
@@ -158,7 +158,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMonitorRequest(
@@ -201,7 +201,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMonitorConfigV3Request(
@@ -243,7 +243,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetMonitorConfigV3VersionRequest(
@@ -286,7 +286,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListConstraintsRequest(
@@ -328,7 +328,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListMonitorConfigV3VersionsRequest(
@@ -370,7 +370,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PatchMonitorConfigV3Request(
@@ -413,7 +413,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutAnalyzerRequest(
@@ -457,7 +457,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutMonitorRequest(
@@ -501,7 +501,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutMonitorConfigV3Request(
@@ -544,7 +544,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.PutRequestMonitorRunConfigRequest(
@@ -606,7 +606,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ValidateMonitorConfigV3Request(

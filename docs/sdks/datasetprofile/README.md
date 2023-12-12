@@ -29,7 +29,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateReferenceProfileRequest(
@@ -88,7 +88,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteAnalyzerResultsRequest(
@@ -134,7 +134,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteDatasetProfilesRequest(
@@ -181,7 +181,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.DeleteReferenceProfileRequest(
@@ -226,7 +226,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetProfileTracesRequest(
@@ -273,7 +273,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetReferenceProfileRequest(
@@ -318,7 +318,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.HideSegmentsRequest(
@@ -367,7 +367,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListDeleteAnalyzerResultsRequestsRequest(
@@ -410,7 +410,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListDeleteDatasetProfilesRequestsRequest(
@@ -453,7 +453,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListReferenceProfilesRequest(
@@ -499,7 +499,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListSegmentsRequest(

@@ -29,7 +29,7 @@ from .transactions import Transactions
 from .user import User
 from songbird import utils
 from songbird.models import shared
-from typing import Callable, Dict, Union
+from typing import Dict, Optional
 
 class Songbird:
     r"""WhyLabs Songbird: WhyLabs API that enables end-to-end AI observability"""
@@ -62,7 +62,7 @@ class Songbird:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key_auth: Union[str,Callable[[], str]],
+                 api_key_auth: Optional[str]  = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,

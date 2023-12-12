@@ -15,7 +15,7 @@ Endpoint for Stripe payment webhooks
 import songbird
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = 'string'

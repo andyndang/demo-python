@@ -21,7 +21,7 @@ class Log:
         
         url = utils.generate_url(operations.GetProfileObservatoryLinkRequest, base_url, '/v0/organizations/{org_id}/log/observatory-link/{dataset_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "get_profile_observatory_link_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.GetProfileObservatoryLinkRequest, "get_profile_observatory_link_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -60,7 +60,7 @@ class Log:
         
         url = utils.generate_url(operations.LogAsyncRequest, base_url, '/v0/organizations/{org_id}/log/async/{dataset_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "log_async_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.LogAsyncRequest, "log_async_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -99,7 +99,7 @@ class Log:
         
         url = utils.generate_url(operations.LogReferenceRequest, base_url, '/v0/organizations/{org_id}/log/reference/{model_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "log_reference_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.LogReferenceRequest, "log_reference_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

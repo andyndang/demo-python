@@ -19,7 +19,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAPIKeyRequest(
@@ -27,11 +27,7 @@ req = operations.CreateAPIKeyRequest(
     expiration_time=1577836800000,
     org_id='org-123',
     scopes=[
-        ':',
-        'u',
-        's',
-        'e',
-        'r',
+        ':user',
     ],
     user_id='user-123',
 )
@@ -70,7 +66,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.GetAPIKeyRequest(
@@ -112,7 +108,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.ListAPIKeysRequest(
@@ -154,7 +150,7 @@ import songbird
 from songbird.models import operations
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.RevokeAPIKeyRequest(

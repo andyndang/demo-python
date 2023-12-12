@@ -21,7 +21,7 @@ class NotificationSettings:
         
         url = utils.generate_url(operations.AddNotificationActionRequest, base_url, '/v0/notification-settings/{org_id}/actions/{type}/{action_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.AddNotificationActionRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -264,7 +264,7 @@ class NotificationSettings:
         
         url = utils.generate_url(operations.PutNotificationActionRequest, base_url, '/v0/notification-settings/{org_id}/actions/{type}/{action_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutNotificationActionRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -337,7 +337,7 @@ class NotificationSettings:
         
         url = utils.generate_url(operations.UpdateNotificationActionRequest, base_url, '/v0/notification-settings/{org_id}/actions/{type}/{action_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateNotificationActionRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -376,7 +376,7 @@ class NotificationSettings:
         
         url = utils.generate_url(operations.UpdateNotificationSettingsRequest, base_url, '/v0/notification-settings/{org_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "notification_settings", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateNotificationSettingsRequest, "notification_settings", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

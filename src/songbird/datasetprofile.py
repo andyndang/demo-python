@@ -23,7 +23,7 @@ class DatasetProfile:
         
         url = utils.generate_url(operations.CreateReferenceProfileRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{dataset_id}/reference-profile', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "create_reference_profile_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.CreateReferenceProfileRequest, "create_reference_profile_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
@@ -235,7 +235,7 @@ class DatasetProfile:
         
         url = utils.generate_url(operations.HideSegmentsRequest, base_url, '/v0/organizations/{org_id}/dataset-profiles/models/{dataset_id}/segments/hide', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "segments_list_request", False, False, 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.HideSegmentsRequest, "segments_list_request", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:

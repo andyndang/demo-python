@@ -18,7 +18,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
@@ -320,7 +320,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
@@ -364,7 +364,7 @@ from songbird.models import operations, shared
 
 s = songbird.Songbird(
     server_idx=0,
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
@@ -391,7 +391,7 @@ from songbird.models import operations, shared
 
 s = songbird.Songbird(
     server_url="https://api.whylabsapp.com",
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
@@ -446,7 +446,7 @@ import songbird
 from songbird.models import operations, shared
 
 s = songbird.Songbird(
-    api_key_auth="",
+    api_key_auth="<YOUR_API_KEY_HERE>",
 )
 
 req = operations.CreateAccountUserRequest(
