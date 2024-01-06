@@ -4,16 +4,16 @@ management:
   docChecksum: 518f272d4b20844b12c8039bef5c7428
   docVersion: "0.1"
   speakeasyVersion: internal
-  generationVersion: 2.225.2
-  releaseVersion: 2.2.1
-  configChecksum: 5632faee893b8ecdd98c75fd70247ccd
+  generationVersion: 2.228.1
+  releaseVersion: 2.2.2
+  configChecksum: eed7c6f5a0451a6a572cc8c02212bbdd
   repoURL: https://github.com/andyndang/demo-python.git
   repoSubDirectory: .
   installationURL: https://github.com/andyndang/demo-python.git
 features:
   python:
     constsAndDefaults: 0.1.2
-    core: 4.4.0
+    core: 4.4.1
     deprecations: 2.81.1
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.1
