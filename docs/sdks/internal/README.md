@@ -3,6 +3,7 @@
 
 ### Available Operations
 
+* [azure_marketplace_webhook](#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 * [create_account_user](#create_account_user) - Create an account user
 * [create_membership](#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
 * [create_organization](#create_organization) - Create an organization
@@ -58,6 +59,44 @@
 * [update_user](#update_user) - Update a user.
 * [why_labs_search](#why_labs_search) - WhyLabs Search
 * [why_labs_search_indexing](#why_labs_search_indexing) - WhyLabs Search Indexing
+
+## azure_marketplace_webhook
+
+Endpoint for Azure Marketplace webhooks
+
+### Example Usage
+
+```python
+import songbird
+
+s = songbird.Songbird(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
+
+req = 'string'
+
+res = s.internal.azure_marketplace_webhook(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [str](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
+
+
+### Response
+
+**[operations.AzureMarketplaceWebhookResponse](../../models/operations/azuremarketplacewebhookresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## create_account_user
 

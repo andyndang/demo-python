@@ -54,6 +54,7 @@ if res.status_code == 200:
 
 ### [internal](docs/sdks/internal/README.md)
 
+* [azure_marketplace_webhook](docs/sdks/internal/README.md#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 * [create_account_user](docs/sdks/internal/README.md#create_account_user) - Create an account user
 * [create_membership](docs/sdks/internal/README.md#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
 * [create_organization](docs/sdks/internal/README.md#create_organization) - Create an organization
@@ -126,6 +127,10 @@ if res.status_code == 200:
 ### [feature_flags](docs/sdks/featureflags/README.md)
 
 * [get_feature_flags](docs/sdks/featureflags/README.md#get_feature_flags) - Get feature flags for the specified user/org
+
+### [azure_marketplace](docs/sdks/azuremarketplace/README.md)
+
+* [azure_marketplace_webhook](docs/sdks/azuremarketplace/README.md#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 
 ### [membership](docs/sdks/membership/README.md)
 

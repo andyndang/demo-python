@@ -4,6 +4,7 @@ import requests as requests_http
 from .account import Account
 from .admin import Admin
 from .apikey import APIKey
+from .azure_marketplace import AzureMarketplace
 from .databricks import Databricks
 from .dataset_metadata import DatasetMetadata
 from .datasetprofile import DatasetProfile
@@ -38,6 +39,7 @@ class Songbird:
     admin: Admin
     databricks: Databricks
     feature_flags: FeatureFlags
+    azure_marketplace: AzureMarketplace
     membership: Membership
     notification_settings: NotificationSettings
     organizations: Organizations
@@ -103,6 +105,7 @@ class Songbird:
         self.admin = Admin(self.sdk_configuration)
         self.databricks = Databricks(self.sdk_configuration)
         self.feature_flags = FeatureFlags(self.sdk_configuration)
+        self.azure_marketplace = AzureMarketplace(self.sdk_configuration)
         self.membership = Membership(self.sdk_configuration)
         self.notification_settings = NotificationSettings(self.sdk_configuration)
         self.organizations = Organizations(self.sdk_configuration)

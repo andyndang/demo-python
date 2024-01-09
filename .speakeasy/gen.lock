@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd7cd1e0-223d-4eaf-b419-697408a59d08
 management:
-  docChecksum: 518f272d4b20844b12c8039bef5c7428
+  docChecksum: 432a47c070a6886e1cad4ac025d3484a
   docVersion: "0.1"
   speakeasyVersion: internal
-  generationVersion: 2.228.1
-  releaseVersion: 2.2.2
-  configChecksum: eed7c6f5a0451a6a572cc8c02212bbdd
+  generationVersion: 2.230.1
+  releaseVersion: 2.2.3
+  configChecksum: 6404500dab8cf0ac22073b12a410c0ed
   repoURL: https://github.com/andyndang/demo-python.git
   repoSubDirectory: .
   installationURL: https://github.com/andyndang/demo-python.git
@@ -24,6 +24,7 @@ generatedFiles:
   - src/songbird/admin.py
   - src/songbird/databricks.py
   - src/songbird/featureflags.py
+  - src/songbird/azure_marketplace.py
   - src/songbird/membership.py
   - src/songbird/notification_settings.py
   - src/songbird/organizations.py
@@ -63,6 +64,7 @@ generatedFiles:
   - src/songbird/models/operations/patchorganizationmemberships.py
   - src/songbird/models/operations/putorganizationmemberships.py
   - src/songbird/models/operations/updateaccountuser.py
+  - src/songbird/models/operations/azuremarketplacewebhook.py
   - src/songbird/models/operations/createmembership.py
   - src/songbird/models/operations/createorganization.py
   - src/songbird/models/operations/createuser.py
@@ -351,6 +353,7 @@ generatedFiles:
   - docs/models/operations/putorganizationmembershipsresponse.md
   - docs/models/operations/updateaccountuserrequest.md
   - docs/models/operations/updateaccountuserresponse.md
+  - docs/models/operations/azuremarketplacewebhookresponse.md
   - docs/models/operations/createmembershipresponse.md
   - docs/models/operations/createorganizationrequest.md
   - docs/models/operations/createorganizationresponse.md
@@ -729,6 +732,7 @@ generatedFiles:
   - docs/sdks/admin/README.md
   - docs/sdks/databricks/README.md
   - docs/sdks/featureflags/README.md
+  - docs/sdks/azuremarketplace/README.md
   - docs/sdks/membership/README.md
   - docs/sdks/notificationsettings/README.md
   - docs/sdks/organizations/README.md
