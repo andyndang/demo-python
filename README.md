@@ -54,6 +54,7 @@ if res.status_code == 200:
 
 ### [internal](docs/sdks/internal/README.md)
 
+* [activate_azure_subscription](docs/sdks/internal/README.md#activate_azure_subscription) - Endpoint to activate Azure Marketplace subscriptions
 * [azure_marketplace_webhook](docs/sdks/internal/README.md#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 * [create_account_user](docs/sdks/internal/README.md#create_account_user) - Create an account user
 * [create_membership](docs/sdks/internal/README.md#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -127,10 +128,6 @@ if res.status_code == 200:
 ### [feature_flags](docs/sdks/featureflags/README.md)
 
 * [get_feature_flags](docs/sdks/featureflags/README.md#get_feature_flags) - Get feature flags for the specified user/org
-
-### [azure_marketplace](docs/sdks/azuremarketplace/README.md)
-
-* [azure_marketplace_webhook](docs/sdks/azuremarketplace/README.md#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 
 ### [membership](docs/sdks/membership/README.md)
 
@@ -291,6 +288,11 @@ if res.status_code == 200:
 * [get_user](docs/sdks/user/README.md#get_user) - Get a user by their id.
 * [get_user_by_email](docs/sdks/user/README.md#get_user_by_email) - Get a user by their email.
 * [update_user](docs/sdks/user/README.md#update_user) - Update a user.
+
+### [azure_marketplace](docs/sdks/azuremarketplace/README.md)
+
+* [activate_azure_subscription](docs/sdks/azuremarketplace/README.md#activate_azure_subscription) - Endpoint to activate Azure Marketplace subscriptions
+* [azure_marketplace_webhook](docs/sdks/azuremarketplace/README.md#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 
 ### [traces](docs/sdks/traces/README.md)
 

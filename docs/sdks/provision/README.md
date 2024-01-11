@@ -113,7 +113,7 @@ req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
     model_name='string',
     org_name='string',
-    subscription_tier=shared.SubscriptionTier.FREE,
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.provision.provision_new_user(req)

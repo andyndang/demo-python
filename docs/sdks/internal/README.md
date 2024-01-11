@@ -3,6 +3,7 @@
 
 ### Available Operations
 
+* [activate_azure_subscription](#activate_azure_subscription) - Endpoint to activate Azure Marketplace subscriptions
 * [azure_marketplace_webhook](#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 * [create_account_user](#create_account_user) - Create an account user
 * [create_membership](#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -59,6 +60,49 @@
 * [update_user](#update_user) - Update a user.
 * [why_labs_search](#why_labs_search) - WhyLabs Search
 * [why_labs_search_indexing](#why_labs_search_indexing) - WhyLabs Search Indexing
+
+## activate_azure_subscription
+
+Endpoint to activate Azure Marketplace subscriptions
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import shared
+
+s = songbird.Songbird(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
+
+req = shared.ActivateAzureSubscriptionRequest(
+    email='Travis_Cummings7@gmail.com',
+    marketplace_token='string',
+    org_name='string',
+)
+
+res = s.internal.activate_azure_subscription(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                          | Type                                                                                               | Required                                                                                           | Description                                                                                        |
+| -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `request`                                                                                          | [shared.ActivateAzureSubscriptionRequest](../../models/shared/activateazuresubscriptionrequest.md) | :heavy_check_mark:                                                                                 | The request object to use for the request.                                                         |
+
+
+### Response
+
+**[operations.ActivateAzureSubscriptionResponse](../../models/operations/activateazuresubscriptionresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
 
 ## azure_marketplace_webhook
 
@@ -1673,7 +1717,7 @@ req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
     model_name='string',
     org_name='string',
-    subscription_tier=shared.SubscriptionTier.FREE,
+    subscription_tier=shared.SubscriptionTier.PAID,
 )
 
 res = s.internal.provision_new_user(req)

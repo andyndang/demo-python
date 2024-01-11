@@ -39,7 +39,6 @@ class Songbird:
     admin: Admin
     databricks: Databricks
     feature_flags: FeatureFlags
-    azure_marketplace: AzureMarketplace
     membership: Membership
     notification_settings: NotificationSettings
     organizations: Organizations
@@ -58,6 +57,7 @@ class Songbird:
     sessions: Sessions
     subscription: Subscription
     user: User
+    azure_marketplace: AzureMarketplace
     traces: Traces
     transactions: Transactions
 
@@ -105,7 +105,6 @@ class Songbird:
         self.admin = Admin(self.sdk_configuration)
         self.databricks = Databricks(self.sdk_configuration)
         self.feature_flags = FeatureFlags(self.sdk_configuration)
-        self.azure_marketplace = AzureMarketplace(self.sdk_configuration)
         self.membership = Membership(self.sdk_configuration)
         self.notification_settings = NotificationSettings(self.sdk_configuration)
         self.organizations = Organizations(self.sdk_configuration)
@@ -124,6 +123,7 @@ class Songbird:
         self.sessions = Sessions(self.sdk_configuration)
         self.subscription = Subscription(self.sdk_configuration)
         self.user = User(self.sdk_configuration)
+        self.azure_marketplace = AzureMarketplace(self.sdk_configuration)
         self.traces = Traces(self.sdk_configuration)
         self.transactions = Transactions(self.sdk_configuration)
     
