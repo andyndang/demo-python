@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd7cd1e0-223d-4eaf-b419-697408a59d08
 management:
-  docChecksum: 98be55e7e884eafdc3619224bd55a850
+  docChecksum: 987276e89238f56b496d414376315eb5
   docVersion: "0.1"
   speakeasyVersion: internal
-  generationVersion: 2.230.3
-  releaseVersion: 2.2.4
-  configChecksum: c83f35758f8a77577fcb92ed22e28d11
+  generationVersion: 2.233.2
+  releaseVersion: 2.2.5
+  configChecksum: 3a14f81b4bf0da1e29f0def3da0ea283
   repoURL: https://github.com/andyndang/demo-python.git
   repoSubDirectory: .
   installationURL: https://github.com/andyndang/demo-python.git

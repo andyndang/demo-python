@@ -1717,7 +1717,7 @@ req = shared.ProvisionNewUserRequest(
     email='Alec40@hotmail.com',
     model_name='string',
     org_name='string',
-    subscription_tier=shared.SubscriptionTier.PAID,
+    subscription_tier=shared.SubscriptionTier.FREE,
 )
 
 res = s.internal.provision_new_user(req)
