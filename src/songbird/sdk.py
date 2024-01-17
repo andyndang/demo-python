@@ -30,7 +30,7 @@ from .transactions import Transactions
 from .user import User
 from songbird import utils
 from songbird.models import shared
-from typing import Dict, Optional
+from typing import Callable, Dict, Optional, Union
 
 class Songbird:
     r"""WhyLabs Songbird: WhyLabs API that enables end-to-end AI observability"""
@@ -64,7 +64,7 @@ class Songbird:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 api_key_auth: Optional[str]  = None,
+                 api_key_auth: Union[Optional[str], Callable[[], Optional[str]]] = None,
                  server_idx: int = None,
                  server_url: str = None,
                  url_params: Dict[str, str] = None,
@@ -74,7 +74,7 @@ class Songbird:
         """Instantiates the SDK configuring it with the provided parameters.
         
         :param api_key_auth: The api_key_auth required for authentication
-        :type api_key_auth: Union[str,Callable[[], str]]
+        :type api_key_auth: Union[Optional[str], Callable[[], Optional[str]]]
         :param server_idx: The index of the server to use for all operations
         :type server_idx: int
         :param server_url: The server URL to use for all operations
@@ -89,7 +89,11 @@ class Songbird:
         if client is None:
             client = requests_http.Session()
         
-        security = shared.Security(api_key_auth = api_key_auth)
+        if callable(api_key_auth):
+            def security():
+                return shared.Security(api_key_auth = api_key_auth())
+        else:
+            security = shared.Security(api_key_auth = api_key_auth)
         
         if server_url is not None:
             if url_params is not None:
