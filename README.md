@@ -55,6 +55,7 @@ if res.status_code == 200:
 ### [internal](docs/sdks/internal/README.md)
 
 * [activate_azure_subscription](docs/sdks/internal/README.md#activate_azure_subscription) - Endpoint to activate Azure Marketplace subscriptions
+* [activate_marketplace_subscription_internal](docs/sdks/internal/README.md#activate_marketplace_subscription_internal) - Activate Azure Marketplace subscription to an existing organization.
 * [azure_marketplace_webhook](docs/sdks/internal/README.md#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 * [create_account_user](docs/sdks/internal/README.md#create_account_user) - Create an account user
 * [create_membership](docs/sdks/internal/README.md#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -83,6 +84,7 @@ if res.status_code == 200:
 * [hide_segments](docs/sdks/internal/README.md#hide_segments) - Hides a list of segments
 * [list_account_users](docs/sdks/internal/README.md#list_account_users) - List users in an account
 * [list_api_keys](docs/sdks/internal/README.md#list_api_keys) - List API key metadata for a given organization and user
+* [list_azure_marketplace_subscriptions](docs/sdks/internal/README.md#list_azure_marketplace_subscriptions) - List Azure Marketplace subscriptions
 * [list_jobs](docs/sdks/internal/README.md#list_jobs) - List all of the jobs in a workspace.
 * [list_managed_organizations](docs/sdks/internal/README.md#list_managed_organizations) - List managed organizations for a parent organization
 * [list_monitor_config_v3_versions](docs/sdks/internal/README.md#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
@@ -114,7 +116,9 @@ if res.status_code == 200:
 
 ### [admin](docs/sdks/admin/README.md)
 
+* [activate_marketplace_subscription_internal](docs/sdks/admin/README.md#activate_marketplace_subscription_internal) - Activate Azure Marketplace subscription to an existing organization.
 * [generate_report](docs/sdks/admin/README.md#generate_report) - Generate an admin report
+* [list_azure_marketplace_subscriptions](docs/sdks/admin/README.md#list_azure_marketplace_subscriptions) - List Azure Marketplace subscriptions
 * [post_monitor_config_validation_job](docs/sdks/admin/README.md#post_monitor_config_validation_job) - Create a monitor config validation job for all configs
 
 ### [databricks](docs/sdks/databricks/README.md)

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: dd7cd1e0-223d-4eaf-b419-697408a59d08
 management:
-  docChecksum: 987276e89238f56b496d414376315eb5
+  docChecksum: b0f84bea80b1ddb3221da988856ffa5b
   docVersion: "0.1"
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 2.2.6
-  configChecksum: b3af7550c6f48abd4bf11f3c0cd7593a
+  generationVersion: 2.235.3
+  releaseVersion: 2.2.7
+  configChecksum: 836f86ba735e520b9dd4fcfb583b98f6
   repoURL: https://github.com/andyndang/demo-python.git
   repoSubDirectory: .
   installationURL: https://github.com/andyndang/demo-python.git
@@ -65,6 +65,7 @@ generatedFiles:
   - src/songbird/models/operations/putorganizationmemberships.py
   - src/songbird/models/operations/updateaccountuser.py
   - src/songbird/models/operations/activateazuresubscription.py
+  - src/songbird/models/operations/activatemarketplacesubscriptioninternal.py
   - src/songbird/models/operations/azuremarketplacewebhook.py
   - src/songbird/models/operations/createmembership.py
   - src/songbird/models/operations/createorganization.py
@@ -87,6 +88,7 @@ generatedFiles:
   - src/songbird/models/operations/getuserbyemail.py
   - src/songbird/models/operations/hidesegments.py
   - src/songbird/models/operations/listapikeys.py
+  - src/songbird/models/operations/listazuremarketplacesubscriptions.py
   - src/songbird/models/operations/listjobs.py
   - src/songbird/models/operations/listmonitorconfigv3versions.py
   - src/songbird/models/operations/listorganizations.py
@@ -232,6 +234,8 @@ generatedFiles:
   - src/songbird/models/shared/subscriptionproductfeature.py
   - src/songbird/models/shared/segmentslistrequest.py
   - src/songbird/models/shared/listuserapikeys.py
+  - src/songbird/models/shared/azuremarketplacesubscriptiondetails.py
+  - src/songbird/models/shared/azuremarketplacecontactpayload.py
   - src/songbird/models/shared/listjobsresponse.py
   - src/songbird/models/shared/dto_jobs_jobdto.py
   - src/songbird/models/shared/dto_jobs_jobsettingsdto.py
@@ -357,6 +361,8 @@ generatedFiles:
   - docs/models/operations/updateaccountuserrequest.md
   - docs/models/operations/updateaccountuserresponse.md
   - docs/models/operations/activateazuresubscriptionresponse.md
+  - docs/models/operations/activatemarketplacesubscriptioninternalrequest.md
+  - docs/models/operations/activatemarketplacesubscriptioninternalresponse.md
   - docs/models/operations/azuremarketplacewebhookresponse.md
   - docs/models/operations/createmembershipresponse.md
   - docs/models/operations/createorganizationrequest.md
@@ -397,6 +403,7 @@ generatedFiles:
   - docs/models/operations/hidesegmentsresponse.md
   - docs/models/operations/listapikeysrequest.md
   - docs/models/operations/listapikeysresponse.md
+  - docs/models/operations/listazuremarketplacesubscriptionsresponse.md
   - docs/models/operations/listjobsresponse.md
   - docs/models/operations/listmonitorconfigv3versionsrequest.md
   - docs/models/operations/listmonitorconfigv3versionsresponse.md
@@ -623,6 +630,8 @@ generatedFiles:
   - docs/models/shared/subscriptionproductfeature.md
   - docs/models/shared/segmentslistrequest.md
   - docs/models/shared/listuserapikeys.md
+  - docs/models/shared/azuremarketplacesubscriptiondetails.md
+  - docs/models/shared/azuremarketplacecontactpayload.md
   - docs/models/shared/listjobsresponse.md
   - docs/models/shared/dtojobsjobdto.md
   - docs/models/shared/libraries.md

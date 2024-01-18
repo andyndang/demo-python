@@ -4,6 +4,7 @@
 ### Available Operations
 
 * [activate_azure_subscription](#activate_azure_subscription) - Endpoint to activate Azure Marketplace subscriptions
+* [activate_marketplace_subscription_internal](#activate_marketplace_subscription_internal) - Activate Azure Marketplace subscription to an existing organization.
 * [azure_marketplace_webhook](#azure_marketplace_webhook) - Endpoint for Azure Marketplace webhooks
 * [create_account_user](#create_account_user) - Create an account user
 * [create_membership](#create_membership) - Create a membership for a user, making them apart of an organization. Uses the user's current email address.
@@ -32,6 +33,7 @@
 * [hide_segments](#hide_segments) - Hides a list of segments
 * [list_account_users](#list_account_users) - List users in an account
 * [list_api_keys](#list_api_keys) - List API key metadata for a given organization and user
+* [list_azure_marketplace_subscriptions](#list_azure_marketplace_subscriptions) - List Azure Marketplace subscriptions
 * [list_jobs](#list_jobs) - List all of the jobs in a workspace.
 * [list_managed_organizations](#list_managed_organizations) - List managed organizations for a parent organization
 * [list_monitor_config_v3_versions](#list_monitor_config_v3_versions) - List the monitor config document versions for a given dataset.
@@ -98,6 +100,48 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ActivateAzureSubscriptionResponse](../../models/operations/activateazuresubscriptionresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## activate_marketplace_subscription_internal
+
+Activate Azure Marketplace subscription to an existing organization.
+
+### Example Usage
+
+```python
+import songbird
+from songbird.models import operations
+
+s = songbird.Songbird(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
+
+req = operations.ActivateMarketplaceSubscriptionInternalRequest(
+    org_id='string',
+    subscription_id='string',
+)
+
+res = s.internal.activate_marketplace_subscription_internal(req)
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+### Parameters
+
+| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                              | [operations.ActivateMarketplaceSubscriptionInternalRequest](../../models/operations/activatemarketplacesubscriptioninternalrequest.md) | :heavy_check_mark:                                                                                                                     | The request object to use for the request.                                                                                             |
+
+
+### Response
+
+**[operations.ActivateMarketplaceSubscriptionInternalResponse](../../models/operations/activatemarketplacesubscriptioninternalresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
@@ -1273,6 +1317,37 @@ if res.status_code == 200:
 ### Response
 
 **[operations.ListAPIKeysResponse](../../models/operations/listapikeysresponse.md)**
+### Errors
+
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4x-5xx          | */*             |
+
+## list_azure_marketplace_subscriptions
+
+List Azure Marketplace subscriptions
+
+### Example Usage
+
+```python
+import songbird
+
+s = songbird.Songbird(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
+
+
+res = s.internal.list_azure_marketplace_subscriptions()
+
+if res.status_code == 200:
+    # handle response
+    pass
+```
+
+
+### Response
+
+**[operations.ListAzureMarketplaceSubscriptionsResponse](../../models/operations/listazuremarketplacesubscriptionsresponse.md)**
 ### Errors
 
 | Error Object    | Status Code     | Content Type    |
