@@ -2,18 +2,18 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import organizationsummary as shared_organizationsummary
+from .organizationsummary import OrganizationSummary
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ListOrganizationsResponse:
     r"""Response for listing organization"""
-    
-    items: list[shared_organizationsummary.OrganizationSummary] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
+    items: List[OrganizationSummary] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""A list of all known organization metadata"""
     internal: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('internal'), 'exclude': lambda f: f is None }})
     
+

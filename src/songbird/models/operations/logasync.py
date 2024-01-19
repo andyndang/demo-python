@@ -3,31 +3,29 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import asynclogresponse as shared_asynclogresponse
-from ..shared import logasyncrequest as shared_logasyncrequest
+from ...models.shared import asynclogresponse as shared_asynclogresponse
+from ...models.shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
 
 @dataclasses.dataclass
-class LogAsyncSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class LogAsyncRequest:
-    
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     log_async_request: shared_logasyncrequest.LogAsyncRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class LogAsyncResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     async_log_response: Optional[shared_asynclogresponse.AsyncLogResponse] = dataclasses.field(default=None)
     r"""LogAsync default response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

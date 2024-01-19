@@ -3,28 +3,26 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import notificationaction as shared_notificationaction
-from typing import Optional
+from ...models.shared import notificationaction as shared_notificationaction
+from typing import List, Optional
 
-
-@dataclasses.dataclass
-class ListNotificationActionsSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclasses.dataclass
 class ListNotificationActionsRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class ListNotificationActionsResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    notification_actions: Optional[list[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    classes: Optional[List[shared_notificationaction.NotificationAction]] = dataclasses.field(default=None)
     r"""ListNotificationActions default response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import databricksconnection as shared_databricksconnection
+from .databricksconnection import DatabricksConnection
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 
@@ -10,7 +10,6 @@ from songbird import utils
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetConnectionResponse:
-    r"""GetConnection default response"""
+    connection: DatabricksConnection = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection') }})
     
-    connection: shared_databricksconnection.DatabricksConnection = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connection') }})
-    
+

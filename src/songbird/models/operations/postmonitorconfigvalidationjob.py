@@ -3,21 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
+from ...models.shared import void as shared_void
+from typing import Optional
 
-
-@dataclasses.dataclass
-class PostMonitorConfigValidationJobSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclasses.dataclass
 class PostMonitorConfigValidationJobResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    void: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    void: Optional[shared_void.Void] = dataclasses.field(default=None)
     r"""PostMonitorConfigValidationJob default response"""
     
+

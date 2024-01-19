@@ -3,28 +3,26 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchresponse as shared_searchresponse
+from ...models.shared import searchresponse as shared_searchresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
-class WhyLabsSearchSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class WhyLabsSearchRequest:
-    
     query: str = dataclasses.field(metadata={'query_param': { 'field_name': 'query', 'style': 'form', 'explode': True }})
     
 
+
+
 @dataclasses.dataclass
 class WhyLabsSearchResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
     search_response: Optional[shared_searchresponse.SearchResponse] = dataclasses.field(default=None)
     r"""WhyLabs Search default response"""
     
+

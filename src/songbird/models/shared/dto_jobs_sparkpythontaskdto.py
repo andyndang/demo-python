@@ -4,13 +4,18 @@ from __future__ import annotations
 import dataclasses
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Any, Optional
+from typing import List, Optional
+
+
+@dataclasses.dataclass
+class DTOJobsSparkPythonTaskDTOParameters:
+    pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DTOJobsSparkPythonTaskDTO:
-    
-    parameters: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
+    parameters: Optional[List[DTOJobsSparkPythonTaskDTOParameters]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parameters'), 'exclude': lambda f: f is None }})
     python_file: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pythonFile'), 'exclude': lambda f: f is None }})
     
+

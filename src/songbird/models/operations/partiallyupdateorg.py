@@ -3,30 +3,24 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import organizationsummary as shared_organizationsummary
-from ..shared import subscriptiontier as shared_subscriptiontier
+from ...models.shared import organizationsummary as shared_organizationsummary
+from ...models.shared import subscriptiontier as shared_subscriptiontier
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
 
 
-@dataclasses.dataclass
-class PartiallyUpdateOrgSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class PartiallyUpdateOrgRequestBody:
-    
     org_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('org_id'), 'exclude': lambda f: f is None }})
     r"""The unique ID of an organization. If an organization with this ID does not exist, this method will throw an exception."""
     
 
+
+
 @dataclasses.dataclass
 class PartiallyUpdateOrgRequest:
-    
     request_body: PartiallyUpdateOrgRequestBody = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     domain: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'domain', 'style': 'form', 'explode': True }})
     r"""Domain associated with this organization"""
@@ -42,12 +36,17 @@ class PartiallyUpdateOrgRequest:
     r"""Organization's subscription tier. Should be PAID for real customers"""
     
 
+
+
 @dataclasses.dataclass
 class PartiallyUpdateOrgResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     organization_summary: Optional[shared_organizationsummary.OrganizationSummary] = dataclasses.field(default=None)
     r"""A summary of the organization object if succeeds"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

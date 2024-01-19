@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import dto_clusters_dbfsstorageinfodto as shared_dto_clusters_dbfsstorageinfodto
-from ..shared import dto_clusters_s3storageinfodto as shared_dto_clusters_s3storageinfodto
+from .dto_clusters_dbfsstorageinfodto import DTOClustersDbfsStorageInfoDTO
+from .dto_clusters_s3storageinfodto import DTOClustersS3StorageInfoDTO
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -12,7 +12,7 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class DTOClustersClusterLogConfDTO:
+    dbfs: Optional[DTOClustersDbfsStorageInfoDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dbfs'), 'exclude': lambda f: f is None }})
+    s3: Optional[DTOClustersS3StorageInfoDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3'), 'exclude': lambda f: f is None }})
     
-    dbfs: Optional[shared_dto_clusters_dbfsstorageinfodto.DTOClustersDbfsStorageInfoDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dbfs'), 'exclude': lambda f: f is None }})
-    s3: Optional[shared_dto_clusters_s3storageinfodto.DTOClustersS3StorageInfoDTO] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('s3'), 'exclude': lambda f: f is None }})
-    
+

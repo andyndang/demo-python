@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class DatasetMetadata:
@@ -12,7 +12,8 @@ class DatasetMetadata:
         self.sdk_configuration = sdk_config
         
     
-    def delete_dataset_metadata(self, request: operations.DeleteDatasetMetadataRequest, security: operations.DeleteDatasetMetadataSecurity) -> operations.DeleteDatasetMetadataResponse:
+    
+    def delete_dataset_metadata(self, request: operations.DeleteDatasetMetadataRequest) -> operations.DeleteDatasetMetadataResponse:
         r"""Delete dataset metadata for the specified dataset
         Delete dataset metadata for the specified dataset
         """
@@ -21,24 +22,32 @@ class DatasetMetadata:
         url = utils.generate_url(operations.DeleteDatasetMetadataRequest, base_url, '/v0/organizations/{org_id}/dataset/{dataset_id}/metadata', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeleteDatasetMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def get_dataset_metadata(self, request: operations.GetDatasetMetadataRequest, security: operations.GetDatasetMetadataSecurity) -> operations.GetDatasetMetadataResponse:
+    
+    def get_dataset_metadata(self, request: operations.GetDatasetMetadataRequest) -> operations.GetDatasetMetadataResponse:
         r"""Get dataset metadata for the specified dataset
         Get dataset metadata for the specified dataset
         """
@@ -47,24 +56,32 @@ class DatasetMetadata:
         url = utils.generate_url(operations.GetDatasetMetadataRequest, base_url, '/v0/organizations/{org_id}/dataset/{dataset_id}/metadata', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetDatasetMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.GetDatasetMetadataResponse])
                 res.get_dataset_metadata_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def put_dataset_metadata(self, request: operations.PutDatasetMetadataRequest, security: operations.PutDatasetMetadataSecurity) -> operations.PutDatasetMetadataResponse:
+    
+    def put_dataset_metadata(self, request: operations.PutDatasetMetadataRequest) -> operations.PutDatasetMetadataResponse:
         r"""Put dataset metadata for the specified dataset
         Put dataset metadata for the specified dataset
         """
@@ -72,25 +89,32 @@ class DatasetMetadata:
         
         url = utils.generate_url(operations.PutDatasetMetadataRequest, base_url, '/v0/organizations/{org_id}/dataset/{dataset_id}/metadata', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'string')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutDatasetMetadataRequest, "request_body", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PutDatasetMetadataResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

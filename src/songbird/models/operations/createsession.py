@@ -3,16 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createsessionresponse as shared_createsessionresponse
+from ...models.shared import createsessionresponse as shared_createsessionresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
 class CreateSessionResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_session_response: Optional[shared_createsessionresponse.CreateSessionResponse] = dataclasses.field(default=None)
     r"""A new session id that can be used to upload dataset profiles."""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

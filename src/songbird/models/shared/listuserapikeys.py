@@ -2,16 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import userapikey as shared_userapikey
+from .userapikey import UserAPIKey
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class ListUserAPIKeys:
     r"""Response for listing API key metadata"""
-    
-    items: list[shared_userapikey.UserAPIKey] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
+    items: List[UserAPIKey] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items') }})
     r"""A list of all known API key metadata"""
     
+

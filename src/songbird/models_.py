@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from songbird import utils
-from songbird.models import operations, shared
+from songbird.models import errors, operations, shared
 from typing import Optional
 
 class Models:
@@ -12,7 +12,8 @@ class Models:
         self.sdk_configuration = sdk_config
         
     
-    def create_model(self, request: operations.CreateModelRequest, security: operations.CreateModelSecurity) -> operations.CreateModelResponse:
+    
+    def create_model(self, request: operations.CreateModelRequest) -> operations.CreateModelResponse:
         r"""Create a model with a given name and a time period
         Create a model
         """
@@ -22,24 +23,32 @@ class Models:
         headers = {}
         query_params = utils.get_query_params(operations.CreateModelRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.CreateModelResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ModelMetadataResponse])
                 res.model_metadata_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def deactivate_model(self, request: operations.DeactivateModelRequest, security: operations.DeactivateModelSecurity) -> operations.DeactivateModelResponse:
+    
+    def deactivate_model(self, request: operations.DeactivateModelRequest) -> operations.DeactivateModelResponse:
         r"""Mark a model as inactive
         Mark a model as inactive
         """
@@ -48,24 +57,32 @@ class Models:
         url = utils.generate_url(operations.DeactivateModelRequest, base_url, '/v0/organizations/{org_id}/models/{model_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeactivateModelResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ModelMetadataResponse])
                 res.model_metadata_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def delete_entity_schema(self, request: operations.DeleteEntitySchemaRequest, security: operations.DeleteEntitySchemaSecurity) -> operations.DeleteEntitySchemaResponse:
+    
+    def delete_entity_schema(self, request: operations.DeleteEntitySchemaRequest) -> operations.DeleteEntitySchemaResponse:
         r"""Delete the entity schema config for a given dataset.
         Delete the entity schema config for a given dataset.
         """
@@ -74,24 +91,32 @@ class Models:
         url = utils.generate_url(operations.DeleteEntitySchemaRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeleteEntitySchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def delete_entity_schema_column(self, request: operations.DeleteEntitySchemaColumnRequest, security: operations.DeleteEntitySchemaColumnSecurity) -> operations.DeleteEntitySchemaColumnResponse:
+    
+    def delete_entity_schema_column(self, request: operations.DeleteEntitySchemaColumnRequest) -> operations.DeleteEntitySchemaColumnResponse:
         r"""Delete the entity schema of a single column for a given dataset.
         Delete the entity schema of a single column for a given dataset.
         """
@@ -100,24 +125,32 @@ class Models:
         url = utils.generate_url(operations.DeleteEntitySchemaColumnRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/column/{column_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeleteEntitySchemaColumnResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def delete_entity_schema_metric(self, request: operations.DeleteEntitySchemaMetricRequest, security: operations.DeleteEntitySchemaMetricSecurity) -> operations.DeleteEntitySchemaMetricResponse:
+    
+    def delete_entity_schema_metric(self, request: operations.DeleteEntitySchemaMetricRequest) -> operations.DeleteEntitySchemaMetricResponse:
         r"""Delete the schema of a single metric for a given dataset.
         Delete the schema of a single metric for a given dataset.
         """
@@ -126,24 +159,32 @@ class Models:
         url = utils.generate_url(operations.DeleteEntitySchemaMetricRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/metric/{metric_label}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeleteEntitySchemaMetricResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def get_entity_schema(self, request: operations.GetEntitySchemaRequest, security: operations.GetEntitySchemaSecurity) -> operations.GetEntitySchemaResponse:
+    
+    def get_entity_schema(self, request: operations.GetEntitySchemaRequest) -> operations.GetEntitySchemaResponse:
         r"""Get the entity schema config for a given dataset.
         Get the entity schema config for a given dataset.
         """
@@ -152,24 +193,32 @@ class Models:
         url = utils.generate_url(operations.GetEntitySchemaRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetEntitySchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.EntitySchema])
                 res.entity_schema = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def get_entity_schema_column(self, request: operations.GetEntitySchemaColumnRequest, security: operations.GetEntitySchemaColumnSecurity) -> operations.GetEntitySchemaColumnResponse:
+    
+    def get_entity_schema_column(self, request: operations.GetEntitySchemaColumnRequest) -> operations.GetEntitySchemaColumnResponse:
         r"""Get the entity schema of a single column for a given dataset.
         Get the entity schema of a single column for a given dataset.
         """
@@ -178,24 +227,32 @@ class Models:
         url = utils.generate_url(operations.GetEntitySchemaColumnRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/column/{column_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetEntitySchemaColumnResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ColumnSchema])
                 res.column_schema = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def get_model(self, request: operations.GetModelRequest, security: operations.GetModelSecurity) -> operations.GetModelResponse:
+    
+    def get_model(self, request: operations.GetModelRequest) -> operations.GetModelResponse:
         r"""Get a model metadata
         Returns various metadata about a model
         """
@@ -204,24 +261,32 @@ class Models:
         url = utils.generate_url(operations.GetModelRequest, base_url, '/v0/organizations/{org_id}/models/{model_id}', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetModelResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ModelMetadataResponse])
                 res.model_metadata_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def list_models(self, request: operations.ListModelsRequest, security: operations.ListModelsSecurity) -> operations.ListModelsResponse:
+    
+    def list_models(self, request: operations.ListModelsRequest) -> operations.ListModelsResponse:
         r"""Get a list of all of the model ids for an organization.
         Get a list of all of the model ids for an organization.
         """
@@ -230,24 +295,32 @@ class Models:
         url = utils.generate_url(operations.ListModelsRequest, base_url, '/v0/organizations/{org_id}/models', request)
         headers = {}
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.ListModelsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ListModelsResponse])
                 res.list_models_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def put_entity_schema(self, request: operations.PutEntitySchemaRequest, security: operations.PutEntitySchemaSecurity) -> operations.PutEntitySchemaResponse:
+    
+    def put_entity_schema(self, request: operations.PutEntitySchemaRequest) -> operations.PutEntitySchemaResponse:
         r"""Save the entity schema config for a given dataset.
         Save the entity schema config for a given dataset.
         """
@@ -255,30 +328,38 @@ class Models:
         
         url = utils.generate_url(operations.PutEntitySchemaRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "entity_schema", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutEntitySchemaRequest, "entity_schema", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PutEntitySchemaResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def put_entity_schema_column(self, request: operations.PutEntitySchemaColumnRequest, security: operations.PutEntitySchemaColumnSecurity) -> operations.PutEntitySchemaColumnResponse:
+    
+    def put_entity_schema_column(self, request: operations.PutEntitySchemaColumnRequest) -> operations.PutEntitySchemaColumnResponse:
         r"""Save the entity schema of a single column for a given dataset.
         Save the entity schema of a single column for a given dataset.
         """
@@ -286,30 +367,38 @@ class Models:
         
         url = utils.generate_url(operations.PutEntitySchemaColumnRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/column/{column_id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "column_schema", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutEntitySchemaColumnRequest, "column_schema", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PutEntitySchemaColumnResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def put_entity_schema_metric(self, request: operations.PutEntitySchemaMetricRequest, security: operations.PutEntitySchemaMetricSecurity) -> operations.PutEntitySchemaMetricResponse:
+    
+    def put_entity_schema_metric(self, request: operations.PutEntitySchemaMetricRequest) -> operations.PutEntitySchemaMetricResponse:
         r"""Save the schema of a single metric for a given dataset.
         Save the schema of a single metric for a given dataset.
         """
@@ -317,30 +406,38 @@ class Models:
         
         url = utils.generate_url(operations.PutEntitySchemaMetricRequest, base_url, '/v0/organizations/{org_id}/models/{dataset_id}/schema/metric', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "metric_schema", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.PutEntitySchemaMetricRequest, "metric_schema", False, False, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
         if data is None and form is None:
             raise Exception('request body is required')
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PutEntitySchemaMetricResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.Response])
                 res.response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 
     
-    def update_model(self, request: operations.UpdateModelRequest, security: operations.UpdateModelSecurity) -> operations.UpdateModelResponse:
+    
+    def update_model(self, request: operations.UpdateModelRequest) -> operations.UpdateModelResponse:
         r"""Update a model's metadata
         Update a model's metadata
         """
@@ -350,19 +447,26 @@ class Models:
         headers = {}
         query_params = utils.get_query_params(operations.UpdateModelRequest, request)
         headers['Accept'] = 'application/json'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = utils.configure_security_client(self.sdk_configuration.client, security)
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PUT', url, params=query_params, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.UpdateModelResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
-        if True:
+        if http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
+            raise errors.SDKError('API error occurred', http_res.status_code, http_res.text, http_res)
+        else:
             if utils.match_content_type(content_type, 'application/json'):
                 out = utils.unmarshal_json(http_res.text, Optional[shared.ModelMetadataResponse])
                 res.model_metadata_response = out
+            else:
+                raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
 
         return res
 

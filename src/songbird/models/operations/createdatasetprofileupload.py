@@ -3,24 +3,28 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import asynclogresponse as shared_asynclogresponse
-from ..shared import logasyncrequest as shared_logasyncrequest
+from ...models.shared import createdatasetprofileuploadresponse as shared_createdatasetprofileuploadresponse
+from ...models.shared import logasyncrequest as shared_logasyncrequest
 from typing import Optional
 
 
 @dataclasses.dataclass
 class CreateDatasetProfileUploadRequest:
-    
     log_async_request: shared_logasyncrequest.LogAsyncRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     session_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'session_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class CreateDatasetProfileUploadResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    async_log_response: Optional[shared_asynclogresponse.AsyncLogResponse] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    create_dataset_profile_upload_response: Optional[shared_createdatasetprofileuploadresponse.CreateDatasetProfileUploadResponse] = dataclasses.field(default=None)
     r"""CreateDatasetProfileUpload default response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

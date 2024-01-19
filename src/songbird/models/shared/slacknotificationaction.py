@@ -10,6 +10,6 @@ from songbird import utils
 @dataclasses.dataclass
 class SlackNotificationAction:
     r"""Slack payload for Notification Actions"""
-    
     slack_webhook: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('slackWebhook') }})
     
+

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import awsmarketplacemetadata as shared_awsmarketplacemetadata
+from .awsmarketplacemetadata import AWSMarketplaceMetadata
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 
@@ -11,6 +11,6 @@ from songbird import utils
 @dataclasses.dataclass
 class GetMarketplaceMetadataResponse:
     r"""Response for listing organization"""
+    metadata: AWSMarketplaceMetadata = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
     
-    metadata: shared_awsmarketplacemetadata.AWSMarketplaceMetadata = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metadata') }})
-    
+

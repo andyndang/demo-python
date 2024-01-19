@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import segment as shared_segment
+from .segment import Segment
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
-from typing import Optional
+from typing import Dict, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class SegmentWeight:
-    
-    segment: Optional[shared_segment.Segment] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segment'), 'exclude': lambda f: f is None }})
-    weights: Optional[dict[str, float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weights'), 'exclude': lambda f: f is None }})
+    segment: Optional[Segment] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('segment'), 'exclude': lambda f: f is None }})
+    weights: Optional[Dict[str, float]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weights'), 'exclude': lambda f: f is None }})
     r"""Entity weight value for each entity"""
     
+

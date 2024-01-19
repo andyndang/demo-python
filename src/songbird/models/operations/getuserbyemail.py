@@ -3,28 +3,26 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import user as shared_user
+from ...models.shared import user as shared_user
 from typing import Optional
 
 
 @dataclasses.dataclass
-class GetUserByEmailSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class GetUserByEmailRequest:
-    
     email: str = dataclasses.field(metadata={'query_param': { 'field_name': 'email', 'style': 'form', 'explode': True }})
     
 
+
+
 @dataclasses.dataclass
 class GetUserByEmailResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
     user: Optional[shared_user.User] = dataclasses.field(default=None)
     r"""GetUserByEmail default response"""
     
+

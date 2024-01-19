@@ -3,21 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import modelmetadataresponse as shared_modelmetadataresponse
-from ..shared import modeltype as shared_modeltype
-from ..shared import timeperiod as shared_timeperiod
+from ...models.shared import modelmetadataresponse as shared_modelmetadataresponse
+from ...models.shared import modeltype as shared_modeltype
+from ...models.shared import timeperiod as shared_timeperiod
 from typing import Optional
 
 
 @dataclasses.dataclass
-class UpdateModelSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class UpdateModelRequest:
-    
     model_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'model_id', 'style': 'simple', 'explode': False }})
     r"""The model ID"""
     model_name: str = dataclasses.field(metadata={'query_param': { 'field_name': 'model_name', 'style': 'form', 'explode': True }})
@@ -30,12 +23,17 @@ class UpdateModelRequest:
     r"""The [ModelType] of the dataset"""
     
 
+
+
 @dataclasses.dataclass
 class UpdateModelResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     model_metadata_response: Optional[shared_modelmetadataresponse.ModelMetadataResponse] = dataclasses.field(default=None)
     r"""The [ModelMetadataResponse] if operation succeeds"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

@@ -3,32 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import columnschema as shared_columnschema
-from ..shared import response as shared_response
+from ...models.shared import columnschema as shared_columnschema
+from ...models.shared import response as shared_response
 from typing import Optional
 
 
 @dataclasses.dataclass
-class PutEntitySchemaColumnSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class PutEntitySchemaColumnRequest:
-    
     column_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'column_id', 'style': 'simple', 'explode': False }})
     column_schema: shared_columnschema.ColumnSchema = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class PutEntitySchemaColumnResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
     response: Optional[shared_response.Response] = dataclasses.field(default=None)
     r"""PutEntitySchemaColumn default response"""
     
+

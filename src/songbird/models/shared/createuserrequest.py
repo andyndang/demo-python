@@ -10,7 +10,7 @@ from songbird import utils
 @dataclasses.dataclass
 class CreateUserRequest:
     r"""Request for creating a new user"""
-    
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     r"""The users email address"""
     
+

@@ -3,29 +3,27 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import monitorconfigversion as shared_monitorconfigversion
-from typing import Optional
+from ...models.shared import monitorconfigversion as shared_monitorconfigversion
+from typing import List, Optional
 
-
-@dataclasses.dataclass
-class ListMonitorConfigV3VersionsSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
 
 @dataclasses.dataclass
 class ListMonitorConfigV3VersionsRequest:
-    
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class ListMonitorConfigV3VersionsResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    monitor_config_versions: Optional[list[shared_monitorconfigversion.MonitorConfigVersion]] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    classes: Optional[List[shared_monitorconfigversion.MonitorConfigVersion]] = dataclasses.field(default=None)
     r"""ListMonitorConfigV3Versions default response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

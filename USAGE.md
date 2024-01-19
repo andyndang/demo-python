@@ -1,16 +1,23 @@
-<!-- Start SDK Example Usage -->
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import songbird
-from songbird.models import operations
+from songbird.models import operations, shared
 
-s = songbird.Songbird()
+s = songbird.Songbird(
+    api_key_auth="<YOUR_API_KEY_HERE>",
+)
 
+req = operations.CreateAccountUserRequest(
+    create_account_user_request=shared.CreateAccountUserRequest(
+        email='Jason_Skiles63@yahoo.com',
+    ),
+    org_id='org-123',
+)
 
-res = s.admin.post_monitor_config_validation_job(operations.PostMonitorConfigValidationJobSecurity(
-    api_key_auth="YOUR_API_KEY_HERE",
-))
+res = s.account.create_account_user(req)
 
 if res.status_code == 200:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->

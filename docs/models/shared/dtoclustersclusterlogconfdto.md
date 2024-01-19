@@ -1,0 +1,9 @@
+# DTOClustersClusterLogConfDTO
+
+
+## Fields
+
+| Field                                                                                                  | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `dbfs`                                                                                                 | [Optional[shared.DTOClustersDbfsStorageInfoDTO]](../../models/shared/dtoclustersdbfsstorageinfodto.md) | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |
+| `s3`                                                                                                   | [Optional[shared.DTOClustersS3StorageInfoDTO]](../../models/shared/dtoclusterss3storageinfodto.md)     | :heavy_minus_sign:                                                                                     | N/A                                                                                                    |

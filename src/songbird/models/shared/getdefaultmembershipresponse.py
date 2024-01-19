@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 import dataclasses
-from ..shared import membership as shared_membership
+from .membership import Membership
 from dataclasses_json import Undefined, dataclass_json
 from songbird import utils
 from typing import Optional
@@ -11,8 +11,7 @@ from typing import Optional
 @dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class GetDefaultMembershipResponse:
-    r"""GetDefaultMembershipForEmail default response"""
-    
-    membership: Optional[shared_membership.Membership] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('membership'), 'exclude': lambda f: f is None }})
+    membership: Optional[Membership] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('membership'), 'exclude': lambda f: f is None }})
     r"""Response for the get memberships"""
     
+

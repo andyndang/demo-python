@@ -7,23 +7,21 @@ from typing import Optional
 
 
 @dataclasses.dataclass
-class GetMonitorConfigSchemaSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class GetMonitorConfigSchemaRequest:
-    
     org_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'org_id', 'style': 'simple', 'explode': False }})
     
 
+
+
 @dataclasses.dataclass
 class GetMonitorConfigSchemaResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    get_monitor_config_schema_default_application_json_string: Optional[str] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    res: Optional[str] = dataclasses.field(default=None)
     r"""GetMonitorConfigSchema default response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

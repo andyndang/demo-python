@@ -1,0 +1,16 @@
+# DeleteProfile
+
+
+## Fields
+
+| Field                                                                    | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `before_upload_ts`                                                       | *Optional[int]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `creation_timestamp`                                                     | *Optional[int]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `dataset_id`                                                             | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `delete_gte`                                                             | *Optional[int]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `delete_lt`                                                              | *Optional[int]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `id`                                                                     | *Optional[int]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `org_id`                                                                 | *Optional[str]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `status`                                                                 | [Optional[shared.DeletionStatus]](../../models/shared/deletionstatus.md) | :heavy_minus_sign:                                                       | N/A                                                                      |
+| `updated_timestamp`                                                      | *Optional[int]*                                                          | :heavy_minus_sign:                                                       | N/A                                                                      |

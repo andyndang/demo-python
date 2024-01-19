@@ -3,20 +3,13 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import createreferenceprofilerequest as shared_createreferenceprofilerequest
-from ..shared import createreferenceprofileresponse as shared_createreferenceprofileresponse
+from ...models.shared import createreferenceprofilerequest as shared_createreferenceprofilerequest
+from ...models.shared import createreferenceprofileresponse as shared_createreferenceprofileresponse
 from typing import Optional
 
 
 @dataclasses.dataclass
-class CreateReferenceProfileSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class CreateReferenceProfileRequest:
-    
     create_reference_profile_request: shared_createreferenceprofilerequest.CreateReferenceProfileRequest = dataclasses.field(metadata={'request': { 'media_type': 'application/json' }})
     dataset_id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'dataset_id', 'style': 'simple', 'explode': False }})
     r"""The unique model ID in your company."""
@@ -24,12 +17,17 @@ class CreateReferenceProfileRequest:
     r"""Your company's unique organization ID"""
     
 
+
+
 @dataclasses.dataclass
 class CreateReferenceProfileResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     create_reference_profile_response: Optional[shared_createreferenceprofileresponse.CreateReferenceProfileResponse] = dataclasses.field(default=None)
     r"""The metadata for the summarized reference profile data"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+

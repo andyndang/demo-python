@@ -1,0 +1,11 @@
+# StartTransactionResponse
+
+
+## Fields
+
+| Field                                                                                    | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `content_type`                                                                           | *str*                                                                                    | :heavy_check_mark:                                                                       | HTTP response content type for this operation                                            |
+| `log_transaction_metadata`                                                               | [Optional[shared.LogTransactionMetadata]](../../models/shared/logtransactionmetadata.md) | :heavy_minus_sign:                                                                       | StartTransaction default response                                                        |
+| `status_code`                                                                            | *int*                                                                                    | :heavy_check_mark:                                                                       | HTTP response status code for this operation                                             |
+| `raw_response`                                                                           | [requests.Response](https://requests.readthedocs.io/en/latest/api/#requests.Response)    | :heavy_check_mark:                                                                       | Raw HTTP response; suitable for custom response parsing                                  |

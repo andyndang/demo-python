@@ -3,22 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import pagerdutynotificationaction as shared_pagerdutynotificationaction
+from ...models.shared import pagerdutynotificationaction as shared_pagerdutynotificationaction
 from typing import Optional
 
 
 @dataclasses.dataclass
-class GetPagerDutyNotificationActionPayloadSecurity:
-    
-    api_key_auth: str = dataclasses.field(metadata={'security': { 'scheme': True, 'type': 'apiKey', 'sub_type': 'header', 'field_name': 'X-API-Key' }})
-    
-
-@dataclasses.dataclass
 class GetPagerDutyNotificationActionPayloadResponse:
-    
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     pager_duty_notification_action: Optional[shared_pagerdutynotificationaction.PagerDutyNotificationAction] = dataclasses.field(default=None)
     r"""getPagerDutyNotificationActionPayload default response"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
+
