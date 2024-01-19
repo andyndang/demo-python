@@ -4,9 +4,9 @@ management:
   docChecksum: b0f84bea80b1ddb3221da988856ffa5b
   docVersion: "0.1"
   speakeasyVersion: internal
-  generationVersion: 2.235.3
-  releaseVersion: 2.2.7
-  configChecksum: 836f86ba735e520b9dd4fcfb583b98f6
+  generationVersion: 2.237.2
+  releaseVersion: 2.2.8
+  configChecksum: 5ce89ded5fbea2f2960aeb9d0e7e2a2a
   repoURL: https://github.com/andyndang/demo-python.git
   repoSubDirectory: .
   installationURL: https://github.com/andyndang/demo-python.git
@@ -15,7 +15,7 @@ features:
     constsAndDefaults: 0.1.2
     core: 4.4.2
     deprecations: 2.81.1
-    globalSecurity: 2.83.1
+    globalSecurity: 2.83.2
     globalServerURLs: 2.82.1
 generatedFiles:
   - src/songbird/sdkconfiguration.py
